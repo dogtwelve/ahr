@@ -1,0 +1,117 @@
+// saved by AuroraGT v0.7.2 (SpriteEditor v0.8.3)
+////////////////////////////////////////////////////////////////////////////////
+/*SPRITE*/ {
+
+    VERSION 0001
+
+    // Images:  1
+    // Modules: 6
+    // Frames:  6
+    // Anims:   4
+
+////////////////////////////////////////////////////////////////////////////////
+// Images...
+// <Image> := IMAGE [id] "file" [TRANSP transp_color]
+
+    IMAGE 0x0000 ".\MCbullet.bmp" TRANSP 0x00FF00FF // 0  size: 175 x 100  palettes: 1
+
+////////////////////////////////////////////////////////////////////////////////
+// Modules...
+// <Modules> := MODULES { <MD1> <MD2> ... }
+// <MDi>     := MD id Type [params] ["desc"]
+// Type      := MD_IMAGE | MD_RECT | ...
+// [params]  := if (Type == MD_IMAGE)     -> image x y width height
+//              if (Type == MD_RECT)      -> color width height
+//              if (Type == MD_FILL_RECT) -> color width height
+//              if (Type == MD_ARC)       -> color width height
+//              if (Type == MD_FILL_ARC)  -> color width height
+
+    MODULES
+    {
+        MD	0x1000	MD_IMAGE	0	6	18	30	32
+        MD	0x1001	MD_IMAGE	0	64	12	40	44
+        MD	0x1002	MD_IMAGE	0	120	8	49	50
+        MD	0x1004	MD_IMAGE	0	6	71	11	13
+        MD	0x1005	MD_IMAGE	0	21	71	11	13
+        MD	0x1006	MD_IMAGE	0	36	70	11	19
+    }
+
+////////////////////////////////////////////////////////////////////////////////
+// Frames...
+// <Frame> := FRAME ["desc"] { id <RC1> [<RC2> ...] <FM1> [<FM2> ...] }
+// <RCi>   := RC x1 y1 x2 y2
+// <FMi>   := FM module_or_frame_id ox oy [FLAGS hex_flags] [+Flags]
+// Flags   := HYPER_FM | FLIP_X | FLIP_Y | ROT_90
+
+    FRAME "" // Index = 0, FModules = 1
+    {
+        0x2000
+        FM	0x1000	-15	-20
+    }
+
+    FRAME "" // Index = 1, FModules = 1
+    {
+        0x2001
+        FM	0x1001	-20	-26
+    }
+
+    FRAME "" // Index = 2, FModules = 1
+    {
+        0x2002
+        FM	0x1002	-25	-30
+    }
+
+    FRAME "" // Index = 3, FModules = 1
+    {
+        0x2003
+        FM	0x1004	-5	0
+    }
+
+    FRAME "" // Index = 4, FModules = 1
+    {
+        0x2004
+        FM	0x1005	-5	0
+    }
+
+    FRAME "" // Index = 5, FModules = 1
+    {
+        0x2005
+        FM	0x1006	-5	-1
+    }
+
+////////////////////////////////////////////////////////////////////////////////
+// Animations...
+// <Anim> := ANIM ["desc"] { id [<AF1> <AF2> ...] }
+// <AFi>  := AF frame_id time ox oy [FLAGS hex_flags] [+Flags]
+// Flags  := FLIP_X | FLIP_Y | ROT_90
+
+    ANIM "EXPLOSION" // Index = 0, AFrames = 3
+    {
+        0x3000
+        AF	0x2000	2	0	0
+        AF	0x2001	1	0	0
+        AF	0x2002	2	0	0
+    }
+
+    ANIM "" // Index = 1, AFrames = 1
+    {
+        0x3001
+        AF	0x2003	1	0	0
+    }
+
+    ANIM "" // Index = 2, AFrames = 1
+    {
+        0x3002
+        AF	0x2004	1	0	0
+    }
+
+    ANIM "" // Index = 3, AFrames = 1
+    {
+        0x3003
+        AF	0x2005	1	0	0
+    }
+
+    SPRITE_END
+
+} // SPRITE
+////////////////////////////////////////////////////////////////////////////////

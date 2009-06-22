@@ -1,0 +1,118 @@
+// saved by AuroraGT v0.7.2 (SpriteEditor v0.8.3)
+////////////////////////////////////////////////////////////////////////////////
+/*SPRITE*/ {
+
+    VERSION 0001
+
+    // Images:  1
+    // Modules: 6
+    // Frames:  6
+    // Anims:   3
+
+////////////////////////////////////////////////////////////////////////////////
+// Images...
+// <Image> := IMAGE [id] "file" [TRANSP transp_color]
+
+    IMAGE 0x0000 ".\MC00.bmp" TRANSP 0x00FF00FF // 0  size: 464 x 464  palettes: 1
+
+////////////////////////////////////////////////////////////////////////////////
+// Modules...
+// <Modules> := MODULES { <MD1> <MD2> ... }
+// <MDi>     := MD id Type [params] ["desc"]
+// Type      := MD_IMAGE | MD_RECT | ...
+// [params]  := if (Type == MD_IMAGE)     -> image x y width height
+//              if (Type == MD_RECT)      -> color width height
+//              if (Type == MD_FILL_RECT) -> color width height
+//              if (Type == MD_ARC)       -> color width height
+//              if (Type == MD_FILL_ARC)  -> color width height
+
+    MODULES
+    {
+        MD	0x1000	MD_IMAGE	0	24	137	30	34	"IDLE0"
+        MD	0x1001	MD_IMAGE	0	83	138	30	33	"IDLE1"
+        MD	0x1002	MD_IMAGE	0	9	59	32	33	"ATTACK0"
+        MD	0x1003	MD_IMAGE	0	64	58	30	34	"ATTACK1"
+        MD	0x1004	MD_IMAGE	0	13	178	40	31	"DAMAGED0"
+        MD	0x1005	MD_IMAGE	0	78	179	38	32	"DAMAGED1"
+    }
+
+////////////////////////////////////////////////////////////////////////////////
+// Frames...
+// <Frame> := FRAME ["desc"] { id <RC1> [<RC2> ...] <FM1> [<FM2> ...] }
+// <RCi>   := RC x1 y1 x2 y2
+// <FMi>   := FM module_or_frame_id ox oy [FLAGS hex_flags] [+Flags]
+// Flags   := HYPER_FM | FLIP_X | FLIP_Y | ROT_90
+
+    FRAME "IDLE0" // Index = 0, FModules = 1
+    {
+        0x2000
+        FM	0x1000	-15	-34
+    }
+
+    FRAME "IDLE1" // Index = 1, FModules = 1
+    {
+        0x2001
+        FM	0x1001	-15	-33
+    }
+
+    FRAME "ATTACK0" // Index = 2, FModules = 1
+    {
+        0x2002
+        FM	0x1002	-17	-33
+    }
+
+    FRAME "ATTACK1" // Index = 3, FModules = 1
+    {
+        0x2003
+        FM	0x1003	-15	-34
+    }
+
+    FRAME "DAMAGED0" // Index = 4, FModules = 1
+    {
+        0x2004
+        FM	0x1004	-20	-31
+    }
+
+    FRAME "DAMAGED1" // Index = 5, FModules = 1
+    {
+        0x2005
+        FM	0x1005	-20	-30
+    }
+
+////////////////////////////////////////////////////////////////////////////////
+// Animations...
+// <Anim> := ANIM ["desc"] { id [<AF1> <AF2> ...] }
+// <AFi>  := AF frame_id time ox oy [FLAGS hex_flags] [+Flags]
+// Flags  := FLIP_X | FLIP_Y | ROT_90
+
+    ANIM "MC_IDLE" // Index = 0, AFrames = 2
+    {
+        0x3000
+        AF	0x2000	3	0	0
+        AF	0x2001	2	0	0
+    }
+
+    ANIM "MC_DAMAGED" // Index = 1, AFrames = 2
+    {
+        0x3001
+        AF	0x2004	2	0	0
+        AF	0x2005	2	0	0
+    }
+
+    ANIM "MC_ATTACK" // Index = 2, AFrames = 8
+    {
+        0x3002
+        AF	0x2003	1	0	18
+        AF	0x2003	1	0	22
+        AF	0x2003	1	0	24
+        AF	0x2002	4	0	25
+        AF	0x2003	2	0	25
+        AF	0x2003	1	0	24
+        AF	0x2000	1	0	20
+        AF	0x2000	1	0	16
+    }
+
+    SPRITE_END
+
+} // SPRITE
+////////////////////////////////////////////////////////////////////////////////

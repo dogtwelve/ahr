@@ -1,0 +1,63 @@
+// saved by AuroraGT v0.7.2 (SpriteEditor v0.8.3)
+////////////////////////////////////////////////////////////////////////////////
+/*SPRITE*/ {
+
+    VERSION 0001
+
+    // Images:  1
+    // Modules: 4
+    // Frames:  2
+    // Anims:   0
+
+////////////////////////////////////////////////////////////////////////////////
+// Images...
+// <Image> := IMAGE [id] "file" [TRANSP transp_color]
+
+    IMAGE 0x0000 ".\bg_floor.bmp" TRANSP 0x00FF00FF // 0  size: 128 x 128  palettes: 1
+
+////////////////////////////////////////////////////////////////////////////////
+// Modules...
+// <Modules> := MODULES { <MD1> <MD2> ... }
+// <MDi>     := MD id Type [params] ["desc"]
+// Type      := MD_IMAGE | MD_RECT | ...
+// [params]  := if (Type == MD_IMAGE)     -> image x y width height
+//              if (Type == MD_RECT)      -> color width height
+//              if (Type == MD_FILL_RECT) -> color width height
+//              if (Type == MD_ARC)       -> color width height
+//              if (Type == MD_FILL_ARC)  -> color width height
+
+    MODULES
+    {
+        MD	0x1000	MD_IMAGE	0	0	75	41	24
+        MD	0x1001	MD_IMAGE	0	4	34	117	30
+        MD	0x1002	MD_IMAGE	0	11	19	101	15
+        MD	0x1003	MD_IMAGE	0	20	5	85	14
+    }
+
+////////////////////////////////////////////////////////////////////////////////
+// Frames...
+// <Frame> := FRAME ["desc"] { id <RC1> [<RC2> ...] <FM1> [<FM2> ...] }
+// <RCi>   := RC x1 y1 x2 y2
+// <FMi>   := FM module_or_frame_id ox oy [FLAGS hex_flags] [+Flags]
+// Flags   := HYPER_FM | FLIP_X | FLIP_Y | ROT_90
+
+    FRAME "" // Index = 0, FModules = 3
+    {
+        0x2000
+        FM	0x1000	20	-8
+        FM	0x1000	-20	-8
+        FM	0x1000	-60	-8
+    }
+
+    FRAME "" // Index = 1, FModules = 3
+    {
+        0x2001
+        FM	0x1001	-58	-30
+        FM	0x1002	-51	-45
+        FM	0x1003	-42	-59
+    }
+
+    SPRITE_END
+
+} // SPRITE
+////////////////////////////////////////////////////////////////////////////////
