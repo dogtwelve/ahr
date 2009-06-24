@@ -410,8 +410,6 @@ void CHighGear::setGameState(e_m_gState state, bool bDrawL)
 	m_loadingCounter = 0;
 }
 
-#define VPAD_X	((m_dispX >> 1) - 120)
-#define VPAD_Y	(m_dispY - 120)
 
 void CHighGear::procLoading()
 {
@@ -440,9 +438,11 @@ void CHighGear::procLoading()
 
 		m_gameSprite = NEW CSprite*[MAX_GAMESPRITE];
 		m_gameSprite[0] = NEW CSprite("mc00.bsprite");
+		m_gameSprite[1] = NEW CSprite("enemy_mummy.bsprite");
 		m_pad = NEW CSprite("vpad.bsprite");
-		touchZones->AddZone(1,VPAD_X - 10, VPAD_Y + 25, VPAD_X + 30, VPAD_Y + 65); 
-		touchZones->AddZone(2,VPAD_X + 55, VPAD_Y + 25, VPAD_X + 95, VPAD_Y + 65); 
+		touchZones->AddZone(ZONEID_PAD_LEFT, VPAD_X - 10, VPAD_Y + 25, VPAD_X + 30, VPAD_Y + 65); 
+		touchZones->AddZone(ZONEID_PAD_RIGHT, VPAD_X + 55, VPAD_Y + 25, VPAD_X + 95, VPAD_Y + 65); 
+		touchZones->AddZone(ZONEID_PAD_FIRE, VPAD_FIRE_X, VPAD_FIRE_Y, VPAD_FIRE_X + 40, VPAD_FIRE_Y + 40); 
 		initActors();
 		break;
 	}
@@ -450,27 +450,38 @@ void CHighGear::procLoading()
 		m_gState = m_gStateNext;
 }
 
+
 void CHighGear::initActors()
 {
 	m_actors = NEW CActor*[MAX_ACTOR];
 	for (int i = 0; i < MAX_ACTOR; i ++)
 		m_actors[i] = NEW CActor();
 	//m_actors[0] = NEW CActor();
-	m_actors[0]->init(CActor::ACTOR_MC, m_gameSprite[0]);
+	m_actors[0]->init(CActor::ACTOR_MC, m_gameSprite[0], MC_XCOORD, MC_YCOORD);
+
+	m_actors[1]->init(CActor::ACTOR_ENEMY1, m_gameSprite[1], 0, 0);
 }
+
+
+
 void CHighGear::procMaingame()
 {
 	//Update Touch
 	if (m_actors[0])
 	{
-		if (touchZones->IsZonePressed(1))
+		if (touchZones->IsZonePressed(ZONEID_PAD_LEFT))
 		{
 			m_actors[0]->move(-1);
 		}
-		else if (touchZones->IsZonePressed(2))
+		else if (touchZones->IsZonePressed(ZONEID_PAD_RIGHT))
 		{
 			m_actors[0]->move(1);
 		}
+		else if (touchZones->IsZonePressed(ZONEID_PAD_FIRE))
+		{
+			//FIRE!
+		}
+
 	}
 
 	//UPDATE
@@ -482,6 +493,7 @@ void CHighGear::procMaingame()
 		}
 	}
 
+	//genEnemy();
 	
 
 	//DRAW
@@ -497,6 +509,7 @@ void CHighGear::procMaingame()
 		}
 	}
 
+	//DRAW VIRTUAL PAD
 	m_pad->DrawModule(GetLib2D(), VPAD_X, VPAD_Y, 0);
-	//m_gameSprite[0]->DrawAFrame(GetLib2D(), m_dispX - 50, m_dispY - 50, 0, 0);
+	m_pad->DrawModule(GetLib2D(), VPAD_FIRE_X, VPAD_FIRE_Y, 1);
 }
