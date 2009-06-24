@@ -1,6 +1,8 @@
 #ifndef __ACTOR_H__
 #define __ACTOR_H__
 #include "AuroraSprite.h"
+#include "PlayingGame_defines.h"
+#include "Random.h"
 
 class CActor
 {
@@ -22,7 +24,7 @@ public:
 	} ACTOR_STATE;
 
 
-	void init(int, CSprite*);
+	void init(int, CSprite*, int x = 0, int y = 0);
 	void draw(CLib2D);
 	void update();
 
