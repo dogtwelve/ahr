@@ -439,6 +439,8 @@ void CHighGear::procLoading()
 		m_gameSprite = NEW CSprite*[MAX_GAMESPRITE];
 		m_gameSprite[0] = NEW CSprite("mc00.bsprite");
 		m_gameSprite[1] = NEW CSprite("enemy_mummy.bsprite");
+		m_gameSprite[2] = NEW CSprite("enemy_vampire.bsprite");
+		m_gameSprite[3] = NEW CSprite("mcbullet.bsprite");
 		m_pad = NEW CSprite("vpad.bsprite");
 		touchZones->AddZone(ZONEID_PAD_LEFT, VPAD_X - 10, VPAD_Y + 25, VPAD_X + 30, VPAD_Y + 65); 
 		touchZones->AddZone(ZONEID_PAD_RIGHT, VPAD_X + 55, VPAD_Y + 25, VPAD_X + 95, VPAD_Y + 65); 
@@ -455,14 +457,21 @@ void CHighGear::initActors()
 {
 	m_actors = NEW CActor*[MAX_ACTOR];
 	for (int i = 0; i < MAX_ACTOR; i ++)
-		m_actors[i] = NEW CActor();
+		m_actors[i] = NEW CActor(this);
 	//m_actors[0] = NEW CActor();
 	m_actors[0]->init(CActor::ACTOR_MC, m_gameSprite[0], MC_XCOORD, MC_YCOORD);
 
-	m_actors[1]->init(CActor::ACTOR_ENEMY1, m_gameSprite[1], 0, 0);
+	m_actors[1]->init(CActor::ACTOR_MUMMY, m_gameSprite[1], m_Random.GetNumber(0, 4), 0);
+	m_actors[2]->init(CActor::ACTOR_VAMPIRE, m_gameSprite[2], m_Random.GetNumber(0, 4), 0);
 }
 
+int CHighGear::getEmptyActorIndex()
+{
+	for (int i = 0 ; i < MAX_ACTOR; i ++)
+		if (m_actors[i]->m_type == CActor::ACTOR_NONE) return i;
 
+	return -1;
+}
 
 void CHighGear::procMaingame()
 {
@@ -480,6 +489,12 @@ void CHighGear::procMaingame()
 		else if (touchZones->IsZonePressed(ZONEID_PAD_FIRE))
 		{
 			//FIRE!
+			int index = getEmptyActorIndex();
+
+			if (index > -1)
+			{
+				m_actors[index]->init(CActor::ACTOR_MCBULLET, m_gameSprite[3], m_actors[0]->m_posX, m_actors[0]->m_posY);
+			}
 		}
 
 	}
@@ -490,6 +505,31 @@ void CHighGear::procMaingame()
 		if (m_actors[i])
 		{
 			m_actors[i]->update();
+			if (m_actors[i]->m_state == CActor::ACTOR_STATE_DESTROYED)
+				m_actors[i]->m_type = CActor::ACTOR_NONE;
+		}
+	}
+
+	//UPDATE COLLIDE
+	for (int i = 0; i < MAX_ACTOR; i ++)
+	{
+		if (m_actors[i])
+		{
+			if (m_actors[i]->m_type == CActor::ACTOR_MCBULLET)
+			{
+				for (int j = 0; j < MAX_ACTOR; j ++)
+				{
+					if (m_actors[j]->m_type != CActor::ACTOR_MUMMY 
+						&& m_actors[j]->m_type != CActor::ACTOR_VAMPIRE) continue;
+
+					if (m_actors[j]->m_posX == m_actors[i]->m_posX && 
+						m_actors[j]->m_posY == m_actors[i]->m_posY)
+					{
+						m_actors[i]->m_state = CActor::ACTOR_NONE;	//Bullet X
+						m_actors[j]->notifyState(CActor::ACTOR_STATE_DAMAGED);
+					}
+				}
+			}
 		}
 	}
 

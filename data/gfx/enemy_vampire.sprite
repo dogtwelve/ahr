@@ -5,15 +5,15 @@
     VERSION 0001
 
     // Images:  1
-    // Modules: 6
-    // Frames:  6
-    // Anims:   4
+    // Modules: 2
+    // Frames:  2
+    // Anims:   1
 
 ////////////////////////////////////////////////////////////////////////////////
 // Images...
 // <Image> := IMAGE [id] "file" [TRANSP transp_color]
 
-    IMAGE 0x0000 ".\MCbullet.bmp" TRANSP 0x00FF00FF // 0  size: 175 x 100  palettes: 1
+    IMAGE 0x0000 "D:\workspace\iPhone\AHR\data\gfx\enemy_vampire.bmp" TRANSP 0x00FF00FF // 0  size: 201 x 228  palettes: 1
 
 ////////////////////////////////////////////////////////////////////////////////
 // Modules...
@@ -28,12 +28,8 @@
 
     MODULES
     {
-        MD	0x1000	MD_IMAGE	0	6	18	30	32
-        MD	0x1001	MD_IMAGE	0	64	12	40	44
-        MD	0x1002	MD_IMAGE	0	120	8	49	50
-        MD	0x1004	MD_IMAGE	0	6	71	11	13
-        MD	0x1005	MD_IMAGE	0	21	71	11	13
-        MD	0x1006	MD_IMAGE	0	36	70	11	19
+        MD	0x1000	MD_IMAGE	0	50	43	30	25
+        MD	0x1001	MD_IMAGE	0	12	42	31	26
     }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -46,37 +42,13 @@
     FRAME "" // Index = 0, FModules = 1
     {
         0x2000
-        FM	0x1000	-15	-20
+        FM	0x1000	-15	-24
     }
 
     FRAME "" // Index = 1, FModules = 1
     {
         0x2001
-        FM	0x1001	-20	-26
-    }
-
-    FRAME "" // Index = 2, FModules = 1
-    {
-        0x2002
-        FM	0x1002	-25	-30
-    }
-
-    FRAME "" // Index = 3, FModules = 1
-    {
-        0x2003
-        FM	0x1004	-5	-20
-    }
-
-    FRAME "" // Index = 4, FModules = 1
-    {
-        0x2004
-        FM	0x1005	-5	-20
-    }
-
-    FRAME "" // Index = 5, FModules = 1
-    {
-        0x2005
-        FM	0x1006	-5	-21
+        FM	0x1001	-15	-25
     }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -85,30 +57,13 @@
 // <AFi>  := AF frame_id time ox oy [FLAGS hex_flags] [+Flags]
 // Flags  := FLIP_X | FLIP_Y | ROT_90
 
-    ANIM "EXPLOSION" // Index = 0, AFrames = 3
+    ANIM "" // Index = 0, AFrames = 4
     {
         0x3000
-        AF	0x2000	2	0	0
+        AF	0x2000	3	0	0
         AF	0x2001	1	0	0
-        AF	0x2002	2	0	0
-    }
-
-    ANIM "" // Index = 1, AFrames = 1
-    {
-        0x3001
-        AF	0x2003	1	0	0
-    }
-
-    ANIM "" // Index = 2, AFrames = 1
-    {
-        0x3002
-        AF	0x2004	1	0	0
-    }
-
-    ANIM "" // Index = 3, AFrames = 1
-    {
-        0x3003
-        AF	0x2005	1	0	0
+        AF	0x2000	3	0	0	+FLIP_X
+        AF	0x2001	1	0	0
     }
 
     SPRITE_END

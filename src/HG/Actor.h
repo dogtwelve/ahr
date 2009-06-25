@@ -4,39 +4,47 @@
 #include "PlayingGame_defines.h"
 #include "Random.h"
 
+class CHighGear;
+
+
 class CActor
 {
 public:
-	CActor(void);
+	CActor(CHighGear *pH);
 	~CActor(void);
 
 	enum
 	{
 		ACTOR_NONE = -1,
 		ACTOR_MC,
-		ACTOR_ENEMY1
+		ACTOR_MUMMY,
+		ACTOR_VAMPIRE,
+		ACTOR_MCBULLET
 	} ACTOR_TYPE;
 
 	enum
 	{
-		ACTOR_IDLE = 0,
-		ACTOR_ATTACK
+		ACTOR_STATE_IDLE = 0,
+		ACTOR_STATE_ATTACK,
+		ACTOR_STATE_DAMAGED,
+		ACTOR_STATE_DESTROYED
 	} ACTOR_STATE;
 
 
 	void init(int, CSprite*, int x = 0, int y = 0);
 	void draw(CLib2D);
 	void update();
+	void notifyState(int state);
 
 	int m_type;
 	int m_state;
 	void move(int);
-private:
-	
+
+	CHighGear* g_pGame;
 	int m_posX;
 	int m_posY;
-	
-	int m_FrameCounter;
+private:	
+	int m_VelocityCounter;
 	int m_CurrentFrameTimer;
 	int m_CurrentAFrame;
 	int m_CurrentAnim;

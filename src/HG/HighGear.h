@@ -155,6 +155,8 @@ public:
 	
 	int m_FrameCounter;
 	
+	CRandom m_Random;
+
 	typedef enum
 	{
 		GAME_STATE_INIT,
@@ -187,6 +189,7 @@ public:
 #define MAX_ACTOR	20
 #define	MAX_GAMESPRITE	20
 	void initActors();
+	int getEmptyActorIndex();
 	//for GAME_STATE_MAIN
 	CSprite **m_gameSprite;
 	CSprite *m_bg;
