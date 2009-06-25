@@ -1,12 +1,14 @@
 #include "Actor.h"
 #include "Lib2D.h"
+#include "HighGear.h"
 
 class CLib2D;
+class CHighGear;
 
-
-CActor::CActor(void)
+CActor::CActor(CHighGear *p)
 {
 	m_type = ACTOR_NONE;
+	g_pGame = p;
 	spr = NULL;
 }
 
@@ -17,19 +19,46 @@ CActor::~CActor(void)
 void CActor::init(int type, CSprite* gameSpr, int x, int y)
 {
 	m_type = type;
+	spr = gameSpr;
+
+	m_posX = x;
+	m_posY = y;
+	//init sprite
+	bStateChanged = false;
+	m_VelocityCounter = 0;
+
 	switch (type)
 	{
 	case ACTOR_MC:
-	case ACTOR_ENEMY1:
-		spr = gameSpr;
-
-		m_posX = x;
-		m_posY = y;
-		//init sprite
-		bStateChanged = false;
+	case ACTOR_MUMMY:
+	case ACTOR_VAMPIRE:
 		setAnim(0);
-		m_state = ACTOR_IDLE;
+		m_state = ACTOR_STATE_IDLE;
 		break;
+	case ACTOR_MCBULLET:
+		setAnim(1);
+		m_state = ACTOR_STATE_IDLE;
+		break;
+	}
+}
+
+void CActor::notifyState(int state)
+{
+	if (m_type == ACTOR_NONE) return;
+
+	m_state = state;
+	switch (m_type)
+	{
+		case ACTOR_MUMMY:
+		case ACTOR_VAMPIRE:
+			if (m_state == ACTOR_STATE_DAMAGED)
+			{
+				//hp--;
+				//if (hp < 0)
+				//gameSpr = boom	
+				m_state = ACTOR_STATE_DESTROYED;
+			}
+			break;
 	}
 }
 
@@ -43,16 +72,27 @@ void CActor::update()
 	case ACTOR_MC:
 		if (bStateChanged)
 		{
-			if (m_state == 0)
-			{}
+			if (m_state == ACTOR_STATE_IDLE)
+			{
+				
+			}
 				
 		}
 		break;
-	case ACTOR_ENEMY1:
-		if (m_state == ACTOR_IDLE)
+	case ACTOR_MUMMY:
+	case ACTOR_VAMPIRE:
+		if (m_state == ACTOR_STATE_IDLE)
 		{
-			m_posY = (m_posY + 1) % 6;
+			if (++m_VelocityCounter > 5)
+			{
+				m_VelocityCounter = 0;
+				m_posY = (m_posY + 1) % 7;
+			}
 		}
+		break;
+	case ACTOR_MCBULLET:
+		if (-- m_posY < 0)
+			m_state = ACTOR_STATE_DESTROYED;
 		break;
 	}
 }
@@ -87,7 +127,7 @@ void CActor::draw(CLib2D g)
 
 void CActor::move(int _x)
 {
-	if (m_state != ACTOR_IDLE) return;
+	if (m_state != ACTOR_STATE_IDLE) return;
 
 	
 	m_posX += _x;
