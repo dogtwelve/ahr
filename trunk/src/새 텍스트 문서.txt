@@ -1,0 +1,90 @@
+
+	for (int i = 0; i < g_pGame->m_actorsMax_count; i++)
+	//	for (int i = 0; i < ENTITY::k_max; i++)
+	{
+
+		int temp = 0;
+		if (getEntity(i) != NULL)
+		{
+
+			//TODO 슬롯 관련 수정...
+			//CAUTION 슬롯 늘리면 에러나니 수정..
+			//CAUTION lenderer length
+//			if (getEntity(i)->m_renderer_length == 4)
+			if (getEntity(i)->m_renderer_length >= 4)
+			{
+				temp = CHARSLOT::k_slot_boby;
+			}
+
+			/*if (getEntity(i)->m_type == ACTOR_TYPE_MAPOBJECT)
+			{
+				if (getEntity(i)->m_renderer == NULL)
+				{
+					DBGPRINTF("AAA");
+				}
+				int *abc = getEntity(i)->GetRect(temp);
+				if (IsInCamera(abc))
+				{
+					DBGPRINTF("AAA");
+				}
+			}*/
+			if ((IsInCamera(getEntity(i)->GetRect(temp)) && !((getEntity(i)->m_flags & DFLAGS::HIDE_LAYER) != 0)) || (getEntity(i)->m_type == ENTITY::K_SHINE))
+			{
+				int posY = getEntity(i)->m_posY;
+
+				if ((getEntity(i)->m_flags & DFLAGS::MAP_LAYER) != 0)
+				{
+					getEntity(i)->Draw(vx, vy, sx, sy);
+				}
+				else if ((getEntity(i)->m_flags & DFLAGS::TOP_LAYER) != 0)
+				{
+					int j = top_start;
+					int actorDrCnt = _actorDrawVector->size();
+					for (; j < actorDrCnt; ++j)
+					{
+						if (posY < ((cEntity*) _actorDrawVector->elementAt(j))->m_posY) //todo
+							break;
+					}
+					_actorDrawVector->insertElementAt(getEntity(i), j);
+				}
+				else if ((getEntity(i)->m_flags & DFLAGS::BOTTOM_LAYER) != 0)
+				{
+					int j = 0;
+					for (; j < middle_start; ++j)
+					{
+						cEntity* obj = (cEntity*) _actorDrawVector->elementAt(j); //todo
+
+						if (DrawSort(getEntity(i), obj))
+						{
+							break;
+						}
+					}
+					_actorDrawVector->insertElementAt(getEntity(i), j); //todo
+					++middle_start;
+					++top_start;
+				}
+				else
+				{
+					int j = middle_start;
+					for (; j < top_start; ++j)
+					{
+						cEntity* obj = (cEntity*) _actorDrawVector->elementAt(j); //todo
+
+						if (DrawSort(getEntity(i), obj))
+						{
+							break;
+						}
+					}
+					_actorDrawVector->insertElementAt(getEntity(i), j); //todo
+					++top_start;
+				}
+			}
+		}
+	}
+
+	int actorDrCnt = _actorDrawVector->size();
+	for (int j = 0; j < actorDrCnt; ++j)
+	{
+		cEntity* temp = (cEntity*) (_actorDrawVector->elementAt(j)); //todo
+		temp->Draw(vx, vy, sx, sy);
+	}
