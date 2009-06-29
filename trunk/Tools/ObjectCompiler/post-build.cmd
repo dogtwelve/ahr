@@ -1,0 +1,3 @@
+@echo off
+echo Copying exe to tool directory...
+copy release\ObjectCompiler.exe ..

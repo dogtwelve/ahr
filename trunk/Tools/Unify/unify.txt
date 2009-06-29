@@ -1,0 +1,54 @@
+node =					openNode element closeNode
+
+element =				node
+						parameter
+
+param =					paramName white paramValueList
+
+paramName =				string
+
+paramValueList =		paramValue
+						paramValue paramSeparator paramValueList
+
+string =				literalQuote literalString literalQuote
+						regularString
+
+regularString =			regularChar regularString
+						regularChar
+
+literalString =			escapeSequence literalString
+						literalChar literalString
+
+escapeSequence =		escapeChar escapeCode	
+				
+openNode =				"("
+
+closeNode =				")"
+
+paramSeparator =		","
+
+literalQuote =			<double_quote>
+
+escapeChar =			"\"
+
+escapeCode =			[n\t]
+						literalQuote
+
+regularChar =			alpha
+						numeric
+						[_+-.]
+
+alpha =					alphaUpper
+						alphaLower
+
+alphaUpper =			[ABCDEFGHIJKLMNOPQRSTUVWXYZ]
+
+alphaLower =			[abcdefghijklmnopqrstuvwxyz]
+
+numeric =				[0123456789]
+
+white =					[ <space> <tab> <return> <linefeed> ]
+
+literalChar =			~escapeChar
+
+

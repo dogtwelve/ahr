@@ -1,0 +1,237 @@
+
+
+// Track number used in evolution.
+// <ID><Name><CashToUnlock>
+
+[TRACKS]
+1	kTrackCat_Hawaii		0
+2	kTrackCat_SanFrancisco		0
+3	kTrackCat_LasVegas		0
+4	kTrackCat_Rome			0
+5	kTrackCat_SanktPetersburg	0
+6	kTrackCat_Tokyo			0
+[END]
+
+
+// list of the player cars
+// <CAR ID><NAME><ARCADEPRICE>
+// ArcadePrice: 1 to XXX = price / 0 = unlocked / -1 = not in arcade (just a note).
+// ARCADEPRICE is actually the index in UNLOCK_TABLE
+
+// Attention: car names must be lowercase!
+// Car name = the name of the high poly ase file, without extension
+[CARS]
+1 mini_cooper_s			0
+2 nissan_gtr			0
+3 bmw_m3			0
+4 corvette_zr1			1
+5 aston_martin			3
+6 ng5				4
+7 ferrari_f430			6
+8 bugatti_veyron		8
+9 ducati1098			10
+10 ducati_monster_969		13
+[END]
+
+
+//////////////////////////////////////
+// Added in Asphalt4
+//////////////////////////////////////
+// Opponents for Arcade race
+// For each car, add the opponents car names separated by space(s) or tab(s).
+// By default the first opponent is the car.
+[CARS_OPPONENTS]
+1 nissan_gtr bmw_m3
+2 mini_cooper_s corvette_zr1
+3 nissan_gtr corvette_zr1 aston_martin
+4 bmw_m3 aston_martin
+5 corvette_zr1 ng5
+6 aston_martin ferrari_f430
+7 ng5 bugatti_veyron
+8 ferrari_f430
+9 ducati_monster_969
+10
+[END]
+
+// Accumulated points for each event
+// <CASH> <NITRO*256> <CRIME> <PRIORITY> <COMMENT>
+//
+
+
+[POINTS]
+50		84	0	2	NearMiss
+0		0	0	2	NearMissReverse
+50		64	25	2	ObjectDestruction
+0		0	0	2	PowerBoost
+0		0	25	2	NitroUse
+0		4	0	2	Drifting/frame
+0		0	0	3	Drifting2
+0		0	0	3	Drifting3
+0		0	0	3	Drifting4
+0		128	0	4	DriftingNice
+0		128	0	4	DriftingFantastic
+0		0	0	2	DriftingEnd
+2000	768	50	5	OpponentCrash
+1000	0	0	5	SecondOpponentCrash
+0		0	25	2	TrafficPush
+100		64	25	5	TrafficTakeDown
+100		0	0	2	Jumping/frame
+50		0	0	2	Radar
+0		256	0	2	PowerUpNitro
+0		0	0	2	PowerUpX2
+0		0	0	2	PowerUpX4
+1000	0	0	2	PowerUp500
+2000	0	0	2	PowerUp1000
+0		4	0	1	OppositeLane
+500		0	25	2	CopsGetaway
+3000	768	50	5	CopsTakeDown
+0		0	0	5	CopsTakeDownMany
+0		0	0	5	Busted
+200		0	2	1	OpponentFriction
+0		0	0	2	RivalDistance
+0		0	0	2	Frenzy
+-1000	0	0	5	Crashed
+0		0	0	2	WrongWay
+0		0	50	5	CopWrongOpponentCrash
+0		0	0	2	CopOpponentFriction
+0		0	0	2	CopTrafficPush
+5000	0	0	2	CopBusted
+[END]
+
+
+// Crime levels
+// Effect for each level is hardcoded (moto, cops, helico, supercop)
+
+[CRIME]
+200
+400
+600
+800
+1000
+1200
+[END]
+
+[SINGLERACE_REWARDS]
+5000 
+2500 
+1000 
+500 
+250 
+0 
+0 
+0 
+[END]
+
+// Unlock chart for ARCADE game modes.
+
+// [ARCADE_GAMEMODE]
+// 1		0		Quickrace
+// 2		0		Single Race
+// 3		50000	Elimination
+// 4		100000	Cop Chase
+// 5		150000	Bandit Chase
+// [END]
+
+
+//////////////////////////////////////
+// Added in Asphalt4
+//////////////////////////////////////
+//<EVENT_TYPE><EVENT_UNLOCK_INDEX><EVENT_VALUE_1><EVENT_VALUE_2><EVENT_VALUE_3>
+//<EVENT_TYPE>
+// 	RACE_NORMAL
+// 	RACE_BEAT_EM_ALL
+// 	RACE_COP_CHASE
+// 	RACE_DUEL
+//<EVENT_UNLOCK_INDEX> index in UNLOCK_TABLE
+//<EVENT_VALUE_1>
+//<EVENT_VALUE_2>
+//<EVENT_VALUE_3>
+
+[EVENT_TYPE]
+RACE_NORMAL
+RACE_BEAT_EM_ALL
+RACE_COP_CHASE
+RACE_DUEL
+RACE_CASH_ATTACK
+[END]
+
+[CITY_EVENTS]
+	// Los Angeles
+RACE_NORMAL		0
+RACE_BEAT_EM_ALL	1	4	5	6
+RACE_COP_CHASE		5
+RACE_DUEL		21
+
+	// Paris
+RACE_NORMAL		10
+RACE_COP_CHASE		12
+RACE_CASH_ATTACK	16	20000	25000	30000
+RACE_BEAT_EM_ALL	20	4	5	6
+
+	// Monte Carlo
+RACE_NORMAL		0
+RACE_BEAT_EM_ALL	2	4	5	6
+RACE_COP_CHASE		6
+RACE_CASH_ATTACK	25	20000	25000	30000
+
+	// New York
+RACE_NORMAL		3
+RACE_BEAT_EM_ALL	4	4	5	6
+RACE_DUEL		9
+RACE_COP_CHASE		13
+
+	// Shanghai
+RACE_NORMAL		7
+RACE_BEAT_EM_ALL	8	4	5	6
+RACE_COP_CHASE		11
+RACE_CASH_ATTACK	24	20000	25000	30000
+	
+	// Dubai
+RACE_NORMAL		17
+RACE_COP_CHASE		19
+RACE_DUEL		23
+RACE_BEAT_EM_ALL	26	4	5	6
+
+[END]
+
+//////////////////////////////////////
+// Added in Asphalt4
+//////////////////////////////////////
+// <Girl index><Index in UNLOCK_TABLE>
+[GIRLS]
+1	1
+2	10
+3	17
+[END]
+
+// Unlock Index to Unlock Money table
+[UNLOCK_TABLE]
+0
+8000
+20000
+40000
+60000
+80000
+100000
+120000
+140000
+160000
+180000
+200000
+220000
+240000
+260000
+280000
+300000
+350000
+400000
+450000
+500000
+550000
+600000
+650000
+700000
+750000
+800000
+[END]
+

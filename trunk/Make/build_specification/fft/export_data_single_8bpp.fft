@@ -1,0 +1,54 @@
+FILE_FORMAT_TEMPLATE "BSprite3"
+{
+//	TYPE BINARY
+	CHUNKS
+	{
+		utils.write : TYPE_UINT8 0x08	// default
+
+		// Modules...
+		sprite.number_of_modules : TYPE_UINT16
+		sprite.for_each_module
+			module.image : TYPE_UINT8
+			module.x : TYPE_UINT16
+			module.y : TYPE_UINT16			
+			module.w : TYPE_UINT16
+			module.h : TYPE_UINT16
+		//////////////////////////////////////////////////
+
+		// FModules...
+		sprite.number_of_fmodules : TYPE_UINT16
+		sprite.for_each_fmodule
+			fmodule.module_index : TYPE_UINT16
+			fmodule.offset_x : TYPE_INT16
+			fmodule.offset_y : TYPE_INT16
+			fmodule.flags : TYPE_UINT8
+
+		// Frames...
+		sprite.number_of_frames : TYPE_UINT16
+		sprite.for_each_frame
+			frame.number_of_fmodules : TYPE_UINT16
+			frame.first_fmodule : TYPE_UINT16
+			
+//		sprite.for_each_frame
+//			frame.rc_x : TYPE_INT8
+//			frame.rc_y : TYPE_INT8
+//			frame.rc_w : TYPE_UINT8
+//			frame.rc_h : TYPE_UINT8	
+
+		// AFrames...
+		sprite.number_of_aframes : TYPE_UINT16
+		sprite.for_each_aframe
+			aframe.frame_index : TYPE_UINT8
+			aframe.time : TYPE_INT8
+			aframe.offset_x : TYPE_INT16
+			aframe.offset_y : TYPE_INT16
+			aframe.flags : TYPE_UINT8
+			
+		// Anims...
+		sprite.number_of_anims : TYPE_UINT16
+		sprite.for_each_anim
+			anim.number_of_aframes : TYPE_UINT16
+			anim.first_aframe : TYPE_UINT16		
+
+	}
+}

@@ -1,0 +1,52 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// TODO SpriteEditor
+
+    + drag & drop (modules -> fmodules, frames -> aframes)
+
+    + edit HyperFrames
+        * add possibility to view the list of frames insted of the list of modules,
+          in order to create a new HF
+
+    + plugins: Import / Export / Utils
+
+    + sort Modules
+        * width, height
+        * height, width
+        * area (width * height)
+    + sort Frames
+        * width, height
+        * height, width
+        * area (width * height)
+        * num modules used
+    + sort Anims
+        * num frames used
+
+    + export BSprite data format: AUTO
+    + export BSprite data format: I16MP
+    + export BSprite data format: Z9 (max 256 colors, Zip 9 compression)
+    + export BSprite data format: RAW (non indexed, raw data)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// TODO GameEditor
+
+    + plugins
+        * Import
+        * Export
+        * Utils (specific debug drawing)
+    + undo / redo
+    + drag & drop editing
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// TODO MapEditor
+
+    + undo / redo
+    + improve interface
+    + Tileset Palette View:
+        scrollbars
+        draw flags
+    + Map View:
+        scrollbars
+        fill ("fill tool")
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,31 @@
+ 
+License d'Utilisation de TMPGEnc.  
+ 
+Ce contrat de License d'Utilisation est fait entre la personne physique ou morale («l'Utilisateur») et M. Hiroyuki Hori et Pegasys-Inc («le Programmeur») pour la possession et/ou l'emploi du logiciel «TMPGEnc». L'Utilisateur est considéré comme ayant pris connaissance et ayant accepté les termes contenus dans ce document.
+
+
+[1] Aucune Garantie ni Aide Technique n'est Accordée à l'utilisateur. 
+Cette license n'accorde pas à l'Utilisateur le droit de demander une aide technique, correction ou autres relative à l'usage du logiciel fournis. L'Utilisateur reconnaît qu'il ne peut bénéficier d'une aide que par le moyen du site web ou du BBS de TMPGenc Net. 
+L'utilisateur reconnaît enfin que TMPGenc étant un logiciel gratuit, il ne peut s'attendre à une quelconque aide de la part du Programmeur.
+
+
+[2] Protection de l'Auteur. 
+1) Droits d'auteur. 
+Le Programmeur est propriétaire des droits relatifs au logiciel et à ses composants. Ce logiciel et ses composants sont protégés par le lois relatives au droit d'auteur. 
+2) Interdiction de redistribution. 
+Il est expressement interdit de redistribuer, vendre, que ce soit seul ou compris dans un lot, tout ou partie de ce logiciel ou de ses composants par quel moyen que ce soit. 
+3) Interdiction d'ingénierie inverse. 
+Ce logiciel est protégé par les lois relatives à la propriété intellectuelle. Les activités d'ingénierie inverse tel que le désassemblage et la décompilation sont expressement interdites.
+
+4) Interdiction d'utilisation commerciale. 
+La version de démonstration gratuite de TMPGEenc ne peut être employ´e que dans le cadre d'une utilisation priv´e et personnelle, l'utilisation à l'intérieur de l'entreprise dans un but de présentation. 
+Si vous désirez utiliser TMPGEnc dans un but commercial, veuillez envisager l'achat de «TMPGEnc Plus» disponible sur le site de Pegasys-Inc. 
+
+
+[3] Limitation de responsabilité. 
+Le Programmeur et Pegasys ne se reconnaissent aucune responsabilité, directe ou indirecte, expresse ou implicite, quant aux dommages que pourrait provoquer l'utilisation de ce logiciel ou de ses composants.
+
+[4] Compétence. 
+Ce contrat de licence est basé sur la loi japonaise. 
+
+ 

@@ -1,0 +1,1295 @@
+﻿abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ%
+
+CHT	CHS
+	
+職業	职业
+MULTIPLAYER	MULTIPLAYER
+選項	选项
+退出	退出
+	
+	
+LANGUAGES	LANGUAGES
+ENGLISH	ENGLISH
+FRANÇAIS	FRANÇAIS
+DEUTSCH	DEUTSCH
+ESPAÑOL	ESPAÑOL
+ITALIANO	ITALIANO
+PORTUGUÊS	PORTUGUÊS
+PORTUGUÊS-BR	PORTUGUÊS-BR
+简体	简体
+繁體	繁體
+ENGLISH	ENGLISH
+即學即玩	即学即玩
+競速賽	竞速赛
+爭分奪秒	争分夺秒
+單一賽道	单一赛道
+警車追逐	警车追逐
+道路挑戰	道路挑战
+警車追逐	警车追逐
+	
+比賽暫停	比赛暂停
+繼續	继续
+	
+重新開始比賽	重新开始比赛
+再試一次	再试一次
+向前	向前
+後退	后退
+	
+錦標賽	锦标赛
+修車廠	修车厂
+訊息	消息
+	
+主辦遊戲	主持游戏
+加入遊戲	加入游戏
+設定	设置
+伺服器	服务器列表
+	
+正在搜索伺服器...	正在搜索服务器…
+開始遊戲	开始游戏
+	
+繁忙...	繁忙...
+連線	连接
+已連線	已连接
+未連線	未连接
+正在連線...	正在连接...
+連線請求已失敗	连接请求失败
+	
+確認來自：\n%s的連線	确认来自：\n%s 的连接
+確定	确定
+取消	取消
+	
+正在等候客戶端	正在等待客户端
+正在等候遊戲開始	正在等待游戏开始
+正在等候連線...	正在等待连接...
+	
+藍芽連線	蓝牙连接
+啟用藍芽無線科技？	激活蓝牙无线技术？
+	
+音效	音效
+音效設定	音效设置
+主音量	主音量
+音效音量	音效音量
+音樂音量	音乐音量
+	
+關於	关于
+	
+	
+排名	排名
+	
+	
+調整	调整
+	
+正常	正常
+倒車	倒车
+	
+速度計	速度计
+	
+您贏了！	您赢了！
+您輸了！	您输了！
+	
+	
+載入中	加载中
+	
+圈數：	圈数：
+位置：	位置：
+時間：	时间：
+最佳成績：	最佳成绩：
+速度：	速度：
+鎖定！	锁定！
+	
+速度	速度
+重量	重量
+	
+開	开
+關	关
+	
+金錢	金钱
+0	0
+1	1
+2	2
+3	3
+4	4
+5	5
+6	6
+7	7
+8	8
+9	9
+#	#
+*	*
+'A'	'A'
+'B'	'B'
+控制器向上鍵	控制器向上键
+控制器向左鍵	控制器向左键
+控制器向右鍵	控制器向右键
+控制器向下鍵	控制器向下键
+控制器鍵中央	控制器键中央
+清除鍵	清除键
+編輯鍵	编辑键
+左選取鍵	左选择键
+右選取鍵	右选择键
+撥號鍵	拨号键
+結束鍵	结束键
+功能表鍵	菜单键
+	
+<BRAKES>	<BRAKES>
+<TURBO>	<TURBO>
+<TURN_LEFT>	<TURN_LEFT>
+<TURN_RIGHT>	<TURN_RIGHT>
+<DRIFT_LEFT>	<DRIFT_LEFT>
+<DRIFT_RIGHT>	<DRIFT_RIGHT>
+<DRIFT_KEY>	<DRIFT_KEY>
+<NEXT_CAMERA>	<NEXT_CAMERA>
+<PREVIOUS_CAMERA>	<PREVIOUS_CAMERA>
+	
+飄移	飘移
+	
+按 A 鍵	按 A  键
+	
+BLUETOOTH SETTINGS	BLUETOOTH SETTINGS
+BLUETOOTH STATUS:	BLUETOOTH STATUS:
+BLUETOOTH NAME:	BLUETOOTH NAME:
+	
+YOUR GARAGE IS EMPTY!	YOUR GARAGE IS EMPTY!
+YOU HAVE %D VEHICLES.	YOU HAVE %D VEHICLES.
+YOU HAVE ONE VEHICLE.	YOU HAVE ONE VEHICLE.
+SELL	SELL
+DO YOU REALLY WANT TO SELL YOUR	DO YOU REALLY WANT TO SELL YOUR
+%s	%s
+FOR %D DOLLARS?	FOR %D DOLLARS?
+CONGRATULATIONS!	CONGRATULATIONS!
+	
+GAME TERMINATED BY THE HOST	GAME TERMINATED BY THE HOST
+HAS QUIT THE GAME	HAS QUIT THE GAME
+GAME CANCELLED DUE TO	GAME CANCELLED DUE TO
+LACK OF PLAYERS	LACK OF PLAYERS
+CONNECTION LOST	CONNECTION LOST
+	
+HAS PAUSED THE GAME	HAS PAUSED THE GAME
+WAITING FOR THE GAME TO RESUME	WAITING FOR THE GAME TO RESUME
+	
+DATA CORRUPTED OR MEMORY CARD REMOVED	DATA CORRUPTED OR MEMORY CARD REMOVED
+	
+GO!	GO!
+LIST	LIST
+ACCEPTED VEHICLE LIST	ACCEPTED VEHICLE LIST
+	
+復位為預設值	重置为默认值
+	
+	
+EASY	EASY
+HARD	HARD
+	
+TRADEMARK NOTICE	TRADEMARK NOTICE
+	
+	
+SAVE PROGRESS & PROFILE ?	SAVE PROGRESS & PROFILE ?
+裝置記憶體已滿 - 未能存儲任何資料。	设备内存已满 － 未能保存任何数据。
+刪除一些資料後再試。	删除一些数据，然后再试。
+	
+準備就緒？	准备就绪？
+完成！	完成！
+	
+	
+後退	后退
+您確定嗎?	您确定吗？
+退出	退出
+N-GAGE ARENA	N-GAGE ARENA
+選項	选项
+選取	选择
+調整	调整
+否	否
+	
+按任意鍵	按任意键
+觸摸螢幕以繼續	触摸屏幕以继续
+關於	关于
+語言	语言
+重置遊戲	重置游戏
+你想刪除你的職業進展嗎？	你是否希望删除你的职业进度？
+音效	音效
+速度計	速度计
+選項	选项
+是	是
+加載中...	加载中...
+	
+暫停	暂停
+退出比賽	退出比赛
+繼續比賽	继续比赛
+重新開始比賽	重新开始比赛
+音效	音效
+完成比賽	完成比赛
+	
+被鎖定	被锁定
+	
+拆卸！	拆卸！
+耶!!	耶!!
+	
+消滅他！	消灭他！
+超強！	超强！
+狂熱！	狂热！
+飛車襲警！	飞车袭警！
+淩駕法律！	凌驾法律！
+成功逃離！	成功逃离！
+太近了…	太近了…
+學學開車吧！	学学开车吧！
+發瘋的車手被制服了！	发疯的车手被制服了！
+有保險嗎？	有保险吗？
+城市浩劫！	城市浩劫！
+勢不可擋！	势不可挡！
+出色跳躍！	出色跳跃！
+致命一擊！	致命一击！
+城市浩劫！	城市浩劫！
+僅差毫釐！	仅差毫厘！
+車型錯誤！	车型错误！
+競賽距離	竞赛距离
+那你能飄移嗎？	那你能飘移吗？
+燃燒橡膠！	燃烧橡胶！
+喔，多棒的飄移！	喔，多棒的飘移！
+你掌握了此項技術！	你掌握了此项技术！
+精彩的飄移！	精彩的飘移！
+盯住領先者！	盯住领先者！
+控制住他！	控制住他！
+把他打回老家！	把他打回老家！
+附帶損失！	附带损失！
+瀕臨損毀！	濒临损毁！
+你迷路了嗎？！	你迷路了吗？！
+蠻勇無畏	蛮勇无畏
+	
+	
+	
+圈數	圈数
+	
+MPH	MPH
+KM/H	KM/H
+	
+按 5 開始	按 5 开始
+送出至\nN-GAGE ARENA	提交至\nN-GAGE ARENA
+	
+	
+比賽獎勵	比赛奖励
+	
+存檔中…	保存中…
+	
+	
+成功送出	成功提交
+	
+關閉中…	关闭中…
+退出遊戲	退出游戏
+(EMPTY)	(EMPTY)
+	
+再試一次！	再试一次！
+	
+位次	位次
+	
+	
+其他	其它
+懲罰	惩罚
+	
+現金獎勵	现金奖励
+	
+STORAGE MEMORY FULL	STORAGE MEMORY FULL
+DATA CORRUPTED	DATA CORRUPTED
+	
+	
+說明	帮助
+開始比賽	开始比赛
+HOME	HOME
+DESTINATION	DESTINATION
+選取您的女郎	选择您的女郎
+試玩版	试玩版
+完美飄移！	完美飘移！
+僅差毫釐!	仅差毫厘!
+成功逃離！	成功逃离！
+主功能表	主菜单
+控制	控制
+功率	功率
+FORD MUSTANG	FORD MUSTANG
+LAMBORGHINI GALLARDO	LAMBORGHINI GALLARDO
+	
+拆卸！	拆卸！
+拆卸！	拆卸！
+拆卸！	拆卸！
+瀕臨破產！	濒临破产！
+	
+	
+	
+畫面方向	显示方向
+畫面模式	显示模式
+	
+	
+方向	方向
+縱向	纵向
+橫向 90 度	横向 90 度
+横向 270 度	横向 270 度
+	
+返回主功能表	返回主菜单
+選取您的座駕	选择您的座驾
+選取您的女郎	选择您的女郎
+我的記錄	我的记录
+您要聲音嗎？	您要声音吗？
+	
+	
+功率	功率
+kg	kg
+lbs	lbs
+秒	秒
+hp	hp
+您確定要退出嗎？	您确定要退出吗？
+真要退出嗎？	真要退出吗？
+顯示	显示
+試玩版不提供	试玩版不提供
+試玩版中鎖定	试玩版中锁定
+在比賽期間，按 '*' 以切換車輛視角。	在比赛期间，按 '*' 以切换车辆视角。
+按 '*' 以切換車輛視角。	按 '*' 以切换车辆视角。
+	
+	
+N-GAGE ARENA	N-GAGE ARENA
+說明	帮助
+	
+畫面	画面
+自動加速	自动加速
+開啟運動虛化	启用运用虚化
+加速:[自動]	加速：[自动]
+加速:[手動]	加速：[手动]
+	
+	
+開啟雷達畫面	启用雷达显示
+	
+	
+確認退出?	确认退出?
+	
+	
+	
+	
+0-100	0-100
+100-0	100-0
+0-60	0-60
+60-0	60-0
+km/h	km/h
+mph	mph
+bps	bps
+	
+音量	音量
+頁	页
+	
+金盃！	金杯！
+銀盃！	银杯！
+銅盃！	铜杯！
+	
+市中心	市中心
+星光大道	星光大道
+群山	群山
+大道	大道
+堤岸	堤岸
+蒙馬特爾	蒙马特尔
+港口	港口
+異國公園	异国公园
+蒙特卡羅	蒙特卡罗
+寬街	宽街
+中央花園	中央花园
+大橋	大桥
+神廟	神庙
+外灘	外滩
+金融區	金融区
+海灘	海滩
+舊城	旧城
+新城	新城
+	
+顏色	颜色
+輪緣	轮缘
+輪胎	轮胎
+引擎	引擎
+篩氣裝置	滤气装置
+重量改裝器	重量改装器
+排氣	排气
+刹車	刹车
+傳動	传动
+減震器	减震器
+ECU	ECU
+機軸	机轴
+容積	容积
+汽缸	汽缸
+活塞	活塞
+開始比賽	开始比赛
+	
+無改裝	无改装
+裝飾組件 1	装饰组件 1
+裝飾組件 2	装饰组件 2
+裝飾組件 3	装饰组件 3
+裝飾組件 4	装饰组件 4
+無改裝	无改装
+輪緣 1	轮缘 1
+輪緣 2	轮缘 2
+輪緣 3	轮缘 3
+無改裝	无改装
+GT 型（硬）	GT 型（硬）
+GT 型（適中）	GT 型（适中）
+GT 型（軟）	GT 型（软）
+運動型（硬）	运动型（硬）
+運動型（適中）	运动型（适中）
+運動型（軟）	运动型（软）
+賽車型（硬）	赛车型（硬）
+賽車型（適中）	赛车型（适中）
+賽車型（軟）	赛车型（软）
+原型光面輪胎	原型光面轮胎
+無改裝	无改装
+GT 型套件 1	GT 型套件 1
+GT 型套件 2	GT 型套件 2
+GT 型套件 3	GT 型套件 3
+運動型套件 1	运动型套件 1
+運動型套件 2	运动型套件 2
+運動型套件 3	运动型套件 3
+賽車型套件 1	赛车型套件 1
+賽車型套件 2	赛车型套件 2
+賽車型套件 3	赛车型套件 3
+原型套件	原型套件
+無改裝	无改装
+碳塑氣箱	碳塑气箱
+碳塑吸入口	碳塑吸入口
+壓縮機 1	压缩机 1
+壓縮機 2	压缩机 2
+渦輪一階	涡轮一阶
+渦輪二階	涡轮二阶
+渦輪三階	涡轮三阶
+雙渦輪 1	双涡轮 1
+雙渦輪 2	双涡轮 2
+雙渦輪 3	双涡轮 3
+無改裝	无改装
+階段套件 1	阶段套件 1
+階段套件 2	阶段套件 2
+階段套件 3	阶段套件 3
+碳塑板	碳塑板
+碳塑底盤	碳塑底盘
+無改裝	无改装
+催化劑	催化剂
+運動型催化劑	运动型催化剂
+賽車型催化劑	赛车型催化剂
+鋼制運動型	钢制运动型
+鋼制賽車型	钢制赛车型
+不銹鋼運動型	不锈钢运动型
+不銹鋼賽車型	不锈钢赛车型
+鈦制賽車型	钛制赛车型
+陶制賽車型	陶制赛车型
+銥制賽車型	铱制赛车型
+無改裝	无改装
+GT 一階	GT 一阶
+GT 二階	GT 二阶
+GT 三階	GT 三阶
+運動型一階	运动型一阶
+運動型二階	运动型二阶
+運動型三階	运动型三阶
+賽車型一階	赛车型一阶
+賽車型二階	赛车型二阶
+賽車型三階	赛车型三阶
+F1 全套系統	F1 全套系统
+無改裝	无改装
+GT 一階	GT 一阶
+GT 二階	GT 二阶
+GT 三階	GT 三阶
+運動型一階	运动型一阶
+運動型二階	运动型二阶
+運動型三階	运动型三阶
+賽車型一階	赛车型一阶
+賽車型二階	赛车型二阶
+賽車型三階	赛车型三阶
+F1 全套系統	F1 全套系统
+無改裝	无改装
+GT 一階	GT 一阶
+GT 二階	GT 二阶
+GT 三階	GT 三阶
+運動型一階	运动型一阶
+運動型二階	运动型二阶
+運動型三階	运动型三阶
+賽車型一階	赛车型一阶
+賽車型二階	赛车型二阶
+賽車型三階	赛车型三阶
+F1 全套系統	F1 全套系统
+無改裝	无改装
+電腦升級	电脑升级
+GT 模組晶片	GT 模块芯片
+運動型模組晶片	运动型模块芯片
+賽車型模組晶片	赛车型模块芯片
+原型模組晶片	原型模块芯片
+無改裝	无改装
+重量升級	重量升级
+陶制軸	陶制轴
+鋁制軸	铝制轴
+碳制軸	碳制轴
+銥制軸	铱制轴
+無改裝	无改装
++ 50 CC	+ 50 CC
++ 100 CC	+ 100 CC
++ 200 CC	+ 200 CC
++ 500 CC	+ 500 CC
++ 1000 CC	+ 1000 CC
+無改裝	无改装
+階段套件 1	阶段套件 1
+階段套件 2	阶段套件 2
+陶制燃燒室	陶制燃烧室
+銥制燃燒室	铱制燃烧室
+合金燃燒室	合金燃烧室
+無改裝	无改装
+活塞 1	活塞 1
+活塞 2	活塞 2
+陶制活塞	陶制活塞
+銥制活塞	铱制活塞
+合金活塞	合金活塞
+	
+桑德拉	桑德拉
+蜜雪兒	米歇尔
+朱莉亞	朱莉亚
+"帶上我，我將讓 
+您的車提速！"	"带上我，我将让 
+您的车提速！"
+"選取我，否則您會
+被其他警員尾隨！"	"选择我，否则 您会被 
+其他警察 尾随！"
+"讓我來，你將上
+黃金時段！"	"让我来，你将上
+黄金时段！"
+	
+國家	国家
+難度	难度
+美國	美国
+法蘭西	法国
+摩納哥	摩纳哥
+美國	美国
+中國	中国
+阿拉伯聯合大公國	阿联酋
+選取您的賽場	选取您的赛场
+選取您的賽事	选取您的赛事
+比賽	比赛
+對決	对决
+橫掃群雄	横扫群雄
+警車追逐	警车追逐
+搶金奪銀	抢金夺银
+	
+狂飆車	狂飙车
+	
+	
+控制	控制
+移動控制	移动控制
+加速器	加速器
+刹車	刹车
+氮氣助力	氮气助力
+左轉	左转
+右轉	右转
+左飄移	左飘移
+右飄移	右飘移
+飄移	飘移
+變換鏡頭	变换镜头
+下一鏡頭	下一镜头
+上一鏡頭	上一镜头
+或者	或者
+加速計	加速计
+方向盤	方向盘
+滿屏	满屏
+边框	边框
+"你是否想要
+連線
+N-Gage Arena？"	"你是否想要
+连接到
+N-Gage Arena?"
+積分榜	积分榜
+我的成績	我的成绩
+排名	排名
+送出成績	提交成绩
+正在下載資料...	正在下载数据...
+"你要將你的
+成績送出到 N-Gage Arena嗎？"	"你要将你的
+成绩提交到 N-Gage Arena吗？   "
+"將成績傳送
+至 N-Gage Arena..."	"将成绩发送
+至 N-Gage Arena..."
+成績傳送成功。	成绩发送成功。
+未能傳送成績。	未能发送成绩。
+資訊	信息
+完成	完成
+車輛	车辆
+女生	女孩
+賽事	赛事
+城市	城市
+解鎖的是	解锁的是
+"按街頭規則賽車！ 
+率先完成比賽，
+以盡可能多地賺取現金！
+ 至少位居第 3 名，
+否則將輸掉比賽！"	"按街头规则赛车！ 
+率先完成比赛，
+以尽可能多地赚取现金！
+ 至少位居第 3 名，
+否则将输掉比赛！"
+"讓他們知道誰是王中王！
+ 摧毀盡可能多的敵人車輛！ 
+你還可能將警員 
+逐出道路！"	"让他们知道谁是王中王！
+ 摧毁尽可能多的敌人车辆！ 
+你还可能将警察 
+逐出道路！ "
+"試試改變一下立場，
+站在法律的正義
+一邊！
+ 趕上領先者，
+將他碾個粉碎！
+ 避開其他車輛，
+否則你就要輸錢。"	"试试改变一下立场，
+站在法律的正义
+一边！
+ 赶上领先者，
+将他碾个粉碎！ 
+避开其它车辆，
+否则你就要输钱。"
+"並駕齊驅，
+趕上對手 並超過他！
+ 不必說，
+你必須率先到達終點！"	"并驾齐驱，
+赶上对手 并超过他！
+ 不必说，
+你必须率先到达终点！"
+"使出渾身解數，
+盡可能多地 賺取現金：
+撞車、跳躍，
+或者逆車流而行！
+ 30,000 可以讓你得第一名！"	"使出浑身解数，
+尽可能多地 赚取现金：
+撞车、跳跃，
+或者逆车流而行！
+ 30,000 可以让你得第一名！"
+	
+輸掉比賽	输掉比赛
+你要重試嗎？	你要重试吗？
+	
+新道具已解鎖	新道具已解锁
+無新道具	无新道具
+新摩托車已解鎖	新摩托车已解锁
+新汽車已解鎖	新汽车已解锁
+賽事	赛事
+改裝套件	改装套件
+總分	总分
+向左旋轉	向左旋转
+向右旋轉	向右旋转
+翻轉	翻转
+恢復預設值	恢复默认值
+旋轉裝置以切換方向	旋转设备以切换方向
+基本控制	基本控制
+"按 <TURN_LEFT> 和 <TURN_RIGHT> 以轉向，
+按 <TURBO> 以使用氮氣助力。"	"按 <TURN_LEFT> 和 <TURN_RIGHT> 以转向，
+按 <TURBO> 以使用氮气助力。"
+氮氣助力 - 提示 1	氮气助力 - 提示 1
+"按 <TURBO> 使用氮氣助力。
+ 你同時可以使用多達三倍助力。"	"按 <TURBO> 使用氮气助力。
+ 你同时可以使用多达三倍助力。"
+飄移 - 提示 1	飘移 - 提示 1
+"實現飄移的方法有多種：
+*在轉彎時按 <DRIFT_LEFT> 或 <DRIFT_RIGHT>；
+*在進入彎道時快速按下 <DRIFT_LEFT> 或 <DRIFT_RIGHT>。"	"实现飘移的方法有多种：
+*在转弯时按 <DRIFT_LEFT> 或 <DRIFT_RIGHT>；
+*在进入弯道时快速按下 <DRIFT_LEFT> 或 <DRIFT_RIGHT>。"
+鏡頭	镜头
+你可以透過按 '*' 和 '#' 鍵切換汽車鏡頭。	你可以通过按 '*' 和 '#' 切换汽车视角。
+街頭規則	街头规则
+"非法動作是獲得現金、
+助力和電視直播的最佳方式！"	"非法动作是获得现金、
+助力和电视直播的最佳方式！ "
+做個惡人	做个恶人
+"你可以將對手擠到兩側的牆上，
+使對手撞車。"	"你可以将对手挤到两侧的墙上，
+使对手撞车。"
+氮氣助力 - 提示 2	氮气助力 - 提示 2
+"在使用三倍助力時，
+你可以將對手掃地出局！"	"在使用三倍助力时，
+你可以将对手扫地出局！"
+飄移 - 提示 2	飘移 - 提示 2
+飄移將為你賺取更多氮氣助力！	飘移将为你赚取更多氮气助力！
+女郎與你	女郎与你
+"你的女友可以影響遊戲，
+因此要明智選取！"	"你的女友可以影响游戏，
+因此要明智选择！"
+財富	财富
+"大把大把地贏錢，
+以解鎖新賽道、車子、
+女郎和改裝套件。"	"大把大把地赢钱，
+以解锁新赛道、车子、
+女郎和改装套件。"
+基本控制	基本控制
+	
+氮氣助力 - 提示 1	氮气助力 - 提示 1
+	
+飄移 - 提示 1	飘移 - 提示 1
+	
+鏡頭	镜头
+	
+	
+	
+遊戲積分	游戏积分
+	
+未來賽車之星	未来赛车之星
+你是什麼風格？	你是什么风格？
+我的女郎	我的女郎
+老古董改裝道具	老古董改装道具
+模範車手	模范车手
+頭號公敵	头号公敌
+街頭車手	街头车手
+最愛的城市	最爱的城市
+偷窺寶貝	偷窥宝贝
+汽車收藏	汽车收藏
+速度之神	速度之神
+世界車手	世界车手
+改裝大師	改装大师
+地下之王	地下之王
+在遊戲中	在游戏中
+現金	现金
+花心老頭	花心老头
+百萬富翁	百万富翁
+千萬富翁	千万富翁
+一身銅臭	一身铜臭
+	
+在比賽中率先完成	在比赛中率先完成
+每項賽事至少玩一次	每项赛事至少玩一次
+"在女郎選取功能
+表中選取女友"	"在女郎选择菜
+单中选取女友"
+解鎖所有 2 級改裝道具	解锁所有 2 级改装道具
+不撞車且名列单圈前三	不撞车且名列单圈前三
+摧毀 5 輛警車	摧毁 5 辆警车
+在比賽模式中連續五次奪冠	在比赛模式中连续五次夺冠
+"在一座城市的所有賽
+事中率先完成/奪魁"	"在一座城市的所有赛
+事中率先完成/夺魁"
+解鎖所有女郎	解锁所有女郎
+解鎖所有車輛	解锁所有车辆
+"在所有比賽模式
+賽道上奪得第一"	"在所有比赛模式
+赛道上率先完成"
+"解鎖所有賽道、
+模式和賽事"	"解锁所有赛道、
+模式和赛事"
+購買所有改裝工具	购买所有改装工具
+"在所有賽事和城市
+中率先完成/奪魁"	"在所有赛事和城市
+中率先完成/夺魁"
+第一次提交成績	第一次提交成绩
+提交 $100,000 的成績	提交 $100,000 的成绩
+提交 $250,000 的成績	提交 $250,000 的成绩
+提交 $1,000,000 的成績	提交 $1,000,000 的成绩
+提交 $2,500,000 的成績	提交 $2,500,000 的成绩
+提交 $5,000,000 的成績	提交 $5,000,000 的成绩
+	
+	
+你就比老太太開得快！	你就比老太太开得快！
+你居然會開車！	你居然会开车！
+你要搭車嗎？	你要搭车吗？
+改裝座駕！	改装座驾！
+別撞車！ 你有潛力！	别撞车！ 你有潜力！
+你摧毀了 5 輛警車！	你摧毁了 5 辆警车！
+"現在，你可以自
+稱為車手了！"	"现在，你可以自
+称为车手了！"
+那是我的位置！	那是我的位置！
+你是個街頭玩家！	你是个街头玩家！
+"歡迎加入收
+藏家俱樂部！"	"欢迎加入收
+藏家俱乐部！"
+"你是全世界速
+度最快的車手！"	"你是全世界速
+度最快的车手！"
+你還有沒見到過的地方嗎？	你还有没见到过的地方吗？
+"現在你擁有史上
+最奇異的座駕！"	"现在你拥有史上
+最奇异的座驾！"
+向王者致敬，寶貝！	向王者致敬，宝贝！ 
+	
+你橫掃賽場！	你横扫赛场！
+你為自己賺了點零花錢！	你为自己赚了点零花钱！
+現在，這才是大錢！	现在，这才是大钱！
+"歡迎加入百萬
+富翁俱樂部！"	"欢迎加入百万
+富翁俱乐部！"
+你現在是千萬富翁了！	你现在是千万富翁了！
+"你是全世
+界最富有的車手！"	"你是全世
+界最富有的车手！"
+	
+新車	新车
+	
+選取你的賭注	选择你的赌注
+你沒有足夠的賭資！	你没有足够的赌资！
+	
+鏡頭 1	镜头 1
+鏡頭 2	镜头 2
+鏡頭 3	镜头 3
+鏡頭 4	镜头 4
+© 2008 年 Gameloft 著作權所有	© 2008 年 Gameloft 版权所有
+	
+新女郎已解鎖	新女郎已解锁
+	
+遊戲方式	游戏方式
+旋轉裝置視圖，以切換顯示方向	旋转设备视图，以变换显示方向
+顯示羞辱對手鏡頭	显示羞辱对手镜头
+羞辱對手鏡頭	羞辱对手镜头
+,	,
+.	.
+最佳：	最佳：
+最多羞辱對手次數	最多羞辱对手次数
+新遊戲積分已解鎖	新游戏积分已解锁
+"恭喜！
+你剛才已完成都市賽車 4：精英競速！
+若需更多挑戰，
+嘗試在所有比賽中都奪魁！
+準備好再次沖上街頭了嗎？"	"恭喜！
+你刚才已完成都市赛车 4：精英竞速中的所有比赛！
+如需更多挑战，
+尝试在所有比赛中都夺魁！
+准备好再次冲上街头了吗？"
+"匪夷所思！
+你已完成都市賽車 4：
+精英競速！
+現在，
+你可加冕地下賽車之王！"	"匪夷所思！
+你已完成都市赛车 4：精英竞速！
+现在，
+你可加冕地下赛车之王！"
+重大新聞	重大新闻
+N-GAGE 應用程式	N-GAGE 应用程序
+<按鍵未指派>	<按键未指派>
+新城市已解鎖	新城市已解锁
+按鍵使用中	按键使用中
+	
+"您是否要
+購買完全版本？"	"您是否要
+购买完全版本？"
+"警告：尚有未分配的行動。
+您要繼續嗎？"	"警告：尚有未指派的行动。
+您是否想要继续？"
+"存檔資料已損壞。
+恢復預設資料。"	"数据存档已损坏。
+还原默认数据。"
+"存檔資料已損壞。
+恢復備援資料。"	"数据存档已损坏。
+还原备份数据。"
+	
+你的等級	你的等级
+新手	新手
+業餘選手	业余选手
+職業選手	职业选手
+專家	专家
+大師	大师
+	
+	
+洛杉磯	洛杉矶
+巴黎	巴黎
+蒙特卡羅	蒙特卡罗
+紐約	纽约
+上海	上海
+迪拜	迪拜
+	
+	
+多人遊戲	多人游戏
+多人遊戲競賽	多人游戏竞赛
+線上排名	在线排名
+啟動藍芽無線技術？	激活蓝牙无线技术？
+啟動 WIFI？	激活 WIFI？
+確認	确定
+取消	取消
+設定連線類型：	设定连接类型：
+藍芽	蓝牙
+WIFI	WIFI
+後退	后退
+等待啟動	等待激活
+PLEASE MAKE SURE THAT YOUR PHONE IS CONNECTED TO A NETWORK BEFORE PLAYING OVER WI-FI.	PLEASE MAKE SURE THAT YOUR PHONE IS CONNECTED TO A NETWORK BEFORE PLAYING OVER WI-FI.
+主辦遊戲	主持游戏
+加入遊戲	加入游戏
+藍芽設定	蓝牙设置
+WIFI 設定	WIFI 设置
+藍芽名稱：	蓝牙名称：
+藍芽狀態：	蓝牙状态：
+WIFI 名稱：	WIFI 名称：
+WIFI 狀態：	WIFI 状态：
+連線類型	连接类型
+	
+正在連線…	正在连接…
+	
+正在等待玩家	正在等待玩家
+加入都市賽車遊戲	加入都市赛车游戏
+確認連線：	确认连接：
+CONNECTION DENIED BY SERVER	CONNECTION DENIED BY SERVER
+開始遊戲	开始游戏
+選取賽道	选择赛道
+	
+正在尋找都市賽車遊戲	正在寻找都市赛车游戏
+正在等待連線…	正在等待连接…
+已過去四分鐘，但主機尚未接受你。	已过去四分钟，但主机尚未接受你。
+你可能已被此遊戲拒絕，或者主機可能已斷開連線。	你可能已被此游戏拒绝，或者主机可能已断开连接。
+你是否要繼續等待？	你是否要继续等待？
+正在等待遊戲開始...	正在等待游戏开始...
+	
+	
+遊戲被主機中斷	游戏被主机中断
+已退出遊戲	已退出游戏
+遊戲取消原因：	游戏取消原因：
+玩家人數不夠	玩家人数不够
+連線中斷	连接中断
+已暫停遊戲	已暂停游戏
+正在等待遊戲重新開始	正在等待游戏恢复
+已連線用戶端：	已连接客户端：
+	
+	
+"正在驗證註冊。 
+
+請稍候。
+
+謝謝。"	"正在验证注册。 
+
+请稍候。
+
+谢谢。"
+請稍候。	请稍候。
+謝謝。	谢谢。
+"你目前尚未註冊。
+
+你必須有一個有效的用戶名，才能訪問 GAMELOFT LIVE！
+
+你是否想註冊？"	"你目前尚未注册。
+
+你必须有一个有效的用户名，才能访问 GAMELOFT LIVE！
+
+你是否想注册？"
+"
+你必須有一個有效的用戶名，才能訪問 GAMELOFT LIVE。"	"
+你必须有一个有效的用户名，才能访问 GAMELOFT LIVE。"
+你是否想註冊？	你是否想注册？
+	
+"用戶名
+%s
+不可用。
+
+請選取以下建議，或輸入一個新用戶名。"	"用户名
+%s
+不可用。
+
+请选择以下建议，或输入一个新用户名。"
+	
+	
+請輸入一個用戶名。	请输入一个用户名。
+最小字元數：4	最小字符数：4
+最大字元數：15	最大字符数：15
+	
+"祝賀您， 
+%s
+
+你已成功註冊。
+
+歡迎重返 GAMELOFT LIVE！"	"祝贺您， 
+%s
+
+你已成功注册。
+
+欢迎重返 GAMELOFT LIVE！"
+	
+"正在發送積分。
+
+請稍候。
+
+謝謝。"	"正在发送积分。
+
+请稍候。
+
+谢谢。"
+你的積分已成功上傳。	你的积分已成功上传。
+	
+"正在訪問排行榜…
+
+請稍候
+
+謝謝"	"正在访问排行榜…
+
+请稍候
+
+谢谢"
+	
+	
+你好，%s！	你好，%s！
+我的成績	我的成绩
+我的排名	我的排名
+前 50 位玩家	前 50 位玩家
+	
+"網路目前不可用。
+
+請稍後再試。"	"网络目前不可用。
+
+请稍后再试。"
+我的排名	我的排名
+前十位	前十位
+已登錄	已登录
+正在登入	正在登录
+未登入	未登录
+正在送出積分…	正在提交积分…
+已送出積分	已提交积分
+正在檢索資料…	正在检索数据…
+資料已檢索	数据已检索
+失敗	失败
+%%基本控制	%%基本控制
+%D%PRESS D-PAD LEFT OR RIGHT TO TURN.	%D%PRESS D-PAD LEFT OR RIGHT TO TURN.
+%N%按 <TURN_LEFT> 或 <TURN_RIGHT> 轉向。	%N%按 <TURN_LEFT> 或 <TURN_RIGHT> 转向。
+%D%PRESS D-PAD OK OR UP TO USE A NITRO BOOST AND INCREASE YOUR SPEED FOR A SHORT TIME.	%D%PRESS D-PAD OK OR UP TO USE A NITRO BOOST AND INCREASE YOUR SPEED FOR A SHORT TIME.
+%N%按 <TURBO> 以使用氮氣助力，並短暫提速。	%N%按 <TURBO> 以使用氮气助力，并短暂提速。
+%D%PRESS D-PAD DOWN TO BRAKE.	%D%PRESS D-PAD DOWN TO BRAKE.
+%N%PRESS <BRAKES> TO BRAKE.	%N%PRESS <BRAKES> TO BRAKE.
+你同時可以使用三倍助力。	你同时可以使用三倍助力。
+%D%OPEN IN-GAME MENU TO CHANGE CAMERA VIEW.	%D%OPEN IN-GAME MENU TO CHANGE CAMERA VIEW.
+%N%按 <NEXT_CAMERA> 和 <PREVIOUS_CAMERA> 以切換鏡頭視角。	%N%按 <NEXT_CAMERA> 和 <PREVIOUS_CAMERA>以切换镜头视角。
+%P%飄移	%P%飘移
+%D%YOU CAN PERFORM DRIFTS BY NEGOTIATING A CURVE AT HIGH SPEED.	%D%YOU CAN PERFORM DRIFTS BY NEGOTIATING A CURVE AT HIGH SPEED.
+"%N%實現飄移的方法有多種：
+
+- 在轉彎時按 <DRIFT_LEFTt> 或 <DRIFT_RIGHT>；
+
+- 在進入彎道時快速按下 <TURN_LEFT> 或 <TURN_RIGHT>；
+
+- 在轉彎時按住 <BRAKES>。"	"%N%实现飘移的方法有多种：
+
+- 在转弯时按 <DRIFT_LEFT> 或 <DRIFT_RIGHT>；
+
+- 在进入弯道时快速按下 <TURN_LEFT> 或 <TURN_RIGHT>；
+
+- 在转弯时按住 <BRAKES>。"
+飄移將為你賺取更多氮氣助力！	飘移将为你赚取更多氮气助力！
+%L%飄移	%L%飘移
+%D%YOU CAN PERFORM DRIFTS BY NEGOTIATING A CURVE AT HIGH SPEED.	%D%YOU CAN PERFORM DRIFTS BY NEGOTIATING A CURVE AT HIGH SPEED.
+"%N%實現飄移的方法有多種：
+
+- 在轉彎時按下 <DRIFT_KEY>；
+
+- 在進入彎道時快速按下 <TURN_LEFT> 或 <TURN_RIGHT>。"	"%N%实现飘移的方法有多种：
+
+- 在转弯时按下 <DRIFT_KEY>；
+
+- 在进入弯道时快速按下 <TURN_LEFT> 或 <TURN_RIGHT>。"
+飄移將為你賺取更多氮氣助力！	飘移将为你赚取更多氮气助力！
+%%非法動作	%%非法动作
+"按街頭規則遊戲！ 
+表演非法動作，以獲得現金、
+助力和電視直播！"	"按街头规则游戏！ 
+表演非法动作，以获得现金、
+助力和电视直播！ "
+非法動作還會讓警員立即聞風而來！	非法动作还会让警察立即闻风而来！
+警員的數量取決於「通緝」級別。	警察的数量取决于“通缉”级别。
+%%氮氣	%%氮气
+氮氣表指示可用助力數。	氮气表指示可用助力数。
+撞向對手以將它們撞出馬路！	撞向对手以将它们撞出马路！
+"表演非法動作，以便上電視直播！
+聲望就是金錢！"	"表演非法动作，以便上电视直播！
+声望等于金钱！"
+%%賽事：賽車	%%赛事：赛车
+"按街頭規則賽車！率先完成比賽，
+以盡可能多地贏得現金！至少位
+居第 3 名，否則將輸掉比賽！"	"按街头规则赛车！ 率先完成比赛，
+以尽可能多地赢得现金！ 至少位
+居第 3 名，否则将输掉比赛！"
+*賽事：橫掃群雄	*赛事：横扫群雄
+"讓他們知道誰是王中王！
+摧毀盡可能多的敵人車輛！
+你還可以將警員逐出道路！"	"让他们知道谁是王中王！
+摧毁尽可能多的敌人车辆！
+你还可以将警察逐出道路！"
+%%賽事：警車追逐	%%赛事：警车追逐
+	
+"轉變立場，看看站在法律一邊，
+是什麼感覺！趕上領先者，
+將他碾個粉碎！
+避開其他車輛，否則你就要輸錢。"	"转变立场，看看站在法律一边，
+是什么感觉！赶上领先者，
+将他碾个粉碎！
+避开其它车辆，否则你就要输钱。"
+*賽事：對決	*赛事：对决
+"一對一賽車，趕上對手 
+並超過他！ ！不必說，
+你必須率先到達終點！"	"一对一赛车，赶上对手 
+并超过他！ ！不必说，
+你必须率先到达终点！"
+%%賽事：搶金奪銀	%%赛事：抢金夺银
+"使出渾身解數，盡可能多地 
+賺錢： 撞車、跳躍
+或者在街上使用氮氣！ 
+第一名將獲得 30,000 分；
+在遊戲中倖存獲得 20,000 分！"	"使出浑身解数，尽可能多地 
+赚钱： 撞车、跳跃，
+或者在街上使用氮气！
+第一名将获得 30,000 分；
+在游戏中幸存获得 20,000 分！"
+%N	%N
+%%都市賽車：精英競速™ 4	%%都市赛车：精英竞速™ 4
+%N	%N
+%%資訊和支援：	%%信息和支持：
+WWW.GAMELOFT.COM	WWW.GAMELOFT.COM
+SUPPORT@GAMELOFT.COM	SUPPORT@GAMELOFT.COM
+%N	%N
+%N	%N
+© 2008 GAMELOFT	© 2008 GAMELOFT
+保留所有權利	保留所有权利
+都市賽車：精英競速™ 4	都市赛车：精英竞速™ 4
+是 GAMELOFT 在美國	是 GAMELOFT 在美国
+和/或其它國家/地區的商標。	和/或其它国家/地区的商标。
+%N	%N
+%N	%N
+%N	%N
+版本號：	版本号：
+%V	%V
+%N	%N
+%%字幕	%%字幕
+%N	%N
+%%執行製作人	%%执行制作人
+JEAN-NICOLAS VERNIN	JEAN-NICOLAS VERNIN
+%N	%N
+%%製作人	%%制作人
+RADU NECULA	RADU NECULA
+ADRIAN GEORGESCU	ADRIAN GEORGESCU
+%N	%N
+%%創作總監	%%创作总监
+STANISLAS DEWAVRIN	STANISLAS DEWAVRIN
+%N	%N
+%%遊戲設計	%%游戏设计
+ADRIAN SORIN ANDREI	ADRIAN SORIN ANDREI
+%N	%N
+%%主程式	%%主编程
+RALUCA AXON	RALUCA AXON
+%N	%N
+%%編程	%%编程
+MARIAN ANGHEL	MARIAN ANGHEL
+SILVIU NITA	SILVIU NITA
+ADRIAN DEMETRESCU	ADRIAN DEMETRESCU
+RADU OVIDENIE	RADU OVIDENIE
+%N	%N
+%%3D 導演	%%3D 导演
+CHRISTOPHE LATOUR	CHRISTOPHE LATOUR
+%N	%N
+%%主 3D 美工	%%主 3D 美工
+ANDREI ICHIM	ANDREI ICHIM
+%N	%N
+%%3D 美工	%%3D 美工
+VLADIMIR TENESLAV	VLADIMIR TENESLAV
+%N	%N
+%%主 2D 美工	%%主 2D 美工
+LAURENTIU FRANCISC PAROTA	LAURENTIU FRANCISC PAROTA
+%N	%N
+%%2D 美工	%%2D 美工
+EMILIAN OCTAVIAN ENACHE	EMILIAN OCTAVIAN ENACHE
+MIHAI ANGELO STET	MIHAI ANGELO STET
+%N	%N
+%%音效設計	%%音效设计
+MARC-LEONCE VOLCY	MARC-LEONCE VOLCY
+DIEGO ZALDIVAR	DIEGO ZALDIVAR
+%N	%N
+%%作曲	%%作曲
+MATHIEU VACHON	MATHIEU VACHON 
+%N	%N
+%%品保經理	%%质保经理
+王    鹏	王    鹏
+EMANUEL PARGOV	EMANUEL PARGOV
+%N	%N
+%%PROJECT MANAGER	%%PROJECT MANAGER
+王晓枫	王晓枫
+%N	%N
+%%品保主管	%%质保主管
+夏    龑	夏    龑
+%N	%N
+%%品保團隊	%%质保团队
+张    凯	张    凯
+张子承	张子承
+邵秉明	邵秉明
+翟    健	翟    健
+李浩然	李浩然
+刘光辉	刘光辉
+李    凯	李    凯
+刘    硕	刘    硕
+KIRIL KOLEV	KIRIL KOLEV
+STEFAN ANTIMOV	STEFAN ANTIMOV
+PETAR KERKELOV	PETAR KERKELOV
+%N	%N
+%%製作室創作經理	%%制作室创作经理
+BOGDAN LUCACI	BOGDAN LUCACI
+%N	%N
+%%製作室主 2D 美工	%%制作室主 2D 美工
+ISTVAN KOVACS	ISTVAN KOVACS
+%N	%N
+%%製作室主 3D 美工	%%制作室主 3D 美工
+AUREL MANEA	AUREL MANEA
+%N	%N
+%%製作室技術總監	%%制作室技术总监
+DRAGOS IFTIMI	DRAGOS IFTIMI
+%N	%N
+%%在地化經理	%%本地化经理
+ALEXIS GREEN-PAINCHAUD	ALEXIS GREEN-PAINCHAUD
+%N	%N
+%%在地化團隊	%%本地化团队
+%N	%N
+%%特別鳴謝	%%特别感谢
+VICTOR VERNIN	VICTOR VERNIN
+DAMIAN MARINOV DAMIANOV	DAMIAN MARINOV DAMIANOV
+%N	%N
+%N	%N
+%N	%N
+"所有製造商、
+汽車、摩托車、
+名稱、品牌和
+本遊戲描繪的
+關聯影像，是
+其各自所有者
+的商標和/或著
+作權保護材料。"	"所有制造商、
+汽车、摩托车、
+名称、品牌和
+本游戏描绘的
+关联影像，是
+其各自所有者
+的商标和/或版
+权保护材料。"
+%N	%N
+%N	%N
+%L	%L
+%N	%N
+PRODUCED UNDER LICENSE OF FERRARI SPA. FERRARI, THE PRANCING HORSE DEVICE, ALL ASSOCIATED LOGOS AND DISTINCTIVE DESIGNS ARE PROPERTY OF FERRARI SPA. THE BODY DESIGNS OF THE FERRARI CARS ARE PROTECTED AS FERRARI PROPERTY UNDER DESIGN, TRADEMARK AND TRADE DRESS REGULATIONS.	PRODUCED UNDER LICENSE OF FERRARI SPA. FERRARI, THE PRANCING HORSE DEVICE, ALL ASSOCIATED LOGOS AND DISTINCTIVE DESIGNS ARE PROPERTY OF FERRARI SPA. THE BODY DESIGNS OF THE FERRARI CARS ARE PROTECTED AS FERRARI PROPERTY UNDER DESIGN, TRADEMARK AND TRADE DRESS REGULATIONS.
+%N	%N
+%N	%N
+%N	%N
+TRADEMARKS, DESIGN PATENTS AND COPYRIGHTS ARE USED WITH THE APPROVAL OF THE OWNER AND/OR EXCLUSIVE LICENSEE BUGATTI INTERNATIONAL S.A.	TRADEMARKS, DESIGN PATENTS AND COPYRIGHTS ARE USED WITH THE APPROVAL OF THE OWNER AND/OR EXCLUSIVE LICENSEE BUGATTI INTERNATIONAL S.A.
+%N	%N
+%N	%N
+%N	%N
+THE TRADEMARKS, COPYRIGHTS AND DESIGN RIGHTS IN AND ASSOCIATED WITH RUF RGT ARE USED UNDER LICENCE FROM RUF VERTRIEBS GMBH.	THE TRADEMARKS, COPYRIGHTS AND DESIGN RIGHTS IN AND ASSOCIATED WITH RUF RGT ARE USED UNDER LICENCE FROM RUF VERTRIEBS GMBH.
+%N	%N
+%N	%N
+%N	%N
+THE TRADEMARKS, COPYRIGHTS AND DESIGN RIGHTS IN AND ASSOCIATED WITH CORVETTE ZR-1, CHEVROLET "BOWTIE" EMBLEMS, ARE TRADEMARKS OF GENERAL MOTORS CO. USED UNDER LICENSE TO GAMELOFT.	THE TRADEMARKS, COPYRIGHTS AND DESIGN RIGHTS IN AND ASSOCIATED WITH CORVETTE ZR-1, CHEVROLET "BOWTIE" EMBLEMS, ARE TRADEMARKS OF GENERAL MOTORS CO. USED UNDER LICENSE TO GAMELOFT.
+%N	%N
+%N	%N
+%N	%N
+’NISSAN’ AND THE NAMES, LOGOS, MARKS AND DESIGNS OF THE NISSAN PRODUCTS ARE TRADEMARKS AND/OR INTELLECTUAL PROPERTY RIGHTS OF NISSAN MOTOR CO., LTD.	’NISSAN’ AND THE NAMES, LOGOS, MARKS AND DESIGNS OF THE NISSAN PRODUCTS ARE TRADEMARKS AND/OR INTELLECTUAL PROPERTY RIGHTS OF NISSAN MOTOR CO., LTD.
+%N	%N
+%N	%N
+%N	%N
+THE MINI TRADEMARKS ARE USED UNDER LICENCE FROM BMW AG.	THE MINI TRADEMARKS ARE USED UNDER LICENCE FROM BMW AG.
+%N	%N
+%N	%N
+%N	%N
+ASTON MARTIN AND THE ASTON MARTIN LOGO ARE TRADEMARKS OWNED AND LICENSED BY ASTON MARTIN LAGONDA © 2006 ASTON MARTIN LAGONDA.	ASTON MARTIN AND THE ASTON MARTIN LOGO ARE TRADEMARKS OWNED AND LICENSED BY ASTON MARTIN LAGONDA © 2006 ASTON MARTIN LAGONDA.
+%N	%N
+%N	%N
+%N	%N
+DUCATI MOTOR HOLDING S.P.A OFFICIAL LICENSED PRODUCT.	DUCATI MOTOR HOLDING S.P.A OFFICIAL LICENSED PRODUCT.
+%N	%N
+%N	%N
+%N	%N
+THE BMW TRADEMARKS ARE USED UNDER LICENSE FROM BMW AG	THE BMW TRADEMARKS ARE USED UNDER LICENSE FROM BMW AG
+%N	%N
+%N	%N
+%N	%N
+"本手機遊戲中複製的
+車輛外觀或設計可能
+因移動設備的規格而
+不同於此等車輛的原
+版設計。"	"本手机游戏中复制的
+车辆外观或设计可能
+因移动设备的规格而
+不同于此等车辆的原
+版设计。"

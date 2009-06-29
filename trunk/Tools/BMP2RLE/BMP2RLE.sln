@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BMP2RLE", "BMP2RLE.vcproj", "{CF7F8673-ECF7-4FA7-B93D-10817DFC4360}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF7F8673-ECF7-4FA7-B93D-10817DFC4360}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CF7F8673-ECF7-4FA7-B93D-10817DFC4360}.Debug|Win32.Build.0 = Debug|Win32
+		{CF7F8673-ECF7-4FA7-B93D-10817DFC4360}.Release|Win32.ActiveCfg = Release|Win32
+		{CF7F8673-ECF7-4FA7-B93D-10817DFC4360}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 1
+		SccProjectUniqueName0 = BMP2RLE.vcproj
+		SccProjectName0 = \u0022$/HIGHGEAR/Tools/BMP2RLE\u0022,\u0020ANDAAAAA
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+	EndGlobalSection
+EndGlobal
