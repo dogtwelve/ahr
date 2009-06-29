@@ -1,0 +1,4 @@
+if "%LINE_ID%" == "%RESULT_LINE_ID%" (
+	set RESULT_LINE=%CURRENT_LINE%
+)
+set /A LINE_ID=%LINE_ID%+1

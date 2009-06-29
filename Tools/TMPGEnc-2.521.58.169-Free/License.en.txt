@@ -1,0 +1,39 @@
+About The License
+
+This license agreement ("License") shall be made between "User" those who use the software (either personal or corporate) and "Programmer" Hiroyuki Hori with Pegasys Inc. ("Pegasys") for the software "TMPGEnc". Once you use this software, you are automatically deemed to have agreed with all the provision as following in this document.
+
+
+1. No warranty for user support 
+This License does not warrant any user support or bugfix of the software. Thus, user shall agree that limited user support is provided at public place such as BBS on TMPGEnc website irregularly.
+
+TMPGEnc is not "FREEWARE" which you can expect user support from author or developer.
+
+
+2. Copyrights
+
+1) Copyrights 
+Copyrights of the software and it's component are owned by Pegasys. These are copyright protected in any case under applicable copyright low. 
+
+2) Prohibition of re-distribution 
+It is prohibited to redistribute the software and it's copy or components in any means. We never permit anyone to sell free version of TMPGEnc even as a part of product.
+
+3) Prohibition of reverse engineering. 
+This software includes intellectual property rights. Reverse engineering, reverse assembling, reverse compile are all prohibited.
+
+4) Prohibition of commercial use
+Free demo version of TMPGEnc can be used only for personal use or non-commercial use such as presentation inside a company.
+For commercial use, please purchase "TMPGEnc Plus" (or "TMPGEnc Server").
+
+Such product(s) can be purchased from :
+Pegasys Inc.
+http://www.pegasys-inc.com
+
+3. Disclaimer 
+
+Programmer and Pegasys disclaim all other warranties, either express or implied, including but not limited to implied warranties of merchantability and fitness for a particular purpose, with respect to the software, the accompanying product manual(s) and written materials, to the maximum extent permitted by applicable law. The limited warranty contained herein gives you specific legal rights.
+
+Once new version is released, we will never do support activities based on older version.
+
+4. Applicable law 
+
+This license is based on Japanese law.

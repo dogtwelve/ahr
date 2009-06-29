@@ -1,0 +1,20 @@
+// list of tracks
+
+[TRACKS]
+1 Miami
+2 Airport
+3 NewYork
+[END]
+
+
+// list of the player cars
+
+[CARS]
+1 Rgt
+2 Morgan
+3 Slr
+4 Hummer
+5 Exige
+6 Saleen
+[END]
+

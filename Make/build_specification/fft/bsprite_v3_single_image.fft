@@ -1,0 +1,97 @@
+FILE_FORMAT_TEMPLATE "BSprite3"
+{
+//	TYPE BINARY
+	CHUNKS
+	{
+	  utils.write : TYPE_UINT16 0x03DF
+		utils.write : TYPE_UINT32 0x2101C107
+	//  utils.write : TYPE_UINT32 BS_MODULES|BS_FRAMES|BS_ANIMS|BS_MODULE_IMAGES|BS_SINGLE_IMAGE|BS_MODULES_XY|BS_FRAME_RECTS|BS_MODULES_IMG|BS_FM_PALETTE
+
+		// Modules...
+		sprite.number_of_modules : TYPE_UINT16
+		sprite.for_each_module
+		//	module.type : TYPE_UINT8
+		//	module.color : TYPE_UINT8
+			module.x : TYPE_UINT8
+			module.y : TYPE_UINT8
+			module.image : TYPE_UINT8
+			module.w : TYPE_UINT8
+			module.h : TYPE_UINT8
+
+		// Frames...
+		sprite.number_of_fmodules : TYPE_UINT16
+		sprite.for_each_fmodule
+			fmodule.module_index : TYPE_UINT8
+			fmodule.offset_x : TYPE_INT8
+			fmodule.offset_y : TYPE_INT8
+			fmodule.palette : TYPE_INT8
+			fmodule.flags : TYPE_UINT8
+
+		sprite.number_of_frects : TYPE_UINT16
+ 		sprite.for_each_frect
+     	frect.x : TYPE_INT8
+     	frect.y : TYPE_INT8
+     	frect.w : TYPE_UINT8
+     	frect.h : TYPE_UINT8
+			
+		sprite.number_of_frames : TYPE_UINT16
+		sprite.for_each_frame
+			frame.number_of_fmodules : TYPE_UINT16
+			frame.first_fmodule : TYPE_UINT16
+			frame.number_of_frects : TYPE_UINT8
+		sprite.for_each_frame
+	//	sprite.for_each_frame_rc						
+			frame.rc_x : TYPE_UINT8
+			frame.rc_y : TYPE_UINT8
+			frame.rc_w : TYPE_UINT8
+			frame.rc_h : TYPE_UINT8
+	//	sprite.for_each_frame_coll_rc					
+		//	frame.coll_rc_x : TYPE_INT8
+		//	frame.coll_rc_y : TYPE_INT8
+		//	frame.coll_rc_w : TYPE_UINT8
+		//	frame.coll_rc_h : TYPE_UINT8
+
+		// Anims...
+		sprite.number_of_aframes : TYPE_UINT16
+/*		
+		sprite.for_each_anim
+			anim.for_each_aframe
+				aframe.frame_index : TYPE_UINT8
+				aframe.time : TYPE_INT8
+				aframe.offset_x : TYPE_INT8
+				aframe.offset_y : TYPE_INT8
+				aframe.flags : TYPE_UINT8
+*/
+		
+		sprite.for_each_aframe
+			aframe.frame_index : TYPE_UINT8
+			aframe.time : TYPE_INT8
+			aframe.offset_x : TYPE_INT8
+			aframe.offset_y : TYPE_INT8
+			aframe.flags : TYPE_UINT8
+			
+		sprite.number_of_anims : TYPE_UINT16
+		sprite.for_each_anim
+			anim.number_of_aframes : TYPE_UINT16
+			anim.first_aframe : TYPE_UINT16
+
+	//	utils.write : TYPE_UINT16 0xFFFF
+		// Images...
+		sprite.number_of_images : TYPE_UINT8
+		sprite.for_each_image
+		  image.png_data : TYPE_DATA
+/*		
+		sprite.set_pixel_format : _4444
+		sprite.set_data_format : I256RLE
+		sprite.set_options : BS_DEFAULT_MIDP2
+		sprite.number_of_palettes : TYPE_UINT8
+		sprite.for_each_palette
+		  palette.number_of_colors : TYPE_UINT8
+		  palette.colors_data : TYPE_DATA
+		sprite.for_each_module
+		  sprite.module_images : TYPE_DATA
+		//	image.options: BS_KEEP_PAL | BS_TRANSP_FIRST | BS_TRANSP_LAST | BS_PNG_CRC
+		//	sprite.single_image
+*/
+	}
+}

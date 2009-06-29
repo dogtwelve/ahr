@@ -1,0 +1,55 @@
+
+  MapEditor, by Ionut Matasaru
+
+// History log...
+
+
+2007.01.17 (v0.0.7)
+    |
+    + Added Undo Redo
+    + Added multiple view - layers
+    + Added posibility to copy paste tiles from one map to another if they have the same tileset
+    + Added one button to replace all tiles the same kind with another tile
+    + Added one button to exchange all tiles the same kind with another tile
+    + Horizontal and vertical scroll on tileset pallete form
+    + Copy/Paste of blank tiles
+
+2006.11.09 (v0.0.5)
+    |
+    + Added DEL key to delete the selected tiles and keep this areea in memory to paste after
+
+2006.08.20 (v0.0.4)
+    |
+    + Added CUT option when you use dropper: press CONTROL at the end of selection to cut it
+    + Added Erase Tool
+    + when you keep pressed space the cursor become pan and you can adjust view part of image
+    + Fixed bug when you draw tileset palette with frames that have mode that one fram module you can't have transparency
+
+2006.07.06 (v0.0.3)
+    |
+    + New,Open,Save now works fine
+    + Tools/Resize Map...
+    + fixed frame tiles draw (fmodules with offset)
+    + fixed dirty modification flag for an opened document
+    *** Ionel Petcu
+    + Added delete on selected delete pencil
+
+2006.07.03 (v0.0.2)
+    + Map View:
+    |   select a block of tiles from the map with the "dropper tool"
+    + flip horiz. / flip vert. the selected block of tiles
+
+2006.06.30 (v0.0.1)
+    + the Tiled Layer Map Editor is functional
+    + can be lunched from Game Editor
+    + Tileset Palette View:
+    |   select a block of tiles from the tileset palette
+    + Map View:
+    |   draws the selected block of tiles (when in "pencil tool" mode)
+    |   paste the selected tiles on the map with the "pencil tool"
+
+2006.06.16 (v0.0.0)
+    + start coding the Tiled Layer Map Editor
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////

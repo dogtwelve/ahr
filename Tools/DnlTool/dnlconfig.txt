@@ -1,0 +1,13 @@
+0
+http://tdw0.gameloft.net/dw64.php
+D:\DEV\Asphalt11_MERGE\data\bin\
+9
+main.bar main -1
+carsA.bar carsA 0
+carsB.bar carsB 0
+carsC.bar carsC 0
+videos.bar videos 0
+tracksA.bar tracksA 0
+tracksB.bar tracksB 0
+tracksC.bar tracksC 0
+tracksD.bar tracksD 0

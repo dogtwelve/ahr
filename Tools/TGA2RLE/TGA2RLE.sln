@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TGA2RLE", "TGA2RLE.vcproj", "{6FF7A921-C563-4A20-8E63-30C7F9F34DB5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FF7A921-C563-4A20-8E63-30C7F9F34DB5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6FF7A921-C563-4A20-8E63-30C7F9F34DB5}.Debug|Win32.Build.0 = Debug|Win32
+		{6FF7A921-C563-4A20-8E63-30C7F9F34DB5}.Release|Win32.ActiveCfg = Release|Win32
+		{6FF7A921-C563-4A20-8E63-30C7F9F34DB5}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 1
+		SccProjectUniqueName0 = TGA2RLE.vcproj
+		SccProjectName0 = \u0022$/Games/Asphalt1.1/Tools/TGA2RLE\u0022,\u0020AHQSAAAA
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+	EndGlobalSection
+EndGlobal

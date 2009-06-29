@@ -1,0 +1,18 @@
+FILE_FORMAT_TEMPLATE "BSprite3"
+{
+//	TYPE BINARY
+	CHUNKS
+	{
+
+		sprite.for_each_module
+			module.w : TYPE_UINT16
+			module.h : TYPE_UINT16 
+			
+		// Images...
+		sprite.set_pixel_format : _0888
+		sprite.set_data_format : I256
+		sprite.set_options: BS_MODULE_IMAGES | BS_KEEP_PAL | BS_MULTIPLE_IMAGES | BS_SINGLE_IMAGE
+		//sprite.set_module_images_options : DISABLE_PIXEL_FORMAT|DISABLE_DATA_FORMAT
+		sprite.module_images : TYPE_DATA
+	}
+}

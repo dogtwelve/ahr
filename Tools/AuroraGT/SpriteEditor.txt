@@ -1,0 +1,510 @@
+
+  SpriteEditor, by Ionut Matasaru
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// TODO:
+
+    + generate Java/C++ file
+        ExportModulesIdFileH("MODULE_", "file.h");
+        ExportModulesIdFileJava("MODULE_", "file.java");
+        ExportFramesIdFileH("FRAME_", "file.h");
+        ExportFramesIdFileJava("FRAME_", "file.java");
+        ExportAnimsIdFileH("ANIM_", "file.h");
+        ExportAnimsIdFileJava("ANIM_", "file.java");
+
+    + drag & drop (modules -> fmodules, frames -> aframes)
+
+    + plugins: Import / Export / Utils
+
+    + sort Modules
+        * width, height
+        * height, width
+        * area (width * height)
+    + sort Frames
+        * width, height
+        * height, width
+        * area (width * height)
+        * num modules used
+    + sort Anims
+        * num frames used
+
+    + FLIP X/Y for animations --> frame rect ?
+
+    + use templates for export
+    + export optimized PNG
+    + export BSprite data format: AUTO
+    + export BSprite data format: I16MP
+    + export BSprite data format: I8, I32, I64, I128
+    + export BSprite data format: Z9 (max 256 colors, Zip 9 compression)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// History log...
+
+2006.01.xx (v0.6.8)
+    |
+    + fixed "Modules Usage" \ "Clone target modules and update images" for "Rotated (Rot90)" modules
+    *** Ionel Petcu:
+    + modules contextual menu: Create Frames for each Module
+    + modules contextual menu: Create one Frame for all Modules
+    + frames contextual menu: Create Animations for each Frame
+    + frames contextual menu: Create one Animation for all Frames
+    + copy/paste (modules, frames, fmodules, anims, aframes)
+    + fixed bug: on modules not show module edit box
+    + fixed bug: multiple selection of fmodules aframes when 2 4 6 8 are pressed
+    + add interface support to disable unused options and buttons
+    + Frames View: click+shift in modules preview --> replace module (does not add a new fmodule)
+    + fixed issues regarding "drag & drop"
+
+2005.12.22 (v0.6.7)
+    |
+    + when a new image is loaded, the relative path is used
+    + Images contextual menu: Get Full Path / Get Relative Path
+    *** Ionel Petcu:
+    + move multiple selected modules with mouse
+    + some multiple selection issues fixed
+    + fixed bug: save collision rect in BSprite (BS_FRAME_COLL_RC)
+
+2005.12.15 (v0.6.6)
+    |
+    + more issues fixed regarding "edit in place"
+    + multiple selection, by Ionel Petcu
+    + fixed export CRC in .bsprite
+    |   tested on all pixel formats: _8888, _0888, _4444, _1555, _0565, 0332
+    |   the java class was updated and tested
+    + save collision rect in BSprite (BS_FRAME_COLL_RC)
+
+2005.09.30 (v0.6.5)
+    |
+    + drag and drop:
+    |   fixed some bugs
+    |   now is avaliable for single selected Module, Frame, FModule, Anim and AFrame
+    |   UNDO/REDO for all "drag and drop" actions
+    + fixed some issues with "edit in place"
+
+2005.09.28 (v0.6.4)
+    |
+    + sprcmd new command:
+    |   SetGlobalBSpriteFlags(flags)
+    |   use GLOBAL, instead of BS_... in ExportBSpriteEx() to use above flags
+    + new BSprite export flags:
+    |   BS_MODULES_IMG   -> export image index for each module
+    |   BS_NFM_1_BYTE    -> export nfm as byte
+    |   BS_SKIP_FRAME_RC -> do not export frame rect
+    + when an image is auto converted to 256 colors, it is also marked with "+" added to the name
+    |   "+" -> image with scrambled palette
+    |   "*" -> modified image
+    + run .sprcmd: SetPalette/LoadPalette warnings regarding images with scrambled palette
+    + fixed bug: first module cannot be flipped/rotated
+    + fixed bug: Divide Modules damages the frames
+
+2005.09.19 (v0.6.3)
+    |
+    + export BSprite data format: I256RLE
+    + export BSprite pixel format: _1555, _0565
+    + fixed "0 colors" bug for data format I256
+
+2005.09.16 (v0.6.2)
+    |
+    + Tools -> Modules Usage: Statistics / Clone / Clone and Update
+    + module cotextual menu: Rotate 90 degrees CW /CCW
+
+2005.09.14 (v0.6.1)
+    |
+    + toolbar -> one export icon -> opens Export Menu
+    + Export BSprite Dialog: checkboxes for BS_NAF_1_BYTE, BS_TRANSP_FIRST, BS_TRANSP_LAST
+    + File -> Purge -> Undo, Clippboard, All
+
+2005.09.13 (v0.6.0)
+    |
+    + fixed some undo/redo bugs
+    + undo/redo support for all actions (IPetcu, 2005.08.26, beta)
+    + undo/redo support for view selections (IPetcu, 2005.08.26)
+    + delete/insert modules/frames/fmodules/anims/aframes using DEL/INSERT keys (IPetcu, 2005.08.19)
+    + edit in place for all lists (IPetcu, 2005.07.11)
+
+2005.09.13 (v0.5.9)
+    |
+    + FModule contextual menu: Go to Module Edit
+    + AFrame contextual menu: Go to Frame Edit
+    + Statistics: real unused modules (includes MMappings tests)
+
+2005.08.12 (v0.5.8)
+    |
+    + new sprite command:
+    |   SpriteAdjust(add, mul, div, flags)
+    + fixed: delete unselected module bug
+
+2005.07.22 (v0.5.7)
+    |
+    + export BSprite:
+    |   BS_TRANSP_FIRST -> move trasparency as the first color
+    |   BS_TRANSP_LAST  -> move trasparency as the last color
+    + fixed BS_KEEP_PAL -> keep palette unmodified (even the unused colors)
+
+2005.07.05 (v0.5.6)
+    |
+    + fixed: arrange modules horizontally/vertically overlaping bug
+    + Paint, edit, use for MD_RECT, MD_FILL_RECT modules
+    + export BSprite: saves data for MD_RECT, MD_FILL_RECT modules
+    + removed ROT_180 and ROT_270 flags
+
+2005.06.14 (v0.5.5)
+    |
+    + export Images:
+    |   log file for modules
+    |   save modules for each flag (Rot, Fy, Fx)
+    |   save only used modules (also used by flags)
+
+2005.06.14 (v0.5.4)
+    |
+    + SpriteOptimization: Make a single image from all modules (by Dragos Velicu)
+    + SpriteOptimization: sort functions do not mark unused modules/frames anymore
+    |                     separate options for mark unused modules/frames
+    + SpriteOptimization: fixed the HYPER frames in SortModulesByName()
+    + rotation for modules (ROT_90)
+    + fixed transparency for flipped or rotated modules (including true color images)
+    + RearangeModules works now for true color images too
+
+2005.04.20 (v0.5.3)
+    |
+    + export BSprite: (by AMatei)
+    |   BS_NAF_1_BYTE -> export naf as byte
+    |   BS_KEEP_PAL -> keep original palette (do not optimize colors)
+    + auto maximize view on open
+
+2005.04.20 (v0.5.2)
+    |
+    + export BSprite: flags BS_FM_OFF_SHORT / BS_AF_OFF_SHORT -> export fm/af offsets as shorts
+    + frame contextual menu: FLIP horiz/vert
+    + anim contextual menu: FLIP horiz/vert
+
+2005.02.15 (v0.5.1)
+    |
+    + PreviewSetup -> global Save/Restore default values
+    + compiled with VisualStudio .NET 2003 (MFC71)
+
+2004.11.01 (v0.5.0)
+    |
+    + export BSprite pixel format: _0888, _0332
+    + "Statistics..." -> the first item in a contextual menu
+    + frame contextual menu: Make Module from Frame (by Dragos Velicu)
+    + frame contextual menu: Expand HyperFrame (where it is used)
+
+2004.10.15 (v0.4.9)
+    |
+    + Optimization dialog: Transform the sprite to have one FModule per Frame,
+    |                       builds a module for each frame.
+    |                       (coded by Dragos Velicu)
+    + "Build HyperFrames"  moved inside "Optimization..." dialog
+    + fixed expand HyperFrames for an FModule (flip, flags)
+    + Optimization dialog: Expand All HyperFrames
+
+2004.10.03 (v0.4.8)
+    |
+    + fixed MMapping crash bug (invalide mapped modules)
+    + fixed computation of Module/Frame/etc. bounding rectangle
+    |   (sprite.Get???Rect() will return an error if rect could not be computed)
+    + show index & id for modules or frames in the preview lists (FrameEditor, AnimEditor, MMappingEditor)
+
+2004.09.28 (v0.4.7)
+    |
+    + statistics for Modules
+    + more stats for FModules/Frames
+    + fixed BSprite export of sprites with no modules or no images
+    + added "not exact transparent color found" error message
+
+2004.09.10 (v0.4.6)
+    |
+    + Export Images: animations as GIF -> bad colors palette bug fixed
+    + SpriteOptimization: font -> auto generate names for modules and a font frame
+    + Frames Editor: easier font editing
+    + switch HyperFM flag for an fmodule (fmodule contextual menu)
+
+2004.09.09 (v0.4.5)
+    |
+    + load/save HyperFrames fixed
+    + Build (auto detect and create) HyperFrames/HyperFModules (thanks to Dragos Velicu)
+    + progress bar and some error reporting for SpriteOptimization
+    + sort FModules for a certain frame (contextual menu) or for all frames (SpriteOptimization)
+    + Expand HyperFrames (fmodule contextual menu) (Dragos Velicu)
+    + Frame Statistics (frame contextual menu)
+    + FModule Statistics (fmodule contextual menu)
+
+2004.08.31 (v0.4.4)
+    |
+    + Export Images (modules & frames as .bmp, .png, .gif, .jpg, .tif; anims as .gif, .wmv) (Dragos Velicu)
+    + Modules Mappings Editor (Dragos Velicu)
+
+2004.08.26 (v0.4.3)
+    |
+    + Clone Y Flipped modules, flip them and update images -> no more Y flipped modules
+    |   (thanks to Dragos Velicu)
+    + HyperFModules selection crash bug fixed
+    + split module H (select x from [1 .. W-1])
+    + split module V (select y from [1 .. H-1])
+
+2004.08.23 (v0.4.2)
+    |
+    + BSprite v3
+    |   * use flags, palettes are saved after anims
+    |   * PNG additional info -> CRCs for dynamic PNG build
+    |   * .sprcmd: ExportBSpriteEx("file.bsprite", FLAG1 | FLAG2 | ..., file_type, pixel_format)
+    + ...
+
+2004.08.04 (v0.4.1)
+    |
+    + customize preview
+    |   * backgraound: solid, gradient, hash
+    |   * grid: minor & major lines (on/off, step, color)
+    + HyperFModules -> a frame can have links to other frames (HyperFrames) (loops are detected)
+    |   * save / parse / edit
+    + impoved floorplan alg. (also finds solutions with overlapped modules)
+    + impoved module divider alg.
+
+2004.07.27 (v0.4.0)
+    |
+    + statistics:
+    |   * modules verticaly flipped
+    |   * crash bug fixed
+    + optimization:
+    |   * rearrange modules 'horizontally' and 'vertically': can use fixed grid and image size limitation
+    |   * rearrange modules 'auto': floorplan alg. by Dragos Velicu
+    |   * parameter adjustment: add, mul, div
+    |   * module smart divider (added to contextual menu)
+    + Modules Mappings: parse / save / used by FModules on paint
+    + Frame Editor: double click -> set view origin
+    + fixed "Reduce modules size to fit image" for flipped modules
+
+2004.07.22 (v0.3.9)
+    |
+    + Optimization dialog: adjust parameters (Add, Mul, Div, filter)
+    + statistics: modules, frames -> now you can see by who are used (once, twice)
+
+2004.07.09 (v0.3.8)
+    |
+    + many fixes regarding selection / edit / apply
+    + enter pressed in an edit box will not change the text edit position
+
+2004.07.08 (v0.3.7)
+    |
+    + Anim Editor: duration of each anim (with * are marked those that ends with 0)
+    + some minor fixes
+    + major grid at every 16 pixels for zoom <= 100%
+
+2004.06.25 (v0.3.6)
+    |
+    + BSprite2 export support for: max. 4096 modules / max. 4096 frames
+    + stats: maximum FMs/F, maximum AFs/A
+    + Frame Editor: modules preview -> fixed scroll (total width > 32768)
+    + Anim Editor: frames preview -> fixed scroll (total width > 32768)
+
+2004.06.22 (v0.3.5)
+    |
+    + Reduce modules size to fit image (based on the transparent color)
+
+2004.06.15 (v0.3.4)
+    |
+    + both verically & horizontally flipped modules uses transparency as normal modules (cached image)
+    + fixed "no clip" for flipped modules
+    + statistics: total FModules, total AFrames, memory used be Java Sprite
+
+2004.06.11 (v0.3.3)
+    |
+    + Statistics (used memory estimation, used modules/frames)
+    + new AFrame has a default time = 1
+
+2004.06.09 (v0.3.2)
+    |
+    + new Optimization dialog:
+    |   * generate modules as tiles
+    |   * rearrange modules (horizontally / vertically / based on master frames)
+    |   * generate master frames
+    + verically flipped modules uses transparency as normal modules (cached image)
+    |   (if flippled both vert. & horiz., the module is still draw without transparency)
+    + Save/SaveAs for images (see contextual menu)
+
+2004.05.31 (v0.3.1)
+    |
+    + Optimize hack:
+    |   * sort frames by name
+    |   * mark/unmark unused frames
+    |   * sort anims by name
+    |   * eliminate duplicate modules/frames/anims
+    + the list of modules (in Frames Editor) & the list of frames (in Anim Editor) are drawn much faster
+    + some minor fixes
+
+2004.05.25 (v0.3.0)
+    |
+    + Merge Sprite (also, eliminates duplicate items)
+    + horizontally flipped modules uses transparency as normal modules (cached image)
+    + fixed clone of images
+
+2004.05.21 (v0.2.9)
+    |
+    + export BS2: improved optimisation (use info only from modules, not from entire image)
+
+2004.05.20 (v0.2.8)
+    |
+    + Frame Editor: select & move fmodules with the mouse
+
+2004.05.14 (v0.2.7)
+    |
+    + export BSprite2
+    + pixel format _8888
+    + load old non modular .sprite files
+    + Frame Editor: double click on modules list will insert a new module into current frame
+    + Anim Editor: double click on frames list will insert a new frame into current anim
+    + all list views: ensures that a new added list view item is visible
+    + all list views: some key handle improvements
+
+2004.05.10 (v0.2.6)
+    |
+    + contextual menu on all lists (Modules, Images, Frames, FModules, Anims, AFrames)
+    + MOVE, NEW, CLONE, DELETE to all contextual menus
+    + major grid lines at every 16 pixels
+
+2004.05.03 (v0.2.5)
+    |
+    + ask for delete confirmation (Images, Modules, Frames, FModules, Anims, AFrames)
+    + added module/frame description in FModules/AFrames list
+    + added flags as strings in FModules/AFrames list
+    + resize views on y
+
+2004.04.30 (v0.2.4)
+    |
+    + contextual menu on FModules, AFrames (FLIP, ROTATE, ZORDER, NEW, CLONE, DELETE)
+    + icons for contextual menus
+    + fixed FLIP X/Y for frames
+    + Frame Editor: modules preview + insert selected
+    + Anim Editor: frames preview + insert selected
+
+2004.04.29 (v0.2.3)
+    |
+    + Frame Editor: when a FModule is selected it is highlighted in the preview
+    + changed some default flags
+    + FLIP X/Y flags are applied before offset
+
+2004.04.28 (v0.2.2)
+    |
+    + Images: Insert, Delete, Up, Down
+    + Images: Load, Reload
+    + frame clones
+
+2004.04.28 (v0.2.1)
+    |
+    + transp color setup for each images
+    + description string for modules
+
+2004.04.20 (v0.2.0) (major version number was reset to 0)
+    |
+    + modular version
+    + integration with LevelEditor
+    + resizeable dialog
+    + generic CGraphics drawing (preview area)
+    - many features from v1.1.7 do not work anymore (PENDING)
+
+====================================================================================================
+
+2004.01.22 (v1.1.7)
+    |
+    + "Tools\Optimize..."
+    |   * rearrange frames horiz/vert
+    + in the title bar, the image name has a '*' if it was modified (Ex.: after "rearrange")
+    + bug fixed: ask for save on "escape" key
+
+2003.11.17 (v1.1.6)
+    |
+    + "Tools\Optimize..."
+        * reduce frames to fit image
+        * remove empty frames (DOES NOT WORK YET)
+
+2003.11.12 (v1.1.5)
+    |
+    + export BSprite I2/4444 (max 2 colors, 8 pixels/byte)
+    + export BSprite I4/4444 (max 4 colors, 4 pixels/byte)
+    + export BSprite I256/4444 (max 256 colors, 1 pixels/byte)
+    + "Tools\AutoFrames..." (auto frames generation)
+        * grid (fixed size blocs)
+
+2003.10.31 (v1.1.4)
+    |
+    + AFrames: flags -> hex number
+
+2003.10.30 (v1.1.3)
+    |
+    + added Guides (draw a cross guide lines)
+    |   * Shift + Mouse Click/DblClick/Move -> adjust position
+    + bug fixed: draw sprite flipped (preview area)
+
+2003.10.23 (v1.1.2)
+    |
+    + "Image\Save"
+    + "Image\Save As..."
+    + custom FPS for animation preview
+    + "Tools\Resize..." -> "Tools\Adjust params..."
+    |   * "Add" field was added
+    + bug fixed: export BSprite do not modify the palettes anymore
+
+2003.10.21 (v1.1.1)
+    |
+    + main menu changed: Sprite, Image, Tools, Help
+    |   * Sprite : Reload, Open, Import, Save, Save As, Export, Run, Exit
+    |   * Image  : Reload, Open, Save, Save As
+    |   * Tools  : Statistics, Oprimize, HotSpot(F->AF), HotSpot(AF->F), Resize, AutoFrames
+    |   * Help   : About
+    + preview area -> HotXY check box (draws the hotspot cross lines)
+    + preview area -> NoClip check box (draws the entire image with frame selection)
+
+2003.10.12 (v1.1.0)
+    |
+    + command added: LoadPalette(pal_index, "file.act")
+    + multiplte palettes support for BSprite
+
+2003.09.28 (v1.0.9)
+    |
+    + export BSprite I16/4444 (max 16 colors, 2 pixels/byte)
+    + added "File\Run...": run a sprite commands (".sprcmd") file
+      Current supported commands:
+        * Load("file.sprite")
+        * ExportBSprite("file.bsprite", file_type, pixel_format)
+            file_type = I16 or I127
+            pixel_format = _4444
+        * ExportTXT1("file.txt")
+
+2003.09.26 (v1.0.8)
+    |
+    + enter in an edit box (Frame, Anim, AFrame) -> "Apply"
+    + quick keys in Frames list:
+        Q, A --> +/- X position
+        W, S --> +/- Y position
+        E, D --> +/- Width
+        R, F --> +/- Height
+        G, J --> +/- HotspotX
+        Y, H --> +/- HotspotY
+
+2003.09.26 (v1.0.7)
+    |
+    + export BSprite I127/4444 (max 127 colors, RLE encoded)
+    + "Sprite\Resize..." is more flexible
+    + added "Sprite\Make Tileset..." (now is implicit to: 16x16 tiles, all image)
+
+2003.09.12 (v1.0.6)
+    |
+    + added "Sprite\Resize..."
+    + double click on a sprite file opens the SpriteEditor with the sprite loaded
+
+2003.09.05 (v1.0.5)
+    |
+    + back buffer to preview area -> flicker free animation
+
+2003.09.03 (v1.0.4)
+    |
+    + added "Sprite\HotSpot: Frames -> AFrames..."
+    + added "Sprite\HotSpot: AFrames -> Frames..."
+
+2003.07.10 (v1.0.0)
+    |
+    + first version
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////

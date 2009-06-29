@@ -1,0 +1,259 @@
+;
+; External Tool Information File
+;
+
+[info]
+L3ENC.exe=L3ENC
+mp3enc*.exe=MP3Enc
+8hz-mp3.exe=8hz-mp3
+maenc.exe=MAENC
+toolame*.exe=tooLAME
+LAME.exe=LAME
+SCMPX.exe=SCMPX
+GOGO.EXE=GOGO
+GOGO.DLL=GOGODLL
+
+wavefs44.exe=wavefs44
+WTC.exe=WTC
+SSRC.exe=SSRC
+
+
+
+[L3ENC:info]
+Name="L3ENC"
+SupportMethod=encode
+Encode.InterfaceType=CommandLine
+Encode.SupportTypes=layer3
+
+[L3ENC:encode:param]
+" -br %s":BitRate_bps
+" -crc":CalcCRC
+" -hq"
+" %s":SrcFileName
+" %s":DestFileName
+
+
+
+[MP3Enc:info]
+Name="MP3Enc"
+SupportMethod=encode
+Encode.InterfaceType=CommandLine
+Encode.SupportTypes=layer3
+
+[MP3Enc:encode:param]
+" -if %s":SrcFileName
+" -of %s":DestFileName
+" -br %s":BitRate_bps
+" -esr %s":SamplingFrequency
+" -crc":CalcCRC
+" -dm": ChannelMode_Mono
+" -qual 9"
+" -v"
+
+
+
+[8hz-mp3:info]
+Name="8hz-mp3"
+SupportMethod=encode
+Encode.InterfaceType=CommandLine
+Encode.SupportTypes=layer3
+Encode.DualChannelMode=RewriteStereo
+
+[8hz-mp3:encode:param]
+" -b %s":BitRate_kbps
+" -c":CopyrightFlag
+" -o":OriginalFlag
+" -crc":CalcCRC
+" %s":SrcFileName
+" %s":DestFileName
+
+
+
+[MAENC:info]
+Name="MAENC"
+SupportMethod=encode
+Encode.InterfaceType=CommandLine
+Encode.SupportTypes=layer2
+
+[MAENC:encode:param]
+" %s":SrcFileName
+" %s":DestFileName
+" -Mm":ChannelMode_Mono
+" -Ms":ChannelMode_Stereo
+" -Mj":ChannelMode_JointStereo
+" -Md":ChannelMode_DualChannel
+" -Pm"
+" -B%s":BitRate_kbps
+" -Dn":EmphasisType_None
+" -D5":EmphasisType_50_15ms
+" -Dc":EmphasisType_CCITTj17
+" -E":CalcCRC
+" -O":OriginalFlag
+" -C":CopyrightFlag
+
+
+
+[tooLAME:info]
+Name="tooLAME"
+SupportMethod=encode
+Encode.InterfaceType=CommandLine
+Encode.SupportTypes=layer2
+
+[tooLAME:encode:param]
+" -m m":ChannelMode_Mono
+" -m s":ChannelMode_Stereo
+" -m j":ChannelMode_JointStereo
+" -m d":ChannelMode_DualChannel
+" -b %s":BitRate_kbps
+" -d n":EmphasisType_None
+" -d 5":EmphasisType_50_15ms
+" -d c":EmphasisType_CCITTj17
+" -e":CalcCRC
+" -c":CopyrightFlag
+" -o":OriginalFlag
+" %s":SrcFileName
+" %s":DestFileName
+
+
+
+[LAME:info]
+Name="LAME"
+SupportMethod=encode
+Encode.InterfaceType=CommandLine
+Encode.SupportTypes=layer3
+
+[LAME:encode:param]
+" -m m":ChannelMode_Mono
+" -m s":ChannelMode_Stereo
+" -m j":ChannelMode_JointStereo
+" -m d":ChannelMode_DualChannel
+" -b %s":BitRate_kbps
+" -e n":EmphasisType_None
+" -e 5":EmphasisType_50_15ms
+" -e c":EmphasisType_CCITTj17
+" -p":CalcCRC
+" -c":CopyrightFlag
+" -o":OriginalFlag
+" %s":SrcFileName
+" %s":DestFileName
+
+
+
+[SCMPX:info]
+Name="SCMPX"
+SupportMethod=encode,resample
+Encode.InterfaceType=CommandLine
+Encode.SupportTypes=layer1,layer2,layer3
+Encode.DualChannelMode=RewriteStereo
+Resample.InterfaceType=CommandLine
+Resample.SupportInput=all
+Resample.SupportOutput=all
+Resample.SupportChannels=all
+
+[SCMPX:encode:param]
+" -e "
+" -l1":Layer_1
+" -l2":Layer_2
+" -l3":Layer_3
+" -b%s":BitRate_index
+" -s":ChannelMode_Stereo
+" -s":ChannelMode_DualChannel
+" -j":ChannelMode_JointStereo
+" -e5":EmphasisType_50_15ms
+" -ej":EmphasisType_CCITTj17
+" -x":PrivateFlag
+" -er":CalcCRC
+" -o":OriginalFlag
+" -c":CopyrightFlag
+" %s":SrcFileName
+" %s":DestFileName
+
+[SCMPX:resample:param]
+" -w "
+" -sf%s":SamplingFrequency
+" -rs16"
+" -ch%s":ChannelCount
+" -q40"
+" %s":SrcFileName
+" %s":DestFileName
+
+
+
+[GOGO:info]
+Name="GoGo-No-Coda"
+SupportMethod=encode
+Encode.InterfaceType=CommandLine
+Encode.SupportTypes=layer3
+
+[GOGO:encode:param]
+" -b %s":BitRate_kbps
+" -m m":ChannelMode_Mono
+" -m s":ChannelMode_Stereo
+" -m j":ChannelMode_JointStereo
+" -m s":ChannelMode_DualChannel
+" -nopsy"
+" -emp n":EmphasisType_None
+" -emp 5":EmphasisType_50_15ms
+" -emp c":EmphasisType_CCITTj17
+" %s":SrcFileName
+" %s":DestFileName
+
+
+
+[GOGODLL:info]
+Name="GoGo-No-Coda"
+SupportMethod=encode
+Encode.InterfaceType=GOGOAPI
+Encode.SupportTypes=layer3
+
+
+
+[wavefs44:info]
+Name="wavefs44"
+SupportMethod=resample
+Resample.InterfaceType=CommandLine
+Resample.SupportInput=32000,44100,48000
+Resample.SupportOutput=32000,44100,48000
+Resample.SupportChannels=2
+
+[wavefs44:resample:param]
+" %s":SrcFileName
+" %s":DestFileName
+" g1"
+" p2"
+" s32":SamplingFrequency_32000
+"":SamplingFrequency_44100
+" s48":SamplingFrequency_48000
+
+
+
+[WTC:info]
+Name="WTC"
+SupportMethod=resample
+Resample.InterfaceType=CommandLine
+Resample.SupportInput=all
+Resample.SupportOutput=all
+Resample.SupportChannels=all
+
+[WTC:resample:param]
+" %s":SrcFileName
+" %s":DestFileName
+" %s":SamplingFrequency
+" 511"
+
+
+
+[SSRC:info]
+Name="Shibatch sampling rate converter"
+SupportMethod=resample
+Resample.InterfaceType=CommandLine
+Resample.SupportInput=all
+Resample.SupportOutput=all
+Resample.SupportChannels=all
+
+[SSRC:resample:param]
+" --rate %s":SamplingFrequency
+" --dither 0"
+" --bits 16"
+" %s":SrcFileName
+" %s":DestFileName

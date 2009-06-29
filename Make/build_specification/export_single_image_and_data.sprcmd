@@ -1,0 +1,169 @@
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+////	Export	DATA
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+
+InitBSpriteFFT("fft\export_data_single_8bpp.fft")
+
+//////////////////////////////////////////////////
+Load("..\bld_tmp\bg_floor.sprite")
+	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 128, -1, 1, 0)
+	SaveImage(0, "..\bld_tmp\bg_floor.bmp")
+	Save("..\bld_tmp\bg_floor.sprite")
+
+Load("..\bld_tmp\bg_floor.sprite")
+		ExportBSpriteFFT("..\build_output\bg_floor.data")
+
+//--------
+
+Load("..\bld_tmp\mc00.sprite")
+	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 128, -1, 1, 0)
+	SaveImage(0, "..\bld_tmp\mc00.bmp")
+	Save("..\bld_tmp\mc00.sprite")
+
+Load("..\bld_tmp\mc00.sprite")
+		ExportBSpriteFFT("..\build_output\mc00.data")
+
+
+
+Load("..\bld_tmp\enemy_mummy.sprite")
+	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 256, -1, 1, 0)
+	SaveImage(0, "..\bld_tmp\enemy_mummy.bmp")
+	Save("..\bld_tmp\enemy_mummy.sprite")
+
+Load("..\bld_tmp\enemy_mummy.sprite")
+		ExportBSpriteFFT("..\build_output\enemy_mummy.data")		
+		
+		
+Load("..\bld_tmp\enemy_vampire.sprite")
+	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 256, -1, 1, 0)
+	SaveImage(0, "..\bld_tmp\enemy_vampire.bmp")
+	Save("..\bld_tmp\enemy_vampire.sprite")
+
+Load("..\bld_tmp\enemy_vampire.sprite")
+		ExportBSpriteFFT("..\build_output\enemy_vampire.data")		
+//--------
+
+Load("..\bld_tmp\loading.sprite")
+	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 128, -1, 1, 0)
+	SaveImage(0, "..\bld_tmp\loading.bmp")
+	Save("..\bld_tmp\loading.sprite")
+
+Load("..\bld_tmp\loading.sprite")
+		ExportBSpriteFFT("..\build_output\loading.data")
+
+//--------
+
+Load("..\bld_tmp\MCbullet.sprite")
+	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 128, -1, 1, 0)
+	SaveImage(0, "..\bld_tmp\mcbullet.bmp")
+	Save("..\bld_tmp\mcbullet.sprite")
+
+Load("..\bld_tmp\mcbullet.sprite")
+		ExportBSpriteFFT("..\build_output\mcbullet.data")
+
+//--------
+
+Load("..\bld_tmp\logo.sprite")
+	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 128, -1, 1, 0)
+	SaveImage(0, "..\bld_tmp\logo.bmp")
+	Save("..\bld_tmp\logo.sprite")
+
+Load("..\bld_tmp\logo.sprite")
+		ExportBSpriteFFT("..\build_output\logo.data")
+		
+
+Load("..\bld_tmp\splash.sprite")
+	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 512, -1, 1, 0)
+	SaveImage(0, "..\bld_tmp\splash.bmp")
+	Save("..\bld_tmp\splash.sprite")
+
+Load("..\bld_tmp\splash.sprite")
+		ExportBSpriteFFT("..\build_output\splash.data")		
+
+//--------
+
+Load("..\bld_tmp\vpad.sprite")
+	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 512, -1, 1, 0)
+	SaveImage(0, "..\bld_tmp\vpad.bmp")
+	Save("..\bld_tmp\vpad.sprite")
+
+Load("..\bld_tmp\vpad.sprite")
+		ExportBSpriteFFT("..\build_output\vpad.data")		
+
+
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+////	Export	IMAGE
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+
+InitBSpriteFFT("fft\export_image_single_8bpp.fft")
+	
+//////////////////////////////////////////////////
+
+Load("..\bld_tmp\bg_floor.sprite")
+	DeleteAllModules()
+	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
+	ExportBSpriteFFT("..\build_output\bg_floor.image")
+
+//----
+
+Load("..\bld_tmp\mc00.sprite")
+	DeleteAllModules()
+	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
+	ExportBSpriteFFT("..\build_output\mc00.image")
+
+
+Load("..\bld_tmp\enemy_mummy.sprite")
+	DeleteAllModules()
+	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
+	ExportBSpriteFFT("..\build_output\enemy_mummy.image")
+	
+Load("..\bld_tmp\enemy_vampire.sprite")
+	DeleteAllModules()
+	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
+	ExportBSpriteFFT("..\build_output\enemy_vampire.image")
+
+//----
+
+Load("..\bld_tmp\loading.sprite")
+	DeleteAllModules()
+	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
+	ExportBSpriteFFT("..\build_output\loading.image")
+
+//----
+
+Load("..\bld_tmp\mcbullet.sprite")
+	DeleteAllModules()
+	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
+	ExportBSpriteFFT("..\build_output\mcbullet.image")
+
+//----
+
+Load("..\bld_tmp\logo.sprite")
+	DeleteAllModules()
+	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
+	ExportBSpriteFFT("..\build_output\logo.image")
+
+//----
+
+Load("..\bld_tmp\splash.sprite")
+	DeleteAllModules()
+	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
+	ExportBSpriteFFT("..\build_output\splash.image")
+
+//----
+
+
+Load("..\bld_tmp\vpad.sprite")
+	DeleteAllModules()
+	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
+	ExportBSpriteFFT("..\build_output\vpad.image")
+
+//----
+
+
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
