@@ -19,7 +19,8 @@ public:
 		ACTOR_MC,
 		ACTOR_MUMMY,
 		ACTOR_VAMPIRE,
-		ACTOR_MCBULLET
+		ACTOR_MCBULLET,
+		ACTOR_BOOM
 	} ACTOR_TYPE;
 
 	enum
@@ -41,6 +42,7 @@ public:
 	void move(int);
 
 	CHighGear* g_pGame;
+	CSprite* spr;
 	int m_posX;
 	int m_posY;
 private:	
@@ -49,7 +51,6 @@ private:
 	int m_CurrentAFrame;
 	int m_CurrentAnim;
 	bool bStateChanged;
-	CSprite* spr;
 	void updateSprite();
 	void setAnim(int);
 };

@@ -29,7 +29,7 @@ struct intl_string_ids
 	// this is what you are looking for :)
 	# ifndef __CW32__
 		# define STRING_(VALUE, ID, DEFAULT)	enum { ID = VALUE };				
-		# include "../../data/languages/intl_lang_arm.hpp" 
+//		# include "../../data/languages/intl_lang_arm.hpp" 
 	#else
 	enum 
 	{

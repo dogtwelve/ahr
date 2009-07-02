@@ -55,7 +55,7 @@ void CActor::notifyState(int state)
 			{
 				//hp--;
 				//if (hp < 0)
-				//gameSpr = boom	
+				//gameSpr = boom
 				m_state = ACTOR_STATE_DESTROYED;
 			}
 			break;
