@@ -475,6 +475,10 @@ int CHighGear::getEmptyActorIndex()
 
 void CHighGear::procMaingame()
 {
+	//////////////////////////
+	//UPDATE
+	//////////////////////////
+
 	//Update Touch
 	if (m_actors[0])
 	{
@@ -499,7 +503,7 @@ void CHighGear::procMaingame()
 
 	}
 
-	//UPDATE
+	//UPDATE actors
 	for (int i = 0; i < MAX_ACTOR; i ++)
 	{
 		if (m_actors[i])
@@ -527,6 +531,19 @@ void CHighGear::procMaingame()
 					{
 						m_actors[i]->m_state = CActor::ACTOR_NONE;	//Bullet X
 						m_actors[j]->notifyState(CActor::ACTOR_STATE_DAMAGED);
+
+int index = getEmptyActorIndex();
+
+			if (index > -1)
+
+
+
+
+
+
+			{
+				m_actors[index]->init(CActor::ACTOR_MCBULLET, m_gameSprite[3], m_actors[0]->m_posX, m_actors[0]->m_posY);
+			}
 					}
 				}
 			}
@@ -535,19 +552,65 @@ void CHighGear::procMaingame()
 
 	//genEnemy();
 	
-
+	/////////////////////////
 	//DRAW
+	/////////////////////////
+
+	//BG
 	GetLib2D().DrawRect(0, 0, m_dispX, m_dispY, 0xF111, 0xFEEE);
-	
 	m_bg->DrawFrame(GetLib2D(), m_dispX >> 1, m_dispY >> 1, 1);
+
+
+	//Sort Actor's draw order
+	int* drawActorSortArray;
+	int drawActorCnt = 0;
+
+	drawActorSortArray = new int[MAX_ACTOR * 2];
+
+	for (int i = 0; i < MAX_ACTOR; i ++) drawActorSortArray[i * 2] = -1;
 
 	for (int i = 0; i < MAX_ACTOR; i ++)
 	{
-		if (m_actors[i])
+		if (!m_actors[i]) continue;
+		if (m_actors[i]->m_type == CActor::ACTOR_NONE) continue;
+		if (m_actors[i]->spr == NULL) continue;
+
+
+		for (int j = 0; j < MAX_ACTOR; j ++)
+		{
+			if (drawActorSortArray[j * 2] == -1 
+				|| drawActorSortArray[j * 2 + 1] > m_actors[i]->m_posY)
+			{
+			//ADD this @drawActorSortArray which index is j
+				if (j < drawActorCnt)
+				{
+					for (int k = drawActorCnt; k >= j; k--)
+					{
+						drawActorSortArray[(k + 1)* 2] = drawActorSortArray[k * 2];
+						drawActorSortArray[(k + 1)* 2 + 1] = drawActorSortArray[k * 2 + 1];
+					}
+				}
+
+				drawActorSortArray[j * 2] = i;
+				drawActorSortArray[j * 2 + 1] = m_actors[i]->m_posY;
+				drawActorCnt ++;
+				break;
+			}
+		}
+		
+	}
+	
+
+	for (int i = 0; i < drawActorCnt; i ++)
+	{
+		m_actors[drawActorSortArray[i * 2]]->draw(GetLib2D());
+		/*if (m_actors[i])
 		{
 			m_actors[i]->draw(GetLib2D());
-		}
+		}*/
 	}
+
+	delete(drawActorSortArray);
 
 	//DRAW VIRTUAL PAD
 	m_pad->DrawModule(GetLib2D(), VPAD_X, VPAD_Y, 0);
