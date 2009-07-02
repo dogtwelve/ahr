@@ -13,7 +13,7 @@
 // Images...
 // <Image> := IMAGE [id] "file" [TRANSP transp_color]
 
-    IMAGE 0x0000 "D:\workspace\iPhone\AHR\data\gfx\vpad.bmp" TRANSP 0x00FF00FF // 0  size: 126 x 189  palettes: 1
+    IMAGE 0x0000 "D:\workspace\iPhone\AHR\data\gfx\vpad.bmp" TRANSP 0x00FF00FF // 0  size: -1 x -1  palettes: 0
 
 ////////////////////////////////////////////////////////////////////////////////
 // Modules...
