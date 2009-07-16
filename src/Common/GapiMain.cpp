@@ -125,7 +125,7 @@ int CGapi::LoopGame(void)
 			mDisplayOrientationTimer = ORIENTATION_CHANGE_TIME;
 
 			// on menus change
-			//if (m_pHighGear->m_gState != CHighGear::gs_play)
+			//if (m_pHighGear->m_state != CHighGear::gs_play)
 				mDisplayOrientationTimer = 1;
 		}
 		

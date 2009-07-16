@@ -3,7 +3,13 @@
 
 #include "Config.h"
 
+#define GAMESPRITE_MC		m_gameSprite[0]
+#define GAMESPRITE_MUMMY	m_gameSprite[1]
+#define GAMESPRITE_VAMPIRE	m_gameSprite[2]
+#define GAMESPRITE_SKULL	m_gameSprite[3]
+#define GAMESPRITE_MCBULLET	m_gameSprite[4]
 
+#define MAINCHAR			m_actors[0]
 #define VPAD_X	((m_dispX >> 1) - 120)
 #define VPAD_Y	(m_dispY - 120)
 #define VPAD_FIRE_X	((m_dispX >> 1) + 80)
@@ -13,17 +19,21 @@
 #define ZONEID_PAD_RIGHT	2
 #define ZONEID_PAD_FIRE		3
 
-#define MC_XCOORD 2 
-#define MC_YCOORD 6
 
-#define LEVEL_UNIT_WIDTH	5
-#define LEVEL_UNIT_HEIGHT	7
-#define LEVEL_PIXEL_HEIGHT	45
-#define LEVEL_PIXEL_WIDTH_SHORT	72
-#define LEVEL_PIXEL_WIDTH_LONG	116
+
+#define LEVEL_UNIT_WIDTH	11
+#define LEVEL_UNIT_HEIGHT	21
+#define LEVEL_PIXEL_HEIGHT	125
+#define LEVEL_PIXEL_WIDTH_SHORT	184
+#define LEVEL_PIXEL_WIDTH_LONG	300
 #define LEVEL_X_CENTER		(INITIAL_DISP_X >> 1)
-#define LEVEL_Y_START		(INITIAL_DISP_Y >> 1) - 57
-#define LEVEL_Y_END			(INITIAL_DISP_Y >> 1) - 12
+#define LEVEL_Y_START		(INITIAL_DISP_Y >> 1) - LEVEL_PIXEL_HEIGHT + 24
+#define LEVEL_Y_END			(INITIAL_DISP_Y >> 1)
 
+#define MC_XCOORD (LEVEL_UNIT_WIDTH / 2) 
+#define MC_YCOORD (LEVEL_UNIT_HEIGHT - 1)
 
+#define TIME_LIMIT	300000
+
+#define MAX_ENEMY	3
 #endif	// PLAYING_GAME__DEFINES__H__INCLUDED__

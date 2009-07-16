@@ -5,7 +5,7 @@
     VERSION 0001
 
     // Images:  1
-    // Modules: 3
+    // Modules: 4
     // Frames:  0
     // Anims:   0
 
@@ -13,7 +13,7 @@
 // Images...
 // <Image> := IMAGE [id] "file" [TRANSP transp_color]
 
-    IMAGE 0x0000 "D:\workspace\iPhone\AHR\data\gfx\vpad.bmp" TRANSP 0x00FF00FF // 0  size: -1 x -1  palettes: 0
+    IMAGE 0x0000 ".\vpad.bmp" TRANSP 0x00FF00FF // 0  size: 126 x 189  palettes: 1
 
 ////////////////////////////////////////////////////////////////////////////////
 // Modules...
@@ -28,9 +28,10 @@
 
     MODULES
     {
-        MD	0x1000	MD_IMAGE	0	20	32	85	87
+        MD	0x1003	MD_IMAGE	0	70	2	25	25
         MD	0x1001	MD_IMAGE	0	17	133	39	39
         MD	0x1002	MD_IMAGE	0	73	133	39	39
+        MD	0x1000	MD_IMAGE	0	20	32	85	87
     }
 
     SPRITE_END

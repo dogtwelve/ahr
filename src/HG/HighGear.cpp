@@ -103,7 +103,7 @@ CHighGear::CHighGear(CGapi& gapi) :
 	m_bChargerConected = false;
 #endif
 	
-	m_gState = GAME_STATE_INIT;
+	m_state = GAME_STATE_INIT;
 }
 
 
@@ -265,11 +265,11 @@ bool CHighGear::InitDisplayOrientation(int orientation)
 //		if (playerCar)
 //			playerCar->recalculateEnvMap();
 ////SEFU 
-//		if (m_gState == gs_play && !Gapi().m_orientationOptionsInMenus)
+//		if (m_state == gs_play && !Gapi().m_orientationOptionsInMenus)
 //		{
 //			m_PlayingGame->RecreateInGameMenu();
 //		}
-//		if (m_gState == gs_ingame_menu)
+//		if (m_state == gs_ingame_menu)
 //		{
 //			//LAngelov: we must recreate InGame Menu
 //			m_PlayingGame->RecreateInGameMenu();
@@ -302,13 +302,14 @@ extern void OGLRefresh3D();
 
 void CHighGear::GameLoop(void)
 {
-	switch( m_gState )
+	switch( m_state )
 	{
 	case GAME_STATE_INIT:
 		InitHighGear(0);
 		InitHighGear(1);
 		InitHighGear(2);
 		InitHighGear(3);
+		m_Random.SetSeed(GETTIMEMS());
 
 		g_bRefreshScreenBuffer = true;
 
@@ -363,9 +364,9 @@ void CHighGear::GameLoop(void)
 	m_FrameCounter++;
 
 #ifdef USE_TOUCH_SCREEN
-//	if (m_gState != gs_play
+//	if (m_state != gs_play
 //		
-//		&& m_gState != gs_suspended)
+//		&& m_state != gs_suspended)
 //	{
 		touchZones->Update();
 	#ifdef DRAW_TOUCH_ZONES
@@ -402,14 +403,17 @@ void CHighGear::ZoneMove(short zoneId, int x, int y)
 }
 #endif // USE_TOUCH_SCREEN
 
-void CHighGear::setGameState(e_m_gState state, bool bDrawL)
+void CHighGear::setGameState(e_m_state state, bool bDrawL)
 {
-	m_gState = GAME_STATE_LOADING;
-	m_gStateNext = state;
+	m_state = GAME_STATE_LOADING;
+	m_stateNext = state;
 	m_bDrawLoading = bDrawL;
 	m_loadingCounter = 0;
 }
-
+#define GAME_READY	0
+#define GAME_START	1
+#define GAME_RESULT	2
+#define GAME_OVER	3
 
 void CHighGear::procLoading()
 {
@@ -422,34 +426,48 @@ void CHighGear::procLoading()
 	if (m_loadingCounter == 0)
 		touchZones->ClearZones();
 #endif
-	switch (m_gStateNext)
+	switch (m_stateNext)
 	{
 	case GAME_STATE_LOGO:
 		m_logoSprite = NEW CSprite("logo.bsprite");
 		m_logoTimer = GETTIMEMS();
+		
 		break;
 	case GAME_STATE_TITLE:
 		m_SplashScreen = NEW CSprite("splash.bsprite");
 		touchZones->AddZone(0, 0, 0, m_dispX, m_dispY);
 		break;
 	case GAME_STATE_MAIN:
+		//######################
+		//####	load resources
+		//######################
 		delete(m_SplashScreen);
-		m_bg = NEW CSprite("bg_floor.bsprite");
+		m_bg = NEW CSprite*[2];
+
+		m_bg[0] = NEW CSprite("bg.bsprite");
+		m_bg[1] = NEW CSprite("bg_floor.bsprite");
+		m_ui = NEW CSprite("interface0.bsprite");
 
 		m_gameSprite = NEW CSprite*[MAX_GAMESPRITE];
-		m_gameSprite[0] = NEW CSprite("mc00.bsprite");
-		m_gameSprite[1] = NEW CSprite("enemy_mummy.bsprite");
-		m_gameSprite[2] = NEW CSprite("enemy_vampire.bsprite");
-		m_gameSprite[3] = NEW CSprite("mcbullet.bsprite");
+		GAMESPRITE_MC = NEW CSprite("mc00.bsprite");
+		GAMESPRITE_MUMMY = NEW CSprite("enemy_mummy.bsprite");
+		GAMESPRITE_VAMPIRE = NEW CSprite("enemy_vampire.bsprite");
+		GAMESPRITE_SKULL = NEW CSprite("enemy_skull.bsprite");
+		GAMESPRITE_MCBULLET = NEW CSprite("mcbullet.bsprite");
+
 		m_pad = NEW CSprite("vpad.bsprite");
-		touchZones->AddZone(ZONEID_PAD_LEFT, VPAD_X - 10, VPAD_Y + 25, VPAD_X + 30, VPAD_Y + 65); 
-		touchZones->AddZone(ZONEID_PAD_RIGHT, VPAD_X + 55, VPAD_Y + 25, VPAD_X + 95, VPAD_Y + 65); 
-		touchZones->AddZone(ZONEID_PAD_FIRE, VPAD_FIRE_X, VPAD_FIRE_Y, VPAD_FIRE_X + 40, VPAD_FIRE_Y + 40); 
+		
+		//#####################
+		//####	reset game
+		//####		::reset Actor
+		//####		::reset game variables
 		initActors();
+		m_gameTime = GETTIMEMS();
+		m_gameState = GAME_READY;
 		break;
 	}
 	if (++ m_loadingCounter <= m_loadingLength)
-		m_gState = m_gStateNext;
+		m_state = m_stateNext;
 }
 
 
@@ -458,11 +476,10 @@ void CHighGear::initActors()
 	m_actors = NEW CActor*[MAX_ACTOR];
 	for (int i = 0; i < MAX_ACTOR; i ++)
 		m_actors[i] = NEW CActor(this);
-	//m_actors[0] = NEW CActor();
-	m_actors[0]->init(CActor::ACTOR_MC, m_gameSprite[0], MC_XCOORD, MC_YCOORD);
+	
+	//Just set MC's actor
+	MAINCHAR->init(CActor::ACTOR_MC, GAMESPRITE_MC, MC_XCOORD, MC_YCOORD);
 
-	m_actors[1]->init(CActor::ACTOR_MUMMY, m_gameSprite[1], m_Random.GetNumber(0, 4), 0);
-	m_actors[2]->init(CActor::ACTOR_VAMPIRE, m_gameSprite[2], m_Random.GetNumber(0, 4), 0);
 }
 
 int CHighGear::getEmptyActorIndex()
@@ -479,86 +496,116 @@ void CHighGear::procMaingame()
 	//UPDATE
 	//////////////////////////
 
-	//Update Touch
-	if (m_actors[0])
+	switch (m_gameState)
 	{
-		if (touchZones->IsZonePressed(ZONEID_PAD_LEFT))
+	case GAME_READY:
+	{
+		if (GETTIMEMS() - m_gameTime > 3000)
 		{
-			m_actors[0]->move(-1);
+			m_gameState = GAME_START;
+			m_gameTime = GETTIMEMS();
+			touchZones->AddZone(ZONEID_PAD_LEFT, VPAD_X - 10, VPAD_Y + 25, VPAD_X + 30, VPAD_Y + 65); 
+			touchZones->AddZone(ZONEID_PAD_RIGHT, VPAD_X + 55, VPAD_Y + 25, VPAD_X + 95, VPAD_Y + 65); 
+			touchZones->AddZone(ZONEID_PAD_FIRE, VPAD_FIRE_X, VPAD_FIRE_Y, VPAD_FIRE_X + 40, VPAD_FIRE_Y + 40); 
+		
 		}
-		else if (touchZones->IsZonePressed(ZONEID_PAD_RIGHT))
-		{
-			m_actors[0]->move(1);
-		}
-		else if (touchZones->IsZonePressed(ZONEID_PAD_FIRE))
+		break;
+	}
+	case GAME_START:
+		//genEnemy();
+		if (m_Random.GetNumber(0, 100) < 7)
 		{
 			//FIRE!
 			int index = getEmptyActorIndex();
 
 			if (index > -1)
 			{
-				m_actors[index]->init(CActor::ACTOR_MCBULLET, m_gameSprite[3], m_actors[0]->m_posX, m_actors[0]->m_posY);
+				int eType = m_Random.GetNumber(0, MAX_ENEMY);
+
+				m_actors[index]->init(CActor::ACTOR_MUMMY + eType, m_gameSprite[1 + eType],
+										m_Random.GetNumber(0, LEVEL_UNIT_WIDTH), 0);
 			}
 		}
 
-	}
-
-	//UPDATE actors
-	for (int i = 0; i < MAX_ACTOR; i ++)
-	{
-		if (m_actors[i])
+		//Update Touch
+		if (MAINCHAR)
 		{
-			m_actors[i]->update();
-			if (m_actors[i]->m_state == CActor::ACTOR_STATE_DESTROYED)
-				m_actors[i]->m_type = CActor::ACTOR_NONE;
-		}
-	}
-
-	//UPDATE COLLIDE
-	for (int i = 0; i < MAX_ACTOR; i ++)
-	{
-		if (m_actors[i])
-		{
-			if (m_actors[i]->m_type == CActor::ACTOR_MCBULLET)
+			if (touchZones->IsZonePressed(ZONEID_PAD_LEFT))
 			{
-				for (int j = 0; j < MAX_ACTOR; j ++)
+				MAINCHAR->move(-1);
+			}
+			else if (touchZones->IsZonePressed(ZONEID_PAD_RIGHT))
+			{
+				MAINCHAR->move(1);
+			}
+			else if (touchZones->IsZonePressed(ZONEID_PAD_FIRE))
+			{
+				if (MAINCHAR->canFire())
 				{
-					if (m_actors[j]->m_type != CActor::ACTOR_MUMMY 
-						&& m_actors[j]->m_type != CActor::ACTOR_VAMPIRE) continue;
+					//FIRE!
+					int index = getEmptyActorIndex();
 
-					if (m_actors[j]->m_posX == m_actors[i]->m_posX && 
-						m_actors[j]->m_posY == m_actors[i]->m_posY)
+					if (index > -1)
 					{
-						m_actors[i]->m_state = CActor::ACTOR_NONE;	//Bullet X
-						m_actors[j]->notifyState(CActor::ACTOR_STATE_DAMAGED);
-
-int index = getEmptyActorIndex();
-
-			if (index > -1)
-
-
-
-
-
-
-			{
-				m_actors[index]->init(CActor::ACTOR_MCBULLET, m_gameSprite[3], m_actors[0]->m_posX, m_actors[0]->m_posY);
-			}
+						m_actors[index]->init(CActor::ACTOR_MCBULLET, GAMESPRITE_MCBULLET, MAINCHAR->m_posX, MAINCHAR->m_posY);
 					}
+					MAINCHAR->notifyState(CActor::ACTOR_STATE_ATTACK, 15);
 				}
 			}
-		}
-	}
 
-	//genEnemy();
+		}
+		
+		//UPDATE actors
+		for (int i = 0; i < MAX_ACTOR; i ++)
+		{
+			if (m_actors[i])
+			{
+				m_actors[i]->update();
+				if (m_actors[i]->m_state == CActor::ACTOR_STATE_DESTROYED)
+					m_actors[i]->m_type = CActor::ACTOR_NONE;
+			}
+		}
+
+		////UPDATE COLLIDE
+		//for (int i = 0; i < MAX_ACTOR; i ++)
+		//{
+		//	if (m_actors[i])
+		//	{
+		//		//ÃÑ¾Ë!
+		//		if (m_actors[i]->m_type == CActor::ACTOR_MCBULLET)
+		//		{
+		//			for (int j = 0; j < MAX_ACTOR; j ++)
+		//			{
+		//				if (!m_actors[j]->isEnemy()) continue;
+
+		//				if (m_actors[j]->m_posX == m_actors[i]->m_posX && 
+		//					m_actors[j]->m_posY == m_actors[i]->m_posY)
+		//				{
+		//					m_actors[i]->m_state = CActor::ACTOR_STATE_DESTROYED;	//Bullet X
+		//					m_actors[j]->notifyState(CActor::ACTOR_STATE_DAMAGED, -1);	//Enemy
+
+		//					int index = getEmptyActorIndex();
+
+		//					if (index > -1)
+		//					{
+		//						m_actors[index]->init(CActor::ACTOR_BOOM, GAMESPRITE_MCBULLET, m_actors[j]->m_posX, m_actors[j]->m_posY);
+		//					}
+		//				}
+		//			}
+		//		}
+		//	}
+		//}
+		break;
+	}
 	
 	/////////////////////////
 	//DRAW
 	/////////////////////////
 
 	//BG
-	GetLib2D().DrawRect(0, 0, m_dispX, m_dispY, 0xF111, 0xFEEE);
-	m_bg->DrawFrame(GetLib2D(), m_dispX >> 1, m_dispY >> 1, 1);
+	GetLib2D().DrawRect(0, 0, m_dispX, m_dispY, 0xF000, 0xF000);
+	m_bg[0]->DrawModule(GetLib2D(), 0, (m_bg[0]->GetModuleHeight(0) - m_dispY) - (m_bg[0]->GetModuleHeight(0) - m_dispY) * (m_gameTime ++) / TIME_LIMIT, 0);
+	m_bg[1]->DrawFrame(GetLib2D(), m_dispX >> 1, LEVEL_Y_START + 125, 0);
 
 
 	//Sort Actor's draw order
@@ -612,7 +659,21 @@ int index = getEmptyActorIndex();
 
 	delete(drawActorSortArray);
 
-	//DRAW VIRTUAL PAD
-	m_pad->DrawModule(GetLib2D(), VPAD_X, VPAD_Y, 0);
-	m_pad->DrawModule(GetLib2D(), VPAD_FIRE_X, VPAD_FIRE_Y, 1);
+	if (m_gameState == GAME_READY)
+	{
+		if ((GETTIMEMS() / 500) % 2)
+			m_ui->DrawFrame(GetLib2D(), m_dispX >> 1, m_dispY >> 1, 0);
+	}
+
+	else if (m_gameState == GAME_START)
+	{
+		//DRAW VIRTUAL PAD
+		m_pad->DrawModule(GetLib2D(), VPAD_X - 2, VPAD_Y + 33, 0);
+		m_pad->DrawModule(GetLib2D(), VPAD_X + 63, VPAD_Y + 33, 0, 1);
+		//touchZones->AddZone(ZONEID_PAD_LEFT, VPAD_X - 10, VPAD_Y + 25, VPAD_X + 30, VPAD_Y + 65); 
+		//touchZones->AddZone(ZONEID_PAD_RIGHT, VPAD_X + 55, VPAD_Y + 25, VPAD_X + 95, VPAD_Y + 65); 
+
+		m_pad->DrawModule(GetLib2D(), VPAD_FIRE_X, VPAD_FIRE_Y, 1);
+	}
+	
 }

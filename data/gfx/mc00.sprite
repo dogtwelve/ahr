@@ -99,17 +99,13 @@
         AF	0x2005	2	0	0
     }
 
-    ANIM "MC_ATTACK" // Index = 2, AFrames = 8
+    ANIM "MC_ATTACK" // Index = 2, AFrames = 4
     {
         0x3002
-        AF	0x2003	1	0	18
-        AF	0x2003	1	0	22
-        AF	0x2003	1	0	24
-        AF	0x2002	4	0	25
-        AF	0x2003	2	0	25
-        AF	0x2003	1	0	24
-        AF	0x2000	1	0	20
-        AF	0x2000	1	0	16
+        AF	0x2003	1	0	2
+        AF	0x2002	4	0	5
+        AF	0x2003	1	0	4
+        AF	0x2000	1	0	1
     }
 
     SPRITE_END

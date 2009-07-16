@@ -88,8 +88,8 @@
     ANIM "EXPLOSION" // Index = 0, AFrames = 3
     {
         0x3000
-        AF	0x2000	3	0	0
-        AF	0x2001	2	0	0
+        AF	0x2000	1	0	0
+        AF	0x2001	1	0	0
         AF	0x2002	2	0	0
     }
 

@@ -7,6 +7,15 @@
 InitBSpriteFFT("fft\export_data_single_8bpp.fft")
 
 //////////////////////////////////////////////////
+Load("..\bld_tmp\bg.sprite")
+	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 2048, -1, 1, 0)
+	SaveImage(0, "..\bld_tmp\bg.bmp")
+	Save("..\bld_tmp\bg.sprite")
+
+Load("..\bld_tmp\bg.sprite")
+		ExportBSpriteFFT("..\build_output\bg.data")
+
+
 Load("..\bld_tmp\bg_floor.sprite")
 	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 128, -1, 1, 0)
 	SaveImage(0, "..\bld_tmp\bg_floor.bmp")
@@ -43,7 +52,23 @@ Load("..\bld_tmp\enemy_vampire.sprite")
 
 Load("..\bld_tmp\enemy_vampire.sprite")
 		ExportBSpriteFFT("..\build_output\enemy_vampire.data")		
+
+Load("..\bld_tmp\enemy_skull.sprite")
+	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 256, -1, 1, 0)
+	SaveImage(0, "..\bld_tmp\enemy_skull.bmp")
+	Save("..\bld_tmp\enemy_skull.sprite")
+
+Load("..\bld_tmp\enemy_skull.sprite")
+		ExportBSpriteFFT("..\build_output\enemy_skull.data")		
 //--------
+
+Load("..\bld_tmp\interface0.sprite")
+	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 256, -1, 1, 0)
+	SaveImage(0, "..\bld_tmp\interface0.bmp")
+	Save("..\bld_tmp\interface0.sprite")
+
+Load("..\bld_tmp\interface0.sprite")
+		ExportBSpriteFFT("..\build_output\interface0.data")		
 
 Load("..\bld_tmp\loading.sprite")
 	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 128, -1, 1, 0)
@@ -102,6 +127,11 @@ Load("..\bld_tmp\vpad.sprite")
 InitBSpriteFFT("fft\export_image_single_8bpp.fft")
 	
 //////////////////////////////////////////////////
+Load("..\bld_tmp\bg.sprite")
+	DeleteAllModules()
+	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
+	ExportBSpriteFFT("..\build_output\bg.image")
+
 
 Load("..\bld_tmp\bg_floor.sprite")
 	DeleteAllModules()
@@ -126,7 +156,18 @@ Load("..\bld_tmp\enemy_vampire.sprite")
 	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
 	ExportBSpriteFFT("..\build_output\enemy_vampire.image")
 
+Load("..\bld_tmp\enemy_skull.sprite")
+	DeleteAllModules()
+	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
+	ExportBSpriteFFT("..\build_output\enemy_skull.image")
+
 //----
+
+Load("..\bld_tmp\interface0.sprite")
+	DeleteAllModules()
+	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
+	ExportBSpriteFFT("..\build_output\interface0.image")
+
 
 Load("..\bld_tmp\loading.sprite")
 	DeleteAllModules()

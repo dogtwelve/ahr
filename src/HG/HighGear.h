@@ -168,10 +168,10 @@ public:
 		/*gs_test_loading,
 		gs_test_view,
 		gs_test_view2*/
-	} e_m_gState;
+	} e_m_state;
 	
-	e_m_gState m_gState, m_gStateNext;
-	void setGameState(e_m_gState, bool bDrawL = false);
+	e_m_state m_state, m_stateNext;
+	void setGameState(e_m_state, bool bDrawL = false);
 
 	int m_loadingCounter;
 	int m_loadingLength;
@@ -186,16 +186,23 @@ public:
 	
 	int m_logoTimer;
 
-#define MAX_ACTOR	20
+	int m_kill;
+	int m_level;
+
+#define MAX_ACTOR	50
 #define	MAX_GAMESPRITE	20
 	void initActors();
 	int getEmptyActorIndex();
 	//for GAME_STATE_MAIN
 	CSprite **m_gameSprite;
-	CSprite *m_bg;
+	CSprite **m_bg;
+	CSprite *m_ui;
 	CSprite *m_pad;
 
 	CActor **m_actors;
+
+	int m_gameTime;
+	int m_gameState;
 };
 
 #endif
