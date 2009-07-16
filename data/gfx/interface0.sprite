@@ -5,15 +5,15 @@
     VERSION 0001
 
     // Images:  1
-    // Modules: 6
-    // Frames:  6
-    // Anims:   4
+    // Modules: 11
+    // Frames:  11
+    // Anims:   0
 
 ////////////////////////////////////////////////////////////////////////////////
 // Images...
 // <Image> := IMAGE [id] "file" [TRANSP transp_color]
 
-    IMAGE 0x0000 ".\MCbullet.bmp" TRANSP 0x00FF00FF // 0  size: 175 x 100  palettes: 1
+    IMAGE 0x0000 ".\interface_caption.png" TRANSP 0x00FF00FF // 0  size: 256 x 256  palettes: 1
 
 ////////////////////////////////////////////////////////////////////////////////
 // Modules...
@@ -28,12 +28,17 @@
 
     MODULES
     {
-        MD	0x1000	MD_IMAGE	0	6	18	30	32
-        MD	0x1001	MD_IMAGE	0	64	12	40	44
-        MD	0x1002	MD_IMAGE	0	120	8	49	50
-        MD	0x1004	MD_IMAGE	0	6	71	11	13
-        MD	0x1005	MD_IMAGE	0	21	71	11	13
-        MD	0x1006	MD_IMAGE	0	36	70	11	19
+        MD	0x1000	MD_IMAGE	0	3	95	82	17
+        MD	0x1001	MD_IMAGE	0	7	141	24	27
+        MD	0x1002	MD_IMAGE	0	36	142	15	26
+        MD	0x1003	MD_IMAGE	0	56	142	22	26
+        MD	0x1004	MD_IMAGE	0	81	141	20	27
+        MD	0x1005	MD_IMAGE	0	103	143	23	25
+        MD	0x1006	MD_IMAGE	0	127	140	24	28
+        MD	0x1007	MD_IMAGE	0	153	140	20	28
+        MD	0x1008	MD_IMAGE	0	8	168	22	28
+        MD	0x1009	MD_IMAGE	0	31	169	23	27
+        MD	0x100A	MD_IMAGE	0	57	169	21	27
     }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -46,69 +51,67 @@
     FRAME "" // Index = 0, FModules = 1
     {
         0x2000
-        FM	0x1000	-15	-20
+        FM	0x1000	-41	-8
     }
 
     FRAME "" // Index = 1, FModules = 1
     {
         0x2001
-        FM	0x1001	-20	-26
+        FM	0x1001	-8	-23
     }
 
     FRAME "" // Index = 2, FModules = 1
     {
         0x2002
-        FM	0x1002	-25	-30
+        FM	0x1002	-5	-22
     }
 
     FRAME "" // Index = 3, FModules = 1
     {
         0x2003
-        FM	0x1004	-5	-20
+        FM	0x1003	-11	-21
     }
 
     FRAME "" // Index = 4, FModules = 1
     {
         0x2004
-        FM	0x1005	-5	-20
+        FM	0x1004	-10	-23
     }
 
     FRAME "" // Index = 5, FModules = 1
     {
         0x2005
-        FM	0x1006	-5	-21
+        FM	0x1005	-9	-22
     }
 
-////////////////////////////////////////////////////////////////////////////////
-// Animations...
-// <Anim> := ANIM ["desc"] { id [<AF1> <AF2> ...] }
-// <AFi>  := AF frame_id time ox oy [FLAGS hex_flags] [+Flags]
-// Flags  := FLIP_X | FLIP_Y | ROT_90
-
-    ANIM "EXPLOSION" // Index = 0, AFrames = 3
+    FRAME "" // Index = 6, FModules = 1
     {
-        0x3000
-        AF	0x2000	3	0	0
-        AF	0x2001	2	0	0
-        AF	0x2002	2	0	0
+        0x2006
+        FM	0x1006	-10	-24
     }
 
-    ANIM "" // Index = 1, AFrames = 1
+    FRAME "" // Index = 7, FModules = 1
     {
-        0x3001
-        AF	0x2003	1	0	0
+        0x2007
+        FM	0x1007	-8	-23
     }
 
-    ANIM "" // Index = 2, AFrames = 1
+    FRAME "" // Index = 8, FModules = 1
     {
-        0x3002
-        AF	0x2004	1	0	0
+        0x2008
+        FM	0x1008	-9	-24
     }
 
-    ANIM "" // Index = 3, AFrames = 1
+    FRAME "" // Index = 9, FModules = 1
     {
-        0x3003
-        AF	0x2005	1	0	0
+        0x2009
+        FM	0x1009	-11	-23
+    }
+
+    FRAME "" // Index = 10, FModules = 1
+    {
+        0x200A
+        FM	0x100A	-9	-24
     }
 
     SPRITE_END

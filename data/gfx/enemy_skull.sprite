@@ -5,15 +5,15 @@
     VERSION 0001
 
     // Images:  1
-    // Modules: 1
-    // Frames:  1
-    // Anims:   0
+    // Modules: 2
+    // Frames:  2
+    // Anims:   1
 
 ////////////////////////////////////////////////////////////////////////////////
 // Images...
 // <Image> := IMAGE [id] "file" [TRANSP transp_color]
 
-    IMAGE 0x0000 ".\bg_floor.png" TRANSP 0x00FF00FF // 0  size: 320 x 161  palettes: 1
+    IMAGE 0x0000 "D:\workspace\iPhone\AHR\data\gfx\enemy_skull.png" TRANSP 0x00FF00FF // 0  size: 237 x 201  palettes: 1
 
 ////////////////////////////////////////////////////////////////////////////////
 // Modules...
@@ -28,7 +28,8 @@
 
     MODULES
     {
-        MD	0x1000	MD_IMAGE	0	0	0	160	161
+        MD	0x1000	MD_IMAGE	0	10	91	21	25
+        MD	0x1001	MD_IMAGE	0	95	93	21	23
     }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -38,11 +39,29 @@
 // <FMi>   := FM module_or_frame_id ox oy [FLAGS hex_flags] [+Flags]
 // Flags   := HYPER_FM | FLIP_X | FLIP_Y | ROT_90
 
-    FRAME "" // Index = 0, FModules = 2
+    FRAME "" // Index = 0, FModules = 1
     {
         0x2000
-        FM	0x1000	-160	-128
-        FM	0x1000	0	-128	+FLIP_X
+        FM	0x1000	-10	-24
+    }
+
+    FRAME "" // Index = 1, FModules = 1
+    {
+        0x2001
+        FM	0x1001	-10	-22
+    }
+
+////////////////////////////////////////////////////////////////////////////////
+// Animations...
+// <Anim> := ANIM ["desc"] { id [<AF1> <AF2> ...] }
+// <AFi>  := AF frame_id time ox oy [FLAGS hex_flags] [+Flags]
+// Flags  := FLIP_X | FLIP_Y | ROT_90
+
+    ANIM "" // Index = 0, AFrames = 2
+    {
+        0x3000
+        AF	0x2000	3	0	0
+        AF	0x2001	3	0	0
     }
 
     SPRITE_END
