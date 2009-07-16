@@ -530,15 +530,42 @@ void CHighGear::procMaingame()
 		//Update Touch
 		if (MAINCHAR)
 		{
+			if (touchZones->IsZoneReleased(ZONEID_PAD_LEFT))
+			{
+				if (m_keyRepeatValue & (1 << ZONEID_PAD_LEFT))
+				{
+					m_keyRepeatCounter = 0;
+				}
+			}
+			if (touchZones->IsZoneReleased(ZONEID_PAD_RIGHT))
+			{
+				if (m_keyRepeatValue & (1 << ZONEID_PAD_RIGHT))
+					m_keyRepeatCounter = 0;
+			}
+
+			m_keyRepeatValue = 0;
 			if (touchZones->IsZonePressed(ZONEID_PAD_LEFT))
 			{
-				MAINCHAR->move(-1);
+				m_keyRepeatValue |= (1 << ZONEID_PAD_LEFT);
+				//MAINCHAR->move(-1);
 			}
-			else if (touchZones->IsZonePressed(ZONEID_PAD_RIGHT))
+			if (touchZones->IsZonePressed(ZONEID_PAD_RIGHT))
 			{
-				MAINCHAR->move(1);
+				m_keyRepeatValue |= (1 << ZONEID_PAD_RIGHT);
+				//MAINCHAR->move(1);
 			}
-			else if (touchZones->IsZonePressed(ZONEID_PAD_FIRE))
+			
+			
+
+			if (m_keyRepeatValue != ((1 << ZONEID_PAD_LEFT) | (1 << ZONEID_PAD_RIGHT))
+				&& m_keyRepeatValue)
+			{
+				if (m_keyRepeatCounter != 1)
+					MAINCHAR->move(m_keyRepeatValue == (1 << ZONEID_PAD_LEFT) ? -1 : 1);
+				m_keyRepeatCounter++;
+			}
+
+			if (touchZones->IsZonePressed(ZONEID_PAD_FIRE))
 			{
 				if (MAINCHAR->canFire())
 				{
@@ -565,36 +592,6 @@ void CHighGear::procMaingame()
 					m_actors[i]->m_type = CActor::ACTOR_NONE;
 			}
 		}
-
-		////UPDATE COLLIDE
-		//for (int i = 0; i < MAX_ACTOR; i ++)
-		//{
-		//	if (m_actors[i])
-		//	{
-		//		//ÃÑ¾Ë!
-		//		if (m_actors[i]->m_type == CActor::ACTOR_MCBULLET)
-		//		{
-		//			for (int j = 0; j < MAX_ACTOR; j ++)
-		//			{
-		//				if (!m_actors[j]->isEnemy()) continue;
-
-		//				if (m_actors[j]->m_posX == m_actors[i]->m_posX && 
-		//					m_actors[j]->m_posY == m_actors[i]->m_posY)
-		//				{
-		//					m_actors[i]->m_state = CActor::ACTOR_STATE_DESTROYED;	//Bullet X
-		//					m_actors[j]->notifyState(CActor::ACTOR_STATE_DAMAGED, -1);	//Enemy
-
-		//					int index = getEmptyActorIndex();
-
-		//					if (index > -1)
-		//					{
-		//						m_actors[index]->init(CActor::ACTOR_BOOM, GAMESPRITE_MCBULLET, m_actors[j]->m_posX, m_actors[j]->m_posY);
-		//					}
-		//				}
-		//			}
-		//		}
-		//	}
-		//}
 		break;
 	}
 	

@@ -175,6 +175,8 @@ public:
 
 	int m_loadingCounter;
 	int m_loadingLength;
+	int m_keyRepeatCounter;
+	int m_keyRepeatValue;
 	bool m_bDrawLoading;
 	void procLoading();
 	void procMaingame();
