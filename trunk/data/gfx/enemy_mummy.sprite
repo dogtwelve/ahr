@@ -13,7 +13,7 @@
 // Images...
 // <Image> := IMAGE [id] "file" [TRANSP transp_color]
 
-    IMAGE 0x0000 ".\enemy_mummy.png" TRANSP 0x00FF00FF // 0  size: 193 x 198  palettes: 1
+    IMAGE 0x0000 ".\enemy_mummy.bmp" TRANSP 0x00FF00FF // 0  size: 130 x 194  palettes: 1
 
 ////////////////////////////////////////////////////////////////////////////////
 // Modules...
@@ -28,8 +28,8 @@
 
     MODULES
     {
-        MD	0x1000	MD_IMAGE	0	45	3	21	24
-        MD	0x1001	MD_IMAGE	0	9	38	21	23
+        MD	0x1000	MD_IMAGE	0	39	1	21	24
+        MD	0x1001	MD_IMAGE	0	3	36	21	23
     }
 
 ////////////////////////////////////////////////////////////////////////////////

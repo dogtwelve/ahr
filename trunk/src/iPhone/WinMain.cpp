@@ -691,7 +691,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLin
 				#ifdef USE_RENDER_INTO_TEXTURE										
 					bool renderingWithBlur = g_bIsBlurActivated;
 					//TEST
-					//if(renderingWithBlur && CHighGear::GetInstance()->m_gState != CHighGear::gs_ingame_menu)
+					//if(renderingWithBlur && CHighGear::GetInstance()->m_state != CHighGear::gs_ingame_menu)
 					if(renderingWithBlur)
 					{
 						g_sceneViewportW = viewportWidth;
@@ -811,7 +811,7 @@ LRESULT CALLBACK MainProc(HWND hWnd, UINT Message, WPARAM wParam, LPARAM lParam)
 
 #ifdef USE_TOUCH_SCREEN
 			//TEST
-			//if (Gapi.m_pHighGear->m_gState != CHighGear::gs_suspended)
+			//if (Gapi.m_pHighGear->m_state != CHighGear::gs_suspended)
 				touchZones->TouchPressed(0, x, y);
 #endif // USE_TOUCH_SCREEN
 
@@ -826,7 +826,7 @@ LRESULT CALLBACK MainProc(HWND hWnd, UINT Message, WPARAM wParam, LPARAM lParam)
 
 #ifdef USE_TOUCH_SCREEN
 			//TEST
-			//if (Gapi.m_pHighGear->m_gState != CHighGear::gs_suspended)
+			//if (Gapi.m_pHighGear->m_state != CHighGear::gs_suspended)
 				touchZones->TouchReleased(0, x, y);
 #endif // USE_TOUCH_SCREEN
 

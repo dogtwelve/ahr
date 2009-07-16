@@ -156,13 +156,13 @@ extern "C" void GameLoop()
 //	CHighGear* hg = CHighGear::GetInstance();
 //	
 //	if(s_bRecreateSoundEngineAfterInterrupt ||
-//	   (hg->m_gState == CHighGear::gs_menu && (MenuContainer::GetInstance()->canRecreateSoundEngine()) 
+//	   (hg->m_state == CHighGear::gs_menu && (MenuContainer::GetInstance()->canRecreateSoundEngine()) 
 //		&& !hg->m_AudioManager.m_soundWrap->m_bIsSoundAndMusicInitialized && !hg->m_nosound) )
 //	{		
 //		hg->m_AudioManager.initialize();		
 //		//restart the music that was stoped on interrupt
 //		
-//		if(hg->m_gState == CHighGear::gs_menu && !hg->m_nosound)
+//		if(hg->m_state == CHighGear::gs_menu && !hg->m_nosound)
 //		{
 //			hg->m_currentMusicIndex = MUSIC_MUSIC_M_MENU;
 //			//restart the music ... if an interrupt occurs when sound is enabled ( from OFF to ON)
@@ -249,7 +249,7 @@ extern "C" void GameLoop()
 	#ifdef USE_RENDER_INTO_TEXTURE							
 		//u32 screenBufferMixColor = 0xFFFFFFFF; // opaque
 		bool renderingWithBlur = g_bIsBlurActivated;
-		if(renderingWithBlur)// && CHighGear::GetInstance()->m_gState != CHighGear::gs_ingame_menu)
+		if(renderingWithBlur)// && CHighGear::GetInstance()->m_state != CHighGear::gs_ingame_menu)
 		{
 			g_sceneViewportW = viewportWidth;
 			g_sceneViewportH = viewportHeight;

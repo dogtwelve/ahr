@@ -438,11 +438,11 @@ void CTouchZones::updateCheatZones()
 	if (s_nCheatZoneID >= 0 && GETTIMEMS() - s_nCheatLastTimeInZone > k_CHEAT_TIMEMS)
 	{	
 		//mark the cheat activated
-//		if(hg->m_gState == CHighGear::gs_menu && MenuContainer::GetInstance()->getMenu() == MENU_MAIN_INDEX)
+//		if(hg->m_state == CHighGear::gs_menu && MenuContainer::GetInstance()->getMenu() == MENU_MAIN_INDEX)
 //		{
 //			s_nCheatID = k_CHEAT_UNLOCK_ALL + s_nCheatZoneID;
 //		}
-//		else if(hg->m_gState == CHighGear::gs_play)
+//		else if(hg->m_state == CHighGear::gs_play)
 //		{
 //			s_nCheatID = k_CHEAT_WIN_RACE + s_nCheatZoneID;
 //		}
@@ -496,11 +496,11 @@ void CTouchZones::updateCheatZones()
 						//if( GETTIMEMS()- s_nCheatLastTimeInZone > k_CHEAT_TIMEMS)
 						//{	
 						//	////mark the cheat activated
-						//	//if(hg->m_gState == CHighGear::gs_menu && MenuContainer::GetInstance()->getMenu() == MENU_MAIN_INDEX)
+						//	//if(hg->m_state == CHighGear::gs_menu && MenuContainer::GetInstance()->getMenu() == MENU_MAIN_INDEX)
 						//	//{
 						//	//	s_nCheatID = k_CHEAT_UNLOCK_ALL + s_nCheatZoneID;
 						//	//}
-						//	//else if(hg->m_gState == CHighGear::gs_play)
+						//	//else if(hg->m_state == CHighGear::gs_play)
 						//	//{
 						//	//	s_nCheatID = k_CHEAT_WIN_RACE + s_nCheatZoneID;
 						//	//}
@@ -623,7 +623,7 @@ void CTouchZones::drawActivatedCheat()
 {
 	CHighGear *hg = CHighGear::GetInstance();
 //	if(
-//		hg->m_gState == CHighGear::gs_menu && 
+//		hg->m_state == CHighGear::gs_menu && 
 //	   	MenuContainer::GetInstance()->getMenu() == MENU_MAIN_INDEX &&
 //		s_showCheatCounter > 0
 //	)
