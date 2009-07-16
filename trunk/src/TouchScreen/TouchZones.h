@@ -49,6 +49,7 @@ public:
 	void ClearLastZoneActivated();
 
 	bool IsZonePressed(unsigned char zoneId);
+	bool IsZoneReleased(unsigned char zoneId);
 
 	void SetListener(ITouchZonesListener* lst);
 	ITouchZonesListener* GetListener() { return listener; }

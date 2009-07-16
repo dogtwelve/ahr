@@ -1,6 +1,6 @@
  Engine
 
- Timestamp is 4a5ee420 (Thu Jul 16 17:26:08 2009)
+ Timestamp is 4a5f35fc (Thu Jul 16 23:15:24 2009)
 
  Preferred load address is 00400000
 
@@ -47,9 +47,9 @@
 
   Address         Publics by Value              Rva+Base       Lib:Object
 
- 0000:00000000       ___safe_se_handler_count   00000000     <absolute>
  0000:00000000       __except_list              00000000     <absolute>
  0000:00000000       ___safe_se_handler_table   00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_count   00000000     <absolute>
  0000:00000000       ___ImageBase               00400000     <linker-defined>
  0001:00000000       __enc$textbss$begin        00401000     <linker-defined>
  0001:00078822       __enc$textbss$end          00479822     <linker-defined>
@@ -174,6 +174,7 @@
  0002:0000cf60       ?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@ABV12@II@Z 00486f60 f i Util.obj
  0002:0000d080       ?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z 00487080 f i Util.obj
  0002:0000d110       ?replace@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@IIABV12@II@Z 00487110 f i Util.obj
+ 0002:0000d470       ?IsZoneReleased@CTouchZones@@QAE_NE@Z 00487470 f   TouchZones.obj
  0002:0000d550       ?find@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIPBDII@Z 00487550 f i Util.obj
  0002:0000d6b0       ?compare@?$char_traits@D@std@@SAHPBD0I@Z 004876b0 f i Util.obj
  0002:0000d710       ?find@?$char_traits@D@std@@SAPBDPBDIABD@Z 00487710 f i Util.obj
@@ -224,13 +225,17 @@
  0002:0000f3a0       ?Resize@@YAXHH@Z           004893a0 f   WinMain.obj
  0002:0000f530       ?PCDisplayUpdate@@YAXXZ    00489530 f   WinMain.obj
  0002:0000f580       _WinMain@16                00489580 f   WinMain.obj
+ 0002:0000fdc0       ?GetNextIntersectedZone@CTouchZones@@AAEFFFF@Z 00489dc0 f   TouchZones.obj
+ 0002:0000fec0       ??1CTouchZones@@UAE@XZ     00489ec0 f   TouchZones.obj
  0002:0000ffd0       ?Quit@CGapi@@QAEXXZ        00489fd0 f i WinMain.obj
  0002:00010020       ??_GLib3DGL@@QAEPAXI@Z     0048a020 f i WinMain.obj
  0002:00010090       ?MainProc@@YGJPAUHWND__@@IIJ@Z 0048a090 f   WinMain.obj
+ 0002:00010450       ?checkCheatZones@CTouchZones@@QAEX_N@Z 0048a450 f   TouchZones.obj
  0002:00010530       ?GRGetTickCount@@YAKXZ     0048a530 f   WinMain.obj
  0002:00010590       ?GRGetTickCountPeriod@@YAKXZ 0048a590 f   WinMain.obj
  0002:000105d0       ?debug_out@@YAXPBDZZ       0048a5d0 f   WinMain.obj
  0002:000106a0       ?InitOpenGLESWindow@@YAHXZ 0048a6a0 f   WinMain.obj
+ 0002:000109b0       ??0?$CSingletonNoAutoConstruct@$09VCTouchZones@@@@QAE@XZ 0048a9b0 f i TouchZones.obj
  0002:00010a70       ?CloseOpenGLESWindow@@YAXXZ 0048aa70 f   WinMain.obj
  0002:00010b50       ??_GTextureFBO@@QAEPAXI@Z  0048ab50 f i WinMain.obj
  0002:00010bc0       ?OGLRefresh3D@@YAXXZ       0048abc0 f   WinMain.obj
@@ -259,6 +264,7 @@
  0002:00011de0       ?Clear@CBoard3D@Lib3D@@QAEXXZ 0048bde0 f   Board3D.obj
  0002:00011e70       ?Clear@CBoard3D@Lib3D@@QAEXG@Z 0048be70 f   Board3D.obj
  0002:00011f00       ?DrawPolyGT3@CBoard3D@Lib3D@@AAEXPBVTVxuv@2@00@Z 0048bf00 f   Board3D.obj
+ 0002:00012920       ?DrawZones@CTouchZones@@QAEXAAVCLib2D@@@Z 0048c920 f   TouchZones.obj
  0002:00012ba0       ??0LineParamNoZ@Lib3D@@QAE@XZ 0048cba0 f i Board3D.obj
  0002:00012be0       ??0LineParamNoZ@Lib3D@@QAE@HHHH@Z 0048cbe0 f i Board3D.obj
  0002:00012c50       ?Set@LineParamNoZ@Lib3D@@QAEXHHHH@Z 0048cc50 f i Board3D.obj
@@ -267,6 +273,7 @@
  0002:00012e00       ?DivideShift16@CBoard3D@Lib3D@@QBEHHH@Z 0048ce00 f i Board3D.obj
  0002:00012e60       ?LastLine@@YAHPBVTVxuv@Lib3D@@H@Z 0048ce60 f i Board3D.obj
  0002:00012ec0       ?DrawPolyGT3Additive@CBoard3D@Lib3D@@AAEXPBVTVxuv@2@00@Z 0048cec0 f   Board3D.obj
+ 0002:000138e0       ?updateCheatZones@CTouchZones@@QAEXXZ 0048d8e0 f   TouchZones.obj
  0002:00013b60       ?DrawPolyGT3AdditiveAlpha@CBoard3D@Lib3D@@AAEXPBVTVxuv@2@00@Z 0048db60 f   Board3D.obj
  0002:00014800       ?DrawPolyGT3AlphaMask@CBoard3D@Lib3D@@AAEXPBVTVxuv@2@00@Z 0048e800 f   Board3D.obj
  0002:000154a0       ?DrawPolyGT3Shadow@CBoard3D@Lib3D@@AAEXPBVTVxuv@2@00@Z 0048f4a0 f   Board3D.obj
@@ -332,8 +339,8 @@
  0002:0001ded0       ??0TFace@Lib3D@@QAE@PAVTVertex@1@@Z 00497ed0 f   Face.obj
  0002:0001dfc0       ??0COTObject@Lib3D@@IAE@XZ 00497fc0 f i Face.obj
  0002:0001e010       ?GetGLTextureName@COTObject@Lib3D@@UAEIXZ 00498010 f i Face.obj
- 0002:0001e050       ??_ECOTObject@Lib3D@@MAEPAXI@Z 00498050 f i Face.obj
  0002:0001e050       ??_GCOTObject@Lib3D@@MAEPAXI@Z 00498050 f i Face.obj
+ 0002:0001e050       ??_ECOTObject@Lib3D@@MAEPAXI@Z 00498050 f i Face.obj
  0002:0001e0c0       ??1COTObject@Lib3D@@MAE@XZ 004980c0 f i Face.obj
  0002:0001e110       ??_GTFace@Lib3D@@UAEPAXI@Z 00498110 f i Face.obj
  0002:0001e180       ??1TFace@Lib3D@@UAE@XZ     00498180 f i Face.obj
@@ -440,12 +447,12 @@
  0002:00023ab0       ??0length_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z 0049dab0 f i Keyframed.obj
  0002:00023b20       ??0logic_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z 0049db20 f i Keyframed.obj
  0002:00023be0       ?what@logic_error@std@@UBEPBDXZ 0049dbe0 f i Keyframed.obj
- 0002:00023c40       ??_Elogic_error@std@@UAEPAXI@Z 0049dc40 f i Keyframed.obj
  0002:00023c40       ??_Glogic_error@std@@UAEPAXI@Z 0049dc40 f i Keyframed.obj
+ 0002:00023c40       ??_Elogic_error@std@@UAEPAXI@Z 0049dc40 f i Keyframed.obj
  0002:00023cb0       ??1logic_error@std@@UAE@XZ 0049dcb0 f i Keyframed.obj
  0002:00023d20       ??1length_error@std@@UAE@XZ 0049dd20 f i Keyframed.obj
- 0002:00023d80       ??_Glength_error@std@@UAEPAXI@Z 0049dd80 f i Keyframed.obj
  0002:00023d80       ??_Elength_error@std@@UAEPAXI@Z 0049dd80 f i Keyframed.obj
+ 0002:00023d80       ??_Glength_error@std@@UAEPAXI@Z 0049dd80 f i Keyframed.obj
  0002:00023df0       ??0logic_error@std@@QAE@ABV01@@Z 0049ddf0 f i Keyframed.obj
  0002:00023ec0       ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z 0049dec0 f i Keyframed.obj
  0002:00023f90       ??0?$_Container_base_aux_alloc_empty@V?$allocator@VVector4s@@@std@@@std@@IAE@V?$allocator@VVector4s@@@1@@Z 0049df90 f i Keyframed.obj
@@ -618,8 +625,8 @@
  0002:0002f650       ?AnimationPlay@CGLMesh@Lib3D@@QAEXHHH@Z 004a9650 f   Mesh.obj
  0002:0002f950       ?AnimationPlay3@CGLMesh@Lib3D@@QAEXHHHHHH@Z 004a9950 f   Mesh.obj
  0002:0002fb40       ??0CBasicMesh@Lib3D@@QAE@PBD0H@Z 004a9b40 f   Mesh.obj
- 0002:000300f0       ??_ECBasicMesh@Lib3D@@UAEPAXI@Z 004aa0f0 f i Mesh.obj
  0002:000300f0       ??_GCBasicMesh@Lib3D@@UAEPAXI@Z 004aa0f0 f i Mesh.obj
+ 0002:000300f0       ??_ECBasicMesh@Lib3D@@UAEPAXI@Z 004aa0f0 f i Mesh.obj
  0002:00030160       ??0CBasicMesh@Lib3D@@QAE@PBDPAPBDHH@Z 004aa160 f   Mesh.obj
  0002:000306b0       ??1CBasicMesh@Lib3D@@UAE@XZ 004aa6b0 f   Mesh.obj
  0002:000307f0       ?SetUV@CBasicMesh@Lib3D@@QAEXH@Z 004aa7f0 f   Mesh.obj
@@ -796,8 +803,8 @@
  0002:00043f90       ??$MixColor16@GGH@CLib2D@@SAHGGH@Z 004bdf90 f i aaline.obj
  0002:00044040       ??$FastColorAddAlphaHD@GGH@CLib2D@@SAHGGH@Z 004be040 f i aaline.obj
  0002:00044120       ??0CModule@@QAE@HHHHH@Z    004be120 f   AuroraSprite.obj
- 0002:000441f0       ??_ECModule@@UAEPAXI@Z     004be1f0 f i AuroraSprite.obj
  0002:000441f0       ??_GCModule@@UAEPAXI@Z     004be1f0 f i AuroraSprite.obj
+ 0002:000441f0       ??_ECModule@@UAEPAXI@Z     004be1f0 f i AuroraSprite.obj
  0002:00044260       ??1CModule@@UAE@XZ         004be260 f   AuroraSprite.obj
  0002:000442a0       ??0CAuroraPalette@@QAE@F@Z 004be2a0 f   AuroraSprite.obj
  0002:00044350       ??_GCAuroraPalette@@UAEPAXI@Z 004be350 f i AuroraSprite.obj
@@ -810,6 +817,7 @@
  0002:000447b0       ?initKerning@CSprite@@IAEX_N@Z 004be7b0 f   AuroraSprite.obj
  0002:00044800       ?GetKerningSpacing@CSprite@@IAEHG@Z 004be800 f   AuroraSprite.obj
  0002:000448f0       ??0CSprite@@QAE@PBDH@Z     004be8f0 f   AuroraSprite.obj
+ 0002:000460a0       ?Update@CTouchZones@@QAEXXZ 004c00a0 f   TouchZones.obj
  0002:00046690       ??_GCSprite@@UAEPAXI@Z     004c0690 f i AuroraSprite.obj
  0002:00046690       ??_ECSprite@@UAEPAXI@Z     004c0690 f i AuroraSprite.obj
  0002:00046700       ??1CSprite@@UAE@XZ         004c0700 f   AuroraSprite.obj
@@ -947,8 +955,8 @@
  0002:0004e6b0       ?convert_to_grayscale@@YAXAAUImage@@@Z 004c86b0 f   Image.obj
  0002:0004e7e0       ??$MixColor@GGH@CLib2D@@SAHGGH@Z 004c87e0 f i Image.obj
  0002:0004e890       ??0CLib2D@@QAE@PAGGGABVCLib3D@Lib3D@@@Z 004c8890 f   Lib2D.obj
- 0002:0004e9e0       ??_ECLib2D@@UAEPAXI@Z      004c89e0 f i Lib2D.obj
  0002:0004e9e0       ??_GCLib2D@@UAEPAXI@Z      004c89e0 f i Lib2D.obj
+ 0002:0004e9e0       ??_ECLib2D@@UAEPAXI@Z      004c89e0 f i Lib2D.obj
  0002:0004ea50       ??1?$stack@VARect@@V?$deque@VARect@@V?$allocator@VARect@@@std@@@std@@@std@@QAE@XZ 004c8a50 f i Lib2D.obj
  0002:0004eaa0       ?DarkenScreen@CLib2D@@QAEXXZ 004c8aa0 f   Lib2D.obj
  0002:0004eb50       ??1CLib2D@@UAE@XZ          004c8b50 f   Lib2D.obj
@@ -1189,8 +1197,8 @@
  0002:0005bef0       ?IntToStr@@YAXHPAG@Z       004d5ef0 f   FPSCounter.obj
  0002:0005c020       ?Draw@CFPSCounter@@QAEXHHAAVCLib2D@@H@Z 004d6020 f   FPSCounter.obj
  0002:0005c230       ??0CFunctor@@QAE@XZ        004d6230 f   Functor.obj
- 0002:0005c280       ??_ECFunctor@@UAEPAXI@Z    004d6280 f i Functor.obj
  0002:0005c280       ??_GCFunctor@@UAEPAXI@Z    004d6280 f i Functor.obj
+ 0002:0005c280       ??_ECFunctor@@UAEPAXI@Z    004d6280 f i Functor.obj
  0002:0005c2f0       ??1CFunctor@@UAE@XZ        004d62f0 f   Functor.obj
  0002:0005c330       ??0CHighGear@@QAE@AAVCGapi@@@Z 004d6330 f   HighGear.obj
  0002:0005c5d0       ??_GCHighGear@@UAEPAXI@Z   004d65d0 f i HighGear.obj
@@ -1293,8 +1301,8 @@
  0002:00062fe0       ?Draw@CShadow@Lib3D@@QAEXAAVCLib3D@2@PBVVector4s@@PAV4@_NPAVCMatrix44@2@4@Z 004dcfe0 f   shadow.obj
  0002:00063690       ?DrawCopterShadow@CShadow@Lib3D@@QAEXAAVCLib3D@2@PBVVector4s@@PAV4@@Z 004dd690 f   shadow.obj
  0002:000636d0       ??0CSingletonManager@@IAE@XZ 004dd6d0 f   Singleton.obj
- 0002:000637a0       ??_GCSingletonManager@@UAEPAXI@Z 004dd7a0 f i Singleton.obj
  0002:000637a0       ??_ECSingletonManager@@UAEPAXI@Z 004dd7a0 f i Singleton.obj
+ 0002:000637a0       ??_GCSingletonManager@@UAEPAXI@Z 004dd7a0 f i Singleton.obj
  0002:00063810       ??1CSingletonManager@@UAE@XZ 004dd810 f   Singleton.obj
  0002:00063940       ?Create@CSingletonManager@@SAXXZ 004dd940 f   Singleton.obj
  0002:00063a30       ?RegisterSingleton@CSingletonManager@@SAXPAVISingleton@@H@Z 004dda30 f   Singleton.obj
@@ -1349,8 +1357,8 @@
  0002:00066160       ?Flush@CStreamBuffer@@UAEXXZ 004e0160 f i File_iPhone.obj
  0002:000661a0       ?GetBuffer@CStreamBuffer@@UAEPAXXZ 004e01a0 f i File_iPhone.obj
  0002:000661e0       ?Tell@CStreamBuffer@@UAEHXZ 004e01e0 f i File_iPhone.obj
- 0002:00066220       ??_GCStreamBuffer@@UAEPAXI@Z 004e0220 f i File_iPhone.obj
  0002:00066220       ??_ECStreamBuffer@@UAEPAXI@Z 004e0220 f i File_iPhone.obj
+ 0002:00066220       ??_GCStreamBuffer@@UAEPAXI@Z 004e0220 f i File_iPhone.obj
  0002:00066290       ??1CStreamBuffer@@UAE@XZ   004e0290 f   File_iPhone.obj
  0002:00066300       ?SpecificRead@CStreamBuffer@@UAEIPAXI@Z 004e0300 f   File_iPhone.obj
  0002:00066390       ?SpecificWrite@CStreamBuffer@@UAEIPBXI@Z 004e0390 f   File_iPhone.obj
@@ -1389,8 +1397,8 @@
  0002:00069130       ?bindFBO@TextureFBO@@QAEXXZ 004e3130 f   TextureFBO.obj
  0002:000691f0       ?LinkOES2EXT@@YAXXZ        004e31f0 f   GLES_TO_WGL.obj
  0002:00069400       ??0Comms@@QAE@XZ           004e3400 f   Comms.obj
- 0002:000695d0       ??_EComms@@UAEPAXI@Z       004e35d0 f i Comms.obj
  0002:000695d0       ??_GComms@@UAEPAXI@Z       004e35d0 f i Comms.obj
+ 0002:000695d0       ??_EComms@@UAEPAXI@Z       004e35d0 f i Comms.obj
  0002:00069640       ?update@Comms@@UAE_NXZ     004e3640 f   Comms.obj
  0002:00069680       ?DiscoverServers@Comms@@UAE_NXZ 004e3680 f   Comms.obj
  0002:000696c0       ?DiscoveryFinished@Comms@@UAE_NXZ 004e36c0 f   Comms.obj
@@ -1551,8 +1559,8 @@
  0002:00075970       ?MusicFreeXTM@CSoundWrap@@QAEXXZ 004ef970 f   SoundWrap.obj
  0002:000759b0       ?MusicFreeXM@CSoundWrap@@QAEXXZ 004ef9b0 f   SoundWrap.obj
  0002:000759f0       ??0CTouchZones@@QAE@XZ     004ef9f0 f   TouchZones.obj
- 0002:00075b80       ??_GCTouchZones@@UAEPAXI@Z 004efb80 f i TouchZones.obj
  0002:00075b80       ??_ECTouchZones@@UAEPAXI@Z 004efb80 f i TouchZones.obj
+ 0002:00075b80       ??_GCTouchZones@@UAEPAXI@Z 004efb80 f i TouchZones.obj
  0002:00075bf0       ?AddZone@CTouchZones@@QAEFEFFFF@Z 004efbf0 f   TouchZones.obj
  0002:00075d50       ?AddZoneWithMoveDetect@CTouchZones@@QAEFEFFFF@Z 004efd50 f   TouchZones.obj
  0002:00075e00       ?ClearZones@CTouchZones@@QAEXXZ 004efe00 f   TouchZones.obj
@@ -1560,28 +1568,21 @@
  0002:00075f30       ?SetListener@CTouchZones@@QAEXPAVITouchZonesListener@@@Z 004eff30 f   TouchZones.obj
  0002:00075f80       ?WasZoneActivated@CTouchZones@@QAE_NE@Z 004eff80 f   TouchZones.obj
  0002:00075fd0       ?IsZonePressed@CTouchZones@@QAE_NE@Z 004effd0 f   TouchZones.obj
- 0002:00076080       ?ClearLastZoneActivated@CTouchZones@@QAEXXZ 004f0080 f   TouchZones.obj
- 0002:000760d0       ?IsZoneIntersected@CTouchZones@@AAE_NEFF@Z 004f00d0 f   TouchZones.obj
- 0002:000761b0       ?GetNextIntersectedZone@CTouchZones@@AAEFFFF@Z 004f01b0 f   TouchZones.obj
- 0002:000762e0       ?TouchPressed@CTouchZones@@QAEXEFF@Z 004f02e0 f   TouchZones.obj
- 0002:000763a0       ?TouchMoved@CTouchZones@@QAEXEFF@Z 004f03a0 f   TouchZones.obj
- 0002:00076460       ?TouchReleased@CTouchZones@@QAEXEFF@Z 004f0460 f   TouchZones.obj
- 0002:00076520       ?Update@CTouchZones@@QAEXXZ 004f0520 f   TouchZones.obj
- 0002:00076bb0       ?ForceReleaseZones@CTouchZones@@QAEX_N@Z 004f0bb0 f   TouchZones.obj
- 0002:00076cd0       ?DrawZones@CTouchZones@@QAEXAAVCLib2D@@@Z 004f0cd0 f   TouchZones.obj
- 0002:00076f70       ??1CTouchZones@@UAE@XZ     004f0f70 f   TouchZones.obj
- 0002:000770b0       ?setCheatName@CTouchZones@@SAXXZ 004f10b0 f   TouchZones.obj
- 0002:00077120       ?updateCheatZones@CTouchZones@@QAEXXZ 004f1120 f   TouchZones.obj
- 0002:00077340       ?checkCheatZones@CTouchZones@@QAEX_N@Z 004f1340 f   TouchZones.obj
- 0002:000773e0       ?drawActivatedCheat@CTouchZones@@QAEXXZ 004f13e0 f   TouchZones.obj
- 0002:00077430       ??0?$CSingleton@$09VCTouchZones@@@@QAE@XZ 004f1430 f i TouchZones.obj
- 0002:00077490       ??1?$CSingleton@$09VCTouchZones@@@@UAE@XZ 004f1490 f i TouchZones.obj
- 0002:000774f0       ??1?$CSingletonNoAutoConstruct@$09VCTouchZones@@@@UAE@XZ 004f14f0 f i TouchZones.obj
- 0002:00077550       ??_E?$CSingleton@$09VCTouchZones@@@@UAEPAXI@Z 004f1550 f i TouchZones.obj
- 0002:00077550       ??_G?$CSingleton@$09VCTouchZones@@@@UAEPAXI@Z 004f1550 f i TouchZones.obj
- 0002:000775c0       ??_E?$CSingletonNoAutoConstruct@$09VCTouchZones@@@@UAEPAXI@Z 004f15c0 f i TouchZones.obj
- 0002:000775c0       ??_G?$CSingletonNoAutoConstruct@$09VCTouchZones@@@@UAEPAXI@Z 004f15c0 f i TouchZones.obj
- 0002:00077630       ??0?$CSingletonNoAutoConstruct@$09VCTouchZones@@@@QAE@XZ 004f1630 f i TouchZones.obj
+ 0002:000760d0       ?ClearLastZoneActivated@CTouchZones@@QAEXXZ 004f00d0 f   TouchZones.obj
+ 0002:000761b0       ?IsZoneIntersected@CTouchZones@@AAE_NEFF@Z 004f01b0 f   TouchZones.obj
+ 0002:000763a0       ?TouchPressed@CTouchZones@@QAEXEFF@Z 004f03a0 f   TouchZones.obj
+ 0002:00076460       ?TouchMoved@CTouchZones@@QAEXEFF@Z 004f0460 f   TouchZones.obj
+ 0002:00076520       ?TouchReleased@CTouchZones@@QAEXEFF@Z 004f0520 f   TouchZones.obj
+ 0002:00076cd0       ?ForceReleaseZones@CTouchZones@@QAEX_N@Z 004f0cd0 f   TouchZones.obj
+ 0002:00077120       ?setCheatName@CTouchZones@@SAXXZ 004f1120 f   TouchZones.obj
+ 0002:00077430       ?drawActivatedCheat@CTouchZones@@QAEXXZ 004f1430 f   TouchZones.obj
+ 0002:00077490       ??0?$CSingleton@$09VCTouchZones@@@@QAE@XZ 004f1490 f i TouchZones.obj
+ 0002:000774f0       ??1?$CSingleton@$09VCTouchZones@@@@UAE@XZ 004f14f0 f i TouchZones.obj
+ 0002:00077550       ??1?$CSingletonNoAutoConstruct@$09VCTouchZones@@@@UAE@XZ 004f1550 f i TouchZones.obj
+ 0002:000775c0       ??_E?$CSingleton@$09VCTouchZones@@@@UAEPAXI@Z 004f15c0 f i TouchZones.obj
+ 0002:000775c0       ??_G?$CSingleton@$09VCTouchZones@@@@UAEPAXI@Z 004f15c0 f i TouchZones.obj
+ 0002:00077630       ??_G?$CSingletonNoAutoConstruct@$09VCTouchZones@@@@UAEPAXI@Z 004f1630 f i TouchZones.obj
+ 0002:00077630       ??_E?$CSingletonNoAutoConstruct@$09VCTouchZones@@@@UAEPAXI@Z 004f1630 f i TouchZones.obj
  0002:000776f0       ??0Lib3DGL@@QAE@XZ         004f16f0 f   Lib3DGL.obj
  0002:00077780       ??1Lib3DGL@@QAE@XZ         004f1780 f   Lib3DGL.obj
  0002:000777c0       ?fillRect@Lib3DGL@@QAEXHHHHI@Z 004f17c0 f   Lib3DGL.obj
@@ -1763,8 +1764,8 @@
  0002:00081810       ??0CPVRTResourceFile@@QAE@PBD@Z 004fb810 f   OGLESTools:PVRTResourceFile.obj
  0002:00081990       ??1CPVRTResourceFile@@UAE@XZ 004fb990 f   OGLESTools:PVRTResourceFile.obj
  0002:000819d0       ??0CPVRTMemoryFileSystem@@QAE@PBDPBXI_N@Z 004fb9d0 f   OGLESTools:PVRTResourceFile.obj
- 0002:00081a00       ??_ECPVRTResourceFile@@UAEPAXI@Z 004fba00 f i OGLESTools:PVRTResourceFile.obj
  0002:00081a00       ??_GCPVRTResourceFile@@UAEPAXI@Z 004fba00 f i OGLESTools:PVRTResourceFile.obj
+ 0002:00081a00       ??_ECPVRTResourceFile@@UAEPAXI@Z 004fba00 f i OGLESTools:PVRTResourceFile.obj
  0002:00081a60       ?PVRTTextureLoadTiled@@YAXQAEIIQBEIII_N@Z 004fba60 f   OGLESTools:PVRTTexture.obj
  0002:00081b70       ?PVRTTextureCreate@@YAPAUPVR_Header_Texture_TAG@@IIIII_N@Z 004fbb70 f   OGLESTools:PVRTTexture.obj
  0002:00081be0       ??0string@PVRT@@QAE@XZ     004fbbe0 f   OGLESTools:PVRTString.obj
@@ -1933,8 +1934,8 @@
  0002:000866d0       __CxxThrowException@8      005006d0 f   LIBCMTD:throw.obj
  0002:00086740       ?name@type_info@@QBEPBDPAU__type_info_node@@@Z 00500740 f   LIBCMTD:typinfo.obj
  0002:00086770       ??1type_info@@UAE@XZ       00500770 f   LIBCMTD:typinfo.obj
- 0002:000867a0       ??_Gtype_info@@UAEPAXI@Z   005007a0 f i LIBCMTD:typinfo.obj
  0002:000867a0       ??_Etype_info@@UAEPAXI@Z   005007a0 f i LIBCMTD:typinfo.obj
+ 0002:000867a0       ??_Gtype_info@@UAEPAXI@Z   005007a0 f i LIBCMTD:typinfo.obj
  0002:000867e0       ?_name_internal_method@type_info@@QBEPBDPAU__type_info_node@@@Z 005007e0 f   LIBCMTD:typinfo.obj
  0002:00086810       ?_type_info_dtor_internal_method@type_info@@QAEXXZ 00500810 f   LIBCMTD:typinfo.obj
  0002:00086830       ??8type_info@@QBE_NABV0@@Z 00500830 f   LIBCMTD:typinfo.obj
@@ -1958,8 +1959,8 @@
  0002:00086d50       ??0bad_cast@std@@QAE@ABV01@@Z 00500d50 f   LIBCMTD:stdexcpt.obj
  0002:00086d80       ??1bad_cast@std@@UAE@XZ    00500d80 f   LIBCMTD:stdexcpt.obj
  0002:00086db0       ??0bad_typeid@std@@QAE@PBD@Z 00500db0 f   LIBCMTD:stdexcpt.obj
- 0002:00086de0       ??_Gbad_typeid@std@@UAEPAXI@Z 00500de0 f i LIBCMTD:stdexcpt.obj
  0002:00086de0       ??_Ebad_typeid@std@@UAEPAXI@Z 00500de0 f i LIBCMTD:stdexcpt.obj
+ 0002:00086de0       ??_Gbad_typeid@std@@UAEPAXI@Z 00500de0 f i LIBCMTD:stdexcpt.obj
  0002:00086e20       ??0bad_typeid@std@@QAE@ABV01@@Z 00500e20 f   LIBCMTD:stdexcpt.obj
  0002:00086e50       ??1bad_typeid@std@@UAE@XZ  00500e50 f   LIBCMTD:stdexcpt.obj
  0002:00086e80       ??0__non_rtti_object@std@@QAE@PBD@Z 00500e80 f   LIBCMTD:stdexcpt.obj
@@ -2088,8 +2089,8 @@
  0002:0008ec6d       __abnormal_termination     00508c6d f   LIBCMTD:exsup.obj
  0002:0008ec90       __NLG_Notify1              00508c90 f   LIBCMTD:exsup.obj
  0002:0008ec99       __NLG_Notify               00508c99 f   LIBCMTD:exsup.obj
- 0002:0008ecb0       __NLG_Dispatch             00508cb0     LIBCMTD:exsup.obj
  0002:0008ecb0       __NLG_Dispatch2            00508cb0     LIBCMTD:exsup.obj
+ 0002:0008ecb0       __NLG_Dispatch             00508cb0     LIBCMTD:exsup.obj
  0002:0008ecb8       __NLG_Call                 00508cb8 f   LIBCMTD:exsup.obj
  0002:0008ecba       __NLG_Return2              00508cba     LIBCMTD:exsup.obj
  0002:0008ed10       __assert                   00508d10 f   LIBCMTD:assert.obj
@@ -2423,8 +2424,8 @@
  0002:000ae4d0       __scwprintf_p              005284d0 f   LIBCMTD:swprintf.obj
  0002:000ae500       __scwprintf_l              00528500 f   LIBCMTD:swprintf.obj
  0002:000ae530       __scwprintf_p_l            00528530 f   LIBCMTD:swprintf.obj
- 0002:000ae560       __alloca_probe             00528560     LIBCMTD:chkstk.obj
  0002:000ae560       __chkstk                   00528560 f   LIBCMTD:chkstk.obj
+ 0002:000ae560       __alloca_probe             00528560     LIBCMTD:chkstk.obj
  0002:000ae5a0       __input_l                  005285a0 f   LIBCMTD:input.obj
  0002:000b03f0       __INTRN_LOCALE_CONV        0052a3f0 f i LIBCMTD:input.obj
  0002:000b0560       __input_s_l                0052a560 f   LIBCMTD:inputs.obj
@@ -3099,8 +3100,8 @@
  0002:000f5660       ?clear@CallStack@@QAEXXZ   0056f660 f   vldmt:vldutil.obj
  0002:000f56a0       ?push_back@CallStack@@QAEXK@Z 0056f6a0 f   vldmt:vldutil.obj
  0002:000f5800       ?size@CallStack@@QAEKXZ    0056f800 f   vldmt:vldutil.obj
- 0002:000f5815       __strdup                   0056f815 f   LIBCMT:strdup.obj
  0002:000f5815       _strdup                    0056f815 f   LIBCMT:strdup.obj
+ 0002:000f5815       __strdup                   0056f815 f   LIBCMT:strdup.obj
  0002:000f587f       _fputs                     0056f87f f   LIBCMT:fputs.obj
  0002:000f59e0       _strncpy                   0056f9e0 f   LIBCMT:strncpy.obj
  0002:000f5b4d       __vsnprintf_l              0056fb4d f   LIBCMT:vsnprint.obj

@@ -169,6 +169,19 @@ bool CTouchZones::IsZonePressed(unsigned char zoneId)
 	return false;
 }
 
+bool CTouchZones::IsZoneReleased(unsigned char zoneId)
+{
+	for (int i=0; i<ZonesNo; i++)
+	{
+		int z = ZONE_ID(i) & ZONE_ID_MASK;
+
+		if (z == zoneId && pressedZones[i] == ZONE_NOT_PRESSED)
+			return true;
+	}
+
+	return false;
+}
+
 void CTouchZones::ClearLastZoneActivated()
 {
 	LastActivatedZoneId = -1;
