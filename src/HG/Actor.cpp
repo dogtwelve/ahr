@@ -5,6 +5,17 @@
 class CLib2D;
 class CHighGear;
 
+const int arrEnemyData[MAX_ENEMY][3]	=
+{
+	//speed, hp, score
+	{ 10, 10, 0 },	//mummy
+	{ 3, 8, 0, },	//vampire
+	{ 7, 4, 0 }		//skull
+};
+
+#define ENEMY_DATA_INDEX_SPEED	0
+#define ENEMY_DATA_INDEX_HP		1
+#define ENEMY_DATA_INDEX_SCORE	2
 CActor::CActor(CHighGear *p)
 {
 	m_type = ACTOR_NONE;
@@ -23,8 +34,11 @@ void CActor::init(int type, CSprite* gameSpr, int x, int y)
 
 	m_posX = x;
 	m_posY = y;
-	//init sprite
 	
+	m_speed = arrEnemyData[m_type - ACTOR_MUMMY][ENEMY_DATA_INDEX_SPEED];
+	m_hp = arrEnemyData[m_type - ACTOR_MUMMY][ENEMY_DATA_INDEX_HP];
+	m_score = arrEnemyData[m_type - ACTOR_MUMMY][ENEMY_DATA_INDEX_SCORE];
+
 	m_VelocityCounter = 0;
 
 	switch (type)
@@ -60,10 +74,17 @@ void CActor::notifyState(int state, int param1)
 		case ACTOR_SKULL:
 			if (m_state == ACTOR_STATE_DAMAGED)
 			{
-				//hp--;
-				//if (hp < 0)
-				//gameSpr = boom
-				m_state = ACTOR_STATE_DESTROYED;
+				m_hp --;
+				if (m_hp <= 0)
+				{
+					m_state = ACTOR_STATE_DESTROYED;
+					g_pGame->m_kill ++;
+				}
+				else
+				{
+					if (m_posY > 0) m_posY --;
+					m_state = ACTOR_STATE_IDLE;
+				}
 			}
 			break;
 		case ACTOR_MC:
@@ -115,7 +136,8 @@ void CActor::update()
 			if (g_pGame->m_actors[i] == NULL) continue;
 			
 			if (
-				( g_pGame->m_actors[i]->m_type == ACTOR_MCBULLET || 
+				(	(g_pGame->m_actors[i]->m_type == ACTOR_MCBULLET && g_pGame->m_actors[i]->m_state != ACTOR_STATE_DESTROYED)
+					|| 
 					(g_pGame->m_actors[i]->m_type == ACTOR_MC && g_pGame->m_actors[i]->m_state != ACTOR_STATE_DAMAGED)
 				) &&
 				g_pGame->m_actors[i]->m_posX == m_posX && 
@@ -143,13 +165,15 @@ void CActor::update()
 		}
 		if (m_state == ACTOR_STATE_IDLE)
 		{
-			if (++m_VelocityCounter > 5)
+			//int v = arrEnemyData[m_type - ACTOR_MUMMY][ENEMY_DATA_INDEX_SPEED];
+			if (++m_VelocityCounter > m_speed)
 			{
 				m_VelocityCounter = 0;
 
 				if (++ m_posY >= LEVEL_UNIT_HEIGHT)
 				{
-					//Do some penalty
+					//Do some penalty to MC
+					if (g_pGame->m_village > 0) g_pGame->m_village --;
 					m_state = ACTOR_STATE_DESTROYED;
 				}
 			}
@@ -222,6 +246,21 @@ void CActor::draw(CLib2D g)
 	int rX = LEVEL_X_CENTER - (tempW >> 1) + m_posX * tempW / (LEVEL_UNIT_WIDTH-1);
 	spr->DrawAFrame(g, rX, rY, m_CurrentAnim, m_CurrentAFrame);
 	updateSprite();
+
+	if (this->isEnemy() && m_state != ACTOR_STATE_DESTROYED)
+	{
+		g.DrawRect(rX - (ENEMY_HP_BAR_WIDTH >> 1), rY + ENEMY_HP_BAR_OFFSET_Y, 
+			ENEMY_HP_BAR_WIDTH, ENEMY_HP_BAR_HEIGHT,
+			ENEMY_HP_BAR_COLOR_EMPTY, ENEMY_HP_BAR_COLOR_BORDER);
+
+		if (m_hp > 0)
+		{
+			g.DrawRect(rX - (ENEMY_HP_BAR_WIDTH >> 1) + 1, rY + ENEMY_HP_BAR_OFFSET_Y + 1, 
+				(ENEMY_HP_BAR_WIDTH - 2) * m_hp / arrEnemyData[m_type - ACTOR_MUMMY][ENEMY_DATA_INDEX_HP],
+				ENEMY_HP_BAR_HEIGHT - 2,
+				ENEMY_HP_BAR_COLOR, ENEMY_HP_BAR_COLOR);
+		}
+	}
 }
 
 void CActor::move(int _x)

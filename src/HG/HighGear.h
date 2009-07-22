@@ -181,6 +181,10 @@ public:
 	void procLoading();
 	void procMaingame();
 
+	
+
+	void drawNum(int x, int y, int value, int fontWidth, bool bRightAlign);
+	int getNumDigit(int v);
 	Image *m_screenImage2D;
 	Image *m_screenImage3D;
 	
@@ -189,6 +193,7 @@ public:
 	int m_logoTimer;
 
 	int m_kill;
+	int m_village;
 	int m_level;
 
 #define MAX_ACTOR	50

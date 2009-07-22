@@ -14,7 +14,10 @@ set PRJ_TOOL_DIR=%PRJ_ROOT_DIR%\tools
 set PRJ_AURORA_DIR=%PRJ_TOOL_DIR%\AuroraGT
 set PRJ_SPEC_DIR=%PRJ_BUILD_DIR%\build_specification
 set PRJ_BUILD_OUTPUT_DIR=%PRJ_BUILD_DIR%\build_output
+set TOOLDIR=%PRJ_ROOT_DIR%\Tools
 
 set AURORA=%PRJ_AURORA_DIR%\AuroraGT
 
-
+set	USE_LZMA=0
+set VC_DEBUG_DIR=%PRJ_ROOT_DIR%\Engine\Win32
+set WIN32_EXE_RELEASE_DIR=%PRJ_ROOT_DIR%\build\win32

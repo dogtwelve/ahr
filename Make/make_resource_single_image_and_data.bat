@@ -18,7 +18,7 @@ copy %PRJ_DATA_GFX_DIR%\*.sprite .
 
 popd
 
-pushd %PRJ_BUILD_OUTPUT_DIR%
+pushd %PRJ_BUILD_OUTPUT_DIR%\sprite
 for %%i in (*.data) do (
 	copy /b /y %%~ni.data+%%~ni.image	%%~ni.bsprite 
 	
