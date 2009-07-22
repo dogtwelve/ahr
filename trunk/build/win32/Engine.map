@@ -1,6 +1,6 @@
  Engine
 
- Timestamp is 4a5f35fc (Thu Jul 16 23:15:24 2009)
+ Timestamp is 4a674f5a (Thu Jul 23 02:41:46 2009)
 
  Preferred load address is 00400000
 
@@ -48,8 +48,8 @@
   Address         Publics by Value              Rva+Base       Lib:Object
 
  0000:00000000       __except_list              00000000     <absolute>
- 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
  0000:00000000       ___safe_se_handler_count   00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
  0000:00000000       ___ImageBase               00400000     <linker-defined>
  0001:00000000       __enc$textbss$begin        00401000     <linker-defined>
  0001:00078822       __enc$textbss$end          00479822     <linker-defined>
@@ -62,10 +62,11 @@
  0002:00007de0       ?InitGame@CGapi@@QAEHPAX@Z 00481de0 f   GapiMain.obj
  0002:00007ef0       ?canFire@CActor@@QAE_NXZ   00481ef0 f   Actor.obj
  0002:00007f30       ?LoopGame@CGapi@@QAEHXZ    00481f30 f   GapiMain.obj
+ 0002:00008040       ??$_Debug_pointer@V?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@@std@@YAXAAV?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@0@PB_WI@Z 00482040 f i HighGear.obj
  0002:00008080       ?EndGame@CGapi@@QAEXXZ     00482080 f   GapiMain.obj
  0002:000080d0       ?MakePath@CGapi@@QAEPADPBD@Z 004820d0 f   GapiMain.obj
  0002:00008190       ?KeyCode2Keypad@CGapi@@QAEHH@Z 00482190 f   GapiMain.obj
- 0002:000085a0       ?notifyState@CActor@@QAEXHH@Z 004825a0 f   Actor.obj
+ 0002:000085a0       ?GetInstance@?$CSingleton@$01VCArchivedFileManager@@@@SAPAVCArchivedFileManager@@XZ 004825a0 f i HighGear.obj
  0002:000086a0       ?GetKeyBoardConfig@CHighGear@@QBEHXZ 004826a0 f i GapiMain.obj
  0002:000086e0       ?KeyEvent@CGapi@@QAEX_NH@Z 004826e0 f   GapiMain.obj
  0002:00008770       ?UpdateDisplay@CGapi@@QBEXXZ 00482770 f   GapiMain.obj
@@ -78,8 +79,8 @@
  0002:00008bc0       ?allocate@?$_DebugHeapAllocator@D@std@@QAAPADIPBX@Z 00482bc0 f i GapiMain.obj
  0002:00008c80       ??0bad_alloc@std@@QAE@PBD@Z 00482c80 f i GapiMain.obj
  0002:00008cf0       ??1bad_alloc@std@@UAE@XZ   00482cf0 f i GapiMain.obj
- 0002:00008d50       ??_Ebad_alloc@std@@UAEPAXI@Z 00482d50 f i GapiMain.obj
  0002:00008d50       ??_Gbad_alloc@std@@UAEPAXI@Z 00482d50 f i GapiMain.obj
+ 0002:00008d50       ??_Ebad_alloc@std@@UAEPAXI@Z 00482d50 f i GapiMain.obj
  0002:00008dc0       ?allocate@?$_DebugHeapAllocator@D@std@@QAEPADI@Z 00482dc0 f i GapiMain.obj
  0002:00008e80       ?deallocate@?$_DebugHeapAllocator@D@std@@QAEXPADI@Z 00482e80 f i GapiMain.obj
  0002:00008ee0       ?GetInstance@?$CSingletonNoAutoConstruct@$00VCHighGear@@@@SAPAVCHighGear@@XZ 00482ee0 f i GapiMain.obj
@@ -126,6 +127,7 @@
  0002:0000aad0       ?strcmp@@YAHPAG0@Z         00484ad0 f   str_utils.obj
  0002:0000ab60       ?itoa@@YAHHPAG@Z           00484b60 f   str_utils.obj
  0002:0000ad20       ?sprintf@@YAXPAGPBGZZ      00484d20 f   str_utils.obj
+ 0002:0000ae80       ??M?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QBE_NABV01@@Z 00484e80 f i HighGear.obj
  0002:0000aee0       ?sprintf@@YAXPAGPBDZZ      00484ee0 f   str_utils.obj
  0002:0000b0d0       ?toUnicode@@YAPAGPAD@Z     004850d0 f   str_utils.obj
  0002:0000b180       ?CharToUnicode@@YAXPAGPBD@Z 00485180 f   str_utils.obj
@@ -133,6 +135,7 @@
  0002:0000b2c0       ?Trim@Util@@SAAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAV23@@Z 004852c0 f   Util.obj
  0002:0000b430       ?Replace@Util@@SAAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAV23@V23@1@Z 00485430 f   Util.obj
  0002:0000b5a0       ?SplitLeft@Util@@SAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAV23@1PBD@Z 004855a0 f   Util.obj
+ 0002:0000b750       ?begin@?$deque@VARect@@V?$allocator@VARect@@@std@@@std@@QAE?AV?$_Deque_iterator@VARect@@V?$allocator@VARect@@@std@@$00@2@XZ 00485750 f i HighGear.obj
  0002:0000b7c0       ?GetCompleteFileName@Util@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@PBD@Z 004857c0 f   Util.obj
  0002:0000b9e0       ??1?$_String_iterator@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ 004859e0 f i Util.obj
  0002:0000ba30       ??1?$_String_const_iterator@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ 00485a30 f i Util.obj
@@ -274,18 +277,29 @@
  0002:00012e60       ?LastLine@@YAHPBVTVxuv@Lib3D@@H@Z 0048ce60 f i Board3D.obj
  0002:00012ec0       ?DrawPolyGT3Additive@CBoard3D@Lib3D@@AAEXPBVTVxuv@2@00@Z 0048cec0 f   Board3D.obj
  0002:000138e0       ?updateCheatZones@CTouchZones@@QAEXXZ 0048d8e0 f   TouchZones.obj
+ 0002:00013a90       ??0?$CSingletonNoAutoConstruct@$00VCHighGear@@@@QAE@XZ 0048da90 f i HighGear.obj
  0002:00013b60       ?DrawPolyGT3AdditiveAlpha@CBoard3D@Lib3D@@AAEXPBVTVxuv@2@00@Z 0048db60 f   Board3D.obj
+ 0002:00014580       ?draw@CActor@@QAEXVCLib2D@@@Z 0048e580 f   Actor.obj
+ 0002:00014740       ??G?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QBEHABV01@@Z 0048e740 f i HighGear.obj
  0002:00014800       ?DrawPolyGT3AlphaMask@CBoard3D@Lib3D@@AAEXPBVTVxuv@2@00@Z 0048e800 f   Board3D.obj
+ 0002:00015340       ?_Reverse@?$deque@VARect@@V?$allocator@VARect@@@std@@@std@@QAEXII@Z 0048f340 f i HighGear.obj
  0002:000154a0       ?DrawPolyGT3Shadow@CBoard3D@Lib3D@@AAEXPBVTVxuv@2@00@Z 0048f4a0 f   Board3D.obj
+ 0002:00015cc0       ??0?$deque@VARect@@V?$allocator@VARect@@@std@@@std@@QAE@ABV01@@Z 0048fcc0 f i HighGear.obj
  0002:00015ec0       ??0LineParamNoZUV@Lib3D@@QAE@XZ 0048fec0 f i Board3D.obj
  0002:00015f00       ??0LineParamNoZUV@Lib3D@@QAE@HH@Z 0048ff00 f i Board3D.obj
  0002:00015f50       ?Set@LineParamNoZUV@Lib3D@@QAEXHH@Z 0048ff50 f i Board3D.obj
  0002:00015fa0       ?Substact@LineParamNoZUV@Lib3D@@QAEXHABU12@@Z 0048ffa0 f i Board3D.obj
  0002:00016010       ?AddDelta@LineParamNoZUV@Lib3D@@QAEXABU12@@Z 00490010 f i Board3D.obj
  0002:00016070       ?DrawPolyGT3Substractive@CBoard3D@Lib3D@@AAEXPBVTVxuv@2@00@Z 00490070 f   Board3D.obj
+ 0002:00016a90       ??E?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QAEAAV01@XZ 00490a90 f i HighGear.obj
+ 0002:00016be0       ??A?$_Deque_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QBEAAVARect@@H@Z 00490be0 f i HighGear.obj
  0002:00016d10       ?DrawPolyG3@CBoard3D@Lib3D@@AAEXPBVTVxuv@2@00II@Z 00490d10 f   Board3D.obj
+ 0002:000176d0       ??H?$_Deque_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QBE?AV01@H@Z 004916d0 f i HighGear.obj
+ 0002:000177b0       ??$_Debug_range2@V?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@@std@@YAXV?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@0@0PB_WIUrandom_access_iterator_tag@0@@Z 004917b0 f i HighGear.obj
  0002:00017940       ?PrepareFace@CBoard3D@Lib3D@@AAE_NPBVTFace@2@PAPBVTVxuv@2@@Z 00491940 f   Board3D.obj
+ 0002:00017d00       ??$swap@VARect@@@std@@YAXAAVARect@@0@Z 00491d00 f i HighGear.obj
  0002:00017df0       ?DrawPolyGT3z@CBoard3D@Lib3D@@AAEXPBVTVxuv@2@00@Z 00491df0 f   Board3D.obj
+ 0002:000189b0       ?notifyState@CActor@@QAEXHH@Z 004929b0 f   Actor.obj
  0002:00018ca0       ??0LineParamZ@Lib3D@@QAE@XZ 00492ca0 f i Board3D.obj
  0002:00018d00       ??0LineParamZ@Lib3D@@QAE@HHHHH@Z 00492d00 f i Board3D.obj
  0002:00018d80       ?Set@LineParamZ@Lib3D@@QAEXHHHHH@Z 00492d80 f i Board3D.obj
@@ -339,8 +353,8 @@
  0002:0001ded0       ??0TFace@Lib3D@@QAE@PAVTVertex@1@@Z 00497ed0 f   Face.obj
  0002:0001dfc0       ??0COTObject@Lib3D@@IAE@XZ 00497fc0 f i Face.obj
  0002:0001e010       ?GetGLTextureName@COTObject@Lib3D@@UAEIXZ 00498010 f i Face.obj
- 0002:0001e050       ??_GCOTObject@Lib3D@@MAEPAXI@Z 00498050 f i Face.obj
  0002:0001e050       ??_ECOTObject@Lib3D@@MAEPAXI@Z 00498050 f i Face.obj
+ 0002:0001e050       ??_GCOTObject@Lib3D@@MAEPAXI@Z 00498050 f i Face.obj
  0002:0001e0c0       ??1COTObject@Lib3D@@MAE@XZ 004980c0 f i Face.obj
  0002:0001e110       ??_GTFace@Lib3D@@UAEPAXI@Z 00498110 f i Face.obj
  0002:0001e180       ??1TFace@Lib3D@@UAE@XZ     00498180 f i Face.obj
@@ -451,8 +465,8 @@
  0002:00023c40       ??_Elogic_error@std@@UAEPAXI@Z 0049dc40 f i Keyframed.obj
  0002:00023cb0       ??1logic_error@std@@UAE@XZ 0049dcb0 f i Keyframed.obj
  0002:00023d20       ??1length_error@std@@UAE@XZ 0049dd20 f i Keyframed.obj
- 0002:00023d80       ??_Elength_error@std@@UAEPAXI@Z 0049dd80 f i Keyframed.obj
  0002:00023d80       ??_Glength_error@std@@UAEPAXI@Z 0049dd80 f i Keyframed.obj
+ 0002:00023d80       ??_Elength_error@std@@UAEPAXI@Z 0049dd80 f i Keyframed.obj
  0002:00023df0       ??0logic_error@std@@QAE@ABV01@@Z 0049ddf0 f i Keyframed.obj
  0002:00023ec0       ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z 0049dec0 f i Keyframed.obj
  0002:00023f90       ??0?$_Container_base_aux_alloc_empty@V?$allocator@VVector4s@@@std@@@std@@IAE@V?$allocator@VVector4s@@@1@@Z 0049df90 f i Keyframed.obj
@@ -625,8 +639,8 @@
  0002:0002f650       ?AnimationPlay@CGLMesh@Lib3D@@QAEXHHH@Z 004a9650 f   Mesh.obj
  0002:0002f950       ?AnimationPlay3@CGLMesh@Lib3D@@QAEXHHHHHH@Z 004a9950 f   Mesh.obj
  0002:0002fb40       ??0CBasicMesh@Lib3D@@QAE@PBD0H@Z 004a9b40 f   Mesh.obj
- 0002:000300f0       ??_GCBasicMesh@Lib3D@@UAEPAXI@Z 004aa0f0 f i Mesh.obj
  0002:000300f0       ??_ECBasicMesh@Lib3D@@UAEPAXI@Z 004aa0f0 f i Mesh.obj
+ 0002:000300f0       ??_GCBasicMesh@Lib3D@@UAEPAXI@Z 004aa0f0 f i Mesh.obj
  0002:00030160       ??0CBasicMesh@Lib3D@@QAE@PBDPAPBDHH@Z 004aa160 f   Mesh.obj
  0002:000306b0       ??1CBasicMesh@Lib3D@@UAE@XZ 004aa6b0 f   Mesh.obj
  0002:000307f0       ?SetUV@CBasicMesh@Lib3D@@QAEXH@Z 004aa7f0 f   Mesh.obj
@@ -696,7 +710,7 @@
  0002:00036380       ?RenderLine@CRender@Lib3D@@QAEXABVVector4s@@0AAVCBoard3D@2@@Z 004b0380 f   Render.obj
  0002:000367d0       ?TransformVertex@CRender@Lib3D@@QBEKPAVTVertex@2@@Z 004b07d0 f i Render.obj
  0002:00036830       ?RenderRoad@CRender@Lib3D@@QAEXPAURoadStruct@@HHHPAVTTexture@2@PAUsAtlasTextureTile@42@_N@Z 004b0830 f   Render.obj
- 0002:00038b90       ?update@CActor@@QAEXXZ     004b2b90 f   Actor.obj
+ 0002:00038ff0       ??$_Insert@V?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@@?$deque@VARect@@V?$allocator@VARect@@@std@@@std@@QAEXV?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@1@00Uinput_iterator_tag@1@@Z 004b2ff0 f i HighGear.obj
  0002:00039470       ?RenderMeshOTFace@CRender@Lib3D@@QAEXPAVTVertex@2@HPAVTFace@2@HAAVCBoard3D@2@H_N@Z 004b3470 f   Render.obj
  0002:000397f0       ?RenderMeshOTFace@CRender@Lib3D@@QAEXPAVCMesh@2@AAVCBoard3D@2@H@Z 004b37f0 f   Render.obj
  0002:00039890       ?NbFaces@CMesh@Lib3D@@QBEHXZ 004b3890 f i Render.obj
@@ -729,6 +743,7 @@
  0002:0003c020       ?COLOR_AVERAGE@@YAGGG@Z    004b6020 f   texture.obj
  0002:0003c0d0       ??0TTexture@Lib3D@@QAE@HH@Z 004b60d0 f   texture.obj
  0002:0003c200       ?LoadTexture@TTexture@Lib3D@@AAEXPBD_N011H@Z 004b6200 f   texture.obj
+ 0002:0003d3f0       ?update@CActor@@QAEXXZ     004b73f0 f   Actor.obj
  0002:0003d870       ?CreateKeyForGLTexName@TTexture@Lib3D@@SAXAAFI@Z 004b7870 f i texture.obj
  0002:0003d9a0       ?CleanBuffers@TTexture@Lib3D@@QAEXXZ 004b79a0 f   texture.obj
  0002:0003da80       ??0TTexture@Lib3D@@QAE@PBD_N011H@Z 004b7a80 f   texture.obj
@@ -803,8 +818,8 @@
  0002:00043f90       ??$MixColor16@GGH@CLib2D@@SAHGGH@Z 004bdf90 f i aaline.obj
  0002:00044040       ??$FastColorAddAlphaHD@GGH@CLib2D@@SAHGGH@Z 004be040 f i aaline.obj
  0002:00044120       ??0CModule@@QAE@HHHHH@Z    004be120 f   AuroraSprite.obj
- 0002:000441f0       ??_GCModule@@UAEPAXI@Z     004be1f0 f i AuroraSprite.obj
  0002:000441f0       ??_ECModule@@UAEPAXI@Z     004be1f0 f i AuroraSprite.obj
+ 0002:000441f0       ??_GCModule@@UAEPAXI@Z     004be1f0 f i AuroraSprite.obj
  0002:00044260       ??1CModule@@UAE@XZ         004be260 f   AuroraSprite.obj
  0002:000442a0       ??0CAuroraPalette@@QAE@F@Z 004be2a0 f   AuroraSprite.obj
  0002:00044350       ??_GCAuroraPalette@@UAEPAXI@Z 004be350 f i AuroraSprite.obj
@@ -818,8 +833,8 @@
  0002:00044800       ?GetKerningSpacing@CSprite@@IAEHG@Z 004be800 f   AuroraSprite.obj
  0002:000448f0       ??0CSprite@@QAE@PBDH@Z     004be8f0 f   AuroraSprite.obj
  0002:000460a0       ?Update@CTouchZones@@QAEXXZ 004c00a0 f   TouchZones.obj
- 0002:00046690       ??_GCSprite@@UAEPAXI@Z     004c0690 f i AuroraSprite.obj
  0002:00046690       ??_ECSprite@@UAEPAXI@Z     004c0690 f i AuroraSprite.obj
+ 0002:00046690       ??_GCSprite@@UAEPAXI@Z     004c0690 f i AuroraSprite.obj
  0002:00046700       ??1CSprite@@UAE@XZ         004c0700 f   AuroraSprite.obj
  0002:00046c60       ??_GCFrame@@QAEPAXI@Z      004c0c60 f i AuroraSprite.obj
  0002:00046cd0       ??_GCAnim@@QAEPAXI@Z       004c0cd0 f i AuroraSprite.obj
@@ -879,8 +894,8 @@
  0002:0004afe0       ?draw_string@DigitFont@@QAEXAAUImage@@PBDIIW4DS_FX@1@HW4DS_ALIGN@1@@Z 004c4fe0 f   Font.obj
  0002:0004b210       ?GetStringWidth@DigitFont@@QAEHPBD@Z 004c5210 f   Font.obj
  0002:0004b280       ??0CFontWrapper@@QAE@PBD@Z 004c5280 f   FontWrapper.obj
- 0002:0004b390       ??_ECFontWrapper@@UAEPAXI@Z 004c5390 f i FontWrapper.obj
  0002:0004b390       ??_GCFontWrapper@@UAEPAXI@Z 004c5390 f i FontWrapper.obj
+ 0002:0004b390       ??_ECFontWrapper@@UAEPAXI@Z 004c5390 f i FontWrapper.obj
  0002:0004b400       ??1CFontWrapper@@UAE@XZ    004c5400 f   FontWrapper.obj
  0002:0004b4c0       ?DrawFrame@CFontWrapper@@QBEXAAVCLib2D@@HHH@Z 004c54c0 f   FontWrapper.obj
  0002:0004b530       ?GetStringWidth@CFontWrapper@@QAEFPBG@Z 004c5530 f   FontWrapper.obj
@@ -1058,11 +1073,10 @@
  0002:00053e50       ?init@CActor@@QAEXHPAVCSprite@@HH@Z 004cde50 f   Actor.obj
  0002:00054160       ?setAnim@CActor@@AAEXH_N@Z 004ce160 f   Actor.obj
  0002:000541d0       ?updateSprite@CActor@@AAEXXZ 004ce1d0 f   Actor.obj
- 0002:000542e0       ?draw@CActor@@QAEXVCLib2D@@@Z 004ce2e0 f   Actor.obj
  0002:00054460       ?move@CActor@@QAEXH@Z      004ce460 f   Actor.obj
  0002:000544f0       ??0CArchivedFileManager@@QAE@XZ 004ce4f0 f   ArchivedFileManager.obj
- 0002:00054640       ??_GCArchivedFileManager@@UAEPAXI@Z 004ce640 f i ArchivedFileManager.obj
  0002:00054640       ??_ECArchivedFileManager@@UAEPAXI@Z 004ce640 f i ArchivedFileManager.obj
+ 0002:00054640       ??_GCArchivedFileManager@@UAEPAXI@Z 004ce640 f i ArchivedFileManager.obj
  0002:000546b0       ??0ArchiveData@CArchivedFileManager@@QAE@XZ 004ce6b0 f i ArchivedFileManager.obj
  0002:00054710       ??1ArchiveData@CArchivedFileManager@@QAE@XZ 004ce710 f i ArchivedFileManager.obj
  0002:00054770       ??1?$map@PADUSFileProperties@CArchivedFileManager@@Ultstr@2@V?$allocator@U?$pair@QADUSFileProperties@CArchivedFileManager@@@std@@@std@@@std@@QAE@XZ 004ce770 f i ArchivedFileManager.obj
@@ -1095,8 +1109,8 @@
  0002:00056070       ?find@?$_Tree@V?$_Tmap_traits@PADUSFileProperties@CArchivedFileManager@@Ultstr@2@V?$allocator@U?$pair@QADUSFileProperties@CArchivedFileManager@@@std@@@std@@$0A@@std@@@std@@QAE?AViterator@12@ABQAD@Z 004d0070 f i ArchivedFileManager.obj
  0002:00056300       ??Citerator@?$_Tree@V?$_Tmap_traits@PADUSFileProperties@CArchivedFileManager@@Ultstr@2@V?$allocator@U?$pair@QADUSFileProperties@CArchivedFileManager@@@std@@@std@@$0A@@std@@@std@@QBEPAU?$pair@QADUSFileProperties@CArchivedFileManager@@@2@XZ 004d0300 f i ArchivedFileManager.obj
  0002:00056350       ??9const_iterator@?$_Tree@V?$_Tmap_traits@PADUSFileProperties@CArchivedFileManager@@Ultstr@2@V?$allocator@U?$pair@QADUSFileProperties@CArchivedFileManager@@@std@@@std@@$0A@@std@@@std@@QBE_NABV012@@Z 004d0350 f i ArchivedFileManager.obj
- 0002:000563c0       ??_E?$CSingleton@$01VCArchivedFileManager@@@@UAEPAXI@Z 004d03c0 f i ArchivedFileManager.obj
  0002:000563c0       ??_G?$CSingleton@$01VCArchivedFileManager@@@@UAEPAXI@Z 004d03c0 f i ArchivedFileManager.obj
+ 0002:000563c0       ??_E?$CSingleton@$01VCArchivedFileManager@@@@UAEPAXI@Z 004d03c0 f i ArchivedFileManager.obj
  0002:00056430       ??_E?$CSingletonNoAutoConstruct@$01VCArchivedFileManager@@@@UAEPAXI@Z 004d0430 f i ArchivedFileManager.obj
  0002:00056430       ??_G?$CSingletonNoAutoConstruct@$01VCArchivedFileManager@@@@UAEPAXI@Z 004d0430 f i ArchivedFileManager.obj
  0002:000564a0       ??0const_iterator@?$_Tree@V?$_Tmap_traits@PADUSFileProperties@CArchivedFileManager@@Ultstr@2@V?$allocator@U?$pair@QADUSFileProperties@CArchivedFileManager@@@std@@@std@@$0A@@std@@@std@@QAE@ABV012@@Z 004d04a0 f i ArchivedFileManager.obj
@@ -1189,8 +1203,8 @@
  0002:0005bc20       ??$_Destroy@U_Node@?$_Tree_nod@V?$_Tmap_traits@PADUSFileProperties@CArchivedFileManager@@Ultstr@2@V?$allocator@U?$pair@QADUSFileProperties@CArchivedFileManager@@@std@@@std@@$0A@@std@@@std@@@std@@YAXPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PADUSFileProperties@CArchivedFileManager@@Ultstr@2@V?$allocator@U?$pair@QADUSFileProperties@CArchivedFileManager@@@std@@@std@@$0A@@std@@@0@@Z 004d5c20 f i ArchivedFileManager.obj
  0002:0005bc50       ??$_Construct@PAU_Node@?$_Tree_nod@V?$_Tmap_traits@PADUSFileProperties@CArchivedFileManager@@Ultstr@2@V?$allocator@U?$pair@QADUSFileProperties@CArchivedFileManager@@@std@@@std@@$0A@@std@@@std@@PAU123@@std@@YAXPAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PADUSFileProperties@CArchivedFileManager@@Ultstr@2@V?$allocator@U?$pair@QADUSFileProperties@CArchivedFileManager@@@std@@@std@@$0A@@std@@@0@ABQAU120@@Z 004d5c50 f i ArchivedFileManager.obj
  0002:0005bcf0       ??0CFPSCounter@@QAE@XZ     004d5cf0 f   FPSCounter.obj
- 0002:0005bda0       ??_ECFPSCounter@@UAEPAXI@Z 004d5da0 f i FPSCounter.obj
  0002:0005bda0       ??_GCFPSCounter@@UAEPAXI@Z 004d5da0 f i FPSCounter.obj
+ 0002:0005bda0       ??_ECFPSCounter@@UAEPAXI@Z 004d5da0 f i FPSCounter.obj
  0002:0005be10       ??1CFPSCounter@@UAE@XZ     004d5e10 f   FPSCounter.obj
  0002:0005be50       ?ToggleInfoShow@CFPSCounter@@QAEXXZ 004d5e50 f   FPSCounter.obj
  0002:0005bea0       ?Update@CFPSCounter@@QAEXXZ 004d5ea0 f   FPSCounter.obj
@@ -1201,8 +1215,8 @@
  0002:0005c280       ??_ECFunctor@@UAEPAXI@Z    004d6280 f i Functor.obj
  0002:0005c2f0       ??1CFunctor@@UAE@XZ        004d62f0 f   Functor.obj
  0002:0005c330       ??0CHighGear@@QAE@AAVCGapi@@@Z 004d6330 f   HighGear.obj
- 0002:0005c5d0       ??_GCHighGear@@UAEPAXI@Z   004d65d0 f i HighGear.obj
  0002:0005c5d0       ??_ECHighGear@@UAEPAXI@Z   004d65d0 f i HighGear.obj
+ 0002:0005c5d0       ??_GCHighGear@@UAEPAXI@Z   004d65d0 f i HighGear.obj
  0002:0005c640       ??0ITouchZonesListener@@QAE@XZ 004d6640 f i HighGear.obj
  0002:0005c690       ??1CHighGear@@UAE@XZ       004d6690 f   HighGear.obj
  0002:0005c880       ??_GCLib3D@Lib3D@@QAEPAXI@Z 004d6880 f i HighGear.obj
@@ -1231,39 +1245,27 @@
  0002:0005ec40       ?GetNumber@CRandom@@QAEIXZ 004d8c40 f i HighGear.obj
  0002:0005eca0       ??0CLib2D@@QAE@ABV0@@Z     004d8ca0 f i HighGear.obj
  0002:0005ede0       ??0?$stack@VARect@@V?$deque@VARect@@V?$allocator@VARect@@@std@@@std@@@std@@QAE@ABV01@@Z 004d8de0 f i HighGear.obj
- 0002:0005ee40       ?GetInstance@?$CSingleton@$01VCArchivedFileManager@@@@SAPAVCArchivedFileManager@@XZ 004d8e40 f i HighGear.obj
- 0002:0005ef40       ??0?$deque@VARect@@V?$allocator@VARect@@@std@@@std@@QAE@ABV01@@Z 004d8f40 f i HighGear.obj
- 0002:0005f140       ??0?$CSingletonNoAutoConstruct@$00VCHighGear@@@@QAE@XZ 004d9140 f i HighGear.obj
- 0002:0005f200       ??1?$CSingletonNoAutoConstruct@$00VCHighGear@@@@UAE@XZ 004d9200 f i HighGear.obj
- 0002:0005f260       ??1?$_Deque_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QAE@XZ 004d9260 f i HighGear.obj
- 0002:0005f2b0       ??_G?$CSingletonNoAutoConstruct@$00VCHighGear@@@@UAEPAXI@Z 004d92b0 f i HighGear.obj
- 0002:0005f2b0       ??_E?$CSingletonNoAutoConstruct@$00VCHighGear@@@@UAEPAXI@Z 004d92b0 f i HighGear.obj
- 0002:0005f320       ?_GetInstance@?$CSingletonNoAutoConstruct@$01VCArchivedFileManager@@@@KAPAVCArchivedFileManager@@XZ 004d9320 f i HighGear.obj
- 0002:0005f370       ?begin@?$deque@VARect@@V?$allocator@VARect@@@std@@@std@@QAE?AV?$_Deque_iterator@VARect@@V?$allocator@VARect@@@std@@$00@2@XZ 004d9370 f i HighGear.obj
- 0002:0005f400       ?begin@?$deque@VARect@@V?$allocator@VARect@@@std@@@std@@QBE?AV?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@2@XZ 004d9400 f i HighGear.obj
- 0002:0005f490       ??0?$_Deque_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QAE@IPBV_Container_base_secure@1@@Z 004d9490 f i HighGear.obj
- 0002:0005f4f0       ??$insert@V?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@@?$deque@VARect@@V?$allocator@VARect@@@std@@@std@@QAEXV?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@1@00@Z 004d94f0 f i HighGear.obj
- 0002:0005f660       ??$_Iter_cat@V?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@@std@@YA?AUrandom_access_iterator_tag@0@ABV?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@0@@Z 004d9660 f i HighGear.obj
- 0002:0005f6d0       ??$_Insert@V?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@@?$deque@VARect@@V?$allocator@VARect@@@std@@@std@@QAEXV?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@1@00Uinput_iterator_tag@1@@Z 004d96d0 f i HighGear.obj
- 0002:0005fb40       ?push_front@?$deque@VARect@@V?$allocator@VARect@@@std@@@std@@QAEXABVARect@@@Z 004d9b40 f i HighGear.obj
- 0002:0005fca0       ?pop_front@?$deque@VARect@@V?$allocator@VARect@@@std@@@std@@QAEXXZ 004d9ca0 f i HighGear.obj
- 0002:0005fdd0       ?_Reverse@?$deque@VARect@@V?$allocator@VARect@@@std@@@std@@QAEXII@Z 004d9dd0 f i HighGear.obj
- 0002:0005ff10       ??E?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QAEAAV01@XZ 004d9f10 f i HighGear.obj
- 0002:000600c0       ??G?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QBEHABV01@@Z 004da0c0 f i HighGear.obj
- 0002:00060170       ??8?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QBE_NABV01@@Z 004da170 f i HighGear.obj
- 0002:000601e0       ??9?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QBE_NABV01@@Z 004da1e0 f i HighGear.obj
- 0002:00060250       ??A?$_Deque_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QBEAAVARect@@H@Z 004da250 f i HighGear.obj
- 0002:00060340       ?_Compat@?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QBEXABV12@@Z 004da340 f i HighGear.obj
- 0002:00060420       ??D?$_Deque_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QBEAAVARect@@XZ 004da420 f i HighGear.obj
- 0002:00060470       ??H?$_Deque_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QBE?AV01@H@Z 004da470 f i HighGear.obj
- 0002:00060590       ??0?$_Deque_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QAE@ABV01@@Z 004da590 f i HighGear.obj
- 0002:000605f0       ??Y?$_Deque_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QAEAAV01@H@Z 004da5f0 f i HighGear.obj
- 0002:00060650       ??$_Debug_range@V?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@@std@@YAXV?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@0@0PB_WI@Z 004da650 f i HighGear.obj
- 0002:00060780       ??$_Swap_adl@VARect@@@std@@YAXAAVARect@@0@Z 004da780 f i HighGear.obj
- 0002:000607e0       ??$_Debug_range2@V?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@@std@@YAXV?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@0@0PB_WIUrandom_access_iterator_tag@0@@Z 004da7e0 f i HighGear.obj
- 0002:00060900       ??$swap@VARect@@@std@@YAXAAVARect@@0@Z 004da900 f i HighGear.obj
- 0002:00060a00       ??M?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QBE_NABV01@@Z 004daa00 f i HighGear.obj
- 0002:00060a70       ??$_Debug_pointer@V?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@@std@@YAXAAV?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@0@PB_WI@Z 004daa70 f i HighGear.obj
+ 0002:0005ee40       ?drawNum@CHighGear@@QAEXHHHH_N@Z 004d8e40 f   HighGear.obj
+ 0002:0005ef40       ?getNumDigit@CHighGear@@QAEHH@Z 004d8f40 f   HighGear.obj
+ 0002:0005f2b0       ??1?$CSingletonNoAutoConstruct@$00VCHighGear@@@@UAE@XZ 004d92b0 f i HighGear.obj
+ 0002:0005f320       ??1?$_Deque_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QAE@XZ 004d9320 f i HighGear.obj
+ 0002:0005f370       ??_E?$CSingletonNoAutoConstruct@$00VCHighGear@@@@UAEPAXI@Z 004d9370 f i HighGear.obj
+ 0002:0005f370       ??_G?$CSingletonNoAutoConstruct@$00VCHighGear@@@@UAEPAXI@Z 004d9370 f i HighGear.obj
+ 0002:0005f400       ?_GetInstance@?$CSingletonNoAutoConstruct@$01VCArchivedFileManager@@@@KAPAVCArchivedFileManager@@XZ 004d9400 f i HighGear.obj
+ 0002:0005f4f0       ?begin@?$deque@VARect@@V?$allocator@VARect@@@std@@@std@@QBE?AV?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@2@XZ 004d94f0 f i HighGear.obj
+ 0002:0005f660       ??0?$_Deque_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QAE@IPBV_Container_base_secure@1@@Z 004d9660 f i HighGear.obj
+ 0002:0005f6d0       ??$insert@V?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@@?$deque@VARect@@V?$allocator@VARect@@@std@@@std@@QAEXV?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@1@00@Z 004d96d0 f i HighGear.obj
+ 0002:0005fb40       ??$_Iter_cat@V?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@@std@@YA?AUrandom_access_iterator_tag@0@ABV?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@0@@Z 004d9b40 f i HighGear.obj
+ 0002:0005fdd0       ?push_front@?$deque@VARect@@V?$allocator@VARect@@@std@@@std@@QAEXABVARect@@@Z 004d9dd0 f i HighGear.obj
+ 0002:0005ff10       ?pop_front@?$deque@VARect@@V?$allocator@VARect@@@std@@@std@@QAEXXZ 004d9f10 f i HighGear.obj
+ 0002:00060250       ??8?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QBE_NABV01@@Z 004da250 f i HighGear.obj
+ 0002:00060340       ??9?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QBE_NABV01@@Z 004da340 f i HighGear.obj
+ 0002:00060470       ?_Compat@?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QBEXABV12@@Z 004da470 f i HighGear.obj
+ 0002:00060590       ??D?$_Deque_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QBEAAVARect@@XZ 004da590 f i HighGear.obj
+ 0002:00060650       ??0?$_Deque_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QAE@ABV01@@Z 004da650 f i HighGear.obj
+ 0002:00060780       ??Y?$_Deque_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@QAEAAV01@H@Z 004da780 f i HighGear.obj
+ 0002:000607e0       ??$_Debug_range@V?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@std@@@std@@YAXV?$_Deque_const_iterator@VARect@@V?$allocator@VARect@@@std@@$00@0@0PB_WI@Z 004da7e0 f i HighGear.obj
+ 0002:00060900       ??$_Swap_adl@VARect@@@std@@YAXAAVARect@@0@Z 004da900 f i HighGear.obj
  0002:00060aa0       ?unload_language@@YAXAAPAPAG@Z 004daaa0 f   Intl.obj
  0002:00060b20       ?load_language@@YAXPBDAAPAPAG@Z 004dab20 f   Intl.obj
  0002:00060f20       ?load_language@@YAXHAAPAPAG@Z 004daf20 f   Intl.obj
@@ -1301,8 +1303,8 @@
  0002:00062fe0       ?Draw@CShadow@Lib3D@@QAEXAAVCLib3D@2@PBVVector4s@@PAV4@_NPAVCMatrix44@2@4@Z 004dcfe0 f   shadow.obj
  0002:00063690       ?DrawCopterShadow@CShadow@Lib3D@@QAEXAAVCLib3D@2@PBVVector4s@@PAV4@@Z 004dd690 f   shadow.obj
  0002:000636d0       ??0CSingletonManager@@IAE@XZ 004dd6d0 f   Singleton.obj
- 0002:000637a0       ??_ECSingletonManager@@UAEPAXI@Z 004dd7a0 f i Singleton.obj
  0002:000637a0       ??_GCSingletonManager@@UAEPAXI@Z 004dd7a0 f i Singleton.obj
+ 0002:000637a0       ??_ECSingletonManager@@UAEPAXI@Z 004dd7a0 f i Singleton.obj
  0002:00063810       ??1CSingletonManager@@UAE@XZ 004dd810 f   Singleton.obj
  0002:00063940       ?Create@CSingletonManager@@SAXXZ 004dd940 f   Singleton.obj
  0002:00063a30       ?RegisterSingleton@CSingletonManager@@SAXPAVISingleton@@H@Z 004dda30 f   Singleton.obj
@@ -1397,8 +1399,8 @@
  0002:00069130       ?bindFBO@TextureFBO@@QAEXXZ 004e3130 f   TextureFBO.obj
  0002:000691f0       ?LinkOES2EXT@@YAXXZ        004e31f0 f   GLES_TO_WGL.obj
  0002:00069400       ??0Comms@@QAE@XZ           004e3400 f   Comms.obj
- 0002:000695d0       ??_GComms@@UAEPAXI@Z       004e35d0 f i Comms.obj
  0002:000695d0       ??_EComms@@UAEPAXI@Z       004e35d0 f i Comms.obj
+ 0002:000695d0       ??_GComms@@UAEPAXI@Z       004e35d0 f i Comms.obj
  0002:00069640       ?update@Comms@@UAE_NXZ     004e3640 f   Comms.obj
  0002:00069680       ?DiscoverServers@Comms@@UAE_NXZ 004e3680 f   Comms.obj
  0002:000696c0       ?DiscoveryFinished@Comms@@UAE_NXZ 004e36c0 f   Comms.obj
@@ -1434,8 +1436,8 @@
  0002:0006a5a0       ??0DeviceDetails@@QAE@XZ   004e45a0 f   DeviceDetails.obj
  0002:0006a610       ??1DeviceDetails@@QAE@XZ   004e4610 f   DeviceDetails.obj
  0002:0006a650       ??0CWinNetwork@@QAE@XZ     004e4650 f   WinNetwork.obj
- 0002:0006a7b0       ??_ECWinNetwork@@UAEPAXI@Z 004e47b0 f i WinNetwork.obj
  0002:0006a7b0       ??_GCWinNetwork@@UAEPAXI@Z 004e47b0 f i WinNetwork.obj
+ 0002:0006a7b0       ??_ECWinNetwork@@UAEPAXI@Z 004e47b0 f i WinNetwork.obj
  0002:0006a820       ?update@CWinNetwork@@UAE_NXZ 004e4820 f   WinNetwork.obj
  0002:0006b980       ?DiscoverServers@CWinNetwork@@UAE_NXZ 004e5980 f   WinNetwork.obj
  0002:0006bb20       ?StartServer@CWinNetwork@@UAE_NXZ 004e5b20 f   WinNetwork.obj
@@ -1579,10 +1581,10 @@
  0002:00077490       ??0?$CSingleton@$09VCTouchZones@@@@QAE@XZ 004f1490 f i TouchZones.obj
  0002:000774f0       ??1?$CSingleton@$09VCTouchZones@@@@UAE@XZ 004f14f0 f i TouchZones.obj
  0002:00077550       ??1?$CSingletonNoAutoConstruct@$09VCTouchZones@@@@UAE@XZ 004f1550 f i TouchZones.obj
- 0002:000775c0       ??_E?$CSingleton@$09VCTouchZones@@@@UAEPAXI@Z 004f15c0 f i TouchZones.obj
  0002:000775c0       ??_G?$CSingleton@$09VCTouchZones@@@@UAEPAXI@Z 004f15c0 f i TouchZones.obj
- 0002:00077630       ??_G?$CSingletonNoAutoConstruct@$09VCTouchZones@@@@UAEPAXI@Z 004f1630 f i TouchZones.obj
+ 0002:000775c0       ??_E?$CSingleton@$09VCTouchZones@@@@UAEPAXI@Z 004f15c0 f i TouchZones.obj
  0002:00077630       ??_E?$CSingletonNoAutoConstruct@$09VCTouchZones@@@@UAEPAXI@Z 004f1630 f i TouchZones.obj
+ 0002:00077630       ??_G?$CSingletonNoAutoConstruct@$09VCTouchZones@@@@UAEPAXI@Z 004f1630 f i TouchZones.obj
  0002:000776f0       ??0Lib3DGL@@QAE@XZ         004f16f0 f   Lib3DGL.obj
  0002:00077780       ??1Lib3DGL@@QAE@XZ         004f1780 f   Lib3DGL.obj
  0002:000777c0       ?fillRect@Lib3DGL@@QAEXHHHHI@Z 004f17c0 f   Lib3DGL.obj
@@ -1764,8 +1766,8 @@
  0002:00081810       ??0CPVRTResourceFile@@QAE@PBD@Z 004fb810 f   OGLESTools:PVRTResourceFile.obj
  0002:00081990       ??1CPVRTResourceFile@@UAE@XZ 004fb990 f   OGLESTools:PVRTResourceFile.obj
  0002:000819d0       ??0CPVRTMemoryFileSystem@@QAE@PBDPBXI_N@Z 004fb9d0 f   OGLESTools:PVRTResourceFile.obj
- 0002:00081a00       ??_GCPVRTResourceFile@@UAEPAXI@Z 004fba00 f i OGLESTools:PVRTResourceFile.obj
  0002:00081a00       ??_ECPVRTResourceFile@@UAEPAXI@Z 004fba00 f i OGLESTools:PVRTResourceFile.obj
+ 0002:00081a00       ??_GCPVRTResourceFile@@UAEPAXI@Z 004fba00 f i OGLESTools:PVRTResourceFile.obj
  0002:00081a60       ?PVRTTextureLoadTiled@@YAXQAEIIQBEIII_N@Z 004fba60 f   OGLESTools:PVRTTexture.obj
  0002:00081b70       ?PVRTTextureCreate@@YAPAUPVR_Header_Texture_TAG@@IIIII_N@Z 004fbb70 f   OGLESTools:PVRTTexture.obj
  0002:00081be0       ??0string@PVRT@@QAE@XZ     004fbbe0 f   OGLESTools:PVRTString.obj
@@ -1817,8 +1819,8 @@
  0002:00082b70       ??4string@PVRT@@QAEAAV01@ABV01@@Z 004fcb70 f   OGLESTools:PVRTString.obj
  0002:00082b90       ??Astring@PVRT@@QBEABDI@Z  004fcb90 f   OGLESTools:PVRTString.obj
  0002:00082ba0       ??Astring@PVRT@@QAEAADI@Z  004fcba0 f   OGLESTools:PVRTString.obj
- 0002:00082bb0       ??_Estring@PVRT@@UAEPAXI@Z 004fcbb0 f i OGLESTools:PVRTString.obj
  0002:00082bb0       ??_Gstring@PVRT@@UAEPAXI@Z 004fcbb0 f i OGLESTools:PVRTString.obj
+ 0002:00082bb0       ??_Estring@PVRT@@UAEPAXI@Z 004fcbb0 f i OGLESTools:PVRTString.obj
  0002:00082bf0       ??0string@PVRT@@QAE@ABV01@II@Z 004fcbf0 f   OGLESTools:PVRTString.obj
  0002:00082c40       ??0string@PVRT@@QAE@ID@Z   004fcc40 f   OGLESTools:PVRTString.obj
  0002:00082c80       ??0string@PVRT@@QAE@D@Z    004fcc80 f   OGLESTools:PVRTString.obj
@@ -1959,8 +1961,8 @@
  0002:00086d50       ??0bad_cast@std@@QAE@ABV01@@Z 00500d50 f   LIBCMTD:stdexcpt.obj
  0002:00086d80       ??1bad_cast@std@@UAE@XZ    00500d80 f   LIBCMTD:stdexcpt.obj
  0002:00086db0       ??0bad_typeid@std@@QAE@PBD@Z 00500db0 f   LIBCMTD:stdexcpt.obj
- 0002:00086de0       ??_Ebad_typeid@std@@UAEPAXI@Z 00500de0 f i LIBCMTD:stdexcpt.obj
  0002:00086de0       ??_Gbad_typeid@std@@UAEPAXI@Z 00500de0 f i LIBCMTD:stdexcpt.obj
+ 0002:00086de0       ??_Ebad_typeid@std@@UAEPAXI@Z 00500de0 f i LIBCMTD:stdexcpt.obj
  0002:00086e20       ??0bad_typeid@std@@QAE@ABV01@@Z 00500e20 f   LIBCMTD:stdexcpt.obj
  0002:00086e50       ??1bad_typeid@std@@UAE@XZ  00500e50 f   LIBCMTD:stdexcpt.obj
  0002:00086e80       ??0__non_rtti_object@std@@QAE@PBD@Z 00500e80 f   LIBCMTD:stdexcpt.obj
@@ -2089,8 +2091,8 @@
  0002:0008ec6d       __abnormal_termination     00508c6d f   LIBCMTD:exsup.obj
  0002:0008ec90       __NLG_Notify1              00508c90 f   LIBCMTD:exsup.obj
  0002:0008ec99       __NLG_Notify               00508c99 f   LIBCMTD:exsup.obj
- 0002:0008ecb0       __NLG_Dispatch2            00508cb0     LIBCMTD:exsup.obj
  0002:0008ecb0       __NLG_Dispatch             00508cb0     LIBCMTD:exsup.obj
+ 0002:0008ecb0       __NLG_Dispatch2            00508cb0     LIBCMTD:exsup.obj
  0002:0008ecb8       __NLG_Call                 00508cb8 f   LIBCMTD:exsup.obj
  0002:0008ecba       __NLG_Return2              00508cba     LIBCMTD:exsup.obj
  0002:0008ed10       __assert                   00508d10 f   LIBCMTD:assert.obj
@@ -2203,8 +2205,8 @@
  0002:0009c790       ___InternalCxxFrameHandler 00516790 f   LIBCMTD:frame.obj
  0002:0009cf00       ??0bad_exception@std@@QAE@PBD@Z 00516f00 f i LIBCMTD:frame.obj
  0002:0009cf30       ??1bad_exception@std@@UAE@XZ 00516f30 f i LIBCMTD:frame.obj
- 0002:0009cf60       ??_Gbad_exception@std@@UAEPAXI@Z 00516f60 f i LIBCMTD:frame.obj
  0002:0009cf60       ??_Ebad_exception@std@@UAEPAXI@Z 00516f60 f i LIBCMTD:frame.obj
+ 0002:0009cf60       ??_Gbad_exception@std@@UAEPAXI@Z 00516f60 f i LIBCMTD:frame.obj
  0002:0009cfa0       ??0bad_exception@std@@QAE@ABV01@@Z 00516fa0 f i LIBCMTD:frame.obj
  0002:0009d1b0       ___TypeMatch               005171b0 f   LIBCMTD:frame.obj
  0002:0009d290       ___FrameUnwindFilter       00517290 f   LIBCMTD:frame.obj
@@ -2968,8 +2970,8 @@
  0002:000e9360       __isindst                  00563360 f   LIBCMTD:tzset.obj
  0002:000e9bb0       __stricmp_l                00563bb0 f   LIBCMTD:stricmp.obj
  0002:000e9dc0       ___ascii_stricmp           00563dc0 f   LIBCMTD:stricmp.obj
- 0002:000e9e50       __stricmp                  00563e50 f   LIBCMTD:stricmp.obj
  0002:000e9e50       _stricmp                   00563e50 f   LIBCMTD:stricmp.obj
+ 0002:000e9e50       __stricmp                  00563e50 f   LIBCMTD:stricmp.obj
  0002:000e9fa0       __strnicmp_l               00563fa0 f   LIBCMTD:strnicmp.obj
  0002:000ea270       __strnicmp                 00564270 f   LIBCMTD:strnicmp.obj
  0002:000ea460       __statusfp2                00564460 f   LIBCMTD:_ieee87_.obj
@@ -3289,7 +3291,9 @@
  0003:00000fa8       ?k_CHEAT_VIEW_FRAMES@CTouchZones@@2HB 00576fa8     GapiMain.obj
  0003:00000fac       ?k_CHEAT_TIMEMS@CTouchZones@@2HB 00576fac     GapiMain.obj
  0003:00000fb0       ??_C@_1GM@NIFFAJC@?$AA?$CI?$AA?5?$AAP?$AAa?$AAt?$AAh?$AAL?$AAe?$AAn?$AA?5?$AA?$CL?$AA?5?$AAs?$AAt?$AAr?$AAl?$AAe?$AAn?$AA?$CI?$AAF?$AAi?$AAl?$AAe?$AAN?$AAa?$AAm?$AAe?$AA?$CJ?$AA?5?$AA?$CL?$AA?5?$AA1@ 00576fb0     GapiMain.obj
+ 0003:0000101c       ??_C@_0BE@LGGMADHP@sprite?2vpad?4bsprite?$AA@ 0057701c     HighGear.obj
  0003:00001038       ??_C@_1GA@EJMGEELK@?$AAd?$AA?3?$AA?2?$AAw?$AAo?$AAr?$AAk?$AAs?$AAp?$AAa?$AAc?$AAe?$AA?2?$AAi?$AAp?$AAh?$AAo?$AAn?$AAe?$AA?2?$AAa?$AAh?$AAr?$AA?2?$AAs?$AAr?$AAc?$AA?2?$AAc?$AAo?$AAm?$AAm@ 00577038     GapiMain.obj
+ 0003:00001098       ??_C@_0BE@JHOLABNM@sprite?2mc00?4bsprite?$AA@ 00577098     HighGear.obj
  0003:000010ac       ??_C@_1CA@PGGJEFIG@?$AAm?$AA_?$AAU?$AAp?$AAd?$AAa?$AAt?$AAe?$AAD?$AAi?$AAs?$AAp?$AAl?$AAa?$AAy?$AA?$AA@ 005770ac     GapiMain.obj
  0003:000010d8       ??_C@_0EF@GNOGEIAE@c?3?2program?5files?5?$CIx86?$CJ?2microsoft@ 005770d8     GapiMain.obj
  0003:00001130       ??_7bad_alloc@std@@6B@     00577130     GapiMain.obj
@@ -3301,17 +3305,25 @@
  0003:000011d0       ??_C@_04DNCNJDPH@?5?7?6?$AN?$AA@ 005771d0     Util.obj
  0003:000011d8       ??_C@_1DC@POOIKBAO@?$AAI?$AAT?$AAE?$AAR?$AAA?$AAT?$AAO?$AAR?$AA?5?$AAL?$AAI?$AAS?$AAT?$AA?5?$AAC?$AAO?$AAR?$AAR?$AAU?$AAP?$AAT?$AAE?$AAD?$AA?$CB?$AA?$AA@ 005771d8     Util.obj
  0003:00001218       ??_C@_1IO@PFHNEOGE@?$AAc?$AA?3?$AA?2?$AAp?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAf?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAm?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@ 00577218     Util.obj
+ 0003:000012a8       ??_C@_0BI@PHBCICDP@sprite?2mcbullet?4bsprite?$AA@ 005772a8     HighGear.obj
  0003:000012c8       ??_C@_1IM@EDGMOHHN@?$AAc?$AA?3?$AA?2?$AAp?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAf?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAm?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@ 005772c8     Util.obj
+ 0003:00001354       ??_C@_0BL@KLLFBGIJ@sprite?2enemy_skull?4bsprite?$AA@ 00577354     HighGear.obj
  0003:00001370       ??_C@_1BO@MEPPHOO@?$AA?$CC?$AAo?$AAu?$AAt?$AA?5?$AAo?$AAf?$AA?5?$AAr?$AAa?$AAn?$AAg?$AAe?$AA?$CC?$AA?$AA@ 00577370     Util.obj
  0003:00001398       ??_C@_1NA@ICLOEHKI@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAS?$AAt?$AAr?$AAi?$AAn?$AAg?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAh?$AAa?$AAr@ 00577398     Util.obj
  0003:00001498       ??_C@_1FG@CMLDHNON@?$AA?$CI?$AA?$CC?$AAS?$AAt?$AAa?$AAn?$AAd?$AAa?$AAr?$AAd?$AA?5?$AAC?$AA?$CL?$AA?$CL?$AA?5?$AAL?$AAi?$AAb?$AAr?$AAa?$AAr?$AAi?$AAe?$AAs?$AA?5?$AAO?$AAu?$AAt?$AA?5?$AAo?$AAf?$AA?5@ 00577498     Util.obj
  0003:00001500       ??_C@_1EG@CNCHLAOB@?$AAs?$AAt?$AAr?$AAi?$AAn?$AAg?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr?$AAe?$AAn?$AAc?$AAa?$AAb@ 00577500     Util.obj
  0003:00001558       ??_C@_1MC@OAAJIFPD@?$AA?$CI?$AA?$CC?$AA_?$AAM?$AAy?$AAp?$AAt?$AAr?$AA?5?$AA?$DM?$AA?5?$AA?$CI?$AA?$CI?$AA?$CI?$AA_?$AAM?$AAy?$AAs?$AAt?$AAr?$AAi?$AAn?$AAg?$AA?5?$AA?$CK?$AA?$CJ?$AAt?$AAh?$AAi?$AAs?$AA?9?$AA?$DO@ 00577558     Util.obj
+ 0003:0000161c       ??_C@_0BL@ECGANLGB@sprite?2enemy_mummy?4bsprite?$AA@ 0057761c     HighGear.obj
  0003:00001640       ??_C@_1CG@JNLFBNGN@?$AA?$CC?$AAi?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAa?$AAr?$AAg?$AAu?$AAm?$AAe?$AAn?$AAt?$AA?$CC?$AA?$AA@ 00577640     Util.obj
  0003:00001670       ??_C@_1NC@DCAJJLPG@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAS?$AAt?$AAr?$AAi?$AAn?$AAg?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAh?$AAa?$AAr@ 00577670     Util.obj
+ 0003:00001744       ??_C@_0BK@CNLHMLLM@sprite?2interface0?4bsprite?$AA@ 00577744     HighGear.obj
  0003:0000176c       ??_C@_1DM@LBMEEJPP@?$AA?$CI?$AA?$CC?$AAt?$AAh?$AAi?$AAs?$AA?9?$AA?$DO?$AA_?$AAH?$AAa?$AAs?$AA_?$AAc?$AAo?$AAn?$AAt?$AAa?$AAi?$AAn?$AAe?$AAr?$AA?$CI?$AA?$CJ?$AA?$CC?$AA?0?$AA?5?$AA0?$AA?$CJ?$AA?$AA@ 0057776c     Util.obj
  0003:000017b8       ??_C@_1OI@PNIDODDN@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAS?$AAt?$AAr?$AAi?$AAn?$AAg?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAh?$AAa?$AAr@ 005777b8     Util.obj
+ 0003:000018a0       ??_C@_0BI@FHPEMNDE@sprite?2bg_floor?4bsprite?$AA@ 005778a0     HighGear.obj
+ 0003:000018b8       ??_C@_0BC@NBMIGMLL@sprite?2bg?4bsprite?$AA@ 005778b8     HighGear.obj
  0003:000018d0       ??_C@_1BEO@GFHFALBP@?$AA?$CI?$AA?$CC?$AA_?$AAP?$AAs?$AAt?$AAr?$AAi?$AAn?$AAg?$AA?5?$AA?$DN?$AA?$DN?$AA?5?$AAN?$AAU?$AAL?$AAL?$AA?5?$AA?$HM?$AA?$HM?$AA?5?$AA_?$AAP?$AAt?$AAr?$AA?5?$AA?$CB?$AA?$DN?$AA?5?$AAN?$AAU@ 005778d0     Util.obj
+ 0003:00001a20       ??_C@_0BG@MIGHPGAG@sprite?2splash?4bsprite?$AA@ 00577a20     HighGear.obj
+ 0003:00001a38       ??_C@_0BE@FGONIALK@sprite?2logo?4bsprite?$AA@ 00577a38     HighGear.obj
  0003:00001a60       ??_C@_1MK@BODNBKIO@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAS?$AAt?$AAr?$AAi?$AAn?$AAg?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAh?$AAa?$AAr@ 00577a60     Util.obj
  0003:00001b58       ??_C@_1FO@OCPOOAIA@?$AA?$CI?$AA?$CC?$AAS?$AAt?$AAa?$AAn?$AAd?$AAa?$AAr?$AAd?$AA?5?$AAC?$AA?$CL?$AA?$CL?$AA?5?$AAL?$AAi?$AAb?$AAr?$AAa?$AAr?$AAi?$AAe?$AAs?$AA?5?$AAI?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd@ 00577b58     Util.obj
  0003:00001bc8       ??_C@_1DM@KDEKGMPF@?$AAs?$AAt?$AAr?$AAi?$AAn?$AAg?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AAs?$AA?5?$AAi?$AAn?$AAc?$AAo?$AAm?$AAp?$AAa?$AAt?$AAi?$AAb?$AAl?$AAe?$AA?$AA@ 00577bc8     Util.obj
@@ -3548,17 +3560,7 @@
  0003:0000e40c       ??_C@_06LPPMFGHI@IDO?32?6?$AA@ 0058440c     HighGear.obj
  0003:0000e414       ??_C@_0BD@LDOKPBFK@orientation?5?$CFd?5?$CFd?6?$AA@ 00584414     HighGear.obj
  0003:0000e430       ??_C@_1FE@LLDLINCO@?$AAd?$AA?3?$AA?2?$AAw?$AAo?$AAr?$AAk?$AAs?$AAp?$AAa?$AAc?$AAe?$AA?2?$AAi?$AAp?$AAh?$AAo?$AAn?$AAe?$AA?2?$AAa?$AAh?$AAr?$AA?2?$AAs?$AAr?$AAc?$AA?2?$AAh?$AAg?$AA?2?$AAh@ 00584430     HighGear.obj
- 0003:0000e494       ??_C@_0N@HJHBLOK@vpad?4bsprite?$AA@ 00584494     HighGear.obj
- 0003:0000e4a4       ??_C@_0BB@CEJHNKAN@mcbullet?4bsprite?$AA@ 005844a4     HighGear.obj
- 0003:0000e4b8       ??_C@_0BE@GDOKIHFH@enemy_skull?4bsprite?$AA@ 005844b8     HighGear.obj
- 0003:0000e4d0       ??_C@_0BG@FJDENNON@enemy_vampire?4bsprite?$AA@ 005844d0     HighGear.obj
- 0003:0000e4ec       ??_C@_0BE@IKDPEKLP@enemy_mummy?4bsprite?$AA@ 005844ec     HighGear.obj
- 0003:0000e504       ??_C@_0N@CGBABJEJ@mc00?4bsprite?$AA@ 00584504     HighGear.obj
- 0003:0000e514       ??_C@_0BD@KFHHJFIO@interface0?4bsprite?$AA@ 00584514     HighGear.obj
- 0003:0000e52c       ??_C@_0BB@IEHBJFAG@bg_floor?4bsprite?$AA@ 0058452c     HighGear.obj
- 0003:0000e540       ??_C@_0L@CPOKBDCL@bg?4bsprite?$AA@ 00584540     HighGear.obj
- 0003:0000e550       ??_C@_0P@NHDNKBPE@splash?4bsprite?$AA@ 00584550     HighGear.obj
- 0003:0000e564       ??_C@_0N@OHBGJICP@logo?4bsprite?$AA@ 00584564     HighGear.obj
+ 0003:0000e4d0       ??_C@_0BN@MBIHFOPB@sprite?2enemy_vampire?4bsprite?$AA@ 005844d0     HighGear.obj
  0003:0000e578       ??_7?$CSingletonNoAutoConstruct@$00VCHighGear@@@@6B@ 00584578     HighGear.obj
  0003:0000e580       ??_C@_1EI@ODOAHAHP@?$AAd?$AAe?$AAq?$AAu?$AAe?$AA?5?$AAi?$AAn?$AAs?$AAe?$AAr?$AAt?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAo?$AAu?$AAt?$AAs?$AAi?$AAd?$AAe?$AA?5?$AAr?$AAa@ 00584580     HighGear.obj
  0003:0000e5d8       ??_C@_1EC@CEAHEOFL@?$AAd?$AAe?$AAq?$AAu?$AAe?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe?$AAn?$AAt?$AAa?$AAb?$AAl?$AAe@ 005845d8     HighGear.obj

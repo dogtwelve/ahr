@@ -429,12 +429,12 @@ void CHighGear::procLoading()
 	switch (m_stateNext)
 	{
 	case GAME_STATE_LOGO:
-		m_logoSprite = NEW CSprite("logo.bsprite");
+		m_logoSprite = NEW CSprite("sprite\\logo.bsprite");
 		m_logoTimer = GETTIMEMS();
 		
 		break;
 	case GAME_STATE_TITLE:
-		m_SplashScreen = NEW CSprite("splash.bsprite");
+		m_SplashScreen = NEW CSprite("sprite\\splash.bsprite");
 		touchZones->AddZone(0, 0, 0, m_dispX, m_dispY);
 		break;
 	case GAME_STATE_MAIN:
@@ -444,18 +444,18 @@ void CHighGear::procLoading()
 		delete(m_SplashScreen);
 		m_bg = NEW CSprite*[2];
 
-		m_bg[0] = NEW CSprite("bg.bsprite");
-		m_bg[1] = NEW CSprite("bg_floor.bsprite");
-		m_ui = NEW CSprite("interface0.bsprite");
+		m_bg[0] = NEW CSprite("sprite\\bg.bsprite");
+		m_bg[1] = NEW CSprite("sprite\\bg_floor.bsprite");
+		m_ui = NEW CSprite("sprite\\interface0.bsprite");
 
 		m_gameSprite = NEW CSprite*[MAX_GAMESPRITE];
-		GAMESPRITE_MC = NEW CSprite("mc00.bsprite");
-		GAMESPRITE_MUMMY = NEW CSprite("enemy_mummy.bsprite");
-		GAMESPRITE_VAMPIRE = NEW CSprite("enemy_vampire.bsprite");
-		GAMESPRITE_SKULL = NEW CSprite("enemy_skull.bsprite");
-		GAMESPRITE_MCBULLET = NEW CSprite("mcbullet.bsprite");
+		GAMESPRITE_MC = NEW CSprite("sprite\\mc00.bsprite");
+		GAMESPRITE_MUMMY = NEW CSprite("sprite\\enemy_mummy.bsprite");
+		GAMESPRITE_VAMPIRE = NEW CSprite("sprite\\enemy_vampire.bsprite");
+		GAMESPRITE_SKULL = NEW CSprite("sprite\\enemy_skull.bsprite");
+		GAMESPRITE_MCBULLET = NEW CSprite("sprite\\mcbullet.bsprite");
 
-		m_pad = NEW CSprite("vpad.bsprite");
+		m_pad = NEW CSprite("sprite\\vpad.bsprite");
 		
 		//#####################
 		//####	reset game
@@ -464,6 +464,8 @@ void CHighGear::procLoading()
 		initActors();
 		m_gameTime = GETTIMEMS();
 		m_gameState = GAME_READY;
+		m_kill = 0;
+		m_village = MAX_VILLAGE;
 		break;
 	}
 	if (++ m_loadingCounter <= m_loadingLength)
@@ -656,8 +658,17 @@ void CHighGear::procMaingame()
 
 	delete(drawActorSortArray);
 
+#define UI_KILL_X	240
+#define UI_KILL_Y	30
+#define UI_KILL_CAPTION_WIDTH	20
+#define UI_VILLAGE_X	10
+#define UI_VILLAGE_Y	60
+#define UI_VILLAGE_CAPTION_X	180
+#define UI_VILLAGE_CAPTION_WIDTH	20
+
+	//####	Draw UIs
 	if (m_gameState == GAME_READY)
-	{
+	{	//'start' catpion
 		if ((GETTIMEMS() / 500) % 2)
 			m_ui->DrawFrame(GetLib2D(), m_dispX >> 1, m_dispY >> 1, 0);
 	}
@@ -671,6 +682,41 @@ void CHighGear::procMaingame()
 		//touchZones->AddZone(ZONEID_PAD_RIGHT, VPAD_X + 55, VPAD_Y + 25, VPAD_X + 95, VPAD_Y + 65); 
 
 		m_pad->DrawModule(GetLib2D(), VPAD_FIRE_X, VPAD_FIRE_Y, 1);
+
+		//Kills
+		m_ui->DrawFrame(GetLib2D(), UI_KILL_X, UI_KILL_Y, 11);
+		drawNum(UI_KILL_X - UI_KILL_CAPTION_WIDTH, UI_KILL_Y, m_kill, UI_KILL_CAPTION_WIDTH, true);
+
+		//Kills
+		m_ui->DrawFrame(GetLib2D(), UI_VILLAGE_X, UI_VILLAGE_Y, 12);
+		drawNum(UI_VILLAGE_CAPTION_X, UI_VILLAGE_Y, m_village, UI_VILLAGE_CAPTION_WIDTH, true);
 	}
 	
+}
+
+void CHighGear::drawNum(int x, int y, int value, int fontWidth, bool bRightAlign)
+{
+	int digit = getNumDigit(value);
+	
+	if (!bRightAlign) x += fontWidth * digit;
+	for (int i = 0 ; i < digit; i ++)
+	{
+		m_ui->DrawFrame(GetLib2D(), x - fontWidth * i, y , 1 + value % 10);
+		value /= 10;
+	}
+	
+}
+
+int CHighGear::getNumDigit(int v)
+{
+	if (v < 0) return 0;
+	if (v == 0) return 1;
+
+	int cnt = 0;
+	while (v > 0)
+	{
+		v /= 10;
+		cnt ++;
+	}
+	return cnt;
 }

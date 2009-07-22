@@ -13,7 +13,7 @@ Load("..\bld_tmp\bg.sprite")
 	Save("..\bld_tmp\bg.sprite")
 
 Load("..\bld_tmp\bg.sprite")
-		ExportBSpriteFFT("..\build_output\bg.data")
+		ExportBSpriteFFT("..\build_output\sprite\bg.data")
 
 
 Load("..\bld_tmp\bg_floor.sprite")
@@ -22,7 +22,7 @@ Load("..\bld_tmp\bg_floor.sprite")
 	Save("..\bld_tmp\bg_floor.sprite")
 
 Load("..\bld_tmp\bg_floor.sprite")
-		ExportBSpriteFFT("..\build_output\bg_floor.data")
+		ExportBSpriteFFT("..\build_output\sprite\bg_floor.data")
 
 //--------
 
@@ -32,7 +32,7 @@ Load("..\bld_tmp\mc00.sprite")
 	Save("..\bld_tmp\mc00.sprite")
 
 Load("..\bld_tmp\mc00.sprite")
-		ExportBSpriteFFT("..\build_output\mc00.data")
+		ExportBSpriteFFT("..\build_output\sprite\mc00.data")
 
 
 
@@ -42,7 +42,7 @@ Load("..\bld_tmp\enemy_mummy.sprite")
 	Save("..\bld_tmp\enemy_mummy.sprite")
 
 Load("..\bld_tmp\enemy_mummy.sprite")
-		ExportBSpriteFFT("..\build_output\enemy_mummy.data")		
+		ExportBSpriteFFT("..\build_output\sprite\enemy_mummy.data")		
 		
 		
 Load("..\bld_tmp\enemy_vampire.sprite")
@@ -51,7 +51,7 @@ Load("..\bld_tmp\enemy_vampire.sprite")
 	Save("..\bld_tmp\enemy_vampire.sprite")
 
 Load("..\bld_tmp\enemy_vampire.sprite")
-		ExportBSpriteFFT("..\build_output\enemy_vampire.data")		
+		ExportBSpriteFFT("..\build_output\sprite\enemy_vampire.data")		
 
 Load("..\bld_tmp\enemy_skull.sprite")
 	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 256, -1, 1, 0)
@@ -59,7 +59,7 @@ Load("..\bld_tmp\enemy_skull.sprite")
 	Save("..\bld_tmp\enemy_skull.sprite")
 
 Load("..\bld_tmp\enemy_skull.sprite")
-		ExportBSpriteFFT("..\build_output\enemy_skull.data")		
+		ExportBSpriteFFT("..\build_output\sprite\enemy_skull.data")		
 //--------
 
 Load("..\bld_tmp\interface0.sprite")
@@ -68,7 +68,7 @@ Load("..\bld_tmp\interface0.sprite")
 	Save("..\bld_tmp\interface0.sprite")
 
 Load("..\bld_tmp\interface0.sprite")
-		ExportBSpriteFFT("..\build_output\interface0.data")		
+		ExportBSpriteFFT("..\build_output\sprite\interface0.data")		
 
 Load("..\bld_tmp\loading.sprite")
 	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 128, -1, 1, 0)
@@ -76,7 +76,7 @@ Load("..\bld_tmp\loading.sprite")
 	Save("..\bld_tmp\loading.sprite")
 
 Load("..\bld_tmp\loading.sprite")
-		ExportBSpriteFFT("..\build_output\loading.data")
+		ExportBSpriteFFT("..\build_output\sprite\loading.data")
 
 //--------
 
@@ -86,7 +86,7 @@ Load("..\bld_tmp\MCbullet.sprite")
 	Save("..\bld_tmp\mcbullet.sprite")
 
 Load("..\bld_tmp\mcbullet.sprite")
-		ExportBSpriteFFT("..\build_output\mcbullet.data")
+		ExportBSpriteFFT("..\build_output\sprite\mcbullet.data")
 
 //--------
 
@@ -96,7 +96,7 @@ Load("..\bld_tmp\logo.sprite")
 	Save("..\bld_tmp\logo.sprite")
 
 Load("..\bld_tmp\logo.sprite")
-		ExportBSpriteFFT("..\build_output\logo.data")
+		ExportBSpriteFFT("..\build_output\sprite\logo.data")
 		
 
 Load("..\bld_tmp\splash.sprite")
@@ -105,7 +105,7 @@ Load("..\bld_tmp\splash.sprite")
 	Save("..\bld_tmp\splash.sprite")
 
 Load("..\bld_tmp\splash.sprite")
-		ExportBSpriteFFT("..\build_output\splash.data")		
+		ExportBSpriteFFT("..\build_output\sprite\splash.data")		
 
 //--------
 
@@ -115,7 +115,7 @@ Load("..\bld_tmp\vpad.sprite")
 	Save("..\bld_tmp\vpad.sprite")
 
 Load("..\bld_tmp\vpad.sprite")
-		ExportBSpriteFFT("..\build_output\vpad.data")		
+		ExportBSpriteFFT("..\build_output\sprite\vpad.data")		
 
 
 //////////////////////////////////////////////////
@@ -130,70 +130,70 @@ InitBSpriteFFT("fft\export_image_single_8bpp.fft")
 Load("..\bld_tmp\bg.sprite")
 	DeleteAllModules()
 	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
-	ExportBSpriteFFT("..\build_output\bg.image")
+	ExportBSpriteFFT("..\build_output\sprite\bg.image")
 
 
 Load("..\bld_tmp\bg_floor.sprite")
 	DeleteAllModules()
 	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
-	ExportBSpriteFFT("..\build_output\bg_floor.image")
+	ExportBSpriteFFT("..\build_output\sprite\bg_floor.image")
 
 //----
 
 Load("..\bld_tmp\mc00.sprite")
 	DeleteAllModules()
 	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
-	ExportBSpriteFFT("..\build_output\mc00.image")
+	ExportBSpriteFFT("..\build_output\sprite\mc00.image")
 
 
 Load("..\bld_tmp\enemy_mummy.sprite")
 	DeleteAllModules()
 	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
-	ExportBSpriteFFT("..\build_output\enemy_mummy.image")
+	ExportBSpriteFFT("..\build_output\sprite\enemy_mummy.image")
 	
 Load("..\bld_tmp\enemy_vampire.sprite")
 	DeleteAllModules()
 	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
-	ExportBSpriteFFT("..\build_output\enemy_vampire.image")
+	ExportBSpriteFFT("..\build_output\sprite\enemy_vampire.image")
 
 Load("..\bld_tmp\enemy_skull.sprite")
 	DeleteAllModules()
 	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
-	ExportBSpriteFFT("..\build_output\enemy_skull.image")
+	ExportBSpriteFFT("..\build_output\sprite\enemy_skull.image")
 
 //----
 
 Load("..\bld_tmp\interface0.sprite")
 	DeleteAllModules()
 	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
-	ExportBSpriteFFT("..\build_output\interface0.image")
+	ExportBSpriteFFT("..\build_output\sprite\interface0.image")
 
 
 Load("..\bld_tmp\loading.sprite")
 	DeleteAllModules()
 	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
-	ExportBSpriteFFT("..\build_output\loading.image")
+	ExportBSpriteFFT("..\build_output\sprite\loading.image")
 
 //----
 
 Load("..\bld_tmp\mcbullet.sprite")
 	DeleteAllModules()
 	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
-	ExportBSpriteFFT("..\build_output\mcbullet.image")
+	ExportBSpriteFFT("..\build_output\sprite\mcbullet.image")
 
 //----
 
 Load("..\bld_tmp\logo.sprite")
 	DeleteAllModules()
 	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
-	ExportBSpriteFFT("..\build_output\logo.image")
+	ExportBSpriteFFT("..\build_output\sprite\logo.image")
 
 //----
 
 Load("..\bld_tmp\splash.sprite")
 	DeleteAllModules()
 	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
-	ExportBSpriteFFT("..\build_output\splash.image")
+	ExportBSpriteFFT("..\build_output\sprite\splash.image")
 
 //----
 
@@ -201,7 +201,7 @@ Load("..\bld_tmp\splash.sprite")
 Load("..\bld_tmp\vpad.sprite")
 	DeleteAllModules()
 	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
-	ExportBSpriteFFT("..\build_output\vpad.image")
+	ExportBSpriteFFT("..\build_output\sprite\vpad.image")
 
 //----
 

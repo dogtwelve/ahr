@@ -6,7 +6,7 @@
 
 // ASprite defines
 #define USE_SINGLE_IMAGE
-#define JK_TEMPORARY
+//#define JK_TEMPORARY
 
 
 #endif	// ! DEFINE_IPHONE__H__INCLUDED__
