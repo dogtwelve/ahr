@@ -196,6 +196,9 @@ public:
 	int m_village;
 	int m_level;
 
+	int m_btPow;
+	int m_btDelay;
+
 #define MAX_ACTOR	50
 #define	MAX_GAMESPRITE	20
 	void initActors();

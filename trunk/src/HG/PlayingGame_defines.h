@@ -4,10 +4,13 @@
 #include "Config.h"
 
 #define GAMESPRITE_MC		m_gameSprite[0]
-#define GAMESPRITE_MUMMY	m_gameSprite[1]
-#define GAMESPRITE_VAMPIRE	m_gameSprite[2]
-#define GAMESPRITE_SKULL	m_gameSprite[3]
-#define GAMESPRITE_MCBULLET	m_gameSprite[4]
+#define GAMESPRITE_ITEM		m_gameSprite[1]
+#define GAMESPRITE_MUMMY	m_gameSprite[2]
+#define GAMESPRITE_VAMPIRE	m_gameSprite[3]
+#define GAMESPRITE_SKULL	m_gameSprite[4]
+#define GAMESPRITE_MCBULLET	m_gameSprite[5]
+
+#define GAMESPRITE_ENEMY_START_INDEX	2
 
 #define MAINCHAR			m_actors[0]
 #define VPAD_X	((m_dispX >> 1) - 120)
@@ -44,4 +47,7 @@
 
 #define MAX_ENEMY	3
 #define MAX_VILLAGE	100
+
+#define MAX_BULLET_POWER	4
+#define MAX_BULLET_DELAY	4
 #endif	// PLAYING_GAME__DEFINES__H__INCLUDED__

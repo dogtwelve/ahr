@@ -34,7 +34,4 @@ echo ================================
 echo ==== build done ================
 echo ================================
 
-echo temporary
-
-copy build_output\* ..\Engine\Win32\
 pause
