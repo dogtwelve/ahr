@@ -35,6 +35,14 @@ Load("..\bld_tmp\mc00.sprite")
 		ExportBSpriteFFT("..\build_output\sprite\mc00.data")
 
 
+Load("..\bld_tmp\items.sprite")
+	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 128, -1, 1, 0)
+	SaveImage(0, "..\bld_tmp\items.bmp")
+	Save("..\bld_tmp\items.sprite")
+
+Load("..\bld_tmp\items.sprite")
+		ExportBSpriteFFT("..\build_output\sprite\items.data")
+
 
 Load("..\bld_tmp\enemy_mummy.sprite")
 	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 256, -1, 1, 0)
@@ -144,6 +152,11 @@ Load("..\bld_tmp\mc00.sprite")
 	DeleteAllModules()
 	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
 	ExportBSpriteFFT("..\build_output\sprite\mc00.image")
+
+Load("..\bld_tmp\items.sprite")
+	DeleteAllModules()
+	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
+	ExportBSpriteFFT("..\build_output\sprite\items.image")
 
 
 Load("..\bld_tmp\enemy_mummy.sprite")

@@ -17,6 +17,7 @@ public:
 	{
 		ACTOR_NONE = -1,
 		ACTOR_MC,
+		ACTOR_ITEM,
 		ACTOR_MUMMY,
 		ACTOR_VAMPIRE,
 		ACTOR_SKULL,

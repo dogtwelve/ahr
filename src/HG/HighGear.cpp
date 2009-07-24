@@ -450,6 +450,7 @@ void CHighGear::procLoading()
 
 		m_gameSprite = NEW CSprite*[MAX_GAMESPRITE];
 		GAMESPRITE_MC = NEW CSprite("sprite\\mc00.bsprite");
+		GAMESPRITE_ITEM = NEW CSprite("sprite\\items.bsprite");
 		GAMESPRITE_MUMMY = NEW CSprite("sprite\\enemy_mummy.bsprite");
 		GAMESPRITE_VAMPIRE = NEW CSprite("sprite\\enemy_vampire.bsprite");
 		GAMESPRITE_SKULL = NEW CSprite("sprite\\enemy_skull.bsprite");
@@ -466,6 +467,10 @@ void CHighGear::procLoading()
 		m_gameState = GAME_READY;
 		m_kill = 0;
 		m_village = MAX_VILLAGE;
+		
+		//####	bullet levels : 0~4
+		m_btPow = 0;
+		m_btDelay = 0;
 		break;
 	}
 	if (++ m_loadingCounter <= m_loadingLength)
@@ -514,6 +519,11 @@ void CHighGear::procMaingame()
 		break;
 	}
 	case GAME_START:
+		if (m_village <= 0) 
+		{
+			m_gameState = GAME_OVER;
+			break;
+		}
 		//genEnemy();
 		if (m_Random.GetNumber(0, 100) < 7)
 		{
@@ -524,7 +534,7 @@ void CHighGear::procMaingame()
 			{
 				int eType = m_Random.GetNumber(0, MAX_ENEMY);
 
-				m_actors[index]->init(CActor::ACTOR_MUMMY + eType, m_gameSprite[1 + eType],
+				m_actors[index]->init(CActor::ACTOR_MUMMY + eType, m_gameSprite[GAMESPRITE_ENEMY_START_INDEX + eType],
 										m_Random.GetNumber(0, LEVEL_UNIT_WIDTH), 0);
 			}
 		}
@@ -578,7 +588,7 @@ void CHighGear::procMaingame()
 					{
 						m_actors[index]->init(CActor::ACTOR_MCBULLET, GAMESPRITE_MCBULLET, MAINCHAR->m_posX, MAINCHAR->m_posY);
 					}
-					MAINCHAR->notifyState(CActor::ACTOR_STATE_ATTACK, 15);
+					MAINCHAR->notifyState(CActor::ACTOR_STATE_ATTACK, 15 - m_btDelay * 2);
 				}
 			}
 
@@ -594,6 +604,7 @@ void CHighGear::procMaingame()
 					m_actors[i]->m_type = CActor::ACTOR_NONE;
 			}
 		}
+		
 		break;
 	}
 	
@@ -691,7 +702,10 @@ void CHighGear::procMaingame()
 		m_ui->DrawFrame(GetLib2D(), UI_VILLAGE_X, UI_VILLAGE_Y, 12);
 		drawNum(UI_VILLAGE_CAPTION_X, UI_VILLAGE_Y, m_village, UI_VILLAGE_CAPTION_WIDTH, true);
 	}
-	
+	else if (m_gameState == GAME_OVER)
+	{
+		m_ui->DrawFrame(GetLib2D(), m_dispX >> 1, m_dispY >> 1, 13);
+	}
 }
 
 void CHighGear::drawNum(int x, int y, int value, int fontWidth, bool bRightAlign)

@@ -8,9 +8,9 @@ class CHighGear;
 const int arrEnemyData[MAX_ENEMY][3]	=
 {
 	//speed, hp, score
-	{ 10, 10, 0 },	//mummy
-	{ 3, 8, 0, },	//vampire
-	{ 7, 4, 0 }		//skull
+	{ 10, 5, 0 },	//mummy
+	{ 3, 3, 0, },	//vampire
+	{ 7, 3, 0 }		//skull
 };
 
 #define ENEMY_DATA_INDEX_SPEED	0
@@ -43,6 +43,10 @@ void CActor::init(int type, CSprite* gameSpr, int x, int y)
 
 	switch (type)
 	{
+	case ACTOR_ITEM:
+		setAnim(0);
+		m_state = ACTOR_STATE_IDLE;
+		break;
 	case ACTOR_MC:
 	case ACTOR_MUMMY:
 	case ACTOR_VAMPIRE:
@@ -69,16 +73,29 @@ void CActor::notifyState(int state, int param1)
 	m_state = state;
 	switch (m_type)
 	{
+		case ACTOR_ITEM:
+			m_state = ACTOR_STATE_DAMAGED;
+			break;
 		case ACTOR_MUMMY:
 		case ACTOR_VAMPIRE:
 		case ACTOR_SKULL:
 			if (m_state == ACTOR_STATE_DAMAGED)
 			{
-				m_hp --;
+				m_hp -= param1;
 				if (m_hp <= 0)
 				{
 					m_state = ACTOR_STATE_DESTROYED;
 					g_pGame->m_kill ++;
+					//gen Items
+					
+					int index = g_pGame->getEmptyActorIndex();
+
+					if (index > -1)
+					{
+						g_pGame->m_actors[index]->init(ACTOR_ITEM, g_pGame->GAMESPRITE_ITEM,
+														m_posX, m_posY);
+					}
+					
 				}
 				else
 				{
@@ -108,6 +125,59 @@ void CActor::update()
 	if (m_state == ACTOR_STATE_DESTROYED) return;
 	switch (m_type)
 	{
+	case ACTOR_ITEM:
+	{
+		if (m_state == ACTOR_STATE_DAMAGED)
+		{
+			if (--m_posY <= 0)
+				m_state = ACTOR_STATE_IDLE;
+		}
+		else
+		{
+			bool bHit = false;
+			for (int i = 0; i < MAX_ACTOR; i ++)
+			{
+				if (g_pGame->m_actors[i] == NULL) continue;
+				
+				if (g_pGame->m_actors[i]->m_type != ACTOR_MCBULLET) continue;
+				if (g_pGame->m_actors[i]->m_state == ACTOR_STATE_DESTROYED) continue;
+				if (g_pGame->m_actors[i]->m_posX != m_posX) continue;
+				if (g_pGame->m_actors[i]->m_posY != m_posY) continue;
+
+				g_pGame->m_actors[i]->m_state = ACTOR_STATE_DESTROYED;	//Bullet X
+					
+
+				notifyState(ACTOR_STATE_DAMAGED, -1);	//ITEM
+				//hit the Items!!!
+				
+				int index = g_pGame->getEmptyActorIndex();
+
+				if (index > -1)
+				{
+					g_pGame->m_actors[index]->init(ACTOR_BOOM, g_pGame->GAMESPRITE_MCBULLET,
+													m_posX, m_posY);
+				}
+				bHit = true;
+				break;
+			}
+
+			if (!bHit 
+				&& g_pGame->MAINCHAR->m_posX == m_posX &&
+				g_pGame->MAINCHAR->m_posY == m_posY &&
+				g_pGame->MAINCHAR->m_state != ACTOR_STATE_DAMAGED)
+			{
+				//get Items!
+				m_state = ACTOR_STATE_DESTROYED;
+				if (g_pGame->m_btDelay < MAX_BULLET_DELAY) g_pGame->m_btDelay++;
+				if (g_pGame->m_btPow < MAX_BULLET_POWER) g_pGame->m_btPow++;
+			}
+			else if (++ m_posY > LEVEL_UNIT_HEIGHT)
+			{
+				m_state = ACTOR_STATE_DESTROYED;
+			}
+		}
+		break;
+	}
 	case ACTOR_MC:
 		if (m_state == ACTOR_STATE_ATTACK)
 		{
@@ -147,7 +217,7 @@ void CActor::update()
 				
 				if (g_pGame->m_actors[i]->m_type == ACTOR_MCBULLET)
 				{
-					notifyState(ACTOR_STATE_DAMAGED, -1);	//Enemy
+					notifyState(ACTOR_STATE_DAMAGED, 1 + g_pGame->m_btPow);	//Enemy
 
 					int index = g_pGame->getEmptyActorIndex();
 
@@ -183,7 +253,8 @@ void CActor::update()
 		for (int i = 0; i < MAX_ACTOR; i ++)
 		{
 			if (g_pGame->m_actors[i] == NULL) continue;
-			if (!g_pGame->m_actors[i]->isEnemy()) continue;
+			if (!g_pGame->m_actors[i]->isEnemy() 
+				&& g_pGame->m_actors[i]->m_type != ACTOR_ITEM) continue;
 
 
 			if (g_pGame->m_actors[i]->m_posX == m_posX && 

@@ -1,6 +1,6 @@
  Engine
 
- Timestamp is 4a674f5a (Thu Jul 23 02:41:46 2009)
+ Timestamp is 4a690d48 (Fri Jul 24 10:24:24 2009)
 
  Preferred load address is 00400000
 
@@ -47,9 +47,9 @@
 
   Address         Publics by Value              Rva+Base       Lib:Object
 
- 0000:00000000       __except_list              00000000     <absolute>
  0000:00000000       ___safe_se_handler_count   00000000     <absolute>
  0000:00000000       ___safe_se_handler_table   00000000     <absolute>
+ 0000:00000000       __except_list              00000000     <absolute>
  0000:00000000       ___ImageBase               00400000     <linker-defined>
  0001:00000000       __enc$textbss$begin        00401000     <linker-defined>
  0001:00078822       __enc$textbss$end          00479822     <linker-defined>
@@ -461,12 +461,12 @@
  0002:00023ab0       ??0length_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z 0049dab0 f i Keyframed.obj
  0002:00023b20       ??0logic_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z 0049db20 f i Keyframed.obj
  0002:00023be0       ?what@logic_error@std@@UBEPBDXZ 0049dbe0 f i Keyframed.obj
- 0002:00023c40       ??_Glogic_error@std@@UAEPAXI@Z 0049dc40 f i Keyframed.obj
  0002:00023c40       ??_Elogic_error@std@@UAEPAXI@Z 0049dc40 f i Keyframed.obj
+ 0002:00023c40       ??_Glogic_error@std@@UAEPAXI@Z 0049dc40 f i Keyframed.obj
  0002:00023cb0       ??1logic_error@std@@UAE@XZ 0049dcb0 f i Keyframed.obj
  0002:00023d20       ??1length_error@std@@UAE@XZ 0049dd20 f i Keyframed.obj
- 0002:00023d80       ??_Glength_error@std@@UAEPAXI@Z 0049dd80 f i Keyframed.obj
  0002:00023d80       ??_Elength_error@std@@UAEPAXI@Z 0049dd80 f i Keyframed.obj
+ 0002:00023d80       ??_Glength_error@std@@UAEPAXI@Z 0049dd80 f i Keyframed.obj
  0002:00023df0       ??0logic_error@std@@QAE@ABV01@@Z 0049ddf0 f i Keyframed.obj
  0002:00023ec0       ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z 0049dec0 f i Keyframed.obj
  0002:00023f90       ??0?$_Container_base_aux_alloc_empty@V?$allocator@VVector4s@@@std@@@std@@IAE@V?$allocator@VVector4s@@@1@@Z 0049df90 f i Keyframed.obj
@@ -600,8 +600,8 @@
  0002:0002b560       ?PopMatrix@CMatrixStack@Lib3D@@QAEXXZ 004a5560 f   Matrix.obj
  0002:0002b600       ?ResetStack@CMatrixStack@Lib3D@@QAEAAVCMatrix44@2@XZ 004a5600 f   Matrix.obj
  0002:0002b6a0       ??0CMesh@Lib3D@@QAE@PBDHPAVTVertex@1@HPAVTFace@1@HHH_N@Z 004a56a0 f   Mesh.obj
- 0002:0002b780       ??_ECMesh@Lib3D@@UAEPAXI@Z 004a5780 f i Mesh.obj
  0002:0002b780       ??_GCMesh@Lib3D@@UAEPAXI@Z 004a5780 f i Mesh.obj
+ 0002:0002b780       ??_ECMesh@Lib3D@@UAEPAXI@Z 004a5780 f i Mesh.obj
  0002:0002b7f0       ??1CMesh@Lib3D@@UAE@XZ     004a57f0 f   Mesh.obj
  0002:0002b950       ?ClearFaces@CMesh@Lib3D@@QAEXXZ 004a5950 f   Mesh.obj
  0002:0002ba70       ?GetLimits@CMesh@Lib3D@@QBEXPAVVector4s@@0@Z 004a5a70 f   Mesh.obj
@@ -639,8 +639,8 @@
  0002:0002f650       ?AnimationPlay@CGLMesh@Lib3D@@QAEXHHH@Z 004a9650 f   Mesh.obj
  0002:0002f950       ?AnimationPlay3@CGLMesh@Lib3D@@QAEXHHHHHH@Z 004a9950 f   Mesh.obj
  0002:0002fb40       ??0CBasicMesh@Lib3D@@QAE@PBD0H@Z 004a9b40 f   Mesh.obj
- 0002:000300f0       ??_ECBasicMesh@Lib3D@@UAEPAXI@Z 004aa0f0 f i Mesh.obj
  0002:000300f0       ??_GCBasicMesh@Lib3D@@UAEPAXI@Z 004aa0f0 f i Mesh.obj
+ 0002:000300f0       ??_ECBasicMesh@Lib3D@@UAEPAXI@Z 004aa0f0 f i Mesh.obj
  0002:00030160       ??0CBasicMesh@Lib3D@@QAE@PBDPAPBDHH@Z 004aa160 f   Mesh.obj
  0002:000306b0       ??1CBasicMesh@Lib3D@@UAE@XZ 004aa6b0 f   Mesh.obj
  0002:000307f0       ?SetUV@CBasicMesh@Lib3D@@QAEXH@Z 004aa7f0 f   Mesh.obj
@@ -743,7 +743,6 @@
  0002:0003c020       ?COLOR_AVERAGE@@YAGGG@Z    004b6020 f   texture.obj
  0002:0003c0d0       ??0TTexture@Lib3D@@QAE@HH@Z 004b60d0 f   texture.obj
  0002:0003c200       ?LoadTexture@TTexture@Lib3D@@AAEXPBD_N011H@Z 004b6200 f   texture.obj
- 0002:0003d3f0       ?update@CActor@@QAEXXZ     004b73f0 f   Actor.obj
  0002:0003d870       ?CreateKeyForGLTexName@TTexture@Lib3D@@SAXAAFI@Z 004b7870 f i texture.obj
  0002:0003d9a0       ?CleanBuffers@TTexture@Lib3D@@QAEXXZ 004b79a0 f   texture.obj
  0002:0003da80       ??0TTexture@Lib3D@@QAE@PBD_N011H@Z 004b7a80 f   texture.obj
@@ -822,8 +821,8 @@
  0002:000441f0       ??_GCModule@@UAEPAXI@Z     004be1f0 f i AuroraSprite.obj
  0002:00044260       ??1CModule@@UAE@XZ         004be260 f   AuroraSprite.obj
  0002:000442a0       ??0CAuroraPalette@@QAE@F@Z 004be2a0 f   AuroraSprite.obj
- 0002:00044350       ??_GCAuroraPalette@@UAEPAXI@Z 004be350 f i AuroraSprite.obj
  0002:00044350       ??_ECAuroraPalette@@UAEPAXI@Z 004be350 f i AuroraSprite.obj
+ 0002:00044350       ??_GCAuroraPalette@@UAEPAXI@Z 004be350 f i AuroraSprite.obj
  0002:000443c0       ??1CAuroraPalette@@UAE@XZ  004be3c0 f   AuroraSprite.obj
  0002:00044450       ??0CFrame@@QAE@F@Z         004be450 f   AuroraSprite.obj
  0002:00044500       ??1CFrame@@QAE@XZ          004be500 f   AuroraSprite.obj
@@ -1099,8 +1098,8 @@
  0002:00055a20       ??1?$CSingleton@$01VCArchivedFileManager@@@@UAE@XZ 004cfa20 f i ArchivedFileManager.obj
  0002:00055a80       ??1?$CSingletonNoAutoConstruct@$01VCArchivedFileManager@@@@UAE@XZ 004cfa80 f i ArchivedFileManager.obj
  0002:00055ae0       ??1ISingleton@@UAE@XZ      004cfae0 f i ArchivedFileManager.obj
- 0002:00055b20       ??_EISingleton@@UAEPAXI@Z  004cfb20 f i ArchivedFileManager.obj
  0002:00055b20       ??_GISingleton@@UAEPAXI@Z  004cfb20 f i ArchivedFileManager.obj
+ 0002:00055b20       ??_EISingleton@@UAEPAXI@Z  004cfb20 f i ArchivedFileManager.obj
  0002:00055b90       ??0?$map@PADUSFileProperties@CArchivedFileManager@@Ultstr@2@V?$allocator@U?$pair@QADUSFileProperties@CArchivedFileManager@@@std@@@std@@@std@@QAE@XZ 004cfb90 f i ArchivedFileManager.obj
  0002:00055c10       ??A?$map@PADUSFileProperties@CArchivedFileManager@@Ultstr@2@V?$allocator@U?$pair@QADUSFileProperties@CArchivedFileManager@@@std@@@std@@@std@@QAEAAUSFileProperties@CArchivedFileManager@@ABQAD@Z 004cfc10 f i ArchivedFileManager.obj
  0002:00055ed0       ??Rltstr@CArchivedFileManager@@QBE_NPBD0@Z 004cfed0 f i ArchivedFileManager.obj
@@ -1111,8 +1110,8 @@
  0002:00056350       ??9const_iterator@?$_Tree@V?$_Tmap_traits@PADUSFileProperties@CArchivedFileManager@@Ultstr@2@V?$allocator@U?$pair@QADUSFileProperties@CArchivedFileManager@@@std@@@std@@$0A@@std@@@std@@QBE_NABV012@@Z 004d0350 f i ArchivedFileManager.obj
  0002:000563c0       ??_G?$CSingleton@$01VCArchivedFileManager@@@@UAEPAXI@Z 004d03c0 f i ArchivedFileManager.obj
  0002:000563c0       ??_E?$CSingleton@$01VCArchivedFileManager@@@@UAEPAXI@Z 004d03c0 f i ArchivedFileManager.obj
- 0002:00056430       ??_E?$CSingletonNoAutoConstruct@$01VCArchivedFileManager@@@@UAEPAXI@Z 004d0430 f i ArchivedFileManager.obj
  0002:00056430       ??_G?$CSingletonNoAutoConstruct@$01VCArchivedFileManager@@@@UAEPAXI@Z 004d0430 f i ArchivedFileManager.obj
+ 0002:00056430       ??_E?$CSingletonNoAutoConstruct@$01VCArchivedFileManager@@@@UAEPAXI@Z 004d0430 f i ArchivedFileManager.obj
  0002:000564a0       ??0const_iterator@?$_Tree@V?$_Tmap_traits@PADUSFileProperties@CArchivedFileManager@@Ultstr@2@V?$allocator@U?$pair@QADUSFileProperties@CArchivedFileManager@@@std@@@std@@$0A@@std@@@std@@QAE@ABV012@@Z 004d04a0 f i ArchivedFileManager.obj
  0002:00056510       ??4iterator@?$_Tree@V?$_Tmap_traits@PADUSFileProperties@CArchivedFileManager@@Ultstr@2@V?$allocator@U?$pair@QADUSFileProperties@CArchivedFileManager@@@std@@@std@@$0A@@std@@@std@@QAEAAV012@ABV012@@Z 004d0510 f i ArchivedFileManager.obj
  0002:00056570       ??1?$_Tree_val@V?$_Tmap_traits@PADUSFileProperties@CArchivedFileManager@@Ultstr@2@V?$allocator@U?$pair@QADUSFileProperties@CArchivedFileManager@@@std@@@std@@$0A@@std@@@std@@QAE@XZ 004d0570 f i ArchivedFileManager.obj
@@ -1215,8 +1214,8 @@
  0002:0005c280       ??_ECFunctor@@UAEPAXI@Z    004d6280 f i Functor.obj
  0002:0005c2f0       ??1CFunctor@@UAE@XZ        004d62f0 f   Functor.obj
  0002:0005c330       ??0CHighGear@@QAE@AAVCGapi@@@Z 004d6330 f   HighGear.obj
- 0002:0005c5d0       ??_ECHighGear@@UAEPAXI@Z   004d65d0 f i HighGear.obj
  0002:0005c5d0       ??_GCHighGear@@UAEPAXI@Z   004d65d0 f i HighGear.obj
+ 0002:0005c5d0       ??_ECHighGear@@UAEPAXI@Z   004d65d0 f i HighGear.obj
  0002:0005c640       ??0ITouchZonesListener@@QAE@XZ 004d6640 f i HighGear.obj
  0002:0005c690       ??1CHighGear@@UAE@XZ       004d6690 f   HighGear.obj
  0002:0005c880       ??_GCLib3D@Lib3D@@QAEPAXI@Z 004d6880 f i HighGear.obj
@@ -1303,8 +1302,8 @@
  0002:00062fe0       ?Draw@CShadow@Lib3D@@QAEXAAVCLib3D@2@PBVVector4s@@PAV4@_NPAVCMatrix44@2@4@Z 004dcfe0 f   shadow.obj
  0002:00063690       ?DrawCopterShadow@CShadow@Lib3D@@QAEXAAVCLib3D@2@PBVVector4s@@PAV4@@Z 004dd690 f   shadow.obj
  0002:000636d0       ??0CSingletonManager@@IAE@XZ 004dd6d0 f   Singleton.obj
- 0002:000637a0       ??_GCSingletonManager@@UAEPAXI@Z 004dd7a0 f i Singleton.obj
  0002:000637a0       ??_ECSingletonManager@@UAEPAXI@Z 004dd7a0 f i Singleton.obj
+ 0002:000637a0       ??_GCSingletonManager@@UAEPAXI@Z 004dd7a0 f i Singleton.obj
  0002:00063810       ??1CSingletonManager@@UAE@XZ 004dd810 f   Singleton.obj
  0002:00063940       ?Create@CSingletonManager@@SAXXZ 004dd940 f   Singleton.obj
  0002:00063a30       ?RegisterSingleton@CSingletonManager@@SAXPAVISingleton@@H@Z 004dda30 f   Singleton.obj
@@ -1312,8 +1311,8 @@
  0002:00063b50       ?Shutdown@CSingletonManager@@SAXXZ 004ddb50 f   Singleton.obj
  0002:00063c00       ?GetInstance@CSingletonManager@@SAPAV1@XZ 004ddc00 f   Singleton.obj
  0002:00063c60       ??1A_IFile@@UAE@XZ         004ddc60 f   File_iPhone.obj
- 0002:00063d30       ??_GA_IFile@@UAEPAXI@Z     004ddd30 f i File_iPhone.obj
  0002:00063d30       ??_EA_IFile@@UAEPAXI@Z     004ddd30 f i File_iPhone.obj
+ 0002:00063d30       ??_GA_IFile@@UAEPAXI@Z     004ddd30 f i File_iPhone.obj
  0002:00063da0       ?Open@A_IFile@@SAPAV1@PBDH_N1@Z 004ddda0 f   File_iPhone.obj
  0002:00064230       ?CreateStreamBuffer@A_IFile@@SAPAV1@XZ 004de230 f   File_iPhone.obj
  0002:00064320       ?Close@A_IFile@@SAXAAPAV1@@Z 004de320 f   File_iPhone.obj
@@ -1436,8 +1435,8 @@
  0002:0006a5a0       ??0DeviceDetails@@QAE@XZ   004e45a0 f   DeviceDetails.obj
  0002:0006a610       ??1DeviceDetails@@QAE@XZ   004e4610 f   DeviceDetails.obj
  0002:0006a650       ??0CWinNetwork@@QAE@XZ     004e4650 f   WinNetwork.obj
- 0002:0006a7b0       ??_GCWinNetwork@@UAEPAXI@Z 004e47b0 f i WinNetwork.obj
  0002:0006a7b0       ??_ECWinNetwork@@UAEPAXI@Z 004e47b0 f i WinNetwork.obj
+ 0002:0006a7b0       ??_GCWinNetwork@@UAEPAXI@Z 004e47b0 f i WinNetwork.obj
  0002:0006a820       ?update@CWinNetwork@@UAE_NXZ 004e4820 f   WinNetwork.obj
  0002:0006b980       ?DiscoverServers@CWinNetwork@@UAE_NXZ 004e5980 f   WinNetwork.obj
  0002:0006bb20       ?StartServer@CWinNetwork@@UAE_NXZ 004e5b20 f   WinNetwork.obj
@@ -1561,8 +1560,8 @@
  0002:00075970       ?MusicFreeXTM@CSoundWrap@@QAEXXZ 004ef970 f   SoundWrap.obj
  0002:000759b0       ?MusicFreeXM@CSoundWrap@@QAEXXZ 004ef9b0 f   SoundWrap.obj
  0002:000759f0       ??0CTouchZones@@QAE@XZ     004ef9f0 f   TouchZones.obj
- 0002:00075b80       ??_ECTouchZones@@UAEPAXI@Z 004efb80 f i TouchZones.obj
  0002:00075b80       ??_GCTouchZones@@UAEPAXI@Z 004efb80 f i TouchZones.obj
+ 0002:00075b80       ??_ECTouchZones@@UAEPAXI@Z 004efb80 f i TouchZones.obj
  0002:00075bf0       ?AddZone@CTouchZones@@QAEFEFFFF@Z 004efbf0 f   TouchZones.obj
  0002:00075d50       ?AddZoneWithMoveDetect@CTouchZones@@QAEFEFFFF@Z 004efd50 f   TouchZones.obj
  0002:00075e00       ?ClearZones@CTouchZones@@QAEXXZ 004efe00 f   TouchZones.obj
@@ -1575,6 +1574,7 @@
  0002:000763a0       ?TouchPressed@CTouchZones@@QAEXEFF@Z 004f03a0 f   TouchZones.obj
  0002:00076460       ?TouchMoved@CTouchZones@@QAEXEFF@Z 004f0460 f   TouchZones.obj
  0002:00076520       ?TouchReleased@CTouchZones@@QAEXEFF@Z 004f0520 f   TouchZones.obj
+ 0002:000765c0       ?update@CActor@@QAEXXZ     004f05c0 f   Actor.obj
  0002:00076cd0       ?ForceReleaseZones@CTouchZones@@QAEX_N@Z 004f0cd0 f   TouchZones.obj
  0002:00077120       ?setCheatName@CTouchZones@@SAXXZ 004f1120 f   TouchZones.obj
  0002:00077430       ?drawActivatedCheat@CTouchZones@@QAEXXZ 004f1430 f   TouchZones.obj
@@ -1583,8 +1583,8 @@
  0002:00077550       ??1?$CSingletonNoAutoConstruct@$09VCTouchZones@@@@UAE@XZ 004f1550 f i TouchZones.obj
  0002:000775c0       ??_G?$CSingleton@$09VCTouchZones@@@@UAEPAXI@Z 004f15c0 f i TouchZones.obj
  0002:000775c0       ??_E?$CSingleton@$09VCTouchZones@@@@UAEPAXI@Z 004f15c0 f i TouchZones.obj
- 0002:00077630       ??_E?$CSingletonNoAutoConstruct@$09VCTouchZones@@@@UAEPAXI@Z 004f1630 f i TouchZones.obj
  0002:00077630       ??_G?$CSingletonNoAutoConstruct@$09VCTouchZones@@@@UAEPAXI@Z 004f1630 f i TouchZones.obj
+ 0002:00077630       ??_E?$CSingletonNoAutoConstruct@$09VCTouchZones@@@@UAEPAXI@Z 004f1630 f i TouchZones.obj
  0002:000776f0       ??0Lib3DGL@@QAE@XZ         004f16f0 f   Lib3DGL.obj
  0002:00077780       ??1Lib3DGL@@QAE@XZ         004f1780 f   Lib3DGL.obj
  0002:000777c0       ?fillRect@Lib3DGL@@QAEXHHHHI@Z 004f17c0 f   Lib3DGL.obj
@@ -1819,8 +1819,8 @@
  0002:00082b70       ??4string@PVRT@@QAEAAV01@ABV01@@Z 004fcb70 f   OGLESTools:PVRTString.obj
  0002:00082b90       ??Astring@PVRT@@QBEABDI@Z  004fcb90 f   OGLESTools:PVRTString.obj
  0002:00082ba0       ??Astring@PVRT@@QAEAADI@Z  004fcba0 f   OGLESTools:PVRTString.obj
- 0002:00082bb0       ??_Gstring@PVRT@@UAEPAXI@Z 004fcbb0 f i OGLESTools:PVRTString.obj
  0002:00082bb0       ??_Estring@PVRT@@UAEPAXI@Z 004fcbb0 f i OGLESTools:PVRTString.obj
+ 0002:00082bb0       ??_Gstring@PVRT@@UAEPAXI@Z 004fcbb0 f i OGLESTools:PVRTString.obj
  0002:00082bf0       ??0string@PVRT@@QAE@ABV01@II@Z 004fcbf0 f   OGLESTools:PVRTString.obj
  0002:00082c40       ??0string@PVRT@@QAE@ID@Z   004fcc40 f   OGLESTools:PVRTString.obj
  0002:00082c80       ??0string@PVRT@@QAE@D@Z    004fcc80 f   OGLESTools:PVRTString.obj
@@ -1947,8 +1947,8 @@
  0002:00086910       ??0type_info@@AAE@ABV0@@Z  00500910 f   LIBCMTD:typinfo.obj
  0002:00086940       ??4type_info@@AAEAAV0@ABV0@@Z 00500940 f   LIBCMTD:typinfo.obj
  0002:00086960       ??0exception@std@@QAE@XZ   00500960 f   LIBCMTD:stdexcpt.obj
- 0002:000869a0       ??_Gexception@std@@UAEPAXI@Z 005009a0 f i LIBCMTD:stdexcpt.obj
  0002:000869a0       ??_Eexception@std@@UAEPAXI@Z 005009a0 f i LIBCMTD:stdexcpt.obj
+ 0002:000869a0       ??_Gexception@std@@UAEPAXI@Z 005009a0 f i LIBCMTD:stdexcpt.obj
  0002:000869e0       ??0exception@std@@QAE@ABQBD@Z 005009e0 f   LIBCMTD:stdexcpt.obj
  0002:00086a90       ??0exception@std@@QAE@ABQBDH@Z 00500a90 f   LIBCMTD:stdexcpt.obj
  0002:00086ad0       ??0exception@std@@QAE@ABV01@@Z 00500ad0 f   LIBCMTD:stdexcpt.obj
@@ -1956,8 +1956,8 @@
  0002:00086c70       ??1exception@std@@UAE@XZ   00500c70 f   LIBCMTD:stdexcpt.obj
  0002:00086cb0       ?what@exception@std@@UBEPBDXZ 00500cb0 f   LIBCMTD:stdexcpt.obj
  0002:00086ce0       ??0bad_cast@std@@QAE@PBD@Z 00500ce0 f   LIBCMTD:stdexcpt.obj
- 0002:00086d10       ??_Gbad_cast@std@@UAEPAXI@Z 00500d10 f i LIBCMTD:stdexcpt.obj
  0002:00086d10       ??_Ebad_cast@std@@UAEPAXI@Z 00500d10 f i LIBCMTD:stdexcpt.obj
+ 0002:00086d10       ??_Gbad_cast@std@@UAEPAXI@Z 00500d10 f i LIBCMTD:stdexcpt.obj
  0002:00086d50       ??0bad_cast@std@@QAE@ABV01@@Z 00500d50 f   LIBCMTD:stdexcpt.obj
  0002:00086d80       ??1bad_cast@std@@UAE@XZ    00500d80 f   LIBCMTD:stdexcpt.obj
  0002:00086db0       ??0bad_typeid@std@@QAE@PBD@Z 00500db0 f   LIBCMTD:stdexcpt.obj
@@ -2205,8 +2205,8 @@
  0002:0009c790       ___InternalCxxFrameHandler 00516790 f   LIBCMTD:frame.obj
  0002:0009cf00       ??0bad_exception@std@@QAE@PBD@Z 00516f00 f i LIBCMTD:frame.obj
  0002:0009cf30       ??1bad_exception@std@@UAE@XZ 00516f30 f i LIBCMTD:frame.obj
- 0002:0009cf60       ??_Ebad_exception@std@@UAEPAXI@Z 00516f60 f i LIBCMTD:frame.obj
  0002:0009cf60       ??_Gbad_exception@std@@UAEPAXI@Z 00516f60 f i LIBCMTD:frame.obj
+ 0002:0009cf60       ??_Ebad_exception@std@@UAEPAXI@Z 00516f60 f i LIBCMTD:frame.obj
  0002:0009cfa0       ??0bad_exception@std@@QAE@ABV01@@Z 00516fa0 f i LIBCMTD:frame.obj
  0002:0009d1b0       ___TypeMatch               005171b0 f   LIBCMTD:frame.obj
  0002:0009d290       ___FrameUnwindFilter       00517290 f   LIBCMTD:frame.obj
@@ -3057,14 +3057,14 @@
  0002:000f1e50       ?_Xran@_String_base@std@@SAXXZ 0056be50 f   libcpmtd:string.obj
  0002:000f1ee0       ??0out_of_range@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z 0056bee0 f i libcpmtd:string.obj
  0002:000f1f10       ??1out_of_range@std@@UAE@XZ 0056bf10 f i libcpmtd:string.obj
- 0002:000f1f40       ??_Gout_of_range@std@@UAEPAXI@Z 0056bf40 f i libcpmtd:string.obj
  0002:000f1f40       ??_Eout_of_range@std@@UAEPAXI@Z 0056bf40 f i libcpmtd:string.obj
+ 0002:000f1f40       ??_Gout_of_range@std@@UAEPAXI@Z 0056bf40 f i libcpmtd:string.obj
  0002:000f1f80       ??0out_of_range@std@@QAE@ABV01@@Z 0056bf80 f i libcpmtd:string.obj
  0002:000f1fb0       ?_Xinvarg@_String_base@std@@SAXXZ 0056bfb0 f   libcpmtd:string.obj
  0002:000f2040       ??0invalid_argument@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z 0056c040 f i libcpmtd:string.obj
  0002:000f2070       ??1invalid_argument@std@@UAE@XZ 0056c070 f i libcpmtd:string.obj
- 0002:000f20a0       ??_Einvalid_argument@std@@UAEPAXI@Z 0056c0a0 f i libcpmtd:string.obj
  0002:000f20a0       ??_Ginvalid_argument@std@@UAEPAXI@Z 0056c0a0 f i libcpmtd:string.obj
+ 0002:000f20a0       ??_Einvalid_argument@std@@UAEPAXI@Z 0056c0a0 f i libcpmtd:string.obj
  0002:000f20e0       ??0invalid_argument@std@@QAE@ABV01@@Z 0056c0e0 f i libcpmtd:string.obj
  0002:000f2110       __Once                     0056c110 f   libcpmtd:xmtx.obj
  0002:000f2180       __Mtxinit                  0056c180 f   libcpmtd:xmtx.obj
@@ -3293,7 +3293,7 @@
  0003:00000fb0       ??_C@_1GM@NIFFAJC@?$AA?$CI?$AA?5?$AAP?$AAa?$AAt?$AAh?$AAL?$AAe?$AAn?$AA?5?$AA?$CL?$AA?5?$AAs?$AAt?$AAr?$AAl?$AAe?$AAn?$AA?$CI?$AAF?$AAi?$AAl?$AAe?$AAN?$AAa?$AAm?$AAe?$AA?$CJ?$AA?5?$AA?$CL?$AA?5?$AA1@ 00576fb0     GapiMain.obj
  0003:0000101c       ??_C@_0BE@LGGMADHP@sprite?2vpad?4bsprite?$AA@ 0057701c     HighGear.obj
  0003:00001038       ??_C@_1GA@EJMGEELK@?$AAd?$AA?3?$AA?2?$AAw?$AAo?$AAr?$AAk?$AAs?$AAp?$AAa?$AAc?$AAe?$AA?2?$AAi?$AAp?$AAh?$AAo?$AAn?$AAe?$AA?2?$AAa?$AAh?$AAr?$AA?2?$AAs?$AAr?$AAc?$AA?2?$AAc?$AAo?$AAm?$AAm@ 00577038     GapiMain.obj
- 0003:00001098       ??_C@_0BE@JHOLABNM@sprite?2mc00?4bsprite?$AA@ 00577098     HighGear.obj
+ 0003:00001098       ??_C@_0BE@FGONIALK@sprite?2logo?4bsprite?$AA@ 00577098     HighGear.obj
  0003:000010ac       ??_C@_1CA@PGGJEFIG@?$AAm?$AA_?$AAU?$AAp?$AAd?$AAa?$AAt?$AAe?$AAD?$AAi?$AAs?$AAp?$AAl?$AAa?$AAy?$AA?$AA@ 005770ac     GapiMain.obj
  0003:000010d8       ??_C@_0EF@GNOGEIAE@c?3?2program?5files?5?$CIx86?$CJ?2microsoft@ 005770d8     GapiMain.obj
  0003:00001130       ??_7bad_alloc@std@@6B@     00577130     GapiMain.obj
@@ -3316,15 +3316,15 @@
  0003:0000161c       ??_C@_0BL@ECGANLGB@sprite?2enemy_mummy?4bsprite?$AA@ 0057761c     HighGear.obj
  0003:00001640       ??_C@_1CG@JNLFBNGN@?$AA?$CC?$AAi?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAa?$AAr?$AAg?$AAu?$AAm?$AAe?$AAn?$AAt?$AA?$CC?$AA?$AA@ 00577640     Util.obj
  0003:00001670       ??_C@_1NC@DCAJJLPG@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAS?$AAt?$AAr?$AAi?$AAn?$AAg?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAh?$AAa?$AAr@ 00577670     Util.obj
- 0003:00001744       ??_C@_0BK@CNLHMLLM@sprite?2interface0?4bsprite?$AA@ 00577744     HighGear.obj
+ 0003:00001744       ??_C@_0BE@JHOLABNM@sprite?2mc00?4bsprite?$AA@ 00577744     HighGear.obj
  0003:0000176c       ??_C@_1DM@LBMEEJPP@?$AA?$CI?$AA?$CC?$AAt?$AAh?$AAi?$AAs?$AA?9?$AA?$DO?$AA_?$AAH?$AAa?$AAs?$AA_?$AAc?$AAo?$AAn?$AAt?$AAa?$AAi?$AAn?$AAe?$AAr?$AA?$CI?$AA?$CJ?$AA?$CC?$AA?0?$AA?5?$AA0?$AA?$CJ?$AA?$AA@ 0057776c     Util.obj
  0003:000017b8       ??_C@_1OI@PNIDODDN@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAS?$AAt?$AAr?$AAi?$AAn?$AAg?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAh?$AAa?$AAr@ 005777b8     Util.obj
- 0003:000018a0       ??_C@_0BI@FHPEMNDE@sprite?2bg_floor?4bsprite?$AA@ 005778a0     HighGear.obj
- 0003:000018b8       ??_C@_0BC@NBMIGMLL@sprite?2bg?4bsprite?$AA@ 005778b8     HighGear.obj
+ 0003:000018b8       ??_C@_0BI@FHPEMNDE@sprite?2bg_floor?4bsprite?$AA@ 005778b8     HighGear.obj
  0003:000018d0       ??_C@_1BEO@GFHFALBP@?$AA?$CI?$AA?$CC?$AA_?$AAP?$AAs?$AAt?$AAr?$AAi?$AAn?$AAg?$AA?5?$AA?$DN?$AA?$DN?$AA?5?$AAN?$AAU?$AAL?$AAL?$AA?5?$AA?$HM?$AA?$HM?$AA?5?$AA_?$AAP?$AAt?$AAr?$AA?5?$AA?$CB?$AA?$DN?$AA?5?$AAN?$AAU@ 005778d0     Util.obj
- 0003:00001a20       ??_C@_0BG@MIGHPGAG@sprite?2splash?4bsprite?$AA@ 00577a20     HighGear.obj
- 0003:00001a38       ??_C@_0BE@FGONIALK@sprite?2logo?4bsprite?$AA@ 00577a38     HighGear.obj
+ 0003:00001a20       ??_C@_0BC@NBMIGMLL@sprite?2bg?4bsprite?$AA@ 00577a20     HighGear.obj
+ 0003:00001a38       ??_C@_0BG@MIGHPGAG@sprite?2splash?4bsprite?$AA@ 00577a38     HighGear.obj
  0003:00001a60       ??_C@_1MK@BODNBKIO@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAS?$AAt?$AAr?$AAi?$AAn?$AAg?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAh?$AAa?$AAr@ 00577a60     Util.obj
+ 0003:00001b2c       ??_C@_0BF@EAIIOPOE@sprite?2items?4bsprite?$AA@ 00577b2c     HighGear.obj
  0003:00001b58       ??_C@_1FO@OCPOOAIA@?$AA?$CI?$AA?$CC?$AAS?$AAt?$AAa?$AAn?$AAd?$AAa?$AAr?$AAd?$AA?5?$AAC?$AA?$CL?$AA?$CL?$AA?5?$AAL?$AAi?$AAb?$AAr?$AAa?$AAr?$AAi?$AAe?$AAs?$AA?5?$AAI?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd@ 00577b58     Util.obj
  0003:00001bc8       ??_C@_1DM@KDEKGMPF@?$AAs?$AAt?$AAr?$AAi?$AAn?$AAg?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AAs?$AA?5?$AAi?$AAn?$AAc?$AAo?$AAm?$AAp?$AAa?$AAt?$AAi?$AAb?$AAl?$AAe?$AA?$AA@ 00577bc8     Util.obj
  0003:00001c10       ??_C@_1CK@EOPGIILJ@?$AAi?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAn?$AAu?$AAl?$AAl?$AA?5?$AAp?$AAo?$AAi?$AAn?$AAt?$AAe?$AAr?$AA?$AA@ 00577c10     Util.obj
@@ -3358,6 +3358,8 @@
  0003:00001f8c       ??_C@_1CC@BFCHJLAA@?$AAi?$AA?$DO?$AA?$DN?$AA0?$AA?5?$AA?$CG?$AA?$CG?$AA?5?$AAi?$AA?$DM?$AAm?$AA_?$AAs?$AAi?$AAz?$AAe?$AA?$AA@ 00577f8c     ConvexHull.obj
  0003:00001fb8       ??_7TFace@Lib3D@@6B@       00577fb8     Face.obj
  0003:00001fd4       ??_7COTObject@Lib3D@@6B@   00577fd4     Face.obj
+ 0003:00005ff4       ??_C@_0BK@CNLHMLLM@sprite?2interface0?4bsprite?$AA@ 0057bff4     HighGear.obj
+ 0003:00006010       ??_C@_1DK@CNDLFKCJ@?$AAd?$AAe?$AAq?$AAu?$AAe?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AAs?$AA?5?$AAi?$AAn?$AAc?$AAo?$AAm?$AAp?$AAa?$AAt?$AAi?$AAb?$AAl?$AAe?$AA?$AA@ 0057c010     HighGear.obj
  0003:00006cc4       ??_C@_1M@BNPMOHIB@?$AAl?$AA2?$AA?$DO?$AA?$DN?$AA0?$AA?$AA@ 0057ccc4     FSqrt.obj
  0003:00006cd8       ??_C@_1FC@NMDNBFIM@?$AAd?$AA?3?$AA?2?$AAw?$AAo?$AAr?$AAk?$AAs?$AAp?$AAa?$AAc?$AAe?$AA?2?$AAe?$AAn?$AAg?$AAi?$AAn?$AAe?$AA?2?$AAs?$AAr?$AAc?$AA?2?$AAl?$AAi?$AAb?$AA3?$AAd?$AA2?$AA?2?$AAf@ 0057ccd8     FSqrt.obj
  0003:00006d40       ?TSIN@Lib3D@@3QBHB         0057cd40     IMath.obj
@@ -3561,13 +3563,12 @@
  0003:0000e414       ??_C@_0BD@LDOKPBFK@orientation?5?$CFd?5?$CFd?6?$AA@ 00584414     HighGear.obj
  0003:0000e430       ??_C@_1FE@LLDLINCO@?$AAd?$AA?3?$AA?2?$AAw?$AAo?$AAr?$AAk?$AAs?$AAp?$AAa?$AAc?$AAe?$AA?2?$AAi?$AAp?$AAh?$AAo?$AAn?$AAe?$AA?2?$AAa?$AAh?$AAr?$AA?2?$AAs?$AAr?$AAc?$AA?2?$AAh?$AAg?$AA?2?$AAh@ 00584430     HighGear.obj
  0003:0000e4d0       ??_C@_0BN@MBIHFOPB@sprite?2enemy_vampire?4bsprite?$AA@ 005844d0     HighGear.obj
- 0003:0000e578       ??_7?$CSingletonNoAutoConstruct@$00VCHighGear@@@@6B@ 00584578     HighGear.obj
  0003:0000e580       ??_C@_1EI@ODOAHAHP@?$AAd?$AAe?$AAq?$AAu?$AAe?$AA?5?$AAi?$AAn?$AAs?$AAe?$AAr?$AAt?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAo?$AAu?$AAt?$AAs?$AAi?$AAd?$AAe?$AA?5?$AAr?$AAa@ 00584580     HighGear.obj
  0003:0000e5d8       ??_C@_1EC@CEAHEOFL@?$AAd?$AAe?$AAq?$AAu?$AAe?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe?$AAn?$AAt?$AAa?$AAb?$AAl?$AAe@ 005845d8     HighGear.obj
  0003:0000e628       ??_C@_1NC@EPBHAFKL@?$AA?$CI?$AA?$CC?$AA_?$AAM?$AAy?$AAo?$AAf?$AAf?$AA?5?$AA?$DM?$AA?5?$AA?$CI?$AA?$CI?$AA_?$AAM?$AAy?$AAd?$AAe?$AAq?$AAu?$AAe?$AA?5?$AA?$CK?$AA?$CJ?$AA?$CI?$AAt?$AAh?$AAi?$AAs?$AA?9?$AA?$DO?$AA_@ 00584628     HighGear.obj
  0003:0000e728       ??_C@_1LC@GKFJEJGO@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAD?$AAe?$AAq?$AAu?$AAe?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs?$AAs@ 00584728     HighGear.obj
  0003:0000e800       ??_C@_1KK@CICIELCJ@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAD?$AAe?$AAq?$AAu?$AAe?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs?$AAs@ 00584800     HighGear.obj
- 0003:0000e8cc       ??_C@_1DK@CNDLFKCJ@?$AAd?$AAe?$AAq?$AAu?$AAe?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AAs?$AA?5?$AAi?$AAn?$AAc?$AAo?$AAm?$AAp?$AAa?$AAt?$AAi?$AAb?$AAl?$AAe?$AA?$AA@ 005848cc     HighGear.obj
+ 0003:0000e8d0       ??_7?$CSingletonNoAutoConstruct@$00VCHighGear@@@@6B@ 005848d0     HighGear.obj
  0003:0000e914       ??_C@_1M@ONBNGBOD@?$AAi?$AAn?$AAp?$AAu?$AAt?$AA?$AA@ 00584914     Intl.obj
  0003:0000e928       ??_C@_1EI@FPCCHEIB@?$AAd?$AA?3?$AA?2?$AAw?$AAo?$AAr?$AAk?$AAs?$AAp?$AAa?$AAc?$AAe?$AA?2?$AAe?$AAn?$AAg?$AAi?$AAn?$AAe?$AA?2?$AAs?$AAr?$AAc?$AA?2?$AAh?$AAg?$AA?2?$AAi?$AAn?$AAt?$AAl?$AA?4@ 00584928     Intl.obj
  0003:0000e980       ??_C@_09HFIKBBHD@Game?2lang?$AA@ 00584980     Intl.obj
