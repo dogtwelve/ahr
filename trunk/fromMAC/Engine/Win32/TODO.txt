@@ -1,5 +1,0 @@
-General/WinMain (common folder)
-HG/MENU
-HG/intl.hpp
-HG/Intl_hardcoded.hpp
-HG/zlib.h
