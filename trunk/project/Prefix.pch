@@ -1,8 +1,0 @@
-//
-// Prefix header for all source files of the 'IGP' target in the 'IGP' project
-//
-#undef WIN32
-#ifdef __OBJC__
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-#endif
