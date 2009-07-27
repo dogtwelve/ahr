@@ -1,0 +1,144 @@
+CreateFileMappingTable for main.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for main.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for carsa.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for carsb.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksa.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksb.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksc.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksd.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for trackse.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksf.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksg.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksi.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksj.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksk.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksl.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksm.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksn.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for sounds.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for main.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for main.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for carsa.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for carsb.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksa.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksb.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksc.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksd.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for trackse.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksf.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksg.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksi.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksj.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksk.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksl.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksm.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for tracksn.bar
+
+Error, file not loaded
+
+CreateFileMappingTable for sounds.bar
+
+Error, file not loaded
+

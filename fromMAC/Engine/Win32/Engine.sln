@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Asphalt3", "Asphalt3.vcproj", "{B2A6B5BA-4957-4211-8573-153A5DCB25D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		brew|Win32 = brew|Win32
+		Debug|Win32 = Debug|Win32
+		NGage|Win32 = NGage|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2A6B5BA-4957-4211-8573-153A5DCB25D9}.brew|Win32.ActiveCfg = brew|Win32
+		{B2A6B5BA-4957-4211-8573-153A5DCB25D9}.brew|Win32.Build.0 = brew|Win32
+		{B2A6B5BA-4957-4211-8573-153A5DCB25D9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B2A6B5BA-4957-4211-8573-153A5DCB25D9}.Debug|Win32.Build.0 = Debug|Win32
+		{B2A6B5BA-4957-4211-8573-153A5DCB25D9}.NGage|Win32.ActiveCfg = NGage|Win32
+		{B2A6B5BA-4957-4211-8573-153A5DCB25D9}.NGage|Win32.Build.0 = NGage|Win32
+		{B2A6B5BA-4957-4211-8573-153A5DCB25D9}.Release|Win32.ActiveCfg = Release|Win32
+		{B2A6B5BA-4957-4211-8573-153A5DCB25D9}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+EndGlobal
