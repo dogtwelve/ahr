@@ -62,5 +62,5 @@ ren %PRJ_BUILD_OUTPUT_DIR%\main.arc main.bar
 
 copy %PRJ_BUILD_OUTPUT_DIR%\main.bar	%VC_DEBUG_DIR%
 copy %PRJ_BUILD_OUTPUT_DIR%\main.bar	%WIN32_EXE_RELEASE_DIR%
-
+copy %PRJ_BUILD_OUTPUT_DIR%\main.bar	%IPHONE_PRJ_DIR%
 
