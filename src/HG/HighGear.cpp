@@ -60,8 +60,9 @@ extern bool g_bSkipRendering;
 
 #define LOGO_BACKGROUND_COLOR	0xFFFFFF
 #define LOGO_ALPHA_FRAME	500
-#define LOGO_START_FRAME	100
-#define LOGO_TOTAL_FRAME	1200
+#define LOGO_FADEIN_FRAME	100
+#define LOGO_TOTAL_FRAME	2400
+#define LOGO_FADEOUT_FRAME	(LOGO_TOTAL_FRAME - LOGO_ALPHA_FRAME - LOGO_FADEIN_FRAME)
 
 #define LOADING_BACKGROUND_COLOR	0x888888
 
@@ -325,16 +326,21 @@ void CHighGear::GameLoop(void)
 	{
 		GetLib2D().DrawRect(0, 0, m_dispX, m_dispY, LOGO_BACKGROUND_COLOR);
 		int alpha = 255;
-		if (GETTIMEMS() - m_logoTimer < LOGO_START_FRAME)
+		int cFrame = GETTIMEMS() - m_logoTimer;
+		if (cFrame < LOGO_FADEIN_FRAME || cFrame > LOGO_TOTAL_FRAME - LOGO_FADEIN_FRAME)
 			alpha = 0;
-		else if (GETTIMEMS() - m_logoTimer < LOGO_ALPHA_FRAME + LOGO_START_FRAME)
-			alpha = (GETTIMEMS() - m_logoTimer - LOGO_START_FRAME) * 255 / LOGO_ALPHA_FRAME;
+		else if (cFrame < LOGO_ALPHA_FRAME + LOGO_FADEIN_FRAME)
+			alpha = (cFrame - LOGO_FADEIN_FRAME) * 255 / LOGO_ALPHA_FRAME;
+		else if (cFrame > LOGO_FADEOUT_FRAME)
+			alpha = 255 - ((cFrame - LOGO_FADEOUT_FRAME) * 255 / LOGO_ALPHA_FRAME);
 		m_logoSprite->SetGlobalAlpha(alpha);
 		GetLib2D().setColor(LOGO_BACKGROUND_COLOR | (alpha<<24) );
-		m_logoSprite->DrawModule(GetLib2D(), m_dispX >> 1, m_dispY >> 1, IS_PORTRAIT ? GAMELOFT_F_PORTRAIT : GAMELOFT_F_LANDSCAPE);
+		m_logoSprite->DrawModule(GetLib2D(), (m_dispX - m_logoSprite->GetModuleWidth(0)) >> 1 ,
+			(m_dispY - m_logoSprite->GetModuleHeight(0)) >> 1, IS_PORTRAIT ? GAMELOFT_F_PORTRAIT : GAMELOFT_F_LANDSCAPE);
 		
 		if (GETTIMEMS() - m_logoTimer > LOGO_TOTAL_FRAME)
 		{
+			GetLib2D().setColor(LOGO_BACKGROUND_COLOR | (255<<24) );
 			delete(m_logoSprite);
 			setGameState(GAME_STATE_TITLE);
 			m_loadingLength = 1;
