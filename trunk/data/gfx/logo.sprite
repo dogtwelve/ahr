@@ -28,7 +28,7 @@
 
     MODULES
     {
-        MD	0x1000	MD_IMAGE	0	0	79	121	21
+        MD	0x1000	MD_IMAGE	0	0	100	75	39
     }
 
     SPRITE_END
