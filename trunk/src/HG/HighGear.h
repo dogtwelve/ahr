@@ -196,11 +196,14 @@ public:
 	int m_village;
 	int m_level;
 
+	int m_currentEnemyCnt;
 	int m_btPow;
 	int m_btDelay;
 
 #define MAX_ACTOR	50
 #define	MAX_GAMESPRITE	20
+	void genEnemy();
+	int countEnemy();
 	void initActors();
 	int getEmptyActorIndex();
 	//for GAME_STATE_MAIN

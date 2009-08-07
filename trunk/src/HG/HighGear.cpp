@@ -495,6 +495,7 @@ void CHighGear::procLoading()
 		m_gameTime = GETTIMEMS();
 		m_gameState = GAME_READY;
 		m_kill = 0;
+		m_level = 0;
 		m_village = MAX_VILLAGE;
 		
 		//####	bullet levels : 0~4
@@ -568,20 +569,7 @@ void CHighGear::procMaingame()
 			m_gameState = GAME_OVER;
 			break;
 		}
-		//genEnemy();
-		if (m_Random.GetNumber(0, 100) < 7)
-		{
-			//FIRE!
-			int index = getEmptyActorIndex();
-
-			if (index > -1)
-			{
-				int eType = m_Random.GetNumber(0, MAX_ENEMY);
-
-				m_actors[index]->init(CActor::ACTOR_MUMMY + eType, m_gameSprite[GAMESPRITE_ENEMY_START_INDEX + eType],
-										m_Random.GetNumber(0, LEVEL_UNIT_WIDTH), 0);
-			}
-		}
+		genEnemy();
 
 		//Update Touch
 //		if (MAINCHAR)
@@ -731,12 +719,20 @@ void CHighGear::procMaingame()
 	else if (m_gameState == GAME_START)
 	{
 		//DRAW VIRTUAL PAD
-		m_pad->DrawModule(GetLib2D(), VPAD_X - 2, VPAD_Y + 33, 0);
-		m_pad->DrawModule(GetLib2D(), VPAD_X + 63, VPAD_Y + 33, 0, 1);
-		//touchZones->AddZone(ZONEID_PAD_LEFT, VPAD_X - 10, VPAD_Y + 25, VPAD_X + 30, VPAD_Y + 65); 
-		//touchZones->AddZone(ZONEID_PAD_RIGHT, VPAD_X + 55, VPAD_Y + 25, VPAD_X + 95, VPAD_Y + 65); 
+		m_pad->DrawModule(GetLib2D(), 
+						TOUCH_AREA_LBUTTON_X + (TOUCH_AREA_BUTTON_W >> 1),
+						TOUCH_AREA_LBUTTON_Y + (TOUCH_AREA_BUTTON_H >> 1), 
+						0, 0);
+		m_pad->DrawModule(GetLib2D(), 
+						TOUCH_AREA_RBUTTON_X + (TOUCH_AREA_BUTTON_W >> 1),
+						TOUCH_AREA_RBUTTON_Y + (TOUCH_AREA_BUTTON_H >> 1), 
+						0, 1);
 
-		m_pad->DrawModule(GetLib2D(), VPAD_FIRE_X, VPAD_FIRE_Y, 1);
+		m_pad->DrawModule(GetLib2D(), 
+						TOUCH_AREA_FBUTTON_X + (TOUCH_AREA_BUTTON_W >> 1),
+						TOUCH_AREA_FBUTTON_Y + (TOUCH_AREA_BUTTON_H >> 1), 
+						1);
+
 
 		//Kills
 		m_ui->DrawFrame(GetLib2D(), UI_KILL_X, UI_KILL_Y, 11);
@@ -752,6 +748,47 @@ void CHighGear::procMaingame()
 	}
 }
 
+int CHighGear::countEnemy()
+{
+	int cnt = 0;
+
+	for (int i = 0 ;i < MAX_ACTOR; i ++)
+	{
+		if (!m_actors[i]) continue;
+		if (!m_actors[i]->isEnemy()) continue;
+		if (m_actors[i]->m_state == CActor::ACTOR_STATE_DESTROYED) continue;
+
+		cnt ++;
+	}
+
+	return cnt;
+}
+
+void CHighGear::genEnemy()
+{
+	m_currentEnemyCnt = countEnemy();
+
+	if (m_kill < 2) m_level = 1;
+	else if (m_kill < 5) m_level = 2;
+	else if (m_kill < 10) m_level = 3;
+	else m_level = 3 + m_kill / 10;
+
+	if (m_currentEnemyCnt > m_level) return;
+
+	if (m_Random.GetNumber(0, 100) < 5 + m_level / 5)
+	{
+		int index = getEmptyActorIndex();
+
+		if (index > -1)
+		{
+			int eType = m_Random.GetNumber(0, MAX_ENEMY);
+
+			m_actors[index]->init(CActor::ACTOR_MUMMY + eType, m_gameSprite[GAMESPRITE_ENEMY_START_INDEX + eType],
+									m_Random.GetNumber(0, LEVEL_UNIT_WIDTH), 0, m_level / 10);
+		}
+	}
+}
+
 void CHighGear::drawNum(int x, int y, int value, int fontWidth, bool bRightAlign)
 {
 	int digit = getNumDigit(value);
@@ -762,7 +799,6 @@ void CHighGear::drawNum(int x, int y, int value, int fontWidth, bool bRightAlign
 		m_ui->DrawFrame(GetLib2D(), x - fontWidth * i, y , 1 + value % 10);
 		value /= 10;
 	}
-	
 }
 
 int CHighGear::getNumDigit(int v)
