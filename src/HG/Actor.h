@@ -35,7 +35,7 @@ public:
 	} ACTOR_STATE;
 
 
-	void init(int, CSprite*, int x = 0, int y = 0);
+	void init(int, CSprite*, int x = 0, int y = 0, int lv = 0);
 	void draw(CLib2D);
 	void update();
 	void notifyState(int state, int param1);
