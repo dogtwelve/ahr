@@ -540,9 +540,24 @@ void CHighGear::procMaingame()
 		{
 			m_gameState = GAME_START;
 			m_gameTime = GETTIMEMS();
-			touchZones->AddZone(ZONEID_PAD_LEFT, VPAD_X - 10, VPAD_Y + 25, VPAD_X + 30, VPAD_Y + 65); 
-			touchZones->AddZone(ZONEID_PAD_RIGHT, VPAD_X + 55, VPAD_Y + 25, VPAD_X + 95, VPAD_Y + 65); 
-			touchZones->AddZone(ZONEID_PAD_FIRE, VPAD_FIRE_X-20, VPAD_FIRE_Y-20, VPAD_FIRE_X + 80, VPAD_FIRE_Y + 80); 
+			touchZones->AddZone(ZONEID_PAD_LEFT, 
+								TOUCH_AREA_LBUTTON_X,
+								TOUCH_AREA_LBUTTON_Y,
+								TOUCH_AREA_LBUTTON_X + TOUCH_AREA_BUTTON_W,
+								TOUCH_AREA_LBUTTON_Y + TOUCH_AREA_BUTTON_H
+								);
+			touchZones->AddZone(ZONEID_PAD_RIGHT, 
+								TOUCH_AREA_RBUTTON_X,
+								TOUCH_AREA_RBUTTON_Y,
+								TOUCH_AREA_RBUTTON_X + TOUCH_AREA_BUTTON_W,
+								TOUCH_AREA_RBUTTON_Y + TOUCH_AREA_BUTTON_H
+								);
+			touchZones->AddZone(ZONEID_PAD_FIRE, 
+								TOUCH_AREA_FBUTTON_X,
+								TOUCH_AREA_FBUTTON_Y,
+								TOUCH_AREA_FBUTTON_X + TOUCH_AREA_BUTTON_W,
+								TOUCH_AREA_FBUTTON_Y + TOUCH_AREA_BUTTON_H
+								);
 //			touchZones->SetListener(this);
 		}
 		break;
@@ -553,20 +568,20 @@ void CHighGear::procMaingame()
 			m_gameState = GAME_OVER;
 			break;
 		}
-//		//genEnemy();
-//		if (m_Random.GetNumber(0, 100) < 7)
-//		{
-//			//FIRE!
-//			int index = getEmptyActorIndex();
-//
-//			if (index > -1)
-//			{
-//				int eType = m_Random.GetNumber(0, MAX_ENEMY);
-//
-//				m_actors[index]->init(CActor::ACTOR_MUMMY + eType, m_gameSprite[GAMESPRITE_ENEMY_START_INDEX + eType],
-//										m_Random.GetNumber(0, LEVEL_UNIT_WIDTH), 0);
-//			}
-//		}
+		//genEnemy();
+		if (m_Random.GetNumber(0, 100) < 7)
+		{
+			//FIRE!
+			int index = getEmptyActorIndex();
+
+			if (index > -1)
+			{
+				int eType = m_Random.GetNumber(0, MAX_ENEMY);
+
+				m_actors[index]->init(CActor::ACTOR_MUMMY + eType, m_gameSprite[GAMESPRITE_ENEMY_START_INDEX + eType],
+										m_Random.GetNumber(0, LEVEL_UNIT_WIDTH), 0);
+			}
+		}
 
 		//Update Touch
 //		if (MAINCHAR)

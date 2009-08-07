@@ -13,6 +13,15 @@
 #define GAMESPRITE_ENEMY_START_INDEX	2
 
 #define MAINCHAR			m_actors[0]
+#define TOUCH_AREA_LBUTTON_X	0
+#define TOUCH_AREA_LBUTTON_Y	m_dispY - 106
+#define TOUCH_AREA_FBUTTON_X	107
+#define TOUCH_AREA_FBUTTON_Y	m_dispY - 106
+#define TOUCH_AREA_RBUTTON_X	214
+#define TOUCH_AREA_RBUTTON_Y	m_dispY - 106
+#define TOUCH_AREA_BUTTON_W		106
+#define TOUCH_AREA_BUTTON_H		106
+
 #define VPAD_X	((m_dispX >> 1) - 120)
 #define VPAD_Y	(m_dispY - 120)
 #define VPAD_FIRE_X	((m_dispX >> 1) + 80)
