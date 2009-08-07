@@ -45,6 +45,7 @@ public:
 
 	int m_type;
 	int m_state;
+	int m_level;
 	void move(int);
 
 	CHighGear* g_pGame;

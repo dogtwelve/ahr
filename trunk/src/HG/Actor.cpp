@@ -31,13 +31,14 @@ void CActor::init(int type, CSprite* gameSpr, int x, int y, int level)
 {
 	m_type = type;
 	spr = gameSpr;
+	m_level = level;
 
 	m_posX = x;
 	m_posY = y;
 	
-	m_speed = arrEnemyData[m_type - ACTOR_MUMMY][ENEMY_DATA_INDEX_SPEED] + level / 2;
-	m_hp = arrEnemyData[m_type - ACTOR_MUMMY][ENEMY_DATA_INDEX_HP] + level;
-	m_score = arrEnemyData[m_type - ACTOR_MUMMY][ENEMY_DATA_INDEX_SCORE] + level / 5;
+	m_speed = arrEnemyData[m_type - ACTOR_MUMMY][ENEMY_DATA_INDEX_SPEED] + m_level / 2;
+	m_hp = arrEnemyData[m_type - ACTOR_MUMMY][ENEMY_DATA_INDEX_HP] + m_level;
+	m_score = arrEnemyData[m_type - ACTOR_MUMMY][ENEMY_DATA_INDEX_SCORE] + m_level / 5;
 
 	m_VelocityCounter = 0;
 
@@ -328,7 +329,7 @@ void CActor::draw(CLib2D g)
 		{
 			g.DrawRect(rX - (ENEMY_HP_BAR_WIDTH >> 1) + 1, rY + ENEMY_HP_BAR_OFFSET_Y + 1, 
 				(ENEMY_HP_BAR_WIDTH - 2) * m_hp / 
-					(arrEnemyData[m_type - ACTOR_MUMMY][ENEMY_DATA_INDEX_HP]+ level),
+					(arrEnemyData[m_type - ACTOR_MUMMY][ENEMY_DATA_INDEX_HP]+ m_level),
 				ENEMY_HP_BAR_HEIGHT - 2,
 				ENEMY_HP_BAR_COLOR, ENEMY_HP_BAR_COLOR);
 		}
