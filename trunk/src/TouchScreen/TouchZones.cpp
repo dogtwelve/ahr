@@ -262,7 +262,7 @@ void CTouchZones::Update()
 	TouchEventsIdx1 = 0;
 
 #ifdef USE_CHEAT_ZONES
-	updateCheatZones();
+//	updateCheatZones();
 #endif
 	
 	// checking events

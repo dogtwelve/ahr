@@ -390,11 +390,35 @@ void CHighGear::GameLoop(void)
 #ifdef USE_TOUCH_SCREEN
 void CHighGear::ZonePressed(short zoneId)
 {
+	
 	return;
 }
 
 void CHighGear::ZoneReleased(short zoneId)
 {
+	switch (zoneId)
+	{
+		case ZONEID_PAD_LEFT:
+			
+			MAINCHAR->move(-1);
+			break;
+		case ZONEID_PAD_RIGHT:
+			MAINCHAR->move(1);
+		case ZONEID_PAD_FIRE:
+			
+			if (MAINCHAR->canFire())
+			{
+				//FIRE!
+				int index = getEmptyActorIndex();
+				
+				if (index > -1)
+				{
+					m_actors[index]->init(CActor::ACTOR_MCBULLET, GAMESPRITE_MCBULLET, MAINCHAR->m_posX, MAINCHAR->m_posY);
+				}
+				MAINCHAR->notifyState(CActor::ACTOR_STATE_ATTACK, 15 - m_btDelay * 2);
+			}
+			break;
+	}
 	return;
 }
 
@@ -463,7 +487,6 @@ void CHighGear::procLoading()
 		GAMESPRITE_MCBULLET = NEW CSprite("sprite\\mcbullet.bsprite");
 
 		m_pad = NEW CSprite("sprite\\vpad.bsprite");
-		
 		//#####################
 		//####	reset game
 		//####		::reset Actor
@@ -519,8 +542,8 @@ void CHighGear::procMaingame()
 			m_gameTime = GETTIMEMS();
 			touchZones->AddZone(ZONEID_PAD_LEFT, VPAD_X - 10, VPAD_Y + 25, VPAD_X + 30, VPAD_Y + 65); 
 			touchZones->AddZone(ZONEID_PAD_RIGHT, VPAD_X + 55, VPAD_Y + 25, VPAD_X + 95, VPAD_Y + 65); 
-			touchZones->AddZone(ZONEID_PAD_FIRE, VPAD_FIRE_X, VPAD_FIRE_Y, VPAD_FIRE_X + 40, VPAD_FIRE_Y + 40); 
-		
+			touchZones->AddZone(ZONEID_PAD_FIRE, VPAD_FIRE_X-20, VPAD_FIRE_Y-20, VPAD_FIRE_X + 80, VPAD_FIRE_Y + 80); 
+//			touchZones->SetListener(this);
 		}
 		break;
 	}
@@ -530,58 +553,58 @@ void CHighGear::procMaingame()
 			m_gameState = GAME_OVER;
 			break;
 		}
-		//genEnemy();
-		if (m_Random.GetNumber(0, 100) < 7)
-		{
-			//FIRE!
-			int index = getEmptyActorIndex();
-
-			if (index > -1)
-			{
-				int eType = m_Random.GetNumber(0, MAX_ENEMY);
-
-				m_actors[index]->init(CActor::ACTOR_MUMMY + eType, m_gameSprite[GAMESPRITE_ENEMY_START_INDEX + eType],
-										m_Random.GetNumber(0, LEVEL_UNIT_WIDTH), 0);
-			}
-		}
+//		//genEnemy();
+//		if (m_Random.GetNumber(0, 100) < 7)
+//		{
+//			//FIRE!
+//			int index = getEmptyActorIndex();
+//
+//			if (index > -1)
+//			{
+//				int eType = m_Random.GetNumber(0, MAX_ENEMY);
+//
+//				m_actors[index]->init(CActor::ACTOR_MUMMY + eType, m_gameSprite[GAMESPRITE_ENEMY_START_INDEX + eType],
+//										m_Random.GetNumber(0, LEVEL_UNIT_WIDTH), 0);
+//			}
+//		}
 
 		//Update Touch
-		if (MAINCHAR)
+//		if (MAINCHAR)
 		{
-			if (touchZones->IsZoneReleased(ZONEID_PAD_LEFT))
-			{
-				if (m_keyRepeatValue & (1 << ZONEID_PAD_LEFT))
-				{
-					m_keyRepeatCounter = 0;
-				}
-			}
-			if (touchZones->IsZoneReleased(ZONEID_PAD_RIGHT))
-			{
-				if (m_keyRepeatValue & (1 << ZONEID_PAD_RIGHT))
-					m_keyRepeatCounter = 0;
-			}
-
-			m_keyRepeatValue = 0;
+//			if (touchZones->IsZoneReleased(ZONEID_PAD_LEFT))
+//			{
+//				if (m_keyRepeatValue & (1 << ZONEID_PAD_LEFT))
+//				{
+//					m_keyRepeatCounter = 0;
+//				}
+//			}
+//			if (touchZones->IsZoneReleased(ZONEID_PAD_RIGHT))
+//			{
+//				if (m_keyRepeatValue & (1 << ZONEID_PAD_RIGHT))
+//					m_keyRepeatCounter = 0;
+//			}
+//
+//			m_keyRepeatValue = 0;
 			if (touchZones->IsZonePressed(ZONEID_PAD_LEFT))
 			{
-				m_keyRepeatValue |= (1 << ZONEID_PAD_LEFT);
-				//MAINCHAR->move(-1);
+//				m_keyRepeatValue |= (1 << ZONEID_PAD_LEFT);
+				MAINCHAR->move(-1);
 			}
 			if (touchZones->IsZonePressed(ZONEID_PAD_RIGHT))
 			{
-				m_keyRepeatValue |= (1 << ZONEID_PAD_RIGHT);
-				//MAINCHAR->move(1);
+//				m_keyRepeatValue |= (1 << ZONEID_PAD_RIGHT);
+				MAINCHAR->move(1);
 			}
 			
 			
 
-			if (m_keyRepeatValue != ((1 << ZONEID_PAD_LEFT) | (1 << ZONEID_PAD_RIGHT))
-				&& m_keyRepeatValue)
-			{
-				if (m_keyRepeatCounter != 1)
-					MAINCHAR->move(m_keyRepeatValue == (1 << ZONEID_PAD_LEFT) ? -1 : 1);
-				m_keyRepeatCounter++;
-			}
+//			if (m_keyRepeatValue != ((1 << ZONEID_PAD_LEFT) | (1 << ZONEID_PAD_RIGHT))
+//				&& m_keyRepeatValue)
+//			{
+//				if (m_keyRepeatCounter != 1)
+//					MAINCHAR->move(m_keyRepeatValue == (1 << ZONEID_PAD_LEFT) ? -1 : 1);
+//				m_keyRepeatCounter++;
+//			}
 
 			if (touchZones->IsZonePressed(ZONEID_PAD_FIRE))
 			{
