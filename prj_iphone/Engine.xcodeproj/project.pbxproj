@@ -102,6 +102,7 @@
 		27EF0BDA0F94E3C100C46CFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EF0BD90F94E3C100C46CFC /* CoreGraphics.framework */; };
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
+		4516E90410235C5D007358AA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4516E90310235C5D007358AA /* Info.plist */; };
 		45591C7D10194CF7007F0654 /* main.bar in Resources */ = {isa = PBXBuildFile; fileRef = 45591C7C10194CF7007F0654 /* main.bar */; };
 		458A383D1017550D005194DE /* Actor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 458A383B1017550D005194DE /* Actor.cpp */; };
 		458A38961017584B005194DE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 458A38801017584A005194DE /* Default.png */; };
@@ -322,6 +323,7 @@
 		27EF0C410F94F0BD00C46CFC /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
 		28FD14FF0DC6FC520079059D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4516E90310235C5D007358AA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45591C7C10194CF7007F0654 /* main.bar */ = {isa = PBXFileReference; lastKnownFileType = file; path = main.bar; sourceTree = "<group>"; };
 		458A383B1017550D005194DE /* Actor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Actor.cpp; sourceTree = "<group>"; };
 		458A383C1017550D005194DE /* Actor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Actor.h; sourceTree = "<group>"; };
@@ -726,6 +728,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				4516E90310235C5D007358AA /* Info.plist */,
 				27EF09440F94D52500C46CFC /* src_iPhone_specific */,
 				27EF09460F94D55A00C46CFC /* src_common */,
 				27EF09450F94D53900C46CFC /* src_data_headers */,
@@ -825,6 +828,7 @@
 				458A38961017584B005194DE /* Default.png in Resources */,
 				458A389B1017584B005194DE /* icon.png in Resources */,
 				45591C7D10194CF7007F0654 /* main.bar in Resources */,
+				4516E90410235C5D007358AA /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -971,7 +975,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jeongkyu Yoon (D4MFALHHA6)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DEBUGGIN_SYMBOLS = full;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -997,6 +1001,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3C6283A5-D054-4EFF-ABBE-DC4DC6E9D9A9";
 				SDKROOT = iphoneos2.2;
 			};
 			name = Debug;
@@ -1005,11 +1010,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jeongkyu Yoon (D4MFALHHA6)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3C6283A5-D054-4EFF-ABBE-DC4DC6E9D9A9";
 				SDKROOT = iphoneos2.2;
 			};
 			name = Release;

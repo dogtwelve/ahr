@@ -63,7 +63,7 @@
 	#ifdef USE_FANCY_MENUS
 		#define MENUS_LOAD_ALL_CARS
 //#ifndef IPHONE_RELEASE
-		#define USE_CHEAT_ZONES	
+//		#define USE_CHEAT_ZONES	
 //#endif // IPHONE_RELEASE
 	#endif // USE_FANCY_MENUS
 	

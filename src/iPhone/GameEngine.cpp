@@ -385,7 +385,7 @@ extern "C" void GameResume()
 	{
 		//resume game
 //		CHighGear::GetInstance()->Resume();
-//		m_bIsAppPaused = false;	
+		m_bIsAppPaused = false;	
 	}
 	
 	s_bExecutingGameResume = false;
