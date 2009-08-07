@@ -261,7 +261,7 @@ void CActor::update()
 				g_pGame->m_actors[i]->m_posY == m_posY)
 			{
 				m_state = ACTOR_STATE_DESTROYED;	//Bullet X
-				g_pGame->m_actors[i]->notifyState(ACTOR_STATE_DAMAGED, -1);	//Enemy
+				g_pGame->m_actors[i]->notifyState(ACTOR_STATE_DAMAGED, 1 + g_pGame->m_btPow);	//Enemy
 
 				int index = g_pGame->getEmptyActorIndex();
 
