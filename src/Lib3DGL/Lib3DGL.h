@@ -143,7 +143,7 @@ public:
 							  const u8* src, int srcWidth, int srcHeight,
 							  const u8* srcPal, int transp_index);
 	
-	static void Lib3DGL::DecodeP888ToLUMINANCE( u8* dst, int &dstPow2Width, int &dstPow2Height, 
+	static void DecodeP888ToLUMINANCE( u8* dst, int &dstPow2Width, int &dstPow2Height, 
 									const u8* src, int srcWidth, int srcHeight,
 									const u8* srcPal);
 
