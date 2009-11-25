@@ -2,6 +2,7 @@ call setenv.bat
 
 ::WE ARE @ PRJ_BUILD_DIR
 
+del %PRJ_BUILD_OUTPUT_DIR%\sprite /Q /A
 
 ::Make temporary dir
 RD /Q /S bld_tmp
@@ -19,6 +20,7 @@ copy %PRJ_DATA_GFX_DIR%\*.sprite .
 popd
 
 pushd %PRJ_BUILD_OUTPUT_DIR%\sprite
+
 for %%i in (*.data) do (
 	copy /b /y %%~ni.data+%%~ni.image	%%~ni.bsprite 
 	
