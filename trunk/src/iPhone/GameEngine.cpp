@@ -153,11 +153,25 @@ extern "C" void GameLoop()
 	}		
 
 	//get game instance
-//	CHighGear* hg = CHighGear::GetInstance();
+	CHighGear* hg = CHighGear::GetInstance();
 //	
 //	if(s_bRecreateSoundEngineAfterInterrupt ||
 //	   (hg->m_state == CHighGear::gs_menu && (MenuContainer::GetInstance()->canRecreateSoundEngine()) 
 //		&& !hg->m_AudioManager.m_soundWrap->m_bIsSoundAndMusicInitialized && !hg->m_nosound) )
+	if (! hg->m_AudioManager.m_soundWrap->m_bIsSoundAndMusicInitialized)
+	{
+		hg->m_AudioManager.initialize();
+		
+		hg->m_AudioManager.m_soundWrap->MusicLoad("sample1.mp3");
+
+		
+		//hg->m_AudioManager.loadAllEffect();		
+		
+		s_bRecreateSoundEngineAfterInterrupt = false;
+		
+		hg->m_AudioManager.SetMasterVolume( 5 );
+		hg->m_AudioManager.m_soundWrap->MusicStart(true);
+	}
 //	{		
 //		hg->m_AudioManager.initialize();		
 //		//restart the music that was stoped on interrupt
@@ -174,7 +188,6 @@ extern "C" void GameLoop()
 //		
 //		hg->m_AudioManager.loadAllEffect();		
 //		
-//		s_bRecreateSoundEngineAfterInterrupt = false;		
 //		
 //		//fix restarting the sound after interrupt on screens where the music was only loaded, not playing
 //		if(hg->m_bShouldRestartMusicAfterInterrupted)
@@ -339,25 +352,26 @@ extern "C" void GamePause()
 	if(m_bIsRunning)//game init done ... game thread start
 	{
 	
-//		hg->m_bShouldRestartMusicAfterInterrupted = false;
+		//hg->m_bShouldRestartMusicAfterInterrupted = false;
 //	
 //		//suspend game		
-//		hg->Suspend();
+		//hg->Suspend();
 //	
-//		if(hg->m_AudioManager.m_soundWrap->m_bIsSoundAndMusicInitialized)
-//		{
+		if(hg->m_AudioManager.m_soundWrap->m_bIsSoundAndMusicInitialized)
+		{
 //			//check if a music should resume ( on resume reload the currentMusicIndex)
 //			//fix restarting the sound after interrupt on screens where the music was only loaded, not playing
 //			if(!hg->m_nosound)
 //			{
-//				if(hg->IsMusicPlaying())
-//					hg->m_bShouldRestartMusicAfterInterrupted = true;
-//			
-//				s_bRecreateSoundEngineAfterInterrupt = true;						
+			//####	check option if resume the music
+				//if(hg->IsMusicPlaying())
+				//	hg->m_bShouldRestartMusicAfterInterrupted = true;
+			
+				s_bRecreateSoundEngineAfterInterrupt = true;						
 //			}
 //		
-//			hg->m_AudioManager.destroy();
-//		}				
+			hg->m_AudioManager.destroy();
+		}				
 	}	
 	
 	s_bExecutingGamePause = false;
