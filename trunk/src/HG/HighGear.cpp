@@ -140,7 +140,7 @@ bool CHighGear::InitHighGear(int step)
 
 		m_lib3D->m_screenImage3D = m_screenImage2D;
 		m_screenImage3D = m_lib3D->m_screenImage3D;
-
+		m_AudioManager.SetSoundStatus(true);
 
 		break;
 
@@ -364,7 +364,8 @@ void CHighGear::GameLoop(void)
 				)
 		{
 			//setGameState(GAME_STATE_MENU);
-			m_AudioManager.m_soundWrap->MusicStop();
+//JK_SOUND_IMPLEMENT
+			m_AudioManager.stopAllSounds();
 			setGameState(GAME_STATE_MAIN, true);
 		}
 		break;
@@ -422,6 +423,7 @@ void CHighGear::ZoneReleased(short zoneId)
 					m_actors[index]->init(CActor::ACTOR_MCBULLET, GAMESPRITE_MCBULLET, MAINCHAR->m_posX, MAINCHAR->m_posY);
 				}
 				MAINCHAR->notifyState(CActor::ACTOR_STATE_ATTACK, 15 - m_btDelay * 2);
+				m_AudioManager.SampleStart(0, false);
 			}
 			break;
 	}
@@ -470,10 +472,10 @@ void CHighGear::procLoading()
 		
 		break;
 	case GAME_STATE_TITLE:
-#ifdef MUSIC_IMPLEMENT
-		m_AudioManager.m_soundWrap->MusicLoad("bg_title.mp3");//"sample1.mp3");
-		m_AudioManager.m_soundWrap->MusicStart(true);
-#endif
+//JK_SOUND_IMPLEMENT
+		//("bg_title.mp3");//"sample1.mp3");
+		//m_AudioManager.m_soundWrap->MusicStart(true);
+
 		m_SplashScreen = NEW CSprite("sprite\\title.bsprite");
 		m_bg = NEW CSprite*[2];
 

@@ -14,108 +14,25 @@
 												 
 enum											 
 {												 
-SOUND_BONUS_PICK_UP_ITEM, // 1							  	
-SOUND_BONUS_PICK_UP_NITRO, // 2							  	
-SOUND_CAR_BIG_CRASH, // 3							  	
-SOUND_CAR_BRAKE, // 4							  	
-SOUND_CAR_CLUTCH, // 5							  	
-SOUND_CAR_DRIFT, // 6							  	
-SOUND_CAR_ENGINE_4K, // 7							  	
-SOUND_CAR_ENGINE_8K, // 8							  	
-SOUND_CAR_ENGINE_MOTORBIKE, // 9							  	
-SOUND_CAR_ENGINE_MUSCLE, // 10							  	
-SOUND_CAR_ENGINE_ROAR, // 11							  	
-SOUND_CAR_ENGINE_START, // 12							  	
-SOUND_CAR_HELICOPTER_LOOP, // 13							  	
-SOUND_CAR_IMPACT_WALL, // 14							  	
-SOUND_CAR_NITRO_BOOST, // 15							  	
-SOUND_CAR_OBJECT_IMPACT_WOODBLOCK, // 16							  	
-SOUND_CAR_POLICE_SIREN_SLOW, // 17							  	
-SOUND_CAR_SFX_CAR_JUMP, // 18							  	
-SOUND_CAR_SFX_CAR_PASS_BY, // 19							  	
-SOUND_CAR_SUPERDRIFT, // 20							  	
-SOUND_MENU_BACK, // 21							  	
-SOUND_MENU_CONFIRM, // 22							  	
-SOUND_MENU_MOVE, // 23							  	
-SOUND_COUNTER_1, // 24							  	
-SOUND_COUNTER_1ST, // 25							  	
-SOUND_COUNTER_2, // 26							  	
-SOUND_COUNTER_2ND, // 27							  	
-SOUND_COUNTER_3, // 28							  	
-SOUND_COUNTER_3RD, // 29							  	
-SOUND_COUNTER_GO, // 30							  	
-SOUND_COUNTER_LAST_PLACE, // 31							  	
-SOUND_COUNTER_YOU_WIN, // 32							  	
-SOUND_GRIND_SFX_GRIND_LOOP, // 33							  	
-SOUND_VFX_VFX_GIRL1, // 34							  	
-SOUND_VFX_VFX_GIRL2, // 35							  	
-SOUND_VFX_VFX_GIRL3, // 36							  	
+SOUND_BULLET, // 1							  	
+SOUND_DIE, // 2							  	
 NUM_SOUNDS 								 
 };												 
 												 
 												 
-#define SOUND_BONUS_PICK_UP_ITEM_FILE "pick_up_item.wav"		  								
-#define SOUND_BONUS_PICK_UP_NITRO_FILE "pick_up_nitro.wav"		  								
-#define SOUND_CAR_BIG_CRASH_FILE "big_crash.wav"		  								
-#define SOUND_CAR_BRAKE_FILE "brake.wav"		  								
-#define SOUND_CAR_CLUTCH_FILE "clutch.wav"		  								
-#define SOUND_CAR_DRIFT_FILE "drift.wav"		  								
-#define SOUND_CAR_ENGINE_4K_FILE "engine_4K.wav"		  								
-#define SOUND_CAR_ENGINE_8K_FILE "engine_8k.wav"		  								
-#define SOUND_CAR_ENGINE_MOTORBIKE_FILE "engine_motorbike.wav"		  								
-#define SOUND_CAR_ENGINE_MUSCLE_FILE "engine_muscle.wav"		  								
-#define SOUND_CAR_ENGINE_ROAR_FILE "engine_roar.wav"		  								
-#define SOUND_CAR_ENGINE_START_FILE "engine_start.wav"		  								
-#define SOUND_CAR_HELICOPTER_LOOP_FILE "helicopter_loop.wav"		  								
-#define SOUND_CAR_IMPACT_WALL_FILE "impact_wall.wav"		  								
-#define SOUND_CAR_NITRO_BOOST_FILE "nitro_boost.wav"		  								
-#define SOUND_CAR_OBJECT_IMPACT_WOODBLOCK_FILE "object_impact_woodblock.wav"		  								
-#define SOUND_CAR_POLICE_SIREN_SLOW_FILE "police_siren_slow.wav"		  								
-#define SOUND_CAR_SFX_CAR_JUMP_FILE "sfx_car_jump.wav"		  								
-#define SOUND_CAR_SFX_CAR_PASS_BY_FILE "sfx_car_pass_by.wav"		  								
-#define SOUND_CAR_SUPERDRIFT_FILE "superdrift.wav"		  								
-#define SOUND_MENU_BACK_FILE "back.wav"		  								
-#define SOUND_MENU_CONFIRM_FILE "confirm.wav"		  								
-#define SOUND_MENU_MOVE_FILE "move.wav"		  								
-#define SOUND_COUNTER_1_FILE "1.wav"		  								
-#define SOUND_COUNTER_1ST_FILE "1st.wav"		  								
-#define SOUND_COUNTER_2_FILE "2.wav"		  								
-#define SOUND_COUNTER_2ND_FILE "2nd.wav"		  								
-#define SOUND_COUNTER_3_FILE "3.wav"		  								
-#define SOUND_COUNTER_3RD_FILE "3rd.wav"		  								
-#define SOUND_COUNTER_GO_FILE "go.wav"		  								
-#define SOUND_COUNTER_LAST_PLACE_FILE "last_place.wav"		  								
-#define SOUND_COUNTER_YOU_WIN_FILE "you_win.wav"		  								
-#define SOUND_GRIND_SFX_GRIND_LOOP_FILE "sfx_grind_loop.wav"		  								
-#define SOUND_VFX_VFX_GIRL1_FILE "vfx_girl1.wav"		  								
-#define SOUND_VFX_VFX_GIRL2_FILE "vfx_girl2.wav"		  								
-#define SOUND_VFX_VFX_GIRL3_FILE "vfx_girl3.wav"		  								
+#define SOUND_BULLET "bullet.wav"		  								
+#define SOUND_DIE "die.wav"		  								
 		  								 		 		
 enum											 
 {												 
-MUSIC_MUSIC_M_BGM1, // 1							  	
-MUSIC_MUSIC_M_BGM2, // 2							  	
-MUSIC_MUSIC_M_BGM3, // 3							  	
-MUSIC_MUSIC_M_BGM4, // 4							  	
-MUSIC_MUSIC_M_BGM5, // 5							  	
-MUSIC_MUSIC_M_BGM6, // 6							  	
-MUSIC_MUSIC_M_LOSE, // 7							  	
-MUSIC_MUSIC_M_MENU, // 8							  	
-MUSIC_MUSIC_M_TITLE, // 9							  	
-MUSIC_MUSIC_M_WIN, // 10							  	
+MUSIC_GAME, // 1							  	
+MUSIC_TITLE, // 2							  	
 NUM_MUSICS 								 
 };												
 		  										
-#define MUSIC_MUSIC_M_BGM1_FILE "m_bgm1.m4a"		  								  	
-#define MUSIC_MUSIC_M_BGM2_FILE "m_bgm2.m4a"		  								  	
-#define MUSIC_MUSIC_M_BGM3_FILE "m_bgm3.m4a"		  								  	
-#define MUSIC_MUSIC_M_BGM4_FILE "m_bgm4.m4a"		  								  	
-#define MUSIC_MUSIC_M_BGM5_FILE "m_bgm5.m4a"		  								  	
-#define MUSIC_MUSIC_M_BGM6_FILE "m_bgm6.m4a"		  								  	
-#define MUSIC_MUSIC_M_LOSE_FILE "m_lose.m4a"		  								  	
-#define MUSIC_MUSIC_M_MENU_FILE "m_menu.m4a"		  								  	
-#define MUSIC_MUSIC_M_TITLE_FILE "m_title.m4a"		  								  	
-#define MUSIC_MUSIC_M_WIN_FILE "m_win.m4a"		  								  	
+#define MUSIC_GAME "game.mp3"		  								  	
+#define MUSIC_TITLE "title.mp3"		  								  	
+
 extern const char * const MUSIC_FILE[];					 
 extern const char * const SOUND_FILE[];					 
 												 

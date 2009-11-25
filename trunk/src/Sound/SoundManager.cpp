@@ -184,12 +184,12 @@ bool SoundManager::loadCurrentSound()
 		
 	if (nIndex < NUM_SOUNDS)
 	{
-		strcpy(szFilePath, "Sounds\\");
+		strcpy(szFilePath, "sfx\\");
 		strcat(szFilePath, SOUND_FILE[nIndex]);
 	}
 	else
 	{
-		strcpy(szFilePath, "Musics\\");
+		strcpy(szFilePath, "bgm\\");
 		strcat(szFilePath, MUSIC_FILE[nIndex - NUM_SOUNDS]);
 	}
 	//rax - the files already have extension (.wav, .znd, etc)
