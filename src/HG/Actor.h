@@ -20,7 +20,7 @@ public:
 		ACTOR_ITEM,
 		ACTOR_MUMMY,
 		ACTOR_VAMPIRE,
-		ACTOR_SKULL,
+		ACTOR_WOLF,
 		ACTOR_MCBULLET,
 		ACTOR_BOOM
 	} ACTOR_TYPE;
@@ -35,18 +35,18 @@ public:
 	} ACTOR_STATE;
 
 
-	void init(int, CSprite*, int x = 0, int y = 0, int lv = 0);
-	void draw(CLib2D);
-	void update();
-	void notifyState(int state, int param1);
+	void init (int, CSprite*, int x = 0, int y = 0, int lv = 0);
+	void draw (CLib2D);
+	void update ();
+	void notifyState (int state, int param1);
 
-	bool isEnemy();
-	bool canFire();
+	bool isEnemy ();
+	bool canFire ();
 
 	int m_type;
 	int m_state;
 	int m_level;
-	void move(int);
+	void move (int);
 
 	CHighGear* g_pGame;
 	CSprite* spr;

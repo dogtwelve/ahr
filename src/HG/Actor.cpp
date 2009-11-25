@@ -51,7 +51,7 @@ void CActor::init(int type, CSprite* gameSpr, int x, int y, int level)
 	case ACTOR_MC:
 	case ACTOR_MUMMY:
 	case ACTOR_VAMPIRE:
-	case ACTOR_SKULL:
+	case ACTOR_WOLF:
 		setAnim(0);
 		m_state = ACTOR_STATE_IDLE;
 		break;
@@ -79,7 +79,7 @@ void CActor::notifyState(int state, int param1)
 			break;
 		case ACTOR_MUMMY:
 		case ACTOR_VAMPIRE:
-		case ACTOR_SKULL:
+		case ACTOR_WOLF:
 			if (m_state == ACTOR_STATE_DAMAGED)
 			{
 				m_hp -= param1;
@@ -199,7 +199,7 @@ void CActor::update()
 			}
 		}
 		break;
-	case ACTOR_SKULL:
+	case ACTOR_WOLF:
 	case ACTOR_MUMMY:
 	case ACTOR_VAMPIRE:
 		for (int i = 0; i < MAX_ACTOR; i ++)
@@ -307,7 +307,7 @@ void CActor::updateSprite()
 	}
 }
 
-void CActor::draw(CLib2D g)
+void CActor::draw (CLib2D g)
 {
 	if (m_type == ACTOR_NONE) return;
 	if (spr == NULL) return;
@@ -315,8 +315,19 @@ void CActor::draw(CLib2D g)
 	//get current w
 	int rY = LEVEL_Y_START + LEVEL_PIXEL_HEIGHT * m_posY / (LEVEL_UNIT_HEIGHT - 1);
 	int tempW = LEVEL_PIXEL_WIDTH_SHORT + (LEVEL_PIXEL_WIDTH_LONG - LEVEL_PIXEL_WIDTH_SHORT) * m_posY / (LEVEL_UNIT_HEIGHT - 1);
-	int rX = LEVEL_X_CENTER - (tempW >> 1) + m_posX * tempW / (LEVEL_UNIT_WIDTH-1);
-	spr->DrawAFrame(g, rX, rY, m_CurrentAnim, m_CurrentAFrame);
+	int rX = LEVEL_X_CENTER - (tempW >> 1) + m_posX * tempW / (LEVEL_UNIT_WIDTH);
+	
+	int grayDepth = 0xFF;
+	if (m_posY < 12)
+	{
+		int r = grayDepth * (4 + m_posY) / 16;
+		g_pGame->GetLib2D().setColor((r << 16) | (r << 8) | r | (255<<24) );
+	}
+	spr->DrawAFrame(g, rX, rY, m_CurrentAnim, m_CurrentAFrame, 33 + 67 * m_posY / LEVEL_UNIT_HEIGHT);
+	if (m_posY < 12)
+	{
+		g_pGame->GetLib2D().setColor(0xFFFFFFFF );
+	}
 	updateSprite();
 
 	if (this->isEnemy() && m_state != ACTOR_STATE_DESTROYED)
@@ -348,7 +359,7 @@ void CActor::move(int _x)
 
 bool CActor::isEnemy()
 {
-	if (m_type == ACTOR_SKULL) return true;
+	if (m_type == ACTOR_WOLF) return true;
 	if (m_type == ACTOR_VAMPIRE) return true;
 	if (m_type == ACTOR_MUMMY) return true;
 
