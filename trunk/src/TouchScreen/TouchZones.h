@@ -88,7 +88,7 @@ private:
 	unsigned char* pressedZones;
 
 	bool IsZoneIntersected(unsigned char zoneIdx, short x, short y);
-	short CTouchZones::GetNextIntersectedZone(short x, short y, short crtZoneIdx);
+	short GetNextIntersectedZone(short x, short y, short crtZoneIdx);
 
 
 #ifdef USE_CHEAT_ZONES
