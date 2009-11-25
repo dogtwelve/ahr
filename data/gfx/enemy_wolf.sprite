@@ -5,15 +5,15 @@
     VERSION 0001
 
     // Images:  1
-    // Modules: 9
-    // Frames:  9
-    // Anims:   3
+    // Modules: 10
+    // Frames:  10
+    // Anims:   2
 
 ////////////////////////////////////////////////////////////////////////////////
 // Images...
 // <Image> := IMAGE [id] "file" [TRANSP transp_color]
 
-    IMAGE 0x0001 ".\mc.png" TRANSP 0x00FF00FF // 0  size: 600 x 600  palettes: 1
+    IMAGE 0x0000 ".\wolf.png" TRANSP 0x00FF00FF // 0  size: 500 x 500  palettes: 1
 
 ////////////////////////////////////////////////////////////////////////////////
 // Modules...
@@ -28,15 +28,16 @@
 
     MODULES
     {
-        MD	0x1006	MD_IMAGE	0	34	438	81	101
-        MD	0x1007	MD_IMAGE	0	136	438	83	100
-        MD	0x1008	MD_IMAGE	0	234	439	81	100
-        MD	0x1009	MD_IMAGE	0	340	440	77	101
-        MD	0x1000	MD_IMAGE	0	32	179	87	85
-        MD	0x1001	MD_IMAGE	0	31	301	61	107
-        MD	0x1004	MD_IMAGE	0	115	283	59	126
-        MD	0x1005	MD_IMAGE	0	222	276	61	135
-        MD	0x100A	MD_IMAGE	0	318	286	70	127
+        MD	0x1000	MD_IMAGE	0	23	30	50	84
+        MD	0x1001	MD_IMAGE	0	99	31	50	92
+        MD	0x1002	MD_IMAGE	0	170	33	50	84
+        MD	0x1003	MD_IMAGE	0	253	38	50	79
+        MD	0x1004	MD_IMAGE	0	331	45	50	74
+        MD	0x1005	MD_IMAGE	0	411	47	50	73
+        MD	0x1006	MD_IMAGE	0	37	218	50	82
+        MD	0x1007	MD_IMAGE	0	95	215	49	85
+        MD	0x1008	MD_IMAGE	0	157	224	48	78
+        MD	0x1009	MD_IMAGE	0	223	226	49	80
     }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -48,56 +49,62 @@
 
     FRAME "" // Index = 0, FModules = 1
     {
-        0x2006
-        FM	0x1006	-31	-96
+        0x2000
+        FM	0x1000	-23	-70
     }
 
     FRAME "" // Index = 1, FModules = 1
     {
-        0x2007
-        FM	0x1007	-32	-95
+        0x2001
+        FM	0x1001	-23	-74
     }
 
     FRAME "" // Index = 2, FModules = 1
     {
-        0x2008
-        FM	0x1008	-31	-95
+        0x2002
+        FM	0x1002	-23	-73
     }
 
     FRAME "" // Index = 3, FModules = 1
     {
-        0x2009
-        FM	0x1009	-28	-96
+        0x2003
+        FM	0x1003	-23	-68
     }
 
-    FRAME "MC_DAMAGED" // Index = 4, FModules = 1
+    FRAME "" // Index = 4, FModules = 1
     {
-        0x2000
-        FM	0x1000	-34	-80
+        0x2004
+        FM	0x1004	-23	-63
     }
 
-    FRAME "ATTACK0" // Index = 5, FModules = 1
+    FRAME "" // Index = 5, FModules = 1
     {
-        0x2001
-        FM	0x1001	-30	-104
+        0x2005
+        FM	0x1005	-24	-62
     }
 
     FRAME "" // Index = 6, FModules = 1
     {
-        0x2004
-        FM	0x1004	-29	-123
+        0x2006
+        FM	0x1006	-23	-70
     }
 
     FRAME "" // Index = 7, FModules = 1
     {
-        0x2005
-        FM	0x1005	-30	-132
+        0x2007
+        FM	0x1007	-24	-73
     }
 
     FRAME "" // Index = 8, FModules = 1
     {
-        0x200A
-        FM	0x100A	-34	-124
+        0x2008
+        FM	0x1008	-29	-63
+    }
+
+    FRAME "" // Index = 9, FModules = 1
+    {
+        0x2009
+        FM	0x1009	-25	-63
     }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -106,35 +113,26 @@
 // <AFi>  := AF frame_id time ox oy [FLAGS hex_flags] [+Flags]
 // Flags  := FLIP_X | FLIP_Y | ROT_90
 
-    ANIM "MC_IDLE" // Index = 0, AFrames = 4
-    {
-        0x3003
-        AF	0x2006	3	0	0
-        AF	0x2007	3	0	0
-        AF	0x2008	2	0	0
-        AF	0x2009	2	0	0
-    }
-
-    ANIM "MC_DAMAGED" // Index = 1, AFrames = 6
+    ANIM "" // Index = 0, AFrames = 6
     {
         0x3000
-        AF	0x2000	1	0	0
-        AF	0x2000	1	-2	2
-        AF	0x2000	1	0	3
-        AF	0x2000	1	2	4
-        AF	0x2000	1	1	2
-        AF	0x2000	1	-1	1
+        AF	0x2001	1	0	0
+        AF	0x2002	1	0	0
+        AF	0x2003	1	0	0
+        AF	0x2004	1	0	0
+        AF	0x2005	1	0	0
+        AF	0x2006	1	0	0
     }
 
-    ANIM "MC_ATTACK" // Index = 2, AFrames = 6
+    ANIM "" // Index = 1, AFrames = 6
     {
         0x3001
-        AF	0x2001	1	0	0
-        AF	0x2004	1	0	6
-        AF	0x2005	1	0	7
-        AF	0x200A	1	0	7
-        AF	0x2001	3	0	7
-        AF	0x2001	1	0	2
+        AF	0x2007	2	0	0
+        AF	0x2008	3	0	0
+        AF	0x2009	1	-1	0
+        AF	0x2009	1	1	0
+        AF	0x2009	1	-1	0
+        AF	0x2009	1	1	0
     }
 
     SPRITE_END
