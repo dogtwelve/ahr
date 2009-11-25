@@ -118,7 +118,8 @@ int CGapi::LoopGame(void)
 
 
 	{
-		int crtOrientation = GetPhoneOrientation();
+		//####	JK 090818 block screen rotation
+		int crtOrientation = ORIENTATION_PORTRAIT;//GetPhoneOrientation();
 		
 		if (crtOrientation < 0 || mDisplayOrientationOld != crtOrientation)
 		{
