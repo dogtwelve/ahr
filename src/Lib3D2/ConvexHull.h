@@ -22,7 +22,7 @@ public:
 	int			m_index;
 	ConvexHullAtom(){}
 	ConvexHullAtom(const Vector2s& Point_in,int index_in):m_Point(Point_in),m_index(index_in){}
-	ConvexHullAtom& ConvexHullAtom::operator=(const ConvexHullAtom& in)
+	ConvexHullAtom& operator=(const ConvexHullAtom& in)
 	{
 		m_Point.x = in.m_Point.x;
 		m_Point.y = in.m_Point.y;

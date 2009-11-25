@@ -90,7 +90,7 @@ namespace Lib3D
 
 		inline LineParamZ(){};
 
-		inline LineParamZ::LineParamZ(int ix,int iz,int ih,int iu,int iv) :inherited(ix,iz,iu,iv),h(ih)  {}
+		inline LineParamZ(int ix,int iz,int ih,int iu,int iv) :inherited(ix,iz,iu,iv),h(ih)  {}
 
 		inline void Set(int ix,int iz,int ih,int iu,int iv)
 		{

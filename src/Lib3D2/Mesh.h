@@ -223,7 +223,7 @@ class CBasicMesh
 {
 public:
 	CBasicMesh(const char* fileName,const char* textureName,int scaleShift=1);
-	CBasicMesh::CBasicMesh(const char* fileName, const char** textureNames, int nTextures, int scaleShift=1);
+	CBasicMesh(const char* fileName, const char** textureNames, int nTextures, int scaleShift=1);
 	virtual ~CBasicMesh();
 
 	void SetUV(int textureId = 0);
