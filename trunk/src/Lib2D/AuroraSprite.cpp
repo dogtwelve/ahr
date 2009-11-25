@@ -1048,12 +1048,12 @@ CSprite::~CSprite()
 #endif /* USE_OGL*/
 }
 
-void CSprite::DrawAFrame (CLib2D& lib2d, int x, int y, int anim, int aframe) const
+void CSprite::DrawAFrame (CLib2D& lib2d, int x, int y, int anim, int aframe, int zoom) const
 {
 	CAFrame* afrm = anims[anim]->aFrames[aframe];
 	CFrame* frame = afrm->frame;
 
-	DrawFrame(lib2d, x + afrm->xOffset, y + afrm->yOffset, frame, afrm->flags);
+	DrawFrame(lib2d, x + afrm->xOffset, y + afrm->yOffset, frame, afrm->flags, 0, zoom);
 }
 
 int CSprite::GetNumAFrames (int anim) const
@@ -1078,14 +1078,16 @@ void CSprite::DrawFrame(CLib2D& lib2d, int x, int y, int frame, int flags, int r
 	}
 }
 
-void CSprite::DrawFrame(CLib2D& lib2d, int x, int y, CFrame *f, int flags, int rotation) const
+void CSprite::DrawFrame(CLib2D& lib2d, int x, int y, CFrame *f, int flags, int rotation, int zoom) const
 {
 	for(int i = 0; i<f->numFModules; ++i)
 	{
 		CFModule* cfm = f->fModules[i];
 
 //parameters modified for rotationCenterX and rotationCenterY
-		DrawModule(lib2d, x + cfm->xOffset, y + cfm->yOffset, cfm->module, cfm->flags ^ flags, rotation, x/*cfm->xOffset*/, y/*cfm->yOffset*/);
+
+//####	091106 ZOOM added by JK
+		DrawModule(lib2d, x + (cfm->xOffset >> 1), y + (cfm->yOffset >> 1), cfm->module, cfm->flags ^ flags, rotation, x/*cfm->xOffset*/, y/*cfm->yOffset*/, zoom);
 	}
 }
 
@@ -1170,7 +1172,7 @@ void CSprite::DrawModule(CLib2D& lib2d, int x, int y, int module, int flags, int
 	#define SWAP_FLOAT(a,b) {f32 t = a; a = b; b = t;}
 #endif /* USE_OGL */
 
-void CSprite::DrawModule(CLib2D& lib2d, int x, int y, CModule* module, int flags, int rotation, int rotCenterX, int rotCenterY) const
+void CSprite::DrawModule(CLib2D& lib2d, int x, int y, CModule* module, int flags, int rotation, int rotCenterX, int rotCenterY, int zoom) const
 {
 	int srcStartX = 0,	srcEndX = module->width;
 	int srcStartY = 0,	srcEndY = module->height;
@@ -1297,7 +1299,8 @@ void CSprite::DrawModule(CLib2D& lib2d, int x, int y, CModule* module, int flags
 	if(flags & FLAGS_ADDITIVE_BLENDING)
 		appearanceFlag = FLAG_USE_ADDITIVE_BLEND;
 
-	g_lib3DGL->paint2DModule(x, y, srcEndX - srcStartX, srcEndY - srcStartY, m_glTexturesName[currentPalette], uv, appearanceFlag, rotation, rotCenterX, rotCenterY);
+//####	091106 ZOOM added by JK	
+	g_lib3DGL->paint2DModule(x, y, (srcEndX - srcStartX) * zoom / 100, (srcEndY - srcStartY) * zoom / 100, m_glTexturesName[currentPalette], uv, appearanceFlag, rotation, rotCenterX, rotCenterY);
 
 	return ;
 
