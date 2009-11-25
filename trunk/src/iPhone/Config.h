@@ -44,7 +44,7 @@
 
 #ifdef USE_TOUCH_SCREEN
 	
-	#define DRAW_TOUCH_ZONES
+//	#define DRAW_TOUCH_ZONES
 
 	#ifdef IPHONE		
 		//only on IPHONE SDK
