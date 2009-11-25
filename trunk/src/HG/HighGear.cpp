@@ -351,7 +351,13 @@ void CHighGear::GameLoop(void)
 		procMaingame();
 		break;
 	case GAME_STATE_TITLE:
-		m_SplashScreen->DrawFrame(GetLib2D(), 0, 0, 0);
+		
+		GetLib2D().DrawRect(0, 0, m_dispX, m_dispY, 0xF000, 0xF000);
+		GetLib2D().setColor(0x33FFFFFF);
+		m_bg[0]->DrawModule(GetLib2D(), 0, 0, 0);
+		GetLib2D().setColor(0xFFFFFFFF);
+		m_SplashScreen->DrawFrame(GetLib2D(), m_dispX >> 1, m_dispY >> 1, 0, CSprite::FLAGS_ADDITIVE_BLENDING);
+		m_SplashScreen->DrawFrame(GetLib2D(), m_dispX >> 1, (m_dispY >> 1) + 60, 1, CSprite::FLAGS_ADDITIVE_BLENDING);
 		if (Gapi().m_Keypad.Keypad_HasAnyKeyBeenPressed() 
 #ifdef USE_TOUCH_SCREEN
 				|| touchZones->WasZoneActivated(0)
@@ -464,7 +470,13 @@ void CHighGear::procLoading()
 		
 		break;
 	case GAME_STATE_TITLE:
-		m_SplashScreen = NEW CSprite("sprite\\splash.bsprite");
+		m_SplashScreen = NEW CSprite("sprite\\title.bsprite");
+		m_bg = NEW CSprite*[2];
+
+		m_bg[0] = NEW CSprite("sprite\\bg.bsprite");
+		m_gameSprite = NEW CSprite*[MAX_GAMESPRITE];
+		GAMESPRITE_MC = NEW CSprite("sprite\\mc00.bsprite");
+
 		touchZones->AddZone(0, 0, 0, m_dispX, m_dispY);
 		break;
 	case GAME_STATE_MAIN:
@@ -472,18 +484,13 @@ void CHighGear::procLoading()
 		//####	load resources
 		//######################
 		delete(m_SplashScreen);
-		m_bg = NEW CSprite*[2];
-
-		m_bg[0] = NEW CSprite("sprite\\bg.bsprite");
-		m_bg[1] = NEW CSprite("sprite\\bg_floor.bsprite");
 		m_ui = NEW CSprite("sprite\\interface0.bsprite");
 
-		m_gameSprite = NEW CSprite*[MAX_GAMESPRITE];
-		GAMESPRITE_MC = NEW CSprite("sprite\\mc00.bsprite");
+
 		GAMESPRITE_ITEM = NEW CSprite("sprite\\items.bsprite");
 		GAMESPRITE_MUMMY = NEW CSprite("sprite\\enemy_mummy.bsprite");
 		GAMESPRITE_VAMPIRE = NEW CSprite("sprite\\enemy_vampire.bsprite");
-		GAMESPRITE_SKULL = NEW CSprite("sprite\\enemy_skull.bsprite");
+		GAMESPRITE_WOLF = NEW CSprite("sprite\\enemy_wolf.bsprite");
 		GAMESPRITE_MCBULLET = NEW CSprite("sprite\\mcbullet.bsprite");
 
 		m_pad = NEW CSprite("sprite\\vpad.bsprite");
@@ -646,8 +653,8 @@ void CHighGear::procMaingame()
 
 	//BG
 	GetLib2D().DrawRect(0, 0, m_dispX, m_dispY, 0xF000, 0xF000);
-	m_bg[0]->DrawModule(GetLib2D(), 0, (m_bg[0]->GetModuleHeight(0) - m_dispY) - (m_bg[0]->GetModuleHeight(0) - m_dispY) * (m_gameTime ++) / TIME_LIMIT, 0);
-	m_bg[1]->DrawFrame(GetLib2D(), m_dispX >> 1, LEVEL_Y_START + 125, 0);
+	m_bg[0]->DrawModule(GetLib2D(), 0, 0, 0);
+//	m_bg[1]->DrawFrame(GetLib2D(), m_dispX >> 1, LEVEL_Y_START + 125, 0);
 
 
 	//Sort Actor's draw order
