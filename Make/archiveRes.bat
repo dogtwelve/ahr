@@ -34,6 +34,8 @@ rem ------------------------------
 
 if exist ..\archive_main.txt del ..\archive_main.txt /F
 call filearchiver -addall sprite >>..\archive_main.txt			2>NUL
+call filearchiver -addall bgm >>..\archive_main.txt			2>NUL
+call filearchiver -addall sfx >>..\archive_main.txt			2>NUL
 rem call filearchiver -addall Textures\interf >>..\archive_main.txt			2>NUL
 
 
