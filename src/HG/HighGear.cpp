@@ -350,8 +350,7 @@ void CHighGear::GameLoop(void)
 	case GAME_STATE_MAIN:
 		procMaingame();
 		break;
-	case GAME_STATE_TITLE:
-		
+	case GAME_STATE_TITLE:			
 		GetLib2D().DrawRect(0, 0, m_dispX, m_dispY, 0xF000, 0xF000);
 		GetLib2D().setColor(0x33FFFFFF);
 		m_bg[0]->DrawModule(GetLib2D(), 0, 0, 0);
@@ -365,6 +364,7 @@ void CHighGear::GameLoop(void)
 				)
 		{
 			//setGameState(GAME_STATE_MENU);
+			m_AudioManager.m_soundWrap->MusicStop();
 			setGameState(GAME_STATE_MAIN, true);
 		}
 		break;
@@ -470,6 +470,9 @@ void CHighGear::procLoading()
 		
 		break;
 	case GAME_STATE_TITLE:
+		m_AudioManager.m_soundWrap->MusicLoad("bg_title.mp3");//"sample1.mp3");
+		m_AudioManager.m_soundWrap->MusicStart(true);
+
 		m_SplashScreen = NEW CSprite("sprite\\title.bsprite");
 		m_bg = NEW CSprite*[2];
 
@@ -483,6 +486,9 @@ void CHighGear::procLoading()
 		//######################
 		//####	load resources
 		//######################
+		m_AudioManager.m_soundWrap->MusicFree();	
+		m_AudioManager.m_soundWrap->MusicLoad("bg_game.mp3");//"sample1.mp3");
+		
 		delete(m_SplashScreen);
 		m_ui = NEW CSprite("sprite\\interface0.bsprite");
 
@@ -546,6 +552,8 @@ void CHighGear::procMaingame()
 	{
 		if (GETTIMEMS() - m_gameTime > 3000)
 		{
+			m_AudioManager.m_soundWrap->MusicStart(true);
+
 			m_gameState = GAME_START;
 			m_gameTime = GETTIMEMS();
 			touchZones->AddZone(ZONEID_PAD_LEFT, 

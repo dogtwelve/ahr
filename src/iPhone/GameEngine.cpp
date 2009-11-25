@@ -162,15 +162,15 @@ extern "C" void GameLoop()
 	{
 		hg->m_AudioManager.initialize();
 		
-		hg->m_AudioManager.m_soundWrap->MusicLoad("sample1.mp3");
+		//hg->m_AudioManager.m_soundWrap->MusicLoad("bg_game.mp3");//"sample1.mp3");
 
 		
-		//hg->m_AudioManager.loadAllEffect();		
+		hg->m_AudioManager.loadAllEffect();		
 		
 		s_bRecreateSoundEngineAfterInterrupt = false;
 		
 		hg->m_AudioManager.SetMasterVolume( 5 );
-		hg->m_AudioManager.m_soundWrap->MusicStart(true);
+//		hg->m_AudioManager.m_soundWrap->MusicStart(true);
 	}
 //	{		
 //		hg->m_AudioManager.initialize();		
