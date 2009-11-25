@@ -158,11 +158,11 @@ public:
 	virtual ~CSprite();
 
 			void	DrawFrame (CLib2D& lib2d, int x, int y, int frame, int flags = 0, int rotation = 0) const;
-			void    DrawFrame (CLib2D& lib2d, int x, int y, CFrame *f, int flags = 0, int rotation = 0) const;
+			void    DrawFrame (CLib2D& lib2d, int x, int y, CFrame *f, int flags = 0, int rotation = 0, int zoom = 100) const;
 			void	DrawModule(CLib2D& lib2d, int x, int y, int module, int flags = 0, int rotation = 0, int rotCenterX = 0, int rotCenterY = 0) const;
-			void	DrawModule(CLib2D& lib2d, int x, int y, CModule* module, int flags = 0, int rotation = 0, int rotCenterX = 0, int rotCenterY = 0) const;
+			void	DrawModule(CLib2D& lib2d, int x, int y, CModule* module, int flags = 0, int rotation = 0, int rotCenterX = 0, int rotCenterY = 0, int zoom = 100) const;
 
-			void	DrawAFrame (CLib2D& lib2d, int x, int y, int anim, int aframe) const;			
+			void	DrawAFrame (CLib2D& lib2d, int x, int y, int anim, int aframe, int zoom = 100) const;			
 			int		GetNumAFrames (int anim) const;
 			int		GetAFrameTime(int anim, int aframe) const;
 
