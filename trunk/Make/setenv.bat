@@ -2,9 +2,9 @@
 
 set PROJECT_NAME=AHR
 
+cd..
+SET PRJ_ROOT_DIR=%CD%
 
-
-set PRJ_ROOT_DIR=D:\workspace\iPhone\AHR
 
 set PRJ_BUILD_DIR=%PRJ_ROOT_DIR%\Make
 set PRJ_SOURCE_DIR=%PRJ_ROOT_DIR%\src
@@ -21,4 +21,6 @@ set AURORA=%PRJ_AURORA_DIR%\AuroraGT
 set	USE_LZMA=0
 set VC_DEBUG_DIR=%PRJ_ROOT_DIR%\Engine\Win32
 set WIN32_EXE_RELEASE_DIR=%PRJ_ROOT_DIR%\build\win32
-set IPHONE_PRJ_DIR=%PRJ_ROOT_DIR%\prj_iphone
+set IPHONE_PRJ_DIR=%PRJ_ROOT_DIR%\prj_iphone\
+
+cd %PRJ_BUILD_DIR%

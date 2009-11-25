@@ -5,15 +5,15 @@
     VERSION 0001
 
     // Images:  1
-    // Modules: 2
-    // Frames:  2
+    // Modules: 5
+    // Frames:  5
     // Anims:   1
 
 ////////////////////////////////////////////////////////////////////////////////
 // Images...
 // <Image> := IMAGE [id] "file" [TRANSP transp_color]
 
-    IMAGE 0x0000 ".\enemy_mummy.bmp" TRANSP 0x00FF00FF // 0  size: 130 x 194  palettes: 1
+    IMAGE 0x0001 ".\mummy.png" TRANSP 0x00FF00FF // 0  size: 640 x 480  palettes: 1
 
 ////////////////////////////////////////////////////////////////////////////////
 // Modules...
@@ -28,8 +28,11 @@
 
     MODULES
     {
-        MD	0x1000	MD_IMAGE	0	39	1	21	24
-        MD	0x1001	MD_IMAGE	0	3	36	21	23
+        MD	0x1002	MD_IMAGE	0	38	36	50	68
+        MD	0x1003	MD_IMAGE	0	104	34	50	68
+        MD	0x1004	MD_IMAGE	0	171	35	50	68
+        MD	0x1005	MD_IMAGE	0	240	36	50	68
+        MD	0x1006	MD_IMAGE	0	315	36	50	68
     }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -41,14 +44,32 @@
 
     FRAME "" // Index = 0, FModules = 1
     {
-        0x2000
-        FM	0x1000	-11	-23
+        0x2002
+        FM	0x1002	-26	-67
     }
 
     FRAME "" // Index = 1, FModules = 1
     {
-        0x2001
-        FM	0x1001	-11	-22
+        0x2003
+        FM	0x1003	-25	-67
+    }
+
+    FRAME "" // Index = 2, FModules = 1
+    {
+        0x2004
+        FM	0x1004	-25	-67
+    }
+
+    FRAME "" // Index = 3, FModules = 1
+    {
+        0x2005
+        FM	0x1005	-26	-67
+    }
+
+    FRAME "" // Index = 4, FModules = 1
+    {
+        0x2006
+        FM	0x1006	-27	-67
     }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -59,11 +80,11 @@
 
     ANIM "" // Index = 0, AFrames = 4
     {
-        0x3000
-        AF	0x2000	3	0	0
-        AF	0x2001	3	0	0
-        AF	0x2000	3	0	0	+FLIP_X
-        AF	0x2001	3	0	0
+        0x3001
+        AF	0x2003	1	0	0
+        AF	0x2004	1	0	0
+        AF	0x2005	1	0	0
+        AF	0x2006	1	0	0
     }
 
     SPRITE_END

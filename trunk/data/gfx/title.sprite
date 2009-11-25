@@ -5,15 +5,15 @@
     VERSION 0001
 
     // Images:  1
-    // Modules: 1
-    // Frames:  0
+    // Modules: 4
+    // Frames:  2
     // Anims:   0
 
 ////////////////////////////////////////////////////////////////////////////////
 // Images...
 // <Image> := IMAGE [id] "file" [TRANSP transp_color]
 
-    IMAGE 0x0000 ".\back.bmp" TRANSP 0x00FF00FF // 0  size: 320 x 480  palettes: 1
+    IMAGE 0x0000 ".\title.png" TRANSP 0x00FF00FF // 0  size: 337 x 142  palettes: 1
 
 ////////////////////////////////////////////////////////////////////////////////
 // Modules...
@@ -28,7 +28,31 @@
 
     MODULES
     {
-        MD	0x1000	MD_IMAGE	0	0	0	320	480
+        MD	0x1003	MD_IMAGE	0	16	57	131	33
+        MD	0x1000	MD_IMAGE	0	150	57	60	33
+        MD	0x1002	MD_IMAGE	0	211	57	113	32
+        MD	0x1001	MD_IMAGE	0	104	100	151	19
+    }
+
+////////////////////////////////////////////////////////////////////////////////
+// Frames...
+// <Frame> := FRAME ["desc"] { id <RC1> [<RC2> ...] <FM1> [<FM2> ...] }
+// <RCi>   := RC x1 y1 x2 y2
+// <FMi>   := FM module_or_frame_id ox oy [FLAGS hex_flags] [+Flags]
+// Flags   := HYPER_FM | FLIP_X | FLIP_Y | ROT_90
+
+    FRAME "" // Index = 0, FModules = 3
+    {
+        0x2000
+        FM	0x1003	-154	-16
+        FM	0x1000	-17	-16
+        FM	0x1002	47	-16
+    }
+
+    FRAME "" // Index = 1, FModules = 1
+    {
+        0x2001
+        FM	0x1001	-78	-8
     }
 
     SPRITE_END
