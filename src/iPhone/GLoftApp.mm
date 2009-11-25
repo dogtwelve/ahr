@@ -219,6 +219,7 @@ void JoinThread()
 	
 	//Show the window
 	[m_window makeKeyAndVisible];
+	[application setStatusBarHidden:YES animated:NO]; 
 	
 //	[g_sharedInstanceUIApplication setStatusBarStyle: UIStatusBarStyleBlackTranslucent];
 		

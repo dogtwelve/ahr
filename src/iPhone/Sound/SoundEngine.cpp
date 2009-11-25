@@ -95,7 +95,6 @@ extern unsigned int g_SystemVersion;
 			if(result != noErr)									\
 			{													\
 				printf("%s: %d\n", inMessage, (int)result);	\
-				goto inHandler;									\
 			}
 			
 #define AssertNoOALError(inMessage, inHandler)					\
@@ -820,7 +819,7 @@ class BackgroundTrackMgr
 			// first check to see what the max size of a packet is - if it is bigger
 			// than our allocation default size, that needs to become larger
 			OSStatus result = AudioFileGetProperty(inFileInfo->mAFID, kAudioFilePropertyPacketSizeUpperBound, &size, &maxPacketSize);
-				AssertNoError("Error getting packet upper bound size", end);
+				AssertNoError("Error getting packet upper bound size", end1);
 			bool isFormatVBR = (inFileInfo->mFileFormat.mBytesPerPacket == 0 || inFileInfo->mFileFormat.mFramesPerPacket == 0);
 
 			CalculateBytesForTime(inFileInfo->mFileFormat, maxPacketSize, 0.5/*seconds*/, &mBufferByteSize, &mNumPacketsToRead);
@@ -834,7 +833,7 @@ class BackgroundTrackMgr
 				UInt64 theFileNumPackets;
 				size = sizeof(UInt64);
 				result = AudioFileGetProperty(inFileInfo->mAFID, kAudioFilePropertyAudioDataPacketCount, &size, &theFileNumPackets);
-					AssertNoError("Error getting packet count for file", end);
+					AssertNoError("Error getting packet count for file", end1);
 				
 				mNumPacketsToRead = (UInt32)theFileNumPackets;
 				mBufferByteSize = inFileInfo->mFileDataSize;
@@ -863,13 +862,13 @@ class BackgroundTrackMgr
 			for (int i = 0; i < numBuffersToQueue; ++i) 
 			{
 				result = AudioQueueAllocateBuffer(mQueue, mBufferByteSize, &mBuffers[i]);
-					AssertNoError("Error allocating buffer for queue", end);
+					AssertNoError("Error allocating buffer for queue", end1);
 				QueueCallback (this, mQueue, mBuffers[i]);
 				if (inFileInfo->mLoadAtOnce)
 					inFileInfo->mFileDataInQueue = true;
 			}
 		
-		end:
+		end1:
 			return result;
 		}
 		
