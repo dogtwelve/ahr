@@ -470,9 +470,10 @@ void CHighGear::procLoading()
 		
 		break;
 	case GAME_STATE_TITLE:
+#ifdef MUSIC_IMPLEMENT
 		m_AudioManager.m_soundWrap->MusicLoad("bg_title.mp3");//"sample1.mp3");
 		m_AudioManager.m_soundWrap->MusicStart(true);
-
+#endif
 		m_SplashScreen = NEW CSprite("sprite\\title.bsprite");
 		m_bg = NEW CSprite*[2];
 
@@ -486,9 +487,10 @@ void CHighGear::procLoading()
 		//######################
 		//####	load resources
 		//######################
+#ifdef MUSIC_IMPLEMENT
 		m_AudioManager.m_soundWrap->MusicFree();	
 		m_AudioManager.m_soundWrap->MusicLoad("bg_game.mp3");//"sample1.mp3");
-		
+#endif
 		delete(m_SplashScreen);
 		m_ui = NEW CSprite("sprite\\interface0.bsprite");
 
