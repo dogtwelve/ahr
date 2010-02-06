@@ -10,7 +10,7 @@ const int arrEnemyData[MAX_ENEMY][3]	=
 	//speed, hp, score
 	{ 10, 5, 0 },	//mummy
 	{ 3, 3, 0, },	//vampire
-	{ 7, 3, 0 }		//skull
+	{ 5, 3, 0 }		//wolf
 };
 
 #define ENEMY_DATA_INDEX_SPEED	0
@@ -21,6 +21,7 @@ CActor::CActor(CHighGear *p)
 	m_type = ACTOR_NONE;
 	g_pGame = p;
 	spr = NULL;
+	bHasItem = false;
 }
 
 CActor::~CActor(void)
@@ -88,13 +89,15 @@ void CActor::notifyState(int state, int param1)
 					m_state = ACTOR_STATE_DESTROYED;
 					g_pGame->m_kill ++;
 					//gen Items
-					
-					int index = g_pGame->getEmptyActorIndex();
-
-					if (index > -1)
+					if (bHasItem == true)
 					{
-						g_pGame->m_actors[index]->init(ACTOR_ITEM, g_pGame->GAMESPRITE_ITEM,
+						int index = g_pGame->getEmptyActorIndex();
+
+						if (index > -1)
+						{
+							g_pGame->m_actors[index]->init(ACTOR_ITEM, g_pGame->GAMESPRITE_ITEM,
 														m_posX, m_posY);
+						}
 					}
 					
 				}
@@ -116,6 +119,10 @@ void CActor::notifyState(int state, int param1)
 				setAnim(1);
 				m_VelocityCounter = GETTIMEMS();
 			}
+			else if (m_state == ACTOR_STATE_MCDIE)
+			{
+				setAnim(3);
+			}
 			break;
 	}
 }
@@ -136,31 +143,31 @@ void CActor::update()
 		else
 		{
 			bool bHit = false;
-			for (int i = 0; i < MAX_ACTOR; i ++)
-			{
-				if (g_pGame->m_actors[i] == NULL) continue;
-				
-				if (g_pGame->m_actors[i]->m_type != ACTOR_MCBULLET) continue;
-				if (g_pGame->m_actors[i]->m_state == ACTOR_STATE_DESTROYED) continue;
-				if (g_pGame->m_actors[i]->m_posX != m_posX) continue;
-				if (g_pGame->m_actors[i]->m_posY != m_posY) continue;
-
-				g_pGame->m_actors[i]->m_state = ACTOR_STATE_DESTROYED;	//Bullet X
-					
-
-				notifyState(ACTOR_STATE_DAMAGED, -1);	//ITEM
-				//hit the Items!!!
-				
-				int index = g_pGame->getEmptyActorIndex();
-
-				if (index > -1)
-				{
-					g_pGame->m_actors[index]->init(ACTOR_BOOM, g_pGame->GAMESPRITE_MCBULLET,
-													m_posX, m_posY);
-				}
-				bHit = true;
-				break;
-			}
+			//for (int i = 0; i < MAX_ACTOR; i ++)
+//			{
+//				if (g_pGame->m_actors[i] == NULL) continue;
+//				
+//				if (g_pGame->m_actors[i]->m_type != ACTOR_MCBULLET) continue;
+//				if (g_pGame->m_actors[i]->m_state == ACTOR_STATE_DESTROYED) continue;
+//				if (g_pGame->m_actors[i]->m_posX != m_posX) continue;
+//				if (g_pGame->m_actors[i]->m_posY != m_posY) continue;
+//
+//				g_pGame->m_actors[i]->m_state = ACTOR_STATE_DESTROYED;	//Bullet X
+//					
+//
+//				notifyState(ACTOR_STATE_DAMAGED, -1);	//ITEM
+//				//hit the Items!!!
+//				
+//				int index = g_pGame->getEmptyActorIndex();
+//
+//				if (index > -1)
+//				{
+//					g_pGame->m_actors[index]->init(ACTOR_BOOM, g_pGame->GAMESPRITE_MCBULLET,
+//													m_posX, m_posY);
+//				}
+//				bHit = true;
+//				break;
+//			}
 
 			if (!bHit 
 				&& g_pGame->MAINCHAR->m_posX == m_posX &&
@@ -197,6 +204,11 @@ void CActor::update()
 				setAnim(0);
 				m_state = ACTOR_STATE_IDLE;
 			}
+		}
+		
+		if ((GETTIMEMS() - g_pGame->m_gameTime) % 10000 == 0)
+		{
+			g_pGame->m_btPow = Max(0, g_pGame->m_btPow - 1);
 		}
 		break;
 	case ACTOR_WOLF:
@@ -323,13 +335,34 @@ void CActor::draw (CLib2D g)
 		int r = grayDepth * (4 + m_posY) / 16;
 		g_pGame->GetLib2D().setColor((r << 16) | (r << 8) | r | (255<<24) );
 	}
-	spr->DrawAFrame(g, rX, rY, m_CurrentAnim, m_CurrentAFrame, 33 + 67 * m_posY / LEVEL_UNIT_HEIGHT);
-	if (m_posY < 12)
+	if (m_type == ACTOR_MCBULLET)
 	{
+		g_pGame->GetLib2D().setColor(0xEE000000 );
+		
+		spr->DrawAFrame(g, rX, rY + 20, m_CurrentAnim, m_CurrentAFrame, 33 + 67 * m_posY / LEVEL_UNIT_HEIGHT);
 		g_pGame->GetLib2D().setColor(0xFFFFFFFF );
+		
 	}
-	updateSprite();
+	if (g_pGame->m_gameState != GAME_OVER && bHasItem && GETTIMEMS() % 10 == 0)
+		g_pGame->GetLib2D().setColor(0x44FF0000 );
 
+	
+	spr->DrawAFrame(g, rX, rY, m_CurrentAnim, m_CurrentAFrame, 33 + 67 * m_posY / LEVEL_UNIT_HEIGHT);
+
+	if (m_type == ACTOR_MC)
+	{
+		//Draw Heart
+		g_pGame->m_ui->DrawModule(g, rX, rY, 15, 0, 0);//, <#int rotCenterX#>, <#int rotCenterY#>)
+	}
+	
+	if (g_pGame->m_gameState != GAME_OVER)
+	{
+		if (m_posY < 12 || bHasItem)
+		{
+			g_pGame->GetLib2D().setColor(0xFFFFFFFF );
+		}
+		updateSprite();
+	}
 	if (this->isEnemy() && m_state != ACTOR_STATE_DESTROYED)
 	{
 		g.DrawRect(rX - (ENEMY_HP_BAR_WIDTH >> 1), rY + ENEMY_HP_BAR_OFFSET_Y, 

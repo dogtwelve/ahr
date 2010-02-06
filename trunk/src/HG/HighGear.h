@@ -197,6 +197,7 @@ public:
 	int m_level;
 
 	int m_currentEnemyCnt;
+	int m_enemyGenIndex;
 	int m_btPow;
 	int m_btDelay;
 

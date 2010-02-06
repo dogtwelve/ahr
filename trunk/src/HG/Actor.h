@@ -31,7 +31,8 @@ public:
 		ACTOR_STATE_ATTACK,
 		ACTOR_STATE_ATTACK_DELAY,
 		ACTOR_STATE_DAMAGED,
-		ACTOR_STATE_DESTROYED
+		ACTOR_STATE_DESTROYED,
+		ACTOR_STATE_MCDIE
 	} ACTOR_STATE;
 
 
@@ -56,7 +57,7 @@ public:
 	int m_hp;
 	int m_score;
 	int m_attDelay;
-
+	bool bHasItem;
 private:	
 	int m_VelocityCounter;
 	int m_CurrentFrameTimer;

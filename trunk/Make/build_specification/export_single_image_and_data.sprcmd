@@ -71,7 +71,7 @@ Load("..\bld_tmp\enemy_skull.sprite")
 //--------
 
 Load("..\bld_tmp\interface0.sprite")
-	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 256, -1, 1, 0)
+	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 512, -1, 1, 0)
 	SaveImage(0, "..\bld_tmp\interface0.bmp")
 	Save("..\bld_tmp\interface0.sprite")
 
@@ -116,13 +116,6 @@ Load("..\bld_tmp\logo.sprite")
 		ExportBSpriteFFT("..\build_output\sprite\logo.data")
 		
 
-Load("..\bld_tmp\splash.sprite")
-	RearrangeModules(MINIMAL_AREA, 0, 0, 0, 0, 0, 0, 512, -1, 1, 0)
-	SaveImage(0, "..\bld_tmp\splash.bmp")
-	Save("..\bld_tmp\splash.sprite")
-
-Load("..\bld_tmp\splash.sprite")
-		ExportBSpriteFFT("..\build_output\sprite\splash.data")		
 
 //--------
 
@@ -217,10 +210,6 @@ Load("..\bld_tmp\logo.sprite")
 
 //----
 
-Load("..\bld_tmp\splash.sprite")
-	DeleteAllModules()
-	CreateModule(0x1000	MD_IMAGE	0	0	0	-1	-1)
-	ExportBSpriteFFT("..\build_output\sprite\splash.image")
 
 //----
 
