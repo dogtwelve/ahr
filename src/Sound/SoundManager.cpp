@@ -273,10 +273,33 @@ void SoundManager::loadAllEffect()
 
 	initialize();
 	
+	m_SoundData = new unsigned char*[2];
+	const char* szFileName[2] = { "BULLET.wav", "DIE.wav" };
 	if(!m_bAreEffectsLoaded)
 	{
-		for (int nIndex = 0; nIndex < NUM_SOUNDS_TOTAL; nIndex++)
+		for (int nIndex = 0; nIndex < 2; nIndex++)
 		{
+			A_IFile *pFile = A_IFile::Open( szFileName[nIndex], A_IFile::OPEN_STANDALONE | A_IFile::OPEN_READ | A_IFile::OPEN_BINARY, false);
+			
+			if (!pFile)
+			{
+				//return false; // E_FAIL;
+			}
+			
+			int nLength = pFile->GetSize();
+			
+			//SAFE_DELETE(m_SoundData[nIndex]);
+			m_SoundData[nIndex] = NEW unsigned char[nLength];	
+			lengthsSound[nIndex]=nLength;
+			
+			if(!m_SoundData[nIndex])
+			{
+				return;// false; // E_FAIL;
+			}
+			
+			pFile->Read(m_SoundData[nIndex], nLength);
+			A_IFile::Close(pFile);
+			
 			m_soundWrap->SampleLoad(nIndex, (char*) m_SoundData[nIndex], lengthsSound[nIndex]);
 		}
 		m_bAreEffectsLoaded = true;
@@ -357,6 +380,9 @@ void RemoveStoppedSamples()
 
 void SoundManager::SampleStart(int soundId, bool repeat)
 {
+#ifdef WIN32
+	return;
+#endif
 	if (!m_bPlaySounds)
 		return;
 	

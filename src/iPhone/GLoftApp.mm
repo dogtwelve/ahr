@@ -255,7 +255,7 @@ void JoinThread()
 	g_SystemVersion = GetVersionNumber(temp);
 
 #ifdef USE_IPHONE_INTRO_VIDEO
-	LoadMovie("asphalt4.mp4");
+	//LoadMovie("asphalt4.mp4");
 #endif // USE_IPHONE_INTRO_VIDEO
 	
 	//launch game

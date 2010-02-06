@@ -35,6 +35,9 @@ bool			g_bSkipRendering = false;
 //#define __USE_32BITS__		// FOR 32 bits screen  EMULATION
 
 CGapi Gapi;
+static unsigned int _game_clock;
+static unsigned int _game_suspend_time;
+
 static unsigned int SysTickLast;       // used to fix framerate on PC
 unsigned int g_uiFrameDuration; // last frame duration in miliseconds
 
@@ -164,8 +167,9 @@ extern "C" void GameLoop()
 		
 		//hg->m_AudioManager.m_soundWrap->MusicLoad("bg_game.mp3");//"sample1.mp3");
 
-		
-		hg->m_AudioManager.loadAllEffect();		
+//####			JK 091203 fix to load SFX
+		hg->m_AudioManager.loadAllEffect();				
+//		hg->m_AudioManager.loadCurrentSound();
 		
 		s_bRecreateSoundEngineAfterInterrupt = false;
 		

@@ -5,15 +5,15 @@
     VERSION 0001
 
     // Images:  1
-    // Modules: 14
-    // Frames:  14
+    // Modules: 16
+    // Frames:  15
     // Anims:   0
 
 ////////////////////////////////////////////////////////////////////////////////
 // Images...
 // <Image> := IMAGE [id] "file" [TRANSP transp_color]
 
-    IMAGE 0x0000 ".\interface_caption.png" TRANSP 0x00FF00FF // 0  size: 256 x 256  palettes: 1
+    IMAGE 0x0000 ".\interface_caption.png" TRANSP 0x00FF00FF // 0  size: 303 x 274  palettes: 1
 
 ////////////////////////////////////////////////////////////////////////////////
 // Modules...
@@ -41,7 +41,9 @@
         MD	0x100A	MD_IMAGE	0	57	169	21	27
         MD	0x100B	MD_IMAGE	0	101	33	74	26
         MD	0x100C	MD_IMAGE	0	99	62	115	26
-        MD	0x100D	MD_IMAGE	0	11	118	65	11
+        MD	0x100D	MD_IMAGE	0	15	216	283	50
+        MD	0x100E	MD_IMAGE	0	92	97	204	26
+        MD	0x100F	MD_IMAGE	0	234	149	22	30
     }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -132,7 +134,13 @@
     FRAME "" // Index = 13, FModules = 1
     {
         0x200D
-        FM	0x100D	-32	-4
+        FM	0x100D	-148	-24
+    }
+
+    FRAME "" // Index = 14, FModules = 1
+    {
+        0x200E
+        FM	0x100E	-106	-12
     }
 
     SPRITE_END

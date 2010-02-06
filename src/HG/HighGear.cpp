@@ -406,11 +406,11 @@ void CHighGear::ZoneReleased(short zoneId)
 	switch (zoneId)
 	{
 		case ZONEID_PAD_LEFT:
-			
 			MAINCHAR->move(-1);
 			break;
 		case ZONEID_PAD_RIGHT:
 			MAINCHAR->move(1);
+			break;
 		case ZONEID_PAD_FIRE:
 			
 			if (MAINCHAR->canFire())
@@ -448,10 +448,7 @@ void CHighGear::setGameState(e_m_state state, bool bDrawL)
 	m_bDrawLoading = bDrawL;
 	m_loadingCounter = 0;
 }
-#define GAME_READY	0
-#define GAME_START	1
-#define GAME_RESULT	2
-#define GAME_OVER	3
+
 
 void CHighGear::procLoading()
 {
@@ -472,10 +469,13 @@ void CHighGear::procLoading()
 		
 		break;
 	case GAME_STATE_TITLE:
-//JK_SOUND_IMPLEMENT
-		//("bg_title.mp3");//"sample1.mp3");
-		//m_AudioManager.m_soundWrap->MusicStart(true);
-
+#ifndef WIN32
+#define JK_SOUND_IMPLEMENT
+#endif
+#ifdef JK_SOUND_IMPLEMENT
+		m_AudioManager.m_soundWrap->MusicLoad("bg_title.mp3");//("bg_title.mp3");//"sample1.mp3");
+		m_AudioManager.m_soundWrap->MusicStart(true);
+#endif
 		m_SplashScreen = NEW CSprite("sprite\\title.bsprite");
 		m_bg = NEW CSprite*[2];
 
@@ -489,7 +489,7 @@ void CHighGear::procLoading()
 		//######################
 		//####	load resources
 		//######################
-#ifdef MUSIC_IMPLEMENT
+#ifdef JK_SOUND_IMPLEMENT
 		m_AudioManager.m_soundWrap->MusicFree();	
 		m_AudioManager.m_soundWrap->MusicLoad("bg_game.mp3");//"sample1.mp3");
 #endif
@@ -516,6 +516,7 @@ void CHighGear::procLoading()
 		m_village = MAX_VILLAGE;
 		
 		//####	bullet levels : 0~4
+		m_enemyGenIndex = 1;
 		m_btPow = 0;
 		m_btDelay = 0;
 		break;
@@ -583,11 +584,17 @@ void CHighGear::procMaingame()
 		break;
 	}
 	case GAME_START:
-		if (m_village <= 0) 
+		if (m_village <= 98) 
 		{
 			m_gameState = GAME_OVER;
+			MAINCHAR->notifyState(CActor::ACTOR_STATE_MCDIE, NULL);
 			break;
 		}
+		//updateLevel();
+		//updateTimer();
+			
+		if ((GETTIMEMS() - m_gameTime) % 5000 == 0)
+			m_level ++;
 		genEnemy();
 
 		//Update Touch
@@ -640,6 +647,8 @@ void CHighGear::procMaingame()
 						m_actors[index]->init(CActor::ACTOR_MCBULLET, GAMESPRITE_MCBULLET, MAINCHAR->m_posX, MAINCHAR->m_posY);
 					}
 					MAINCHAR->notifyState(CActor::ACTOR_STATE_ATTACK, 15 - m_btDelay * 2);
+					m_AudioManager.SampleStart(0, false);
+
 				}
 			}
 
@@ -738,32 +747,45 @@ void CHighGear::procMaingame()
 	else if (m_gameState == GAME_START)
 	{
 		//DRAW VIRTUAL PAD
+		m_pad->SetGlobalAlpha(100);
+		GetLib2D().setColor(0xffffff | (100<<24) );
 		m_pad->DrawModule(GetLib2D(), 
-						TOUCH_AREA_LBUTTON_X + (TOUCH_AREA_BUTTON_W >> 1),
+			TOUCH_AREA_LBUTTON_X + (TOUCH_AREA_BUTTON_W >> 1) - (m_pad->GetModuleWidth(0) >> 1),
 						TOUCH_AREA_LBUTTON_Y + (TOUCH_AREA_BUTTON_H >> 1), 
-						0, 0);
+						0);//, CSprite::FLAGS_ADDITIVE_BLENDING);
 		m_pad->DrawModule(GetLib2D(), 
-						TOUCH_AREA_RBUTTON_X + (TOUCH_AREA_BUTTON_W >> 1),
+						TOUCH_AREA_RBUTTON_X + (TOUCH_AREA_BUTTON_W >> 1) - (m_pad->GetModuleWidth(1) >> 1),
 						TOUCH_AREA_RBUTTON_Y + (TOUCH_AREA_BUTTON_H >> 1), 
-						0, 1);
+						0, 1);//CSprite::FLAGS_ADDITIVE_BLENDING | 1);
 
 		m_pad->DrawModule(GetLib2D(), 
-						TOUCH_AREA_FBUTTON_X + (TOUCH_AREA_BUTTON_W >> 1),
+						TOUCH_AREA_FBUTTON_X + (TOUCH_AREA_BUTTON_W >> 1) - (m_pad->GetModuleWidth(2) >> 1),
 						TOUCH_AREA_FBUTTON_Y + (TOUCH_AREA_BUTTON_H >> 1), 
-						1);
-
+						1);//, CSprite::FLAGS_ADDITIVE_BLENDING);
+		GetLib2D().setColor(0xffffff | (255<<24) );
 
 		//Kills
 		m_ui->DrawFrame(GetLib2D(), UI_KILL_X, UI_KILL_Y, 11);
 		drawNum(UI_KILL_X - UI_KILL_CAPTION_WIDTH, UI_KILL_Y, m_kill, UI_KILL_CAPTION_WIDTH, true);
 
-		//Kills
+		//TIME
 		m_ui->DrawFrame(GetLib2D(), UI_VILLAGE_X, UI_VILLAGE_Y, 12);
-		drawNum(UI_VILLAGE_CAPTION_X, UI_VILLAGE_Y, m_village, UI_VILLAGE_CAPTION_WIDTH, true);
+		
+		drawNum(UI_VILLAGE_CAPTION_X, UI_VILLAGE_Y, ((GETTIMEMS() - m_gameTime) / 10) % 100, UI_VILLAGE_CAPTION_WIDTH, true);
+		drawNum(UI_VILLAGE_CAPTION_X - 40, UI_VILLAGE_Y, ((GETTIMEMS() - m_gameTime) / 1000), UI_VILLAGE_CAPTION_WIDTH, true);
+//		drawNum(UI_VILLAGE_CAPTION_X - 60, UI_VILLAGE_Y, ((GETTIMEMS() - m_gameTime) / 60000) % 60, UI_VILLAGE_CAPTION_WIDTH, true);
 	}
 	else if (m_gameState == GAME_OVER)
 	{
-		m_ui->DrawFrame(GetLib2D(), m_dispX >> 1, m_dispY >> 1, 13);
+		GetLib2D().DrawRect(0, 0, m_dispX, m_dispY, (0x222 | (2 << 12)));
+		//GetLib2D().setColor(0xFFFFFF);
+		m_ui->DrawFrame(GetLib2D(), m_dispX >> 1, (m_dispY >> 1) - 20, 13, CSprite::FLAGS_ADDITIVE_BLENDING);
+		m_ui->DrawFrame(GetLib2D(), m_dispX >> 1, (m_dispY >> 1) + 10, 14);
+		//GetLib2D().DrawAlphaColorRect(0, 0, m_dispX, m_dispY, 0x33000000, 0x33000000);
+		
+
+//		GetLib2D().setColor(0x44000000);
+		//
 	}
 }
 
@@ -787,24 +809,24 @@ void CHighGear::genEnemy()
 {
 	m_currentEnemyCnt = countEnemy();
 
-	if (m_kill < 2) m_level = 1;
-	else if (m_kill < 5) m_level = 2;
-	else if (m_kill < 10) m_level = 3;
-	else m_level = 3 + m_kill / 10;
+	if (m_currentEnemyCnt > (m_level + 1) * 3) return;
 
-	if (m_currentEnemyCnt > m_level) return;
-
-	if (m_Random.GetNumber(0, 100) < 5 + m_level / 5)
+	if (m_Random.GetNumber(0, 100) < 5 + m_level / 4)
 	{
 		int index = getEmptyActorIndex();
 
 		if (index > -1)
 		{
+			
 			int eType = m_Random.GetNumber(0, MAX_ENEMY);
 
 			m_actors[index]->init(CActor::ACTOR_MUMMY + eType, m_gameSprite[GAMESPRITE_ENEMY_START_INDEX + eType],
-									m_Random.GetNumber(0, LEVEL_UNIT_WIDTH), 0, m_level / 10);
+									m_Random.GetNumber(0, LEVEL_UNIT_WIDTH), 0, m_level / 20);
+			if (m_enemyGenIndex % Max(7 - m_level / 10, 3) == 0) 
+				m_actors[index]->bHasItem = true;
+			if (++ m_enemyGenIndex > 10000) m_enemyGenIndex = 1;
 		}
+		
 	}
 }
 

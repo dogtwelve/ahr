@@ -3,6 +3,11 @@
 
 #include "Config.h"
 
+#define GAME_READY	0
+#define GAME_START	1
+#define GAME_RESULT	2
+#define GAME_OVER	3
+
 #define GAMESPRITE_MC		m_gameSprite[0]
 #define GAMESPRITE_ITEM		m_gameSprite[1]
 #define GAMESPRITE_MUMMY	m_gameSprite[2]
