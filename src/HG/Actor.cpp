@@ -378,7 +378,7 @@ void CActor::draw (CLib2D g)
 		}
 		updateSprite();
 	}
-	if (this->isEnemy() && m_state != ACTOR_STATE_DESTROYED)
+	if (this->isEnemy() && m_state != ACTOR_STATE_DESTROYED && g_pGame->m_gameState != GAME_OVER)
 	{
 		g.DrawRect(rX - (ENEMY_HP_BAR_WIDTH >> 1), rY + ENEMY_HP_BAR_OFFSET_Y, 
 			ENEMY_HP_BAR_WIDTH, ENEMY_HP_BAR_HEIGHT,

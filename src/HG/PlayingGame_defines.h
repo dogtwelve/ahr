@@ -37,6 +37,7 @@
 
 #define ZONEID_PLAY_AGAIN_YES	4
 #define ZONEID_PLAY_AGAIN_NO	5
+#define ZONEID_REPLAY			6
 
 #define MAX_HP	3
 

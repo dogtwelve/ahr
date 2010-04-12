@@ -607,18 +607,23 @@ void CHighGear::procMaingame()
 			m_gameState = GAME_OVER;
 			m_gameTime = GETTIMEMS() - m_gameTime;
 			MAINCHAR->notifyState(CActor::ACTOR_STATE_MCDIE, NULL);
-			touchZones->AddZone(ZONEID_PLAY_AGAIN_YES,
-								(m_dispX >> 1) - 60 - (m_ui->GetModuleWidth(16) >> 1),
-								(m_dispY >> 1) + 55,
-								(m_dispX >> 1) - 60 + (m_ui->GetModuleWidth(16) >> 1),
-								(m_dispY >> 1) + 55 + (m_ui->GetModuleHeight(16))
+
+			touchZones->AddZone(ZONEID_REPLAY,
+								0, 0, m_dispX, m_dispY
 								);
-			touchZones->AddZone(ZONEID_PLAY_AGAIN_NO, 
-								(m_dispX >> 1) + 60 - (m_ui->GetModuleWidth(16) >> 1),
-								(m_dispY >> 1) + 55,
-								(m_dispX >> 1) + 60 + (m_ui->GetModuleWidth(16) >> 1),
-								(m_dispY >> 1) + 55 + (m_ui->GetModuleHeight(16))
-								);
+
+			//touchZones->AddZone(ZONEID_PLAY_AGAIN_YES,
+			//					(m_dispX >> 1) - 60 - (m_ui->GetModuleWidth(16) >> 1),
+			//					(m_dispY >> 1) + 55,
+			//					(m_dispX >> 1) - 60 + (m_ui->GetModuleWidth(16) >> 1),
+			//					(m_dispY >> 1) + 55 + (m_ui->GetModuleHeight(16))
+			//					);
+			//touchZones->AddZone(ZONEID_PLAY_AGAIN_NO, 
+			//					(m_dispX >> 1) + 60 - (m_ui->GetModuleWidth(16) >> 1),
+			//					(m_dispY >> 1) + 55,
+			//					(m_dispX >> 1) + 60 + (m_ui->GetModuleWidth(16) >> 1),
+			//					(m_dispY >> 1) + 55 + (m_ui->GetModuleHeight(16))
+			//					);
 			
 			break;
 		}
@@ -802,12 +807,11 @@ void CHighGear::procMaingame()
 		m_ui->DrawFrame(GetLib2D(), UI_KILL_X, UI_KILL_Y, 11);
 		drawNum(UI_KILL_X - UI_KILL_CAPTION_WIDTH, UI_KILL_Y, m_kill, UI_KILL_CAPTION_WIDTH, true);
 
-		//TIME
-		m_ui->DrawFrame(GetLib2D(), UI_VILLAGE_X, UI_VILLAGE_Y, 12);
-		
-		drawNum(UI_VILLAGE_CAPTION_X, UI_VILLAGE_Y, ((GETTIMEMS() - m_gameTime) / 10) % 100, UI_VILLAGE_CAPTION_WIDTH, true);
-		drawNum(UI_VILLAGE_CAPTION_X - 40, UI_VILLAGE_Y, ((GETTIMEMS() - m_gameTime) / 1000), UI_VILLAGE_CAPTION_WIDTH, true);
-//		drawNum(UI_VILLAGE_CAPTION_X - 60, UI_VILLAGE_Y, ((GETTIMEMS() - m_gameTime) / 60000) % 60, UI_VILLAGE_CAPTION_WIDTH, true);
+		////TIME
+		//m_ui->DrawFrame(GetLib2D(), UI_VILLAGE_X, UI_VILLAGE_Y, 12);
+		//
+		//drawNum(UI_VILLAGE_CAPTION_X, UI_VILLAGE_Y, ((GETTIMEMS() - m_gameTime) / 10) % 100, UI_VILLAGE_CAPTION_WIDTH, true);
+		//drawNum(UI_VILLAGE_CAPTION_X - 40, UI_VILLAGE_Y, ((GETTIMEMS() - m_gameTime) / 1000), UI_VILLAGE_CAPTION_WIDTH, true);
 	}
 	else if (m_gameState == GAME_OVER)
 	{
@@ -817,20 +821,21 @@ void CHighGear::procMaingame()
 		m_ui->DrawFrame(GetLib2D(), UI_KILL_X, UI_KILL_Y, 11);
 		drawNum(UI_KILL_X - UI_KILL_CAPTION_WIDTH, UI_KILL_Y, m_kill, UI_KILL_CAPTION_WIDTH, true);
 		
-		//TIME
-		m_ui->DrawFrame(GetLib2D(), UI_VILLAGE_X, UI_VILLAGE_Y, 12);
-		
-		drawNum(UI_VILLAGE_CAPTION_X, UI_VILLAGE_Y, (m_gameTime / 10) % 100, UI_VILLAGE_CAPTION_WIDTH, true);
-		drawNum(UI_VILLAGE_CAPTION_X - 40, UI_VILLAGE_Y, (m_gameTime / 1000), UI_VILLAGE_CAPTION_WIDTH, true);
+		////TIME
+		//m_ui->DrawFrame(GetLib2D(), UI_VILLAGE_X, UI_VILLAGE_Y, 12);
+		//
+		//drawNum(UI_VILLAGE_CAPTION_X, UI_VILLAGE_Y, (m_gameTime / 10) % 100, UI_VILLAGE_CAPTION_WIDTH, true);
+		//drawNum(UI_VILLAGE_CAPTION_X - 40, UI_VILLAGE_Y, (m_gameTime / 1000), UI_VILLAGE_CAPTION_WIDTH, true);
 		
 		GetLib2D().setColor(0xAAFFFFFF);
-		m_ui->DrawFrame(GetLib2D(), m_dispX >> 1, (m_dispY >> 1) - 30, 13);
+		m_ui->DrawFrame(GetLib2D(), m_dispX >> 1, (m_dispY >> 1) - 20, 13);
+		m_ui->DrawFrame(GetLib2D(), m_dispX >> 1, (m_dispY >> 1) + 15, 14);
 		
-		m_ui->DrawModule(GetLib2D(), (m_dispX >> 1) - (m_ui->GetModuleWidth(14) >> 1), (m_dispY >> 1) + 20, 14, 0);
-		m_ui->DrawModule(GetLib2D(), (m_dispX >> 1) - 60 - (m_ui->GetModuleWidth(16) >> 1), (m_dispY >> 1) + 55, 16, 0);
-		m_ui->DrawModule(GetLib2D(), (m_dispX >> 1) + 60 - (m_ui->GetModuleWidth(17) >> 1), (m_dispY >> 1) + 55, 17, 0);
+		//m_ui->DrawModule(GetLib2D(), (m_dispX >> 1) - (m_ui->GetModuleWidth(14) >> 1), (m_dispY >> 1) + 20, 14, 0);
+		//m_ui->DrawModule(GetLib2D(), (m_dispX >> 1) - 60 - (m_ui->GetModuleWidth(16) >> 1), (m_dispY >> 1) + 55, 16, 0);
+		//m_ui->DrawModule(GetLib2D(), (m_dispX >> 1) + 60 - (m_ui->GetModuleWidth(17) >> 1), (m_dispY >> 1) + 55, 17, 0);
 		
-		if (touchZones->WasZoneActivated(ZONEID_PLAY_AGAIN_YES))
+		if (touchZones->WasZoneActivated(ZONEID_REPLAY))
 		{ 
 			touchZones->ClearZones();
 			initActors();
@@ -838,11 +843,19 @@ void CHighGear::procMaingame()
 			m_gameState = GAME_READY;
 			resetGame();
 		}
-		else if (touchZones->WasZoneActivated(ZONEID_PLAY_AGAIN_NO))
-		{
-			touchZones->ClearZones();
-			setGameState(GAME_STATE_TITLE);
-		}
+		//if (touchZones->WasZoneActivated(ZONEID_PLAY_AGAIN_YES))
+		//{ 
+		//	touchZones->ClearZones();
+		//	initActors();
+		//	m_gameTime = GETTIMEMS();
+		//	m_gameState = GAME_READY;
+		//	resetGame();
+		//}
+		//else if (touchZones->WasZoneActivated(ZONEID_PLAY_AGAIN_NO))
+		//{
+		//	touchZones->ClearZones();
+		//	setGameState(GAME_STATE_TITLE);
+		//}
 	}
 }
 
