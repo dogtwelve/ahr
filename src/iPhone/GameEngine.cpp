@@ -368,8 +368,6 @@ extern "C" void GamePause()
 //			if(!hg->m_nosound)
 //			{
 			//####	check option if resume the music
-				//if(hg->IsMusicPlaying())
-				//	hg->m_bShouldRestartMusicAfterInterrupted = true;
 			
 				s_bRecreateSoundEngineAfterInterrupt = true;						
 //			}
@@ -402,7 +400,7 @@ extern "C" void GameResume()
 	if(m_bIsRunning)//game init done ... game thread start
 	{
 		//resume game
-//		CHighGear::GetInstance()->Resume();
+		//CHighGear::GetInstance()->Resume();
 		m_bIsAppPaused = false;	
 	}
 	

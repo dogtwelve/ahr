@@ -11,9 +11,8 @@
 #define GAMESPRITE_MC		m_gameSprite[0]
 #define GAMESPRITE_ITEM		m_gameSprite[1]
 #define GAMESPRITE_MUMMY	m_gameSprite[2]
-#define GAMESPRITE_VAMPIRE	m_gameSprite[3]
-#define GAMESPRITE_WOLF	m_gameSprite[4]
-#define GAMESPRITE_MCBULLET	m_gameSprite[5]
+#define GAMESPRITE_WOLF	m_gameSprite[3]
+#define GAMESPRITE_MCBULLET	m_gameSprite[4]
 
 #define GAMESPRITE_ENEMY_START_INDEX	2
 
@@ -36,7 +35,10 @@
 #define ZONEID_PAD_RIGHT	2
 #define ZONEID_PAD_FIRE		3
 
+#define ZONEID_PLAY_AGAIN_YES	4
+#define ZONEID_PLAY_AGAIN_NO	5
 
+#define MAX_HP	3
 
 #define LEVEL_UNIT_WIDTH	7
 #define LEVEL_UNIT_HEIGHT	21
@@ -60,7 +62,7 @@
 
 #define TIME_LIMIT	300000
 
-#define MAX_ENEMY	3
+#define MAX_ENEMY	2
 #define MAX_VILLAGE	100
 
 #define MAX_BULLET_POWER	4

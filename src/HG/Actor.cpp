@@ -9,7 +9,7 @@ const int arrEnemyData[MAX_ENEMY][3]	=
 {
 	//speed, hp, score
 	{ 10, 5, 0 },	//mummy
-	{ 3, 3, 0, },	//vampire
+//	{ 3, 3, 0, },	//vampire
 	{ 5, 3, 0 }		//wolf
 };
 
@@ -51,7 +51,7 @@ void CActor::init(int type, CSprite* gameSpr, int x, int y, int level)
 		break;
 	case ACTOR_MC:
 	case ACTOR_MUMMY:
-	case ACTOR_VAMPIRE:
+//ß	case ACTOR_VAMPIRE:
 	case ACTOR_WOLF:
 		setAnim(0);
 		m_state = ACTOR_STATE_IDLE;
@@ -79,7 +79,7 @@ void CActor::notifyState(int state, int param1)
 			m_state = ACTOR_STATE_DAMAGED;
 			break;
 		case ACTOR_MUMMY:
-		case ACTOR_VAMPIRE:
+//		case ACTOR_VAMPIRE:
 		case ACTOR_WOLF:
 			if (m_state == ACTOR_STATE_DAMAGED)
 			{
@@ -201,6 +201,7 @@ void CActor::update()
 		{
 			if (GETTIMEMS() - m_VelocityCounter > 500)
 			{
+				g_pGame->m_hp --;
 				setAnim(0);
 				m_state = ACTOR_STATE_IDLE;
 			}
@@ -213,7 +214,7 @@ void CActor::update()
 		break;
 	case ACTOR_WOLF:
 	case ACTOR_MUMMY:
-	case ACTOR_VAMPIRE:
+//	case ACTOR_VAMPIRE:
 		for (int i = 0; i < MAX_ACTOR; i ++)
 		{
 			if (g_pGame->m_actors[i] == NULL) continue;
@@ -348,11 +349,25 @@ void CActor::draw (CLib2D g)
 
 	
 	spr->DrawAFrame(g, rX, rY, m_CurrentAnim, m_CurrentAFrame, 33 + 67 * m_posY / LEVEL_UNIT_HEIGHT);
-
+	
+	//Draw Heart
 	if (m_type == ACTOR_MC)
 	{
-		//Draw Heart
-		g_pGame->m_ui->DrawModule(g, rX, rY, 15, 0, 0);//, <#int rotCenterX#>, <#int rotCenterY#>)
+		for (int i = 0; i < MAX_HP; i ++)
+		{
+			if (i >= g_pGame->m_hp)
+			{
+				g_pGame->GetLib2D().setColor(0x33000000 );
+			}
+			else {
+				g_pGame->GetLib2D().setColor(0xAAFFFFFF );
+
+			}
+
+			g_pGame->m_ui->DrawModule(g, rX - 15 + 22 * i, rY + 10, 15, 0, 0);//, <#int rotCenterX#>, <#int rotCenterY#>)
+		}
+		g_pGame->GetLib2D().setColor(0xFFFFFFFF );
+
 	}
 	
 	if (g_pGame->m_gameState != GAME_OVER)
@@ -393,7 +408,7 @@ void CActor::move(int _x)
 bool CActor::isEnemy()
 {
 	if (m_type == ACTOR_WOLF) return true;
-	if (m_type == ACTOR_VAMPIRE) return true;
+//	if (m_type == ACTOR_VAMPIRE) return true;
 	if (m_type == ACTOR_MUMMY) return true;
 
 	return false;
