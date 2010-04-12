@@ -424,17 +424,17 @@ void CHighGear::ZoneReleased(short zoneId)
 			break;
 		case ZONEID_PAD_FIRE:
 			
-			if (MAINCHAR->canFire())
-			{
-				////FIRE!
-				//int index = getEmptyActorIndex();
-				//
-				//if (index > -1)
-				//{
-				//	m_actors[index]->init(CActor::ACTOR_MCBULLET, GAMESPRITE_MCBULLET, MAINCHAR->m_posX, MAINCHAR->m_posY);
-				//}
-				//MAINCHAR->notifyState(CActor::ACTOR_STATE_ATTACK, 15 - m_btDelay * 2);
-			}
+			//if (MAINCHAR->canFire())
+			//{
+			//	//FIRE!
+			//	int index = getEmptyActorIndex();
+			//	
+			//	if (index > -1)
+			//	{
+			//		m_actors[index]->init(CActor::ACTOR_MCBULLET, GAMESPRITE_MCBULLET, MAINCHAR->m_posX, MAINCHAR->m_posY);
+			//	}
+			//	MAINCHAR->notifyState(CActor::ACTOR_STATE_ATTACK, 15 - m_btDelay * 2);
+			//}
 			break;
 	}
 	return;
