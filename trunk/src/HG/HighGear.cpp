@@ -405,6 +405,17 @@ void CHighGear::ZoneReleased(short zoneId)
 {
 	switch (zoneId)
 	{
+//		case ZONEID_PLAY_AGAIN_YES:
+//			touchZones->ClearZones();
+//			initActors();
+//			m_gameTime = GETTIMEMS();
+//			m_gameState = GAME_READY;
+//			resetGame();
+//			break;
+//		case ZONEID_PLAY_AGAIN_NO:
+//			touchZones->ClearZones();
+//			setGameState(GAME_STATE_TITLE);
+//			break;
 		case ZONEID_PAD_LEFT:
 			MAINCHAR->move(-1);
 			break;
@@ -415,15 +426,14 @@ void CHighGear::ZoneReleased(short zoneId)
 			
 			if (MAINCHAR->canFire())
 			{
-				//FIRE!
-				int index = getEmptyActorIndex();
-				
-				if (index > -1)
-				{
-					m_actors[index]->init(CActor::ACTOR_MCBULLET, GAMESPRITE_MCBULLET, MAINCHAR->m_posX, MAINCHAR->m_posY);
-				}
-				MAINCHAR->notifyState(CActor::ACTOR_STATE_ATTACK, 15 - m_btDelay * 2);
-				m_AudioManager.SampleStart(0, false);
+				////FIRE!
+				//int index = getEmptyActorIndex();
+				//
+				//if (index > -1)
+				//{
+				//	m_actors[index]->init(CActor::ACTOR_MCBULLET, GAMESPRITE_MCBULLET, MAINCHAR->m_posX, MAINCHAR->m_posY);
+				//}
+				//MAINCHAR->notifyState(CActor::ACTOR_STATE_ATTACK, 15 - m_btDelay * 2);
 			}
 			break;
 	}
@@ -449,6 +459,19 @@ void CHighGear::setGameState(e_m_state state, bool bDrawL)
 	m_loadingCounter = 0;
 }
 
+void CHighGear::resetGame ()
+{
+	m_kill = 0;
+	m_level = 0;
+	m_village = MAX_VILLAGE;
+	m_hp = MAX_HP;
+	
+	//####	bullet levels : 0~4
+	m_enemyGenIndex = 1;
+	m_btPow = 0;
+	m_btDelay = 0;
+	
+}
 
 void CHighGear::procLoading()
 {
@@ -499,7 +522,7 @@ void CHighGear::procLoading()
 
 		GAMESPRITE_ITEM = NEW CSprite("sprite\\items.bsprite");
 		GAMESPRITE_MUMMY = NEW CSprite("sprite\\enemy_mummy.bsprite");
-		GAMESPRITE_VAMPIRE = NEW CSprite("sprite\\enemy_vampire.bsprite");
+//		GAMESPRITE_VAMPIRE = NEW CSprite("sprite\\enemy_vampire.bsprite");
 		GAMESPRITE_WOLF = NEW CSprite("sprite\\enemy_wolf.bsprite");
 		GAMESPRITE_MCBULLET = NEW CSprite("sprite\\mcbullet.bsprite");
 
@@ -511,14 +534,7 @@ void CHighGear::procLoading()
 		initActors();
 		m_gameTime = GETTIMEMS();
 		m_gameState = GAME_READY;
-		m_kill = 0;
-		m_level = 0;
-		m_village = MAX_VILLAGE;
-		
-		//####	bullet levels : 0~4
-		m_enemyGenIndex = 1;
-		m_btPow = 0;
-		m_btDelay = 0;
+		resetGame();
 		break;
 	}
 	if (++ m_loadingCounter <= m_loadingLength)
@@ -559,8 +575,10 @@ void CHighGear::procMaingame()
 		{
 			m_AudioManager.m_soundWrap->MusicStart(true);
 
+			//Set the game
 			m_gameState = GAME_START;
 			m_gameTime = GETTIMEMS();
+			
 			touchZones->AddZone(ZONEID_PAD_LEFT, 
 								TOUCH_AREA_LBUTTON_X,
 								TOUCH_AREA_LBUTTON_Y,
@@ -584,10 +602,24 @@ void CHighGear::procMaingame()
 		break;
 	}
 	case GAME_START:
-		if (m_village <= 98) 
+		if (m_hp <= 0) 
 		{
 			m_gameState = GAME_OVER;
+			m_gameTime = GETTIMEMS() - m_gameTime;
 			MAINCHAR->notifyState(CActor::ACTOR_STATE_MCDIE, NULL);
+			touchZones->AddZone(ZONEID_PLAY_AGAIN_YES,
+								(m_dispX >> 1) - 60 - (m_ui->GetModuleWidth(16) >> 1),
+								(m_dispY >> 1) + 55,
+								(m_dispX >> 1) - 60 + (m_ui->GetModuleWidth(16) >> 1),
+								(m_dispY >> 1) + 55 + (m_ui->GetModuleHeight(16))
+								);
+			touchZones->AddZone(ZONEID_PLAY_AGAIN_NO, 
+								(m_dispX >> 1) + 60 - (m_ui->GetModuleWidth(16) >> 1),
+								(m_dispY >> 1) + 55,
+								(m_dispX >> 1) + 60 + (m_ui->GetModuleWidth(16) >> 1),
+								(m_dispY >> 1) + 55 + (m_ui->GetModuleHeight(16))
+								);
+			
 			break;
 		}
 		//updateLevel();
@@ -647,7 +679,10 @@ void CHighGear::procMaingame()
 						m_actors[index]->init(CActor::ACTOR_MCBULLET, GAMESPRITE_MCBULLET, MAINCHAR->m_posX, MAINCHAR->m_posY);
 					}
 					MAINCHAR->notifyState(CActor::ACTOR_STATE_ATTACK, 15 - m_btDelay * 2);
+#ifdef JK_SOUND_IMPLEMENT
+					m_AudioManager.SampleSetVolume(0, 50);
 					m_AudioManager.SampleStart(0, false);
+#endif
 
 				}
 			}
@@ -746,24 +781,23 @@ void CHighGear::procMaingame()
 
 	else if (m_gameState == GAME_START)
 	{
+		GetLib2D().setColor(0x44FFFFFF);
 		//DRAW VIRTUAL PAD
-		m_pad->SetGlobalAlpha(100);
-		GetLib2D().setColor(0xffffff | (100<<24) );
 		m_pad->DrawModule(GetLib2D(), 
-			TOUCH_AREA_LBUTTON_X + (TOUCH_AREA_BUTTON_W >> 1) - (m_pad->GetModuleWidth(0) >> 1),
-						TOUCH_AREA_LBUTTON_Y + (TOUCH_AREA_BUTTON_H >> 1), 
-						0);//, CSprite::FLAGS_ADDITIVE_BLENDING);
+						TOUCH_AREA_LBUTTON_X + (TOUCH_AREA_BUTTON_W >> 1) - (m_pad->GetModuleWidth(0) >> 1),
+						TOUCH_AREA_LBUTTON_Y + (TOUCH_AREA_BUTTON_H >> 1) - (m_pad->GetModuleHeight(0) >> 1), 
+						0, 0);
 		m_pad->DrawModule(GetLib2D(), 
-						TOUCH_AREA_RBUTTON_X + (TOUCH_AREA_BUTTON_W >> 1) - (m_pad->GetModuleWidth(1) >> 1),
-						TOUCH_AREA_RBUTTON_Y + (TOUCH_AREA_BUTTON_H >> 1), 
-						0, 1);//CSprite::FLAGS_ADDITIVE_BLENDING | 1);
+						TOUCH_AREA_RBUTTON_X + (TOUCH_AREA_BUTTON_W >> 1) - (m_pad->GetModuleWidth(0) >> 1),
+						TOUCH_AREA_RBUTTON_Y + (TOUCH_AREA_BUTTON_H >> 1) - (m_pad->GetModuleHeight(0) >> 1), 
+						0, 1);
 
 		m_pad->DrawModule(GetLib2D(), 
-						TOUCH_AREA_FBUTTON_X + (TOUCH_AREA_BUTTON_W >> 1) - (m_pad->GetModuleWidth(2) >> 1),
-						TOUCH_AREA_FBUTTON_Y + (TOUCH_AREA_BUTTON_H >> 1), 
-						1);//, CSprite::FLAGS_ADDITIVE_BLENDING);
-		GetLib2D().setColor(0xffffff | (255<<24) );
+						TOUCH_AREA_FBUTTON_X + (TOUCH_AREA_BUTTON_W >> 1) - (m_pad->GetModuleWidth(1) >> 1),
+						TOUCH_AREA_FBUTTON_Y + (TOUCH_AREA_BUTTON_H >> 1) - (m_pad->GetModuleHeight(1) >> 1), 
+						1);
 
+		GetLib2D().setColor(0xFFFFFFFF);
 		//Kills
 		m_ui->DrawFrame(GetLib2D(), UI_KILL_X, UI_KILL_Y, 11);
 		drawNum(UI_KILL_X - UI_KILL_CAPTION_WIDTH, UI_KILL_Y, m_kill, UI_KILL_CAPTION_WIDTH, true);
@@ -777,15 +811,38 @@ void CHighGear::procMaingame()
 	}
 	else if (m_gameState == GAME_OVER)
 	{
-		GetLib2D().DrawRect(0, 0, m_dispX, m_dispY, (0x222 | (2 << 12)));
-		//GetLib2D().setColor(0xFFFFFF);
-		m_ui->DrawFrame(GetLib2D(), m_dispX >> 1, (m_dispY >> 1) - 20, 13, CSprite::FLAGS_ADDITIVE_BLENDING);
-		m_ui->DrawFrame(GetLib2D(), m_dispX >> 1, (m_dispY >> 1) + 10, 14);
-		//GetLib2D().DrawAlphaColorRect(0, 0, m_dispX, m_dispY, 0x33000000, 0x33000000);
-		
-
 //		GetLib2D().setColor(0x44000000);
-		//
+//		GetLib2D().DrawRect(0, 0, m_dispX, m_dispY, 0xFFFFFF);
+		//Kills
+		m_ui->DrawFrame(GetLib2D(), UI_KILL_X, UI_KILL_Y, 11);
+		drawNum(UI_KILL_X - UI_KILL_CAPTION_WIDTH, UI_KILL_Y, m_kill, UI_KILL_CAPTION_WIDTH, true);
+		
+		//TIME
+		m_ui->DrawFrame(GetLib2D(), UI_VILLAGE_X, UI_VILLAGE_Y, 12);
+		
+		drawNum(UI_VILLAGE_CAPTION_X, UI_VILLAGE_Y, (m_gameTime / 10) % 100, UI_VILLAGE_CAPTION_WIDTH, true);
+		drawNum(UI_VILLAGE_CAPTION_X - 40, UI_VILLAGE_Y, (m_gameTime / 1000), UI_VILLAGE_CAPTION_WIDTH, true);
+		
+		GetLib2D().setColor(0xAAFFFFFF);
+		m_ui->DrawFrame(GetLib2D(), m_dispX >> 1, (m_dispY >> 1) - 30, 13);
+		
+		m_ui->DrawModule(GetLib2D(), (m_dispX >> 1) - (m_ui->GetModuleWidth(14) >> 1), (m_dispY >> 1) + 20, 14, 0);
+		m_ui->DrawModule(GetLib2D(), (m_dispX >> 1) - 60 - (m_ui->GetModuleWidth(16) >> 1), (m_dispY >> 1) + 55, 16, 0);
+		m_ui->DrawModule(GetLib2D(), (m_dispX >> 1) + 60 - (m_ui->GetModuleWidth(17) >> 1), (m_dispY >> 1) + 55, 17, 0);
+		
+		if (touchZones->WasZoneActivated(ZONEID_PLAY_AGAIN_YES))
+		{ 
+			touchZones->ClearZones();
+			initActors();
+			m_gameTime = GETTIMEMS();
+			m_gameState = GAME_READY;
+			resetGame();
+		}
+		else if (touchZones->WasZoneActivated(ZONEID_PLAY_AGAIN_NO))
+		{
+			touchZones->ClearZones();
+			setGameState(GAME_STATE_TITLE);
+		}
 	}
 }
 

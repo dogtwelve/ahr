@@ -380,9 +380,6 @@ void RemoveStoppedSamples()
 
 void SoundManager::SampleStart(int soundId, bool repeat)
 {
-#ifdef WIN32
-	return;
-#endif
 	if (!m_bPlaySounds)
 		return;
 	

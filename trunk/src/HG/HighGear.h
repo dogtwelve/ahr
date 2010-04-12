@@ -190,8 +190,10 @@ public:
 	
 	CSprite *m_logoSprite;
 	
+	void resetGame ();
 	int m_logoTimer;
 
+	int m_hp;
 	int m_kill;
 	int m_village;
 	int m_level;
