@@ -8,9 +8,9 @@ class CHighGear;
 const int arrEnemyData[MAX_ENEMY][3]	=
 {
 	//speed, hp, score
-	{ 10, 5, 0 },	//mummy
+	{ 10, 2, 0 },	//mummy
 //	{ 3, 3, 0, },	//vampire
-	{ 5, 3, 0 }		//wolf
+	{ 5, 1, 0 }		//wolf
 };
 
 #define ENEMY_DATA_INDEX_SPEED	0
@@ -176,8 +176,15 @@ void CActor::update()
 			{
 				//get Items!
 				m_state = ACTOR_STATE_DESTROYED;
-				if (g_pGame->m_btDelay < MAX_BULLET_DELAY) g_pGame->m_btDelay++;
-				if (g_pGame->m_btPow < MAX_BULLET_POWER) g_pGame->m_btPow++;
+
+				g_pGame->m_level /= 2;
+
+				//####	TODO:@0
+				//kill Enemy at once
+
+
+				//if (g_pGame->m_btDelay < MAX_BULLET_DELAY) g_pGame->m_btDelay++;
+				//if (g_pGame->m_btPow < MAX_BULLET_POWER) g_pGame->m_btPow++;
 			}
 			else if (++ m_posY > LEVEL_UNIT_HEIGHT)
 			{
@@ -207,10 +214,11 @@ void CActor::update()
 			}
 		}
 		
-		if ((GETTIMEMS() - g_pGame->m_gameTime) % 10000 == 0)
-		{
-			g_pGame->m_btPow = Max(0, g_pGame->m_btPow - 1);
-		}
+		//Weaken Bullet Power
+		//if ((GETTIMEMS() - g_pGame->m_gameTime) % 10000 == 0)
+		//{
+		//	g_pGame->m_btPow = Max(0, g_pGame->m_btPow - 1);
+		//}
 		break;
 	case ACTOR_WOLF:
 	case ACTOR_MUMMY:
@@ -254,6 +262,11 @@ void CActor::update()
 			{
 				m_VelocityCounter = 0;
 
+				if (m_posY % 2 == 0 && m_posY < LEVEL_UNIT_HEIGHT - 2 && g_pGame->m_Random.GetNumber(0, 20) == 1)
+				{
+					if (m_posX < g_pGame->MAINCHAR->m_posX) m_posX ++;
+					else if (m_posX > g_pGame->MAINCHAR->m_posX) m_posX --;
+				}
 				if (++ m_posY >= LEVEL_UNIT_HEIGHT)
 				{
 					//Do some penalty to MC
@@ -344,8 +357,9 @@ void CActor::draw (CLib2D g)
 		g_pGame->GetLib2D().setColor(0xFFFFFFFF );
 		
 	}
-	if (g_pGame->m_gameState != GAME_OVER && bHasItem && GETTIMEMS() % 10 == 0)
-		g_pGame->GetLib2D().setColor(0x44FF0000 );
+	//####	No flickering on the monster that has a item
+	//if (g_pGame->m_gameState != GAME_OVER && bHasItem && GETTIMEMS() % 10 == 0)
+	//	g_pGame->GetLib2D().setColor(0x44FF0000 );
 
 	
 	spr->DrawAFrame(g, rX, rY, m_CurrentAnim, m_CurrentAFrame, 33 + 67 * m_posY / LEVEL_UNIT_HEIGHT);

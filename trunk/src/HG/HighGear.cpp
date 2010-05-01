@@ -532,7 +532,7 @@ void CHighGear::procLoading()
 		//####		::reset Actor
 		//####		::reset game variables
 		initActors();
-		m_gameTime = GETTIMEMS();
+		m_gameTime = 0;//GETTIMEMS();
 		m_gameState = GAME_READY;
 		resetGame();
 		break;
@@ -571,13 +571,14 @@ void CHighGear::procMaingame()
 	{
 	case GAME_READY:
 	{
-		if (GETTIMEMS() - m_gameTime > 3000)
+		if (++ m_gameTime > 100)
 		{
 			m_AudioManager.m_soundWrap->MusicStart(true);
 
 			//Set the game
 			m_gameState = GAME_START;
-			m_gameTime = GETTIMEMS();
+			m_gameTime = 0;
+			//GETTIMEMS();
 			
 			touchZones->AddZone(ZONEID_PAD_LEFT, 
 								TOUCH_AREA_LBUTTON_X,
@@ -605,7 +606,7 @@ void CHighGear::procMaingame()
 		if (m_hp <= 0) 
 		{
 			m_gameState = GAME_OVER;
-			m_gameTime = GETTIMEMS() - m_gameTime;
+			m_gameTime = 0;
 			MAINCHAR->notifyState(CActor::ACTOR_STATE_MCDIE, NULL);
 
 			touchZones->AddZone(ZONEID_REPLAY,
@@ -629,10 +630,12 @@ void CHighGear::procMaingame()
 		}
 		//updateLevel();
 		//updateTimer();
-			
-		if ((GETTIMEMS() - m_gameTime) % 5000 == 0)
+		m_gameTime  = (m_gameTime + 1) & (0x0FFFFFFF);
+		if (m_gameTime % 50 == 1)
+		{
 			m_level ++;
-		genEnemy();
+			genEnemy();
+		}
 
 		//Update Touch
 //		if (MAINCHAR)
@@ -839,7 +842,7 @@ void CHighGear::procMaingame()
 		{ 
 			touchZones->ClearZones();
 			initActors();
-			m_gameTime = GETTIMEMS();
+			m_gameTime = 0;
 			m_gameState = GAME_READY;
 			resetGame();
 		}
@@ -879,21 +882,27 @@ void CHighGear::genEnemy()
 {
 	m_currentEnemyCnt = countEnemy();
 
-	if (m_currentEnemyCnt > (m_level + 1) * 3) return;
+	if (m_currentEnemyCnt > 50) return;
 
-	if (m_Random.GetNumber(0, 100) < 5 + m_level / 4)
+	bool bReleaseItem = false;
+	//if (m_Random.GetNumber(0, 100) < 5 + m_level / 4)
+	for (int i = 0; i < Min(m_level, 6); i ++)
 	{
 		int index = getEmptyActorIndex();
 
 		if (index > -1)
 		{
-			
 			int eType = m_Random.GetNumber(0, MAX_ENEMY);
 
 			m_actors[index]->init(CActor::ACTOR_MUMMY + eType, m_gameSprite[GAMESPRITE_ENEMY_START_INDEX + eType],
 									m_Random.GetNumber(0, LEVEL_UNIT_WIDTH), 0, m_level / 20);
-			if (m_enemyGenIndex % Max(7 - m_level / 10, 3) == 0) 
+			if (!bReleaseItem && m_Random.GetNumber(0, 1000) < m_level)
+				
+				//m_enemyGenIndex % Max(7 - m_level / 10, 3) == 0) 
+			{
+				bReleaseItem = true;
 				m_actors[index]->bHasItem = true;
+			}
 			if (++ m_enemyGenIndex > 10000) m_enemyGenIndex = 1;
 		}
 		
